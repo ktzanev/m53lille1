@@ -6,19 +6,19 @@
 \hautdepage{TD2: Espaces euclidiens, notions de base}
 
 % ==================================
-\section{Questions métriques}
+\section{Questions mÃ©triques}
 % ==================================
 
 
 %-----------------------------------
-\begin{exo} (Distance pondérée à un ensemble de points)
+\begin{exo} (Distance pondÃ©rÃ©e Ã  un ensemble de points)
 
-  Soit $(A_i,\lambda_i)_{1\leq i\leq n}$ un système pondéré de $n$ points d'un espace affine euclidien de poids total $\sum_{i=1}^n \lambda_i$ non nul. Pour tout point $M$ on définit la fonction
+  Soit $(A_i,\lambda_i)_{1\leq i\leq n}$ un systÃ¨me pondÃ©rÃ© de $n$ points d'un espace affine euclidien de poids total $\sum_{i=1}^n \lambda_i$ non nul. Pour tout point $M$ on dÃ©finit la fonction
     $$
       \phi(M)=\sum_{i=1}^n \lambda_i |\overrightarrow{MA_i}|^2.
     $$
   \begin{enumerate}
-    \item Soit $G$ le barycentre du système pondéré $(A_i,\lambda_i)_{1\leq i\leq n}$\,, montrer que:
+    \item Soit $G$ le barycentre du systÃ¨me pondÃ©rÃ© $(A_i,\lambda_i)_{1\leq i\leq n}$\,, montrer que:
       $$
         \phi(M)=(\sum_{i=1}^n\lambda_i) |\overrightarrow{MG}|^2+\phi(G).
       $$
@@ -32,9 +32,9 @@
 
   On se place dans l'espace vectoriel $M_3(\mathbb{R})$ des matrices $3\times 3$.
   \begin{enumerate}
-    \item Rappeler comment munir $M_3(\mathbb{R})$ d'une structure d'espace euclidien. En donner, une base orthonormée.
-    \item Donner une base orthonormée de l'espace des matrices antisymétriques.
-    \item Calculer l'orthogonal des matrices antisymétriques.
+    \item Rappeler comment munir $M_3(\mathbb{R})$ d'une structure d'espace euclidien. En donner, une base orthonormÃ©e.
+    \item Donner une base orthonormÃ©e de l'espace des matrices antisymÃ©triques.
+    \item Calculer l'orthogonal des matrices antisymÃ©triques.
     \item Calculer la distance de la matrice%
       \scalebox{.7}{
         $
@@ -51,18 +51,18 @@
 
 
 %-----------------------------------
-\begin{exo} (Théorème de Sylvester-Gallai)
+\begin{exo} (ThÃ©orÃ¨me de Sylvester-Gallai)
   \begin{enumerate}
-    \item Étant donné un nombre fini de points dans un plan affine (euclidien), montrer qu'on a l'alternative suivante:
+    \item Ã‰tant donnÃ© un nombre fini de points dans un plan affine (euclidien), montrer qu'on a l'alternative suivante:
       \begin{itemize}
-        \item soit tous les points sont alignés,
+        \item soit tous les points sont alignÃ©s,
         \item soit il existe une droite qui contient exactement deux points de l'ensemble.
       \end{itemize}
-      \emph{Indication: Considérer le couple $(P,\mathcal{D})$, où $\mathcal{D}$ est une droite contenant au moins deux points de l'ensemble et $P\notin \mathcal{D}$ est un point de l'ensemble, tel que la distance $\mathrm{d}(P,\mathcal{D})$ est minimale.}
+      \emph{Indication: ConsidÃ©rer le couple $(P,\mathcal{D})$, oÃ¹ $\mathcal{D}$ est une droite contenant au moins deux points de l'ensemble et $P\notin \mathcal{D}$ est un point de l'ensemble, tel que la distance $\mathrm{d}(P,\mathcal{D})$ est minimale.}
 
-    \item Est-ce que la question précédente reste vraie si les points sont dans un espace de dimension quelconque?
+    \item Est-ce que la question prÃ©cÃ©dente reste vraie si les points sont dans un espace de dimension quelconque?
 
-    \item Est-ce que la première question reste vraie pour un nombre infini de points?
+    \item Est-ce que la premiÃ¨re question reste vraie pour un nombre infini de points?
   \end{enumerate}
 \end{exo}
 
@@ -74,11 +74,11 @@
 %-----------------------------------
 \begin{exo} (Normes et convexes)
 
-    On se place dans l'espace euclidien standard $\mathbb{R}^{n}$. On appelle \emph{corps convexe} tout ensemble qui est convexe, compact et à intérieur non vide.
+    On se place dans l'espace euclidien standard $\mathbb{R}^{n}$. On appelle \emph{corps convexe} tout ensemble qui est convexe, compact et Ã  intÃ©rieur non vide.
     \begin{enumerate}
-       \item Montrer que la boule unité fermée d'une norme est un corps convexe symétrique par rapport à l'origine.
+       \item Montrer que la boule unitÃ© fermÃ©e d'une norme est un corps convexe symÃ©trique par rapport Ã  l'origine.
 
-       \item Montrer qu'étant donné un corps convexe symétrique par rapport à l'origine, alors il existe une unique norme dont la boule unité fermée est ce convexe.
+       \item Montrer qu'Ã©tant donnÃ© un corps convexe symÃ©trique par rapport Ã  l'origine, alors il existe une unique norme dont la boule unitÃ© fermÃ©e est ce convexe.
 
      \end{enumerate}
 \end{exo}
@@ -86,69 +86,69 @@
 %-----------------------------------
 \begin{exo} (Convexes euclidiens)
 
-    Soient $\mathcal{C}$ un convexe fermé d'un espace euclidien et $P \notin \mathcal{C}$ un point de cet espace.
+    Soient $\mathcal{C}$ un convexe fermÃ© d'un espace euclidien et $P \notin \mathcal{C}$ un point de cet espace.
     \begin{enumerate}
        \item Montrer qu'il existe un unique point $Q \in \mathcal{C}$ tel que $d(P,Q) = d(P,\mathcal{C})$. \newline
        \emph{On dit que $Q$ est la projection de $P$ sur $\mathcal{C}$.}
 
-       \item Montrer que l'hyperplan $\mathcal{H}$ passant par $Q$ et orthogonal à $\overrightarrow{QP}$ est un \emph{plan de support}, c'est-à-dire que $\mathcal{H}$ rencontre $\mathcal{C}$, mais pas son intérieur.
+       \item Montrer que l'hyperplan $\mathcal{H}$ passant par $Q$ et orthogonal Ã  $\overrightarrow{QP}$ est un \emph{plan de support}, c'est-Ã -dire que $\mathcal{H}$ rencontre $\mathcal{C}$, mais pas son intÃ©rieur.
 
-       \item Montrer que tout convexe peut s'écrire comme l'intersection de demi-espaces affines.
+       \item Montrer que tout convexe peut s'Ã©crire comme l'intersection de demi-espaces affines.
 
-       \item Est-ce que la question précédente reste vraie si on se place dans un espace affine de dimension fini, plutôt que dans un espace euclidien?
+       \item Est-ce que la question prÃ©cÃ©dente reste vraie si on se place dans un espace affine de dimension fini, plutÃ´t que dans un espace euclidien?
      \end{enumerate}
 \end{exo}
 
 %-----------------------------------
-\begin{exo} (Séparation de convexes)
+\begin{exo} (SÃ©paration de convexes)
 
-  Étant donnés deux convexes compacts disjoints dans un espace affine de dimension finie, montrer qu'il existe un hyperplan qui les sépare strictement (c'est-à-dire qu'il ne les rencontre pas et que les deux convexes ne sont pas dans le même demi-espace délimité par cet hyperplan).
+  Ã‰tant donnÃ©s deux convexes compacts disjoints dans un espace affine de dimension finie, montrer qu'il existe un hyperplan qui les sÃ©pare strictement (c'est-Ã -dire qu'il ne les rencontre pas et que les deux convexes ne sont pas dans le mÃªme demi-espace dÃ©limitÃ© par cet hyperplan).
 \end{exo}
 
 
 % ==================================
-\section{Isométries}
+\section{IsomÃ©tries}
 % ==================================
 
 %-----------------------------------
 \begin{exo} (Structure euclidienne sur $\mathbb{C}$)
 
-  Soit $f$ une application de $\mathbb{C}$ dans $\mathbb{C}$, $\mathbb{R}$-linéaire.
+  Soit $f$ une application de $\mathbb{C}$ dans $\mathbb{C}$, $\mathbb{R}$-linÃ©aire.
   \begin{enumerate}
     \item Montrer qu'il existe deux complexes $a$ et $b$ tels que pour tout $z\in\mathbb{C}$, $f(z)=az+b\overline{z}$.
-    \item A quelles conditions sur $a$ et $b$, $f$ est-elle $\mathbb{C}$-linéaire?
+    \item A quelles conditions sur $a$ et $b$, $f$ est-elle $\mathbb{C}$-linÃ©aire?
     \item Calculer $\mathrm{tr}(f)$ et $\mathrm{det}(f)$ en fonction de a et b.
 
     \begin{convention}
-      Pour la suite on considère $\mathbb{C}$ muni de sa structure euclidienne canonique.
+      Pour la suite on considÃ¨re $\mathbb{C}$ muni de sa structure euclidienne canonique.
     \end{convention}
 
-    \item Donner la condition nécessaire et suffisante sur $(a,b)$ pour que $f$ soit autoadjoint.
-    \item Donner la condition nécessaire et suffisante sur $(a,b)$ pour que $f$ soit orthogonale.
-    \item À quelle condition sur $(a,b)$ l'application $f$ est à valeurs dans $\mathbb{R} \subset \mathbb{C}$ ?
+    \item Donner la condition nÃ©cessaire et suffisante sur $(a,b)$ pour que $f$ soit autoadjoint.
+    \item Donner la condition nÃ©cessaire et suffisante sur $(a,b)$ pour que $f$ soit orthogonale.
+    \item Ã€ quelle condition sur $(a,b)$ l'application $f$ est Ã  valeurs dans $\mathbb{R} \subset \mathbb{C}$ ?
     \item Soit $z_{1}$ et $z_{2}$ les affixes de deux vecteurs $v_{1}$ et $v_{2}$.\newline
     Exprimer le produit scalaire $<v_{1} ~|~ v_{2}>$ en fonction de $z_{1}$ et $z_{2}$.
   \end{enumerate}
 \end{exo}
 
 %-----------------------------------
-\begin{exo} (Isométries du triangle)
+\begin{exo} (IsomÃ©tries du triangle)
   \begin{enumerate}
-    \item Déterminer le groupe des isométries d'un triangle dans le plan, la discussion sera menée en fonction des propriétés métriques du triangle.
-    \item Même question avec un quadrilatère.
+    \item DÃ©terminer le groupe des isomÃ©tries d'un triangle dans le plan, la discussion sera menÃ©e en fonction des propriÃ©tÃ©s mÃ©triques du triangle.
+    \item MÃªme question avec un quadrilatÃ¨re.
   \end{enumerate}
 \end{exo}
 
 %-----------------------------------
-\begin{exo} (Isométries du tétraèdre)
+\begin{exo} (IsomÃ©tries du tÃ©traÃ¨dre)
 
-    Montrer que le groupe des isométries affines qui préserve un tétraèdre régulier est isomorphe à $\mathfrak{G}_{4}$, le groupe de permutations de $4$ points.
+    Montrer que le groupe des isomÃ©tries affines qui prÃ©serve un tÃ©traÃ¨dre rÃ©gulier est isomorphe Ã  $\mathfrak{G}_{4}$, le groupe de permutations de $4$ points.
 \end{exo}
 
 %-----------------------------------
-\begin{exo} (Nature de certaines isométrie)
+\begin{exo} (Nature de certaines isomÃ©trie)
   \begin{enumerate}
-    \item Soit l'isométrie linéaire%
+    \item Soit l'isomÃ©trie linÃ©aire%
       \scalebox{.7}{
         $
           \begin{pmatrix}
@@ -158,20 +158,20 @@
           \end{pmatrix}
         $.
       }
-      Décrire la nature de cette isométrie.
+      DÃ©crire la nature de cette isomÃ©trie.
     \item Soient $R$ et $T$ une rotation et une translation de $\mathbb{R}^{3}$. Quelle est la nature de $T \circ R$ ?
-    \item Quelle est la composée de trois symétries de plans parallèles de $\mathbb{R}^{3}$?
+    \item Quelle est la composÃ©e de trois symÃ©tries de plans parallÃ¨les de $\mathbb{R}^{3}$?
   \end{enumerate}
 \end{exo}
 
 %-----------------------------------
-\begin{exo} (Capes 2007, 2\ieme\ épreuve)
+\begin{exo} (Capes 2007, 2\ieme\ Ã©preuve)
 % Pour voir l'image originale
 % \usepackage{graphicx}
 % \hspace{-7mm}\includegraphics[scale=0.55]{CAPES2007.png}
 
 \begin{center}
-  \textbf{Partie V. GROUPES DIÉDRAUX}
+  \textbf{Partie V. GROUPES DIÃ‰DRAUX}
 \end{center}
 
 \begin{enumerate}
@@ -180,15 +180,15 @@
   \renewcommand{\theenumii}{\alph{enumii}}
   \renewcommand{\labelenumii}{\theenumii)}
 
-  \item Soit $E$ un plan affine euclidien orienté. Soit $p \in \mathbb{N}$, $p \geq 2$. On appelle groupe diédrale d'ordre $2p$, noté $D_{2p}$, le groupe des isométries laissant invariant un polygone régulier
+  \item Soit $E$ un plan affine euclidien orientÃ©. Soit $p \in \mathbb{N}$, $p \geq 2$. On appelle groupe diÃ©drale d'ordre $2p$, notÃ© $D_{2p}$, le groupe des isomÃ©tries laissant invariant un polygone rÃ©gulier
   \[
     \mathcal{P}_{p}=\left\{M_{0},\ldots,M_{p-1}\right\}
   \]
-  à $p$ sommets, parcourus dans le sens directe. On pose $M_{p}=M_{0}$.
+  Ã  $p$ sommets, parcourus dans le sens directe. On pose $M_{p}=M_{0}$.
   \begin{enumerate}
-    \item Montrer que le sous-groupe $C_{p}$ de $D_{p}$ constitué des isométrie directes, est un groupe cyclique d'ordre $p$ engendré par la rotation $\rho$ de centre $O$ et d'angle $\frac{2 \pi}{p}$, où $O$ est le centre du polygone $\mathcal{P}_{p}$.
+    \item Montrer que le sous-groupe $C_{p}$ de $D_{p}$ constituÃ© des isomÃ©trie directes, est un groupe cyclique d'ordre $p$ engendrÃ© par la rotation $\rho$ de centre $O$ et d'angle $\frac{2 \pi}{p}$, oÃ¹ $O$ est le centre du polygone $\mathcal{P}_{p}$.
 
-    \item Préciser une symétrie orthogonale $\sigma$ laissant le polygone $\mathcal{P}_{p}$ invariant.
+    \item PrÃ©ciser une symÃ©trie orthogonale $\sigma$ laissant le polygone $\mathcal{P}_{p}$ invariant.
 
     \item Montrer que
     \[
@@ -196,7 +196,7 @@
         \rho^{i}\circ \sigma^{j} \,;\, i \in \{1,\ldots,p-1\} \text{ et } j \in \{0,1\}
       \right\}
     \]
-    et en déduire que $D_{2p}$ est un groupe d'ordre $2p$.
+    et en dÃ©duire que $D_{2p}$ est un groupe d'ordre $2p$.
 
     \item Soit $k \in \{1,\ldots,p-1\}$. Montrer que $\sigma \circ \rho^{k} \circ \sigma = \rho^{p-k}$.
   \end{enumerate}
@@ -209,23 +209,23 @@
 % ==================================
 
 %-----------------------------------
-\begin{exo} (Inégalité de Hadamard)
+\begin{exo} (InÃ©galitÃ© de Hadamard)
 
-  Soit E un espace euclidien de dimension $n\geq 1$ et $B$ une base orthonormée de $E$. Montrer que pour tout $n$-uplet de vecteurs $(x_1,\ldots ,x_n)$, on a:
+  Soit E un espace euclidien de dimension $n\geq 1$ et $B$ une base orthonormÃ©e de $E$. Montrer que pour tout $n$-uplet de vecteurs $(x_1,\ldots ,x_n)$, on a:
     $$
       \|det_B(x_1,\ldots,x_n)\|\leq \Vert x_1\Vert....\Vert x_n\Vert .
     $$
-    Dans quel cas on a l'égalité?
+    Dans quel cas on a l'Ã©galitÃ©?
 \end{exo}
 
 %-----------------------------------
-\begin{exo} (Racines carrée de matrices)
+\begin{exo} (Racines carrÃ©e de matrices)
 \newcommand{\transpose}[1]{\vphantom{#1}^t\!#1}
   \begin{enumerate}
-    \item Soit $A$ une matrice carrée réelle de taille $n$, $\transpose{A}$ sa transposée et $S=\transpose{A}A$. Montrer que $S$ est symétrique positive.
-    \item Montrer que $S$ est définie positive si et seulement si $A$ est inversible.
-    \item Réciproquement, montrer que pour toute matrice $S$ symétrique positive, il existe une matrice $A$ carrée réelle de taille $n$ telle que $S=\transpose{A}A$. A-t-on l'unicité de A?
-    \item Soit S une matrice symétrique positive. Montrer qu'il existe une et une seule matrice $R$ symétrique positive telle que $R^2=S$.
+    \item Soit $A$ une matrice carrÃ©e rÃ©elle de taille $n$, $\transpose{A}$ sa transposÃ©e et $S=\transpose{A}A$. Montrer que $S$ est symÃ©trique positive.
+    \item Montrer que $S$ est dÃ©finie positive si et seulement si $A$ est inversible.
+    \item RÃ©ciproquement, montrer que pour toute matrice $S$ symÃ©trique positive, il existe une matrice $A$ carrÃ©e rÃ©elle de taille $n$ telle que $S=\transpose{A}A$. A-t-on l'unicitÃ© de A?
+    \item Soit S une matrice symÃ©trique positive. Montrer qu'il existe une et une seule matrice $R$ symÃ©trique positive telle que $R^2=S$.
     \item Montrer que $\mathrm{rg}(A)=\mathrm{rg}(S)$.
   \end{enumerate}
 \end{exo}
