@@ -1,0 +1,198 @@
+\documentclass[a4paper,12pt,reqno]{amsart}
+\usepackage{graphicx}
+\usepackage{macros_M53}
+
+\begin{document}
+
+\hautdepage{TD4: Coniques et quadriques}
+
+% ==================================
+\section{Ellipses}
+% ==================================
+
+
+%-------------------------------------
+\begin{exo} (Équation d'une ellipse)
+
+  \image{r}{4cm}{-17mm}{0mm}{M53_2014-15_TD4_ellipse_geometrique.tikz}
+
+  Soient une droite $\mathcal{D}$ et un point $F$ en dehors de cette droite. Une ellipse d'excentricité $\varepsilon \in ]0,1[$, de directrice $\mathcal{D}$ et de foyer $F$ est l'ensemble des points $M$ tels qu'on ait le rapport des distances
+  $$
+    \frac{d(M,F)}{d(M,\mathcal{D})}=\varepsilon.
+  $$
+
+  \begin{enumerate}
+    \item On note $K$ la projection orthogonale de $F$ sur $\mathcal{D}$, $u$ un vecteur directeur unitaire de la droite $KF$ (appelée axe focal) et $v$ un vecteur directeur unitaire de $\mathcal{D}$.
+    Montrer qu'il existe un point $O$ sur l'axe focal tel que l'équation de l'ellipse dans le repère $(O,u,v)$ s'écrive:
+    $$
+      \frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1 .
+    $$
+
+    \item Montrer que $O$ est un point de symétrie de l'ellipse et qu'il existe deux axes de symétrie de l'ellipse.
+  \end{enumerate}
+
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Construction avec clous et corde d'une ellipse)
+
+  \image{r}{4cm}{-7mm}{0mm}{M53_2014-15_TD4_ellipse_clous_corde.tikz}
+
+  Étant donnée une ellipse, montrer qu'il existe deux points $F_{1}$ et $F_{2}$ et une constante $k$ tels que pour tout $M \in \mathcal{E}$ on ait $| F_{1}M | + | MF_{2} | = k$.
+
+  Et réciproquement, montrer qu'étant donnés deux points $F_{1}$ et $F_{2}$ et une constante $k > | F_{1}F_{2} |$, alors l'ensemble des points $M$ tels que $| F_{1}M | + | MF_{2} | = k$ forment une ellipse.
+
+\end{exo}
+
+%-----------------------------------
+\begin{exo} (L'espace des ellipses)
+
+  \begin{enumerate}
+    \item Montrer que les transformations affines envoient ellipses sur ellipses, paraboles sur paraboles et hyperboles sur hyperboles.
+    \item Soient $C_1$ et $C_2$ deux ellipses quelconques, montrer qu'il existe une transformation affine $f$ telle que $f(C_1)=C_2$. Une telle transformation est-elle unique?
+    \item Soit $C$ une ellipse, montrer que le sous-groupe des transformations affines qui préservent $C$ est conjugué au groupe orthogonal $O(2)$.
+    \item\hard En déduire qu'il existe un espace des ellipses que l'on peut identifier au quotient $GA(2, \mathbb{R})/O(2)$.
+  \end{enumerate}
+
+\end{exo}
+
+
+%-------------------------------------
+\begin{exo} (Projection d'un cercle)
+
+  \begin{enumerate}
+    \item  Soit $P$ un plan d'équation cartésienne $ax+by+cz+d=0$, donner une condition sur $a,b,c,d$ pour que $P$ ne soit pas orthogonal au plan $z=0$.
+    \item Soit $A\in P$, donner des équations du cercle $C\subset P$ de centre $A$ et de rayon $R$.
+    \item On suppose que $P$ n'est pas orthogonal à $z=0$, montrer que le projeté orthogonal du cercle $C$ sur le plan $z=0$ est une ellipse.  À quelle condition est-ce un cercle?
+  \end{enumerate}
+
+\end{exo}
+
+
+%-------------------------------------
+\begin{exo} (Théorème de Hire)
+
+  \image{r}{4cm}{-17mm}{0mm}{M53_2014-15_TD4_hire.tikz}
+
+  Soient un cercle de rayon $R$ qui roule à l'intérieur d'un cercle de rayon $2R$ et $M$ un point fixe du premier cercle. Montrer que $M$ décrit une ellipse et réciproquement que toute ellipse peut être obtenue de cette façon.
+
+\end{exo}
+
+
+% ==================================
+\section{Paraboles et hyperboles}
+% ==================================
+
+%---------------------------------------
+\begin{exo} (Miroir parabolique)
+
+  \image{r}{5cm}{-17mm}{0mm}{M53_2014-15_TD4_parabole_tangente.tikz}
+
+  Soient une droite $\mathcal{D}$ et un point $F$ en dehors de cette droite. On rappelle qu'une parabole de directrice $\mathcal{D}$ et de foyer $F$ est l'ensemble des points $M$ tels qu'on ait le rapport des distances
+  $$
+    d(M,F)= d(M,\mathcal{D}).
+  $$
+
+  \image{r}{3.5cm}{17mm}{-70mm}{M53_2014-15_TD4_parabole_miroir.tikz}
+
+  On se place dans le repère affine orthonormé $(O,u,v)$, où $u$ et $v$ sont des vecteurs directeurs respectivement de l'axe focal et de la directrice. Soient $(a,0)$ les coordonnées de $F$ dans ce repère.
+
+  \begin{enumerate}
+
+    \item Déterminer l'équation de la parabole dans ce repère.
+
+    \item Soient $M$ un point de la parabole et $P$ sa projection sur la directrice.\\
+    Montrer que la tangente en $M$ est orthogonale à $FP$.
+
+    \item En déduire que la tangente en $M$ est la bissectrice de l'angle $\widehat{FMP}$.
+
+    \item Montrer qu'étant donné un miroir concave parabolique, les rayons\\
+    parallèles à l'axe focal passent par le foyer.
+  \end{enumerate}
+
+\end{exo}
+
+%---------------------------------------
+\begin{exo} ( Parallélogrammes à surface constante)
+
+  \image{r}{5cm}{-7mm}{0mm}{M53_2014-15_TD4_hyperbole_surface.tikz}
+
+  Soient deux droites qui se coupent en un point $O$. On considère l'ensemble des points $M$ tels que le parallélogramme ayant $O$ et $M$ comme sommets opposés et deux côtés sur les droites données a une surface fixé $S>0$.\\
+  Montrer que cette ensemble est formé par deux hyperboles ayant les deux droites comme asymptotes. \\
+  Et réciproquement, étant donné une hyperbole, montrer que les parallélogrammes formés par les asymptotes, le centre et les points $M$ de l'hyperbole, ont une surface constante (ne dépendant pas du choix de $M$).
+\end{exo}
+
+%---------------------------------------
+\begin{exo} (Sécantes et tangentes à une hyperbole)
+
+\image{r}{5cm}{-17mm}{0mm}{M53_2014-15_TD4_hyperbole_secantes.tikz}
+
+On rappelle que l'équation de l'hyperbole dans le repère affine orthonormé $(O,u,v)$, où $u$ et $v$ sont des vecteurs directeurs respectivement de l'axe focal et de la directrice, s'écrit
+$$
+  \frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=1
+$$
+
+\begin{enumerate}
+  \item Montrer que toute droite parallèle à l'une des asymptotes de l'hyperbole (et distincte de cette asymptote) coupe l'hyperbole en exactement un point.
+
+  \item Montrer que si une droite $\mathcal{D}$ coupe l'hyperbole en deux points $M$ et $N$ et les asymptotes en deux points $P$ et $Q$, les segments MN et PQ ont le même milieu (on écrira une équation du second degré dont les abscisses des points $M$ et $N$ (resp. $P$ et $Q$) sont solutions et on évaluera la demi-somme de ces solutions).
+
+  \item En déduire une construction de l'hyperbole point par point connaissant les asymptotes et un point.
+
+  \item Montrer que les milieux des cordes $MN$ de l'hyperbole parallèles à une direction donnée appartiennent tous à une même droite passant par le centre $O$ de l'hyperbole.
+
+  \item Soit $\tau$ une tangente à l'hyperbole en $T$, $R$ et $S$ les points d'intersection de $\tau$ avec les asymptotes. Montrer que $| TR | = | TS |$.
+
+  \item Montrer que l'aire du triangle $ORS$ ne dépend pas de $T$.
+\end{enumerate}
+
+\end{exo}
+
+% ==================================
+\section{Coniques et quadriques}
+% ==================================
+
+
+%---------------------------------------
+\begin{exo} (Équations et natures des coniques)
+
+  Déterminer la nature des courbes suivantes et, quand il existe, leur centre.
+  \begin{examplescol}{2}
+    \item $(x-y+1)^2+(x+y-1)^2=0$,
+    \item $x(x-1)+(y-2)(y-3)=0$,
+    \item $4x^{2}+y^{2}+4xy+2x+3y-1$.
+    \item $(x+y+1)(x-y+3)=3$.
+    \item $2x^{2}+4xy+y^{2}+x+y=0$.
+  \end{examplescol}
+
+\end{exo}
+
+
+%----------------------------------------
+\begin{exo} (Quadriques)
+
+  Dessiner les surfaces:
+  \begin{examplescol}{2}
+    \item $x^2-2y^2+2z^2=1$
+    \item $xy=1$
+    \item $x^2+y^2+4z^2=6$
+    \item $z-4xy=0$
+    \item $z^2-4xy=0$
+  \end{examplescol}
+
+\end{exo}
+
+
+%----------------------------------------
+\begin{exo} (Hélice)
+
+  \begin{enumerate}
+    \item Déterminer la nature géométrique de la surface $\mathcal{C}:x^2+4y ^2=4$.
+    \item Montrer que la courbe $\mathcal{H}$ de paramétrisation $\{x=2cos(t), y= sin(t), z=t\}$ est inscrite sur la surface $\mathcal{C}$.
+    \item Déterminer le sous-groupe des transformations affines qui préservent $\mathcal{C}$ puis qui préservent la courbe $\mathcal{H}$.
+  \end{enumerate}
+
+\end{exo}
+
+\end{document}

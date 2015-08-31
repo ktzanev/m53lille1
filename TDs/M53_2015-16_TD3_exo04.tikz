@@ -1,0 +1,50 @@
+\scalebox{.49} {
+\begin{tikzpicture}[
+      scale=2,
+      very thick,
+      point/.style={circle,inner sep=1.5pt,fill=red,draw=black},
+      diagonal/.style = {draw=lightgray},
+      square/.style = {ultra thick}
+    ]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (2,0);
+  \coordinate (C) at (3,1);
+  \coordinate (D) at (1,1);
+  % -------------------
+  \coordinate (A1) at ($ (A) ! 1 ! -90:(B) $);
+  \coordinate (A2) at ($ (A1) ! 1 ! -90:(A) $);
+  \coordinate (M) at ($ (A) ! .5 ! (A2) $);
+  \draw[diagonal] (A) -- (A2) (A1) -- (B);
+  \draw (A) -- (A1) -- (A2) -- (B) -- (A);
+  % -------------------
+  \coordinate (B1) at ($ (B) ! 1 ! -90:(C) $);
+  \coordinate (B2) at ($ (B1) ! 1 ! -90:(B) $);
+  \coordinate (N) at ($ (B) ! .5 ! (B2) $);
+  \draw[diagonal] (B) -- (B2) (B1) -- (C);
+  \draw (B) -- (B1) -- (B2) -- (C) -- (B);
+  % -------------------
+  \coordinate (C1) at ($ (C) ! 1 ! -90:(D) $);
+  \coordinate (C2) at ($ (C1) ! 1 ! -90:(C) $);
+  \coordinate (P) at ($ (C) ! .5 ! (C2) $);
+  \draw[diagonal] (C) -- (C2) (C1) -- (D);
+  \draw (C) -- (C1) -- (C2) -- (D) -- (C);
+  % -------------------
+  \coordinate (D1) at ($ (D) ! 1 ! -90:(A) $);
+  \coordinate (D2) at ($ (D1) ! 1 ! -90:(D) $);
+  \coordinate (Q) at ($ (D) ! .5 ! (D2) $);
+  \draw[diagonal] (D) -- (D2) (D1) -- (A);
+  \draw (D) -- (D1) -- (D2) -- (A) -- (D);
+  % -------------------
+  \draw[square] (M) -- (N) -- (P) -- (Q) -- cycle;
+  % -------------------
+  \path (A) node[point]{} node[below left]{$A$};
+  \path (B) node[point]{} node[above left]{$B$};
+  \path (C) node[point]{} node[above right]{$C$};
+  \path (D) node[point]{} node[below right]{$D$};
+  \path (M) node[point]{} node[below]{$M$};
+  \path (N) node[point]{} node[below right]{$N$};
+  \path (P) node[point]{} node[above]{$P$};
+  \path (Q) node[point]{} node[above left]{$Q$};
+
+\end{tikzpicture}
+}

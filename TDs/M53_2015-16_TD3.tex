@@ -1,0 +1,208 @@
+\documentclass[a4paper,12pt,reqno]{amsart}
+\usepackage{graphicx}
+\usepackage{macros_M53}
+
+\begin{document}
+
+\hautdepage{TD3: Nombres complexes et géométrie}
+
+% ==================================
+\section{Géométrie élémentaire}
+% ==================================
+
+
+%-----------------------------------
+\begin{exo} (Conditions géométriques)
+  \begin{enumerate}
+    \item Étant donnés deux points $A$ et $B$ du plan complexe d'affixes $a$ et $b$, donner une condition sur $a\overline{b}$ pour que la droite $AB$ passe par $O$ d'affixe $0$. Préciser quand $O$ est entre $A$ et $B$, et quand il ne l'est pas.
+
+    \item Donner une condition nécessaire et suffisante sur les affixes $a$, $b$, $c$ de trois points $A$, $B$, $C$ du plan complexe pour que le triangle $ABC$ soit équilatéral.
+  \end{enumerate}
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Bac C -- 1991)
+
+  Le plan complexe $P$ est identifié avec $\mathbb{C}$. Soit $f$ l'application de $P$ vers $P$ définie par
+    $$
+      f(z)=\frac{3+i\sqrt{3}}{4}z+\frac{1-i\sqrt{3}}{2}
+    $$
+  \begin{enumerate}
+    \item Déterminer la nature géométrique et les éléments caractéristiques de $f$.
+    \item Montrer que le triangle $\Omega M\! f(M)$ est rectangle, en supposant que $\Omega$ est un point fixe de $f$.
+  \end{enumerate}
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo}
+
+  \image{l}{7cm}{-17mm}{0mm}{M53_2014-15_TD3_exo03.tikz}
+
+  À l'extérieur d'un triangle $ABC$, on construit trois carrés de bases les côtés et de centres $P$, $Q$ et $R$. Montrer que les segments $AP$ et $QR$ (resp. $BQ$ et $RP$, $CR$ et $PQ$) sont orthogonaux et de même longueur. En déduire que les droites $AP$, $BQ$ et $CR$ sont concourantes.
+\end{exo}
+\vspace{3mm}
+
+%-----------------------------------
+\begin{exo}
+
+  \image{r}{7cm}{-17mm}{0mm}{M53_2014-15_TD3_exo04.tikz}
+
+  On construit à l'extérieur d'un parallélogramme $ABCD$ quatre carrés de bases les côtés et de centres $M$, $N$, $P$ et $Q$. Montrer que $MNPQ$ est un carré.
+\end{exo}
+
+
+
+% ==================================
+\section{Équations}
+% ==================================
+
+
+%-----------------------------------
+\begin{exo} (Polygone des milieux)
+
+  Reprendre l'exercice 9.c) de la feuille de td n°1 en traduisant le problème en un système de $n$ équations linéaires à $n$ inconnues dans $\mathbb{C}$. Discuter le rang de ce système selon la parité de $n$.
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Équation d'une droite)
+
+  On se place dans $\mathbb{C}$ que l'on considère comme un plan affine réel. On veut donner une équation complexe d'une droite $D$ passant par les points $A$ et $B$.
+  \begin{enumerate}
+    \item Montrer que si $M$ est aligné avec $A$ et $B$ alors $(z-a)(\overline{z}-\overline{b})$ est réel, où $z$ est l'affixe de $M$, $a$ celle de $A$ et $b$ celle de $B$.
+    \item Montrer que $(z-a)(\overline{z}-\overline{b})$ est réel est équivalent à $z$ satisfait
+      $$
+        (z-a)(\overline{z}-\overline{b})=(\overline{z}-\overline{a})(z-b),
+      $$
+      puis en posant $\beta=i(a-b)$ en déduire que c'est équivalent à $z$ satisfait
+      $$
+        \overline{\beta}z+\beta\overline{z}+\gamma=0 \text{, avec } \gamma \in \mathbb{R}.
+      $$
+    \item En partant d'une équation cartésienne de $D$:
+      $$
+        ux+vy+w=0
+      $$
+      et en posant $x=\frac{1}{2}(z+\overline{z})$ et $y=\frac{1}{2i}(z-\overline{z})$ retrouver l'équation complexe précédente.
+  \end{enumerate}
+\end{exo}
+
+%-----------------------------------
+\begin{exo} (Équation d'un cercle)
+
+  Montrer que tout cercle du plan complexe est défini par une équation de la forme
+    $$
+      z\overline{z}-a\overline{z}-\overline{a}z+c=0,
+    $$
+  où $a$ est un nombre complexe et $c$ un réel vérifiant $c \leq |a|^{2}$. Montrer que réciproquement toute équation de ce type est celle d'un cercle.
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Encore des équations)
+  \begin{enumerate}
+    \item Discuter selon les valeurs de $\alpha,\gamma \in \mathbb{R}$ et $\beta \in \mathbb{C}$ quel est le sous-ensemble de $\mathbb{C}$ défini par l'équation
+      $$
+        \alpha.z\overline{z}+\beta\overline{z}+\overline{\beta}z+\gamma=0.
+      $$
+    \item Soit $\lambda$ un nombre réel positif, décrire géométriquement l'ensemble
+      $$
+        E_{\lambda}=\lbrace z\in\mathbb{C}:\vert z-a \vert =\lambda \vert z-b \vert \rbrace .
+      $$
+    \item Déterminer l'ensemble des nombres complexes tels que $\vert z-1 \vert=\vert z-i z\vert=\vert z-i \vert$.
+  \end{enumerate}
+\end{exo}
+
+
+
+% ==================================
+\section{Géométrie projective sans le dire}
+% ==================================
+
+
+%-----------------------------------
+\begin{exo} (points cocycliques et le théorème de Ptolémée)
+
+  On se donne $4$ points distincts $A$, $B$, $C$ et $D$ d'affixes $a$, $b$, $c$ et $d$ respectivement.
+  \begin{enumerate}
+    \item Montrer que l'on a toujours
+      $$
+        |AC|.|BD| \leq |AB|.|CD|+|AD|.|BC|
+      $$
+      avec égalité si et seulement s'il existe un réel $\lambda > 0$ tel que $(b-a)(d-c)=\lambda (d-a)(c-b)$.
+    \item Déduire de la question précédente que le cas d'égalité est équivalent à
+      $$
+        \arg(\frac{b-a}{d-a})-\arg(\frac{b-c}{d-c}) = \pm\pi.
+      $$
+    \item Montrer le théorème de Ptolémée :
+
+    \textit{Un quadrilatère convexe est inscrit dans un cercle si et seulement si le produit des longueurs de ses diagonales est égal à la somme des produits des longueurs des côtés opposés.}
+  \end{enumerate}
+ \end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Birapports)
+
+  Soit $4$ points du plan distincts deux à deux avec affixes $a$, $b$, $c$, $d$. On définit leur birapport comme étant la quantité:
+  $$
+    [a,b,c,d]=\frac{a-c}{b-c}\cdot\frac{b-d}{a-d} \in \mathbb{C}.
+  $$
+  \begin{enumerate}
+    \item Montrer que si $4$ points sont alignés alors leur birapport est un nombre réel. Dans quel cas ce birapport est positif ?
+    \item Montrer que si $4$ points sont cocycliques alors leur birapport est un nombre réel. Dans quel cas ce birapport est positif ?
+    \item Montrer que le birapport de $4$ points est réel si et seulement si les $4$ points sont alignés ou cocycliques.
+    \item Prouver que si $4$ points d'affixes non nuls sont alignés alors leurs images par $1/\overline{z}$ sont alignées ou cocycliques.
+    \item Montrer que les homothéties non nulles, les rotations et les translations préservent les birapports, et que les symétries les transforment en leurs conjugués.
+    \item Montrer que les points d'affixes $-2+6i$, $1+7i$, $4+6i$, $6+2i$ sont cocycliques.
+  \end{enumerate}
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Inversions)
+
+  Une inversion $i(\Omega,r)$ de centre $\Omega$ et de rapport $r \in \mathbb{R}^{*}_{+}$ est une application du plan $P$ privé de $\Omega$ dans $P$ qui à tout point $M$ associe le point $M'$ tel que
+  \begin{itemize}
+    \item $M'$ soit sur la droite $\Omega M$,
+    \item $\overline{\Omega M}.\overline{\Omega M'}=r^2$.
+  \end{itemize}
+  \begin{enumerate}
+    \item Déterminer l'image de $i(\Omega,r)$.
+    \item Montrer que l'inversion est une involution.
+    \item En identifiant le plan $P$ avec $\mathbb{C}$, donner l'expression analytique de l'inversion $i(0,1)$, puis, plus généralement, de $i(\omega,r)$ avec $\omega \in \mathbb{C}$ et $r \in \mathbb{R}^{*}_{+}$.
+    \item  Montrer que chaque point du cercle de centre $\Omega$ et de rayon $r$ est invariant par l'inversion.
+    \item Montrer qu'une inversion transforme un birapport en son conjugué.
+    \item Montrer que l'inversion préserve les droites qui passent par $\Omega$.
+    \item Montrer qu'elle envoie une droite qui ne passe par $\Omega$ sur un cercle qui passe par $\Omega$.
+    \item Montrer aussi qu'elle envoie tout cercle qui ne passe pas par $\Omega$ sur un cercle qui ne passe pas par $\Omega$.
+  \end{enumerate}
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Homographies)
+
+  Une homographie est une application
+  $$
+    z\mapsto \frac{az+b}{cz+d}
+  $$
+  avec $a,b,c,d$ réels tels que $ad-bc\neq 0$.
+  \begin{enumerate}
+    \item Montrer que toute homographie est la composée de translations, d'homothéties et au plus d'une inversion et d'une réflexion.
+    \item Montrer que toute homographie envoie droites ou cercles sur droites ou cercles.
+    \item Montrer que les homographies forment un groupe.
+  \end{enumerate}
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo}
+
+  \image{r}{7cm}{-17mm}{0mm}{M53_2014-15_TD3_exo13.tikz}
+
+  Deux cercles $\mathcal{C}$ et $\mathcal{C}'$ sont tangents intérieurement en $O$. On considère une famille de cercles deux à deux tangents entre eux et tangents à $\mathcal{C}$ et $\mathcal{C}'$. Montrer que les points de contact de ces cercles entre eux sont situés sur un même cercle tangent en $O$ aux deux cercles $\mathcal{C}$ et $\mathcal{C}'$.
+\end{exo}
+
+\end{document}

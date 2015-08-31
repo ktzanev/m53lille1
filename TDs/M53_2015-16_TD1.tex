@@ -1,0 +1,374 @@
+\documentclass[a4paper,12pt,reqno]{amsart}
+\usepackage{macros_M53}
+
+\begin{document}
+
+\hautdepage{TD1: Espaces affines, notions de base}
+
+%-----------------------------------
+\begin{exo} (Projections et symétries)
+
+  On se place dans l'espace $\mathbb{R}^{3}$. Le but de cet exercice est de donner des expressions analytiques pour des projections et des symétries. On considère le plan $\mathcal{P}$ d'équation $\{x+y+z=1\}$ et la droite $\mathcal{D}$ d'équations $\{z=4,\ y=0\}$.
+
+  \begin{enumerate}
+
+    \item Donner l'expression analytique de la projection $p$ sur le plan $\mathcal{P}$ suivant la direction $\mathcal{D}$.
+
+    \item Donner l'expression analytique de la symétrie $s$ par rapport à $\mathcal{P}$ suivant la direction $\mathcal{D}$.
+
+    \item Donner l'expression analytique de la projection orthogonale $\pi$ sur le plan $\mathcal{P}$.
+
+    \item Calculer la distance de $A=(1,0,1)$ au plan $\mathcal{P}$.
+
+    \item Donner l'expression analytique de la symétrie orthogonale $\sigma$ par rapport à $\mathcal{P}$.
+
+  \end{enumerate}
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Barycentres)
+
+On se place dans $\mathbb{R}^{2}$.
+
+\begin{enumerate}
+  \item Calculer l'isobarycentre des points $A=(1, -2)$, $B=(0, -2, )$, $C=(2, -4, )$. Puis le barycentre des mêmes points affectés des poids suivants: $(A,2)$, $(B,4)$, $(C,-1)$.
+
+  \item Montrer que les médianes d'un triangle sont concourantes.
+
+  \item Discuter la position d'un point $M$ par rapport au triangle $\vartriangle\! ABC$ en fonction des signes de ses coordonnées barycentriques $(\alpha, \beta, \gamma)$.
+
+\end{enumerate}
+
+\end{exo}
+
+%-----------------------------------
+\begin{exo} (Perpendiculaire commune)
+
+  On se place dans l'espace $\mathbb{R}^{3}$.
+  \begin{enumerate}
+    \item Soient $\mathcal{D}_{1}$ et $\mathcal{D}_{2}$ deux droites distinctes de l'espace. Justifier l'existence d'une perpendiculaire commune à ces deux droites. Sous quelles conditions est-elle unique?
+
+    \item Donner des équations de la perpendiculaire commune aux droites $\mathcal{D}_{1}$ d'équations\newline \{$x+y-z-1=0,\ 2x+y+z=0\}$ et $\mathcal{D}_{2}$ déterminée par le point $A$ de coordonnées $(1,0,1)$ et le vecteur directeur $\overrightarrow{u}$ de composantes $(1,-1,0)$.
+
+    \item Quelle est la distance entre $\mathcal{D}_{1}$ et $\mathcal{D}_{2}$?
+  \end{enumerate}
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Changement de repères)
+
+  Un repère de l'espace $\mathbb{R}^{3}$ est la donnée de 4 points ordonnés $\Omega$, $A$, $B$ et $C$ tels que les vecteurs $\overrightarrow{\Omega A}$, $\overrightarrow{\Omega B}$ et $\overrightarrow{\Omega C}$ soient linéairement indépendants.
+
+  \begin{enumerate}
+    \item Montrer que pour un repère et tout point $M$ de $\mathbb{R}^{3}$ le vecteur $\overrightarrow{\Omega M}$ s'écrit de manière unique sous la forme:\vspace{-3mm}
+      $$
+        \overrightarrow{\Omega M} = \lambda\overrightarrow{\Omega A} + \mu\overrightarrow{\Omega B} + \nu\overrightarrow{\Omega C},
+      $$
+    le triplet $(\lambda, \mu, \nu)$ correspond aux coordonnées du point $M$ dans ce repère.
+
+    \begin{convention}\unindentlist
+      L'espace $\mathbb{R}^{3}$ est muni de son repère cartésien canonique $\mathcal{R}=(O,I,J,K)$. On considère le nouveau repère $\mathcal{R}'=\left( O'=(0, 0, 1), I'=(0, 0, 0), J'=(1, 0, 2), K'=(0, 1, 1) \right)$.
+    \end{convention}
+
+    \item Soit un point de coordonnées $X=(x, y, z)$ dans le repère $\mathcal{R}$, donner ses coordonnées $X'=(x', y', z')$ dans le repère $\mathcal{R}'$ en fonction de $X=(x, y, z)$ .
+
+    \item \label{chrep} Donner la formule de changement de repère de $\mathcal{R}$ à $\mathcal{R'}$ sous la forme:
+      \[
+        \left(\begin{array}{c} x' \\ y' \\ z'\end{array}\right) =
+        M \left(\begin{array}{c} x \\ y \\ z \end{array}\right) +
+          \left(\begin{array}{c} u \\ v \\ w \end{array}\right),
+      \]
+    où $M$ est une matrice $3\times3$. Puis écrire sous la même forme la formule de changement de repère inverse, de $\mathcal{R'}$ à $\mathcal{R}$.
+
+    \item On se donne $A=(0, 0, 3)$, $B=(1, 0, 4)$, $C=(1, 1, 1)$, trois points dont les coordonnées sont exprimées dans $\mathcal{R}$. Donner l'équation plan $(ABC)$ dans le repère $\mathcal{R}$, puis dans le repère $\mathcal{R}'$.
+
+    \item \label{compchrep} De la question \ref{chrep}) on déduit qu'un changement de repères $P_{\mathcal{R}'}^{\mathcal{R}}$ s'écrit sous la forme $X'=P_{\mathcal{R}'}^{\mathcal{R}}(X)=M_{\mathcal{R}'}^{\mathcal{R}}X+V_{\mathcal{R}'}^{\mathcal{R}}$. Soit un troisième repère $\mathcal{R}''$, quelle formule relie les couples $(M_{\mathcal{R}'}^{\mathcal{R}},V_{\mathcal{R}'}^{\mathcal{R}})$, $(M_{\mathcal{R}''}^{\mathcal{R}'},V_{\mathcal{R}''}^{\mathcal{R}'})$ et $(M_{\mathcal{R}''}^{\mathcal{R}},V_{\mathcal{R}''}^{\mathcal{R}})$ ?
+
+    \item\hard On note $GA$ l'ensemble des couples $(M,V)$ où $M\in GL_{3}(\mathbb{R})$ et $V\in\mathbb{R}^{3}$. On munit $GA$ d'une opération binaire:\vspace{-3mm}
+      \[
+        (M',V')\circ(M,V)=(M'M,M'V+V')
+      \]
+    Montrer que cette opération munit $GA$ d'une loi de groupe.
+
+    \item\hard On note $\mathfrak{Rep}$ l'ensemble des repère de $\mathbb{R}^{3}$. Montrer que l'application:
+      \[
+        Act:
+        \begin{cases}
+          GA \times \mathfrak{Rep} \rightarrow \mathfrak{Rep} \\
+          \left((A,V),(\Omega,P,Q,R)\right) \mapsto (A\Omega+V,AP+V,AQ+V,AR+V)
+        \end{cases}
+      \]
+    est bien définie et qu'elle vérifie:
+    \begin{description}
+      \item[A1] $Act\left((Id,0),(\Omega,P,Q,R)\right)=(\Omega,P,Q,R)$;
+
+      \item[A2] $Act\left((A',V'),Act\left((A,V),(\Omega,P,Q,R)\right)\right) = Act\left((A',V')\circ(A,V),(\Omega,P,Q,R)\right)$.
+    \end{description}
+    \textit{On dit que le groupe $GA$ agit sur l'ensemble $\mathfrak{Rep}$.}
+
+    \item\hard Déduire de la question \ref{compchrep}) que pour deux repères $\mathcal{R}$ et $\mathcal{R}'$ il existe un unique $(A,V)$ tel que $Act\left((A,V),\mathcal{R}\right)=\mathcal{R}'$.
+
+    \item\hard En déduire que $GA$ est en bijection avec l'ensemble $\mathfrak{Rep}$. \\
+    Cette bijection est-elle unique ?
+  \end{enumerate}
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Vers les espaces affines)
+
+  Dans ce qui suit on s'intéresse aux structures portées par les espaces de solutions des équations différentielles dans $C^{\infty}(\mathbb{R})$:\vspace{-4mm}
+    \begin{align*}
+      y' - y &= 4 \qquad (G)\\
+      y' - y &= 0 \qquad (H)
+    \end{align*}
+
+  \begin{enumerate}
+    \item Montrer que l'espace des solutions $\mathcal{S}_{H}$ de $(H)$ est un $\mathbb{R}$-espace vectoriel dont on déterminera la dimension.
+
+    \item L'espace des solutions $\mathcal{S}_{G}$ de $(G)$ est-il un sous-espace vectoriel de $C^{\infty}(\mathbb{R})$?
+
+    \item Déterminer une solution particulière de $(G)$ que l'on notera $C$.
+
+    \item Montrer que toute solution de $(G)$ s'écrit de manière unique sous la forme $f+C$ où $f$ est une solution de $(H)$.
+
+    \item\hard En déduire que les solutions $\mathcal{S}_{G}$ de $(G)$ sont en bijection avec les solutions $\mathcal{S}_{H}$ de $(H)$. Cette bijection est-elle unique?
+
+    \item\hard Montrer que l'application
+      \[
+        Act:
+        \begin{cases}
+          \mathcal{S}_{H}\times \mathcal{S}_{G}\rightarrow \mathcal{S}_{G}\\
+          (f,C)\mapsto f+C
+        \end{cases}
+      \]
+    est bien définie et qu'elle vérifie:
+    \begin{description}
+      \item[A1] $Act(0,C)=C$;
+
+      \item[A2] $Act(f,Act(g,C))=Act(f+g,C)$.
+    \end{description}
+  \end{enumerate}
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Exemples de sous-espaces affines)
+  \begin{enumerate}
+
+  \item Soit $X$ un espace topologique, on considère l'espace $C(X,\mathbb{R})$ des fonctions réelles continues sur $X$. Soit $a \in X$ montrer que l'ensemble
+    \[
+      \mathcal{F}_{a,1}=\{ f \in C(X,\mathbb{R}) : f(a)=1 \}
+    \]
+  est un sous-espace affine de $C(X,\mathbb{R})$.
+
+  \item Montrer que l'ensemble des matrices
+    \[
+      \left\{
+        \left(
+          \begin{array}{cc}
+            1-a & b-2a\\
+            a+b & 3
+          \end{array}
+        \right) \in M_{2}(\mathbb{R})
+        : a,b \in \mathbb{R}
+      \right\}
+    \]
+  est un sous-espace affine de $M_{2}(\mathbb{R})$. En donner un repère affine.
+
+  \item Montrer que le cercle $\left\{ (x,y) : x^{2}+y^{2} = 1 \right\} $ n'est
+  pas un sous-espace affine de $\mathbb{R}^{2}$.
+
+  \item Montrer que $\mathcal{H} = \{ f \in \mathbb{R}^{\mathbb{R}} : f(x+1)=f(x)+1\}$
+  est un sous-espace affine de $\mathbb{R}^{\mathbb{R}}$ . Déterminer
+  un point de $\mathcal{H}$ et sa direction.
+  \end{enumerate}
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo} \hard (Des triangles sur un corps fini)
+
+  On se place dans l'espace affine $\mathcal{E}=(\mathbb{F}_{3})^{2}$ sur $\mathbb{F}_{3}=\mathbb{Z}/3\mathbb{Z}$.
+
+  \begin{enumerate}
+    \item Combien contient-il de points et de droites? Faire des dessins !
+
+    \item Etant donné deux points $M$ et $N$ de $\mathcal{E}$, le milieu de $(M,N)$ est le point $\overline{\frac{1}{2}}M+\overline{\frac{1}{2}}N$. On considère les points $A=(\overline{0}, \overline{0})$, $B=(\overline{2}, \overline{0})$, $C=(\overline{0}, \overline{2})$. Déterminer les médianes du triangle $ABC$. Sont-elles concourantes?
+  \end{enumerate}
+\end{exo}
+
+%-----------------------------------
+\begin{exo} (Composition d'applications affines)
+
+  On se place dans un plan affine réel.
+  \begin{enumerate}
+    \item Soit $ABC$ un triangle, $A'$, $B'$, $C'$ les milieux respectifs de $BC$, $CA$ et $AB$ , $s_{A'}$ , $s_{B'}$, $s_{C'}$ les symétries centrales par rapport à ces points. Déterminer la nature géométrique des transformations $f=s_{B'}\circ s_{A'}$ et $g=s_{C'}\circ s_{B'}\circ s_{C'}$.
+
+    \item Soit $f$ et $f'$ deux homothéties de mêmes rapport quelle est la nature de la transformation $f\circ f'^{-1}$ ?
+  \end{enumerate}
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Polygone des milieux)
+
+  Dans cet exercice on se place dans $\mathbb{R}^{2}$:
+
+  \begin{enumerate}
+    \item Soit $A'B'C'$ un triangle. Montrer qu'il existe un triangle $ABC$, et un seul, tel que $A'$ soit le milieu de $BC$, $B'$ le milieu de $CA$ et $C'$ le milieu de $AB$. Indiquer une construction géométrique de ce triangle.
+
+    \item Soit $A'B'C'D'$ un quadrilatère. Donner une condition nécessaire et suffisante pour qu'il existe un quadrilatère $ABCD$ tel que $A'$ soit le milieu de $AB$, $B'$ le milieu de $BC$, $C'$ le milieu de $CD$ et $D'$ le milieu de $DA$. Ce quadrilatère, s'il existe, est-il unique?
+
+    \item\hard Etant donnés $n$ points $B_{1},\ldots,B_{n}$, peut-on toujours trouver $n$ points $A_{1},\ldots,A_{n}$ tels que $B_{i}$ soit, pour tout $i=1,\ldots,n$, le milieu de $A_{i}A_{i+1}$ (avec la convention $A_{n+1}=A_{1}$ ) ? Donner une construction géométrique des points $A_{i}$ à partir des points $B_{i}$ lorsque la solution existe.\newline
+    \begin{indication}
+      Comme le montre les deux premières questions, la solution dépend de la parité de $n$. On pourra considérer la composée des symétries centrales de centres $B_{1},\ldots,B_{n}$.
+    \end{indication}
+
+  \end{enumerate}
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Homothéties)
+
+  On se place dans un plan affine réel. On rappelle qu'une homothétie de centre $A$ et de rapport $\lambda$ est l'application $h$ qui à un point $M$ associe le point $h(M)$ vérifiant:
+    \[
+      \overrightarrow{Ah(M)}=\lambda\overrightarrow{AM}
+    \]
+
+  \begin{enumerate}
+    \item Que dire des cas particuliers $\lambda=0,1,-1$? A quelle condition $h$ est-elle une bijection, si elle est bijective quelle est son inverse?
+
+    \item On se place dans un repère affine $\mathcal{R}=(O,I,J)$. Donner l'expression analytique de l'homothétie $h$ de centre $A=(u,v)_{\mathcal{R}}$ et de rapport $\lambda$.
+
+    \item Calculer le conjugué d'une homothétie par une transformation affine.
+
+    \item Calculer la composée de deux homothéties.
+
+    \item Les homothéties de rapport non nul forment-elles un groupe?
+
+    \item Montrer que les homothéties de même centre $A$ et de rapport non nul forment un groupe.
+
+    \item On appelle \textit{dilatations} les transformations du sous-groupe engendré par les homothéties dans le groupe affine. Les dilatations agissent-elles transitivement sur le plan affine?
+
+    \item On rappelle que \textit{le centre} d'un groupe $G$ est l'ensemble des éléments $g\in G$ tels que $gh=hg$, $\forall h\in G$. Montrer que le centre de $G$ est un sous-groupe de $G$.
+
+    \item Quel est le centre du groupe linéaire $GL_{2}(\mathbb{R})$?
+
+    \item Quel est le centre du groupe affine $GA_{2}(\mathbb{R})$?
+
+    \item A quelles conditions une homothétie et une translation commutent-elles?
+  \end{enumerate}
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Quelques théorèmes classiques)
+
+  On se place dans un plan affine réel.
+
+  \begin{enumerate}
+  \item Montrer le \textbf{théorème de Pappus} (d'après Pappus d'Alexandrie, IV$^{\mbox{e}}$ siècle après J.-C.):
+
+  \textit{\og Soient $\mathcal{D}$ et $\mathcal{D}'$ deux droites et des points $A,B,C\in \mathcal{D}$ et $A',B',C'\in \mathcal{D}'$
+  tels que $(AB')\parallel(A'B)$ et $(BC')\parallel(B'C)$, alors $(AC')\parallel(A'C)$.\fg}
+
+  \item Montrer le \textbf{théorème de Ceva} (d'après Giovanni Ceva, 1678, même si ce théorème était connu à la fin du XI$^{\mbox{e}}$ siècle de Yusuf Al-Mu'taman ibn H\H{u}d, géomètre et roi de Saragosse.)
+
+  \textit{\og Soit $ABC$ un triangle, soient $D$, $E$ et $F$ trois points distincts des sommets et appartenant respectivement aux segments $[BC]$, $[CA]$ et $[AB]$. Les droites $(AD)$, $(BE)$ et $(CF)$ sont concourantes si et seulement si $\frac{\overline{DB}}{\overline{DC}}\times\frac{\overline{EC}}{\overline{EA}}\times\frac{\overline{FA}}{\overline{FB}}=-1$.\fg}
+
+  \item Montrer le \textbf{théorème de Ménélaüs} (d'après Ménélaüs d'Alexandrie, I$^{\mbox{er}}$ et II$^{\mbox{e}}$ siècle après J.-C.)
+
+  \textit{\og Si $D$, $E$ et $F$ sont trois points des côtés $(BC)$, $(AC)$ et $(AB)$ d'un triangle $ABC$ (et distincts des sommets), alors $D$, $E$ et $F$ sont alignés si et seulement si $\frac{\overline{DB}}{\overline{DC}}\times\frac{\overline{EC}}{\overline{EA}}\times\frac{\overline{FA}}{\overline{FB}}=1$.\fg}
+
+  \item Montrer le \textbf{théorème de Desargues} (d'après Girard Desargues, alias S.G.D.L., XVII$^{\mbox{er}}$ siècle à Lyon):
+
+  \textit{\og Soient $ABC$ et $A'B'C'$ deux triangles sans sommets communs et tels que $(AB)\parallel(A'B')$; $(AC)\parallel(A'C')$; $(BC)\parallel(B'C')$, alors les droites $(AA')$, $(BB')$ et $(CC')$ sont parallèles ou concourantes.\fg}
+
+  \end{enumerate}
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Ensembles convexes)
+
+  \begin{enumerate}
+    \item Soient $C$ et $C'$ deux convexes non vides d'un espace réel affine $E$. Montrer que l'ensemble $\Gamma$ des milieux des segments $MM'$ , où $M$ parcourt $C$ et $M'$ parcourt $C'$ est un convexe.
+
+    \item Montrer que les images directes et inverses des convexes par les applications affines sont également convexes.
+  \end{enumerate}
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Demi-espaces)
+
+  Soit $E$ un espace affine réel de dimension $n$ et $H$ un hyperplan affine de $E$.
+
+  \begin{enumerate}
+
+    \item Montrer que la relation $\sim $ définie sur $E\backslash H$ par:
+      \[
+        M\sim N\Longleftrightarrow[MN]\cap H=\emptyset
+      \]
+    est une relation d'équivalence qui sépare $E\backslash H$ en exactement deux classes, appelés \textit{demi-espaces (ouverts)}.
+
+    \item Montrer que les demi-espaces sont convexes.
+  \end{enumerate}
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Théorème fondamental de la géométrie affine)
+
+  On fixe un espace affine réel $\mathcal{E}$ de dimension au moins $2$, on se donne une bijection $\phi$ de $\mathcal{E}$ dans $\mathcal{E}$. Le but de cet exercice est de montrer que $\phi$ est affine si et seulement si $\text{\ensuremath{\phi}}$ préserve les triplets de points alignés.
+
+  \begin{convention}
+    Dans tout ce qui suit on suppose que $\phi$ envoie $3$ points alignés sur $3$ points alignés. On note par ${}'$ les images par $\phi$: $O'=\phi(O)$, $A'=\phi(A)$, $B'=\phi(B)$, \ldots
+  \end{convention}
+
+  \begin{enumerate}
+    \item Soit $\mathcal{F}$ un sous-espace affine de $\mathcal{E}$, montrer que $\phi^{-1}(\mathcal{F})$ est affine.
+
+    \item Montrer que $\phi$ envoie un repère affine sur un repère affine.
+
+    \item En déduire que $\phi$ envoie $k$ points affinement indépendants sur $k$ points affinement indépendants.
+
+    \item En déduire que $\phi$ préserve droites et plans.
+
+    \item \label{droitesplans} En déduire que $\text{\ensuremath{\phi}}$ envoie les droites parallèles sur des droites parallèles.
+
+    \item On fixe $O$ un point de $\mathcal{E}$. Soient $A$ et $B$ deux points de $\mathcal{E}$ et soit $C$ tel que $\overrightarrow{OC}=\overrightarrow{OA}+\overrightarrow{OB}$, de plus on suppose que $A,B$ et $C$ ne sont pas alignés. En utilisant la question \ref{droitesplans}) montrer que:\vspace{-3mm}
+      \[
+        \overrightarrow{O'C'}=\overrightarrow{O'A'}+\overrightarrow{O'B'}
+      \]
+
+    \item Soient $\mathcal{D}$ une droite passant par $O$ et $\mathcal{D}'$ son image par $\phi$. On fixe $A\neq O$ un point de $\mathcal{D}$. Pour tout scalaire $\lambda\in\mathbb{R}$, on considère le point $M$ défini tel que $ \overrightarrow{OM}=\lambda\overrightarrow{OA}$.\newline
+    Vérifier que son image $M'=\phi(M)$ satisfait $\overrightarrow{O'M'}=\mu\overrightarrow{O'A'}$ pour un unique scalaire $\mu$, indépendant du choix de $A$.
+
+    On a ainsi défini une fonction
+      $
+        \sigma_{\mathcal{D}} :
+        \begin{cases}
+          \mathbb{R}\rightarrow\mathbb{R}\\
+          \lambda\mapsto\mu
+        \end{cases}
+      $.\vspace{1mm}
+
+    \item Soient $M$ et $N$ tels que $\overrightarrow{OM}=\lambda_{1}\overrightarrow{OA}$ et $\overrightarrow{ON}=\lambda_{2}\overrightarrow{OA}$. En utilisant un point $B$ hors de $\mathcal{D}$ et des droites parallèles, construire les points $P$ et $Q$ de $\mathcal{D}$ tels que
+      \[
+        \overrightarrow{OP}=(\lambda_{1}+\lambda_{2})\overrightarrow{OA},\qquad
+        \overrightarrow{OQ}=(\lambda_{1}\lambda_{2})\overrightarrow{OA}.
+      \]
+
+    \item Montrer que $\sigma_{\mathcal{D}}$ vérifie $\sigma_{\mathcal{D}}(\lambda_{1}+\lambda_{2})=\sigma_{\mathcal{D}}(\lambda_{1})+\sigma_{\mathcal{D}}(\lambda_{2})$ et que $\sigma_{\mathcal{D}}(\lambda_{1}.\lambda_{2})=\sigma_{\mathcal{D}}(\lambda_{1}).\sigma_{\mathcal{D}}(\lambda_{2})$. En déduire que $\sigma_{\mathcal{D}}$ est un automorphisme du corps $\mathbb{R}$.
+
+    \item Soit $\sigma$ un automorphisme du corps $\mathbb{R}$. Vérifier que $\sigma(1)=1$, que $\sigma(x)=x, \forall x\in\mathbb{Q}$, que $\sigma$ est une application croissante, puis en déduire que $\sigma=Id$.
+
+    \item Montrer que $\phi$ est affine.
+  \end{enumerate}
+\end{exo}
+\end{document}

@@ -1,0 +1,32 @@
+% layers (definition)
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{main,foreground}
+% points (definition)
+\tikzset{
+  every point/.style = {circle, inner sep={.75\pgflinewidth}, outer sep={-.7\pgflinewidth}, draw, fill=white, opacity=1, solid},
+  point/.style={insert path={node[every point, #1]{}}},
+  point/.default={},
+  colored point/.style = {point={fill=#1}},
+}
+% picture
+\begin{tikzpicture}[rotate=45,font=\tiny]
+  \begin{pgfonlayer}{foreground}
+    \path (0,0)   coordinate (O) node[point, above] {$O$};
+    \path (-1,0)  coordinate (K) node[point, left] {$K$};
+    \path (1,0) coordinate (F) node[point, right] {$F(a,0)$};
+    \path (0.5625,-1.5) coordinate (M) node[thick,colored point=lightgray, below] {$M$};
+    \path (M-|K) coordinate (P) node[point, left]{$P$};
+    \path ($(F)!.5!(P)$) coordinate (FP) [point];
+  \end{pgfonlayer}
+
+  %\draw[help lines,red] (-1.5,-2.5) grid (2.5,2.5);
+  \draw (K) +(0,-2) -- +(0,2)node[rotate=-45, above, scale=.7, pos=.9]{directrice};
+  \draw[ultra thin] (K) -- +(3.5,0) node[rotate=45, above, scale=.7, pos=.9]{axe focal};
+  \draw[semithick, domain=-2.5:1.7] plot (.25*\x*\x, \x);
+  \draw[thick, -latex] (O) -- +(.7,0) node[pos=.7, above]{$u$};
+  \draw[thick, -latex] (O) -- +(0,0.7) node[pos=.7, left]{$v$};
+  \draw[very thin, densely dashed] (F) -- (M) -- (P);
+  \draw[thin] (F) -- (P);
+  \draw[thin, shorten >=-.5cm, shorten <=-1.3cm] (M) -- (FP);
+  \draw[very thin] (F) -- (FP) -- ([turn].1,0) -- ([turn]0,.1) -- ([turn]0,.1);
+\end{tikzpicture}
