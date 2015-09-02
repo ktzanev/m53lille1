@@ -159,16 +159,14 @@
       \item $A,B \in \ens{E} \quad\Rightarrow\quad \vv{AB}=-\vv{BA}$.
       \item $A+\vv{v}=B  \quad\Leftrightarrow\quad \forall (\exists) C \in \ens{E}, \vv{CA}+\vv{v}=\vv{CB}$.
       \item $(A+\vv{v})+\vv{w}=A+(\vv{v}+\vv{w})$ \myemph{($\vv{\ens{E}}$ agit sur $\ens{E}$)}.
-      \item $\vv{AB}=\vv{DC} \Leftrightarrow \vv{AD}=\vv{BC}$
-        \pause\\\myemph{($ABCD$ est un parallélogramme)}.
+      \item $\vv{AB}=\vv{DC} \Leftrightarrow \vv{AD}=\vv{BC}$ \myemph{($ABCD$ est un parallélogramme)}.
       \item $\vv{(A+\vv{v})(B+\vv{w})}=\vv{AB}-\vv{v}+\vv{w}$.
       \item $A_{1},\ldots,A_{k} \in \ens{E}$ et $\lambda_{1},\ldots,\lambda_{k} \in \mathbb{K}$ alors
         \begin{itemize}[<+(1)->]
-          \item Si $\sum_{i=1}^{k}\lambda_{i}=0$ alors $\sum_{i=1}^{k}\lambda_{i}A_{i} \in \vv{\ens{E}}$ est bien définie.
+          \item Si $\sum_{i=1}^{k}\lambda_{i}=0$ alors $\sum_{i=1}^{k}\lambda_{i}A_{i} \in \vv{\ens{E}}$ est bien définie \myemph{($\vv{AB} = B - A$)}.
           \item Si $\sum_{i=1}^{k}\lambda_{i}=1$ alors $\sum_{i=1}^{k}\lambda_{i}A_{i} \in \ens{E}$ est bien définie.
           \item Si $\sum_{i=1}^{k}\lambda_{i}\notin \{0,1\}$ alors $\sum_{i=1}^{k}\lambda_{i}A_{i}$ n'est pas bien définie.
-        \end{itemize}
-      \item Ainsi nous avons par exemple $\vv{AB} = B - A$.
+        \end{itemize}\pause
     \end{itemize}
   \end{frame}
 % =======================================
@@ -192,7 +190,7 @@
   % -----------
   \begin{frame}{Définition du isobarycentre}
     \begin{definition}
-      Soient $A_{1},\ldots,A_{k} \in \ens{E}$, leur \alert{isobarycentre} est le barycentre de ces points pondérés du même poids non nul \emph{(qui peut être pris égal à $1$)}.
+      Soient $A_{1},\ldots,A_{k} \in \ens{E}$, leur \alert{isobarycentre} est le barycentre de ces points pondérés du même poids non nul \emph{(qui peut être pris égal à $\frac{1}{k}$, ou à $1$)}.
     \end{definition}
   \end{frame}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -236,10 +234,10 @@
   \begin{frame}{Coordonnées affines}
     Soient $\mathcal{A}=(A_{0},\ldots,A_{n})$ un un repère affine de $\ens{E}$.\pause\\
     \begin{definition}
-      Pour $B \in \ens{E}$, on dit que $(x_{1},\ldots,x_{n})_{\mathcal{A}}$ sont les \alert{coordonnées cartésiennes} de $B$ dans le repère $\mathcal{A}$ si $\vv{A_{0}B} = \sum_{i=1}^{n} x_{i}\vv{A_{0}A_{i}}$.
+      Pour $B \in \ens{E}$, on dit que $(x_{1},\ldots,x_{n})_{\mathcal{A}}$ sont les \alert{coordonnées cartésiennes} de $B$ dans le repère $\mathcal{A}$, si $\vv{A_{0}B} = \sum_{i=1}^{n} x_{i}\vv{A_{0}A_{i}}$.
     \end{definition}\pause
     \begin{definition}
-      Pour $B \in \ens{E}$, on dit que $[\mu_{0},\ldots,\mu_{n}]_{\mathcal{A}}$ sont les \alert{coordonnées barycentriques} de $B$ dans le repère $\mathcal{A}$ si $\sum_{i=0}^{n}\mu_{i}=1$ et $B=\sum_{i=1}^{n}\mu_{i}A_{i}$.
+      Pour $B \in \ens{E}$, on dit que $[\mu_{0},\ldots,\mu_{n}]_{\mathcal{A}}$ sont les \alert{coordonnées barycentriques} de $B$ dans le repère $\mathcal{A}$, si $\sum_{i=0}^{n}\mu_{i}=1$ et $B=\sum_{i=1}^{n}\mu_{i}A_{i}$.
     \end{definition}\pause
     La relation entres ces deux systèmes de coordonnées est : $\mu_{i}=x_{i}, \forall i=1,\ldots,n$ et $\mu_{0}=1-\sum_{i=1}^{n}\mu_{i}$.
   \end{frame}
@@ -267,15 +265,6 @@
 \subsection{Exemples}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   % -----------
-  \begin{frame}{Les sous-espaces affines d'un espace vectoriel}
-    Soient $\vv{\ens{E}}$ et $\vv{\ens{F}}$ deux espaces vectoriels, et une application linéaire $\vv\phi \in \mathcal{L}(\vv{\ens{E}},\vv{\ens{F}})$.\pause\\
-    Alors pour tout $\vv{v}\in\vv{\ens{F}}$, l'image réciproque $\vv\phi^{-1}(\vv{v})$ est un sous-espace affine de $\vv{\ens{E}}$ de direction $\ker{\vv\phi}$.
-    \begin{itemize}[<+(1)->]
-      \item En particulier, en prenant $\vv\phi(x,y)=x+y$ de $\mathbb{R}^{2}$ dans $\mathbb{R}$ et $\vv{v}=1$, on retrouve le sous-espace affine $\ens{E}=\{(x,y)\ |\ x+y=1 \}$ de direction $\vv{\ens{E}}=\{(x,y)\ |\ x+y=0 \}$.
-      \item L'ensemble $\mathcal{S}$ des solutions d'un système linéaire $AX=B$ est vide ou est un sous-espace affine de direction l'ensemble $\mathcal{S'}$ des solutions homogènes $AX=0$. Et $\mathcal{S}=X_{0}+\mathcal{S}'$, où $X_{0}$ est une solution particulière.
-    \end{itemize}
-  \end{frame}
-  % -----------
   \begin{frame}{Les sous-espaces affines de petites dimensions}
     Soit $\ens{E}$ un espace affine de dimension $n$.
     \begin{itemize}[<+(1)->]
@@ -286,6 +275,24 @@
     \end{itemize}\pause
 
     Soient $A$ et $B$ deux points distincts de $\ens{E}$. On note $AB$ ou $\left<A,B\right>$ la droite affine qui passe par $A$ et $B$.
+  \end{frame}
+  % -----------
+  \begin{frame}{Les sous-espaces affines d'un espace vectoriel}
+    Soient $\vv{\ens{E}}$ et $\vv{\ens{F}}$ deux espaces vectoriels, et une application linéaire $\vv\phi \in \mathcal{L}(\vv{\ens{E}},\vv{\ens{F}})$.\pause\\
+    Alors pour tout $\vv{v}\in\im\vv\phi\subset\vv{\ens{F}}$, l'image réciproque $\vv\phi^{-1}(\vv{v})$ est un sous-espace affine de $\vv{\ens{E}}$ de direction $\ker{\vv\phi}$.
+    \begin{itemize}[<+(1)->]
+      \item En particulier, en prenant $\vv\phi(x,y)=x+y$ de $\mathbb{R}^{2}$ dans $\mathbb{R}$ et $\vv{v}=1$, on retrouve le sous-espace affine $\ens{E}=\{(x,y)\ |\ x+y=1 \}$ de direction $\vv{\ens{E}}=\{(x,y)\ |\ x+y=0 \}$.
+      \item L'ensemble $\mathcal{S}$ des solutions d'un système linéaire $AX=B$ est vide ou est un sous-espace affine de direction l'ensemble $\mathcal{S'}$ des solutions homogènes $AX=0$. Et $\mathcal{S}=X_{0}+\mathcal{S}'$, où $X_{0}$ est une solution particulière.
+    \end{itemize}
+  \end{frame}
+  % -----------
+  \begin{frame}{Les sous-espaces affines d'un espace vectoriel}
+    Soient $\vv{\ens{E}}$ un espace vectoriel et $\ens{F}$ un sous-espace affine de $\vv{\ens{E}}$.
+    \begin{itemize}[<+(1)->]
+      \item $\ens{F}$ est un sous-espace vectoriel ssi $0 \in \ens{F}$.
+      \item $\ens{F}$ est un hyperplan affine ssi il existe une forme linéaire non nulle $\phi\in\vv{\ens{E}}^{\,*}$ et $a \in \mathbb{R}$, tels que $\ens{F}=\phi^{-1}(a)$.
+      \item Tous les sous-espace affines de $\mathbb{R}^{n}$ sont des solutions de systèmes linéaires.
+    \end{itemize}
   \end{frame}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 \subsection{Propriétés}
@@ -305,15 +312,6 @@
     \end{proposition}
   \end{frame}
   % -----------
-  \begin{frame}{Les sous-espaces affines d'un espace vectoriel (bis)}
-    Soient $\vv{\ens{E}}$ un espace vectoriel et $\ens{F}$ un sous-espace affine de $\vv{\ens{E}}$.
-    \begin{itemize}[<+(1)->]
-      \item $\ens{F}$ est un sous-espace vectoriel ssi $0 \in \ens{F}$.
-      \item $\ens{F}$ est un hyperplan affine ssi il existe une forme linéaire $\phi\in\vv{\ens{E}}^{\,*}$ et $a \in \mathbb{R}$, tels que $\ens{F}=\phi^{-1}(a)$.
-      \item Tous les sous-espace affines de $\mathbb{R}^{n}$ sont des solutions de systèmes linéaires.
-    \end{itemize}
-  \end{frame}
-  % -----------
   \begin{frame}{Intersection de sous-espaces affines}
     \begin{proposition}
       L'intersection de deux sous-espaces affines $\ens{F}$ et $\ens{G}$ est:
@@ -325,7 +323,7 @@
     \begin{proposition}
       L'intersection de deux sous-espaces affines $\ens{F}$ et $\ens{G}$ est vide si et seulement si $\exists(\forall) A \in \ens{F}, B \in \ens{G}$,
       $$
-        \vv{AB} \in \vv{\ens{F}}+\vv{\ens{G}}.
+        \vv{AB} \notin \vv{\ens{F}}+\vv{\ens{G}}.
       $$
     \end{proposition}
   \end{frame}
@@ -451,7 +449,7 @@
     \end{definition}
     \begin{enumerate}[<+(1)->]
       \item Une homothétie qui fixe deux points est l'identité.
-      \item Une application affine est une homothétie affine non triviale ssi sa partie vectorielle est une homothétie vectorielle non triviale.
+      \item Une application affine est une homothétie affine non identité ssi sa partie vectorielle est une homothétie vectorielle non identité.
       \item La composée de deux homothéties, l'une de rapport $\lambda$ et l'autre de rapport $\mu$, est :
       \begin{enumerate}[<+(1)->]
         \item Une homothétie de rapport $\lambda\mu$, si $\lambda\mu \neq 1$.
@@ -517,7 +515,7 @@
   \begin{enumerate}[<+(1)->]
     \item L'intersection d'ensembles convexes est convexe.
     \item L'ensemble vide et les ensembles à un points sont convexes.
-    \item Les demi-espaces sont convexes.
+    \item Les demi-espaces (ouverts, fermés) sont convexes.
     \item L'image d'un convexe par une application affine est convexe.
     \item L'image réciproque d'un convexe par une application affine est convexe.
   \end{enumerate}

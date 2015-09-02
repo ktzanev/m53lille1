@@ -5,26 +5,38 @@
 
 \hautdepage{TD1: Espaces affines, notions de base}
 
-%-----------------------------------
-\begin{exo} (Projections et symétries)
 
-  On se place dans l'espace $\mathbb{R}^{3}$. Le but de cet exercice est de donner des expressions analytiques pour des projections et des symétries. On considère le plan $\mathcal{P}$ d'équation $\{x+y+z=1\}$ et la droite $\mathcal{D}$ d'équations $\{z=4,\ y=0\}$.
+%-----------------------------------
+\begin{exo} (Droites)
 
   \begin{enumerate}
-
-    \item Donner l'expression analytique de la projection $p$ sur le plan $\mathcal{P}$ suivant la direction $\mathcal{D}$.
-
-    \item Donner l'expression analytique de la symétrie $s$ par rapport à $\mathcal{P}$ suivant la direction $\mathcal{D}$.
-
-    \item Donner l'expression analytique de la projection orthogonale $\pi$ sur le plan $\mathcal{P}$.
-
-    \item Calculer la distance de $A=(1,0,1)$ au plan $\mathcal{P}$.
-
-    \item Donner l'expression analytique de la symétrie orthogonale $\sigma$ par rapport à $\mathcal{P}$.
-
+    \item\label{q:reel} Soit l'espace affine $\mathbb{R}^{2}$ avec la droite $\mathcal{D}=\big\{(x,y) \;\big|\; x+2y=1\big\}$.
+    \begin{enumerate}
+      \item Déterminer toutes les équations linéaires qui définissent la même droite $\mathcal{D}$.
+      \item Déterminer la direction de $\mathcal{D}$.
+      \item Déterminer toutes les équations linéaires qui définissent une droite parallèle à $\mathcal{D}$.
+      \item Déterminer les équations linéaires qui définissent la droite parallèle à $\mathcal{D}$ qui passent par $A=(2,1)$.
+      \item Déterminer une équation de la droite qui passe par les points $C=(2,3)$ et $D=(4,-3)$. Est-elle parallèle à $\mathcal{D}$?
+    \end{enumerate}
+    \item On considère le plan complexe $\mathbb{C}$ comme un espace affine réel.
+    \begin{enumerate}
+      \item Montrer que toute droite réel de $\mathbb{C}$ est définie par une équation complexe de la forme
+        $$
+          \big\{z \in \mathbb{C} \;\big|\; \overline{\beta}z+\beta\overline{z}+\gamma=0\big\}
+        $$
+        où $\beta \in \mathbb{C}^{*}$ et $\gamma \in \mathbb{R}$.
+      \item Déterminer une équation complexe de la droite $\mathcal{D}$ de la question (\ref{q:reel}).
+      \item Donner une condition sur les coefficients des équations complexes pour que deux droites soit parallèles.
+    \end{enumerate}
+    \item On considère l'espace affine réel $\mathbb{R}^{3}$.
+    \begin{enumerate}
+      \item Déterminer des équations qui définissent la droite $\mathcal{T}$ qui passe par les deux points $M=(1,0,1)$ et $N=(-1,1,1)$.
+      \item Déterminer la direction de $\mathcal{T}$
+      \item Déterminer des équations d'une droite parallèle à $\mathcal{T}$ qui passe par le point $P=(-1,2,1)$.
+      \item Trouver une droite qui n'est ni parallèle à $\mathcal{T}$, ni sécante avec $\mathcal{T}$.
+    \end{enumerate}
   \end{enumerate}
 \end{exo}
-
 
 %-----------------------------------
 \begin{exo} (Barycentres)
@@ -32,7 +44,7 @@
 On se place dans $\mathbb{R}^{2}$.
 
 \begin{enumerate}
-  \item Calculer l'isobarycentre des points $A=(1, -2)$, $B=(0, -2, )$, $C=(2, -4, )$. Puis le barycentre des mêmes points affectés des poids suivants: $(A,2)$, $(B,4)$, $(C,-1)$.
+  \item Calculer l'isobarycentre des points $A=(1,-2)$, $B=(0,-2)$, $C=(2,-4)$. Puis le barycentre des mêmes points affectés des poids suivants: $(A,2)$, $(B,4)$, $(C,-1)$.
 
   \item Montrer que les médianes d'un triangle sont concourantes.
 
@@ -40,19 +52,6 @@ On se place dans $\mathbb{R}^{2}$.
 
 \end{enumerate}
 
-\end{exo}
-
-%-----------------------------------
-\begin{exo} (Perpendiculaire commune)
-
-  On se place dans l'espace $\mathbb{R}^{3}$.
-  \begin{enumerate}
-    \item Soient $\mathcal{D}_{1}$ et $\mathcal{D}_{2}$ deux droites distinctes de l'espace. Justifier l'existence d'une perpendiculaire commune à ces deux droites. Sous quelles conditions est-elle unique?
-
-    \item Donner des équations de la perpendiculaire commune aux droites $\mathcal{D}_{1}$ d'équations\newline \{$x+y-z-1=0,\ 2x+y+z=0\}$ et $\mathcal{D}_{2}$ déterminée par le point $A$ de coordonnées $(1,0,1)$ et le vecteur directeur $\overrightarrow{u}$ de composantes $(1,-1,0)$.
-
-    \item Quelle est la distance entre $\mathcal{D}_{1}$ et $\mathcal{D}_{2}$?
-  \end{enumerate}
 \end{exo}
 
 
@@ -371,4 +370,43 @@ On se place dans $\mathbb{R}^{2}$.
     \item Montrer que $\phi$ est affine.
   \end{enumerate}
 \end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Perpendiculaire commune)
+
+  On se place dans l'espace $\mathbb{R}^{3}$.
+  \begin{enumerate}
+    \item Soient $\mathcal{D}_{1}$ et $\mathcal{D}_{2}$ deux droites distinctes de l'espace. Justifier l'existence d'une perpendiculaire commune à ces deux droites. Sous quelles conditions est-elle unique?
+
+    \item Donner des équations de la perpendiculaire commune aux droites $\mathcal{D}_{1}$ d'équations\newline \{$x+y-z-1=0,\ 2x+y+z=0\}$ et $\mathcal{D}_{2}$ déterminée par le point $A$ de coordonnées $(1,0,1)$ et le vecteur directeur $\overrightarrow{u}$ de composantes $(1,-1,0)$.
+
+    \item Quelle est la distance entre $\mathcal{D}_{1}$ et $\mathcal{D}_{2}$?
+  \end{enumerate}
+\end{exo}
+
+
+
+%-----------------------------------
+\begin{exo} (Projections et symétries)
+
+  On se place dans l'espace $\mathbb{R}^{3}$. Le but de cet exercice est de donner des expressions analytiques pour des projections et des symétries. On considère le plan $\mathcal{P}$ d'équation $\{x+y+z=1\}$ et la droite $\mathcal{D}$ d'équations $\{z=4,\ y=0\}$.
+
+  \begin{enumerate}
+
+    \item Donner l'expression analytique de la projection $p$ sur le plan $\mathcal{P}$ suivant la direction $\mathcal{D}$.
+
+    \item Donner l'expression analytique de la symétrie $s$ par rapport à $\mathcal{P}$ suivant la direction $\mathcal{D}$.
+
+    \item Donner l'expression analytique de la projection orthogonale $\pi$ sur le plan $\mathcal{P}$.
+
+    \item Calculer la distance de $A=(1,0,1)$ au plan $\mathcal{P}$.
+
+    \item Donner l'expression analytique de la symétrie orthogonale $\sigma$ par rapport à $\mathcal{P}$.
+
+  \end{enumerate}
+\end{exo}
+
+
+
 \end{document}
