@@ -1,4 +1,4 @@
-\documentclass[aspectratio=1610 %,handout % handtout = pas de transitions
+\documentclass[aspectratio=1610 ,handout % handtout = pas de transitions
 ]{beamer}
 % =============================================================
 % --------------- XeLaTeX spécifique
@@ -131,11 +131,12 @@
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   % -----------
   \begin{frame}{Vectorialisé d'un espace affine}
-    En fixant un point $\Omega$ d'un espace affine $\ens{E}$, on peut définir sur celui-ci une structure d'espace vectoriel, noté $\ens{E}_{\Omega}$, isomorphe (par définition) à $\vv{\ens{E}}$ via l'application:
+    En fixant un point $\Omega$ d'un espace affine $\ens{E}$, on peut définir sur celui-ci une structure d'espace vectoriel via la bijection:
     \begin{gather*}
       \ens{E} \longrightarrow \vv{\ens{E}}\\
       B \mapsto \vv{\Omega B}
-    \end{gather*}
+    \end{gather*}\pause
+    Cet espace vectoriel est noté $\ens{E}_{\Omega}$ et est isomorphe (par définition) à $\vv{\ens{E}}$.
     \begin{itemize}[<+(1)->]
       \item L'origine de $\ens{E}_{\Omega}$ est le point $\Omega$.
       \item Avec l'écriture $\Omega+\vv{v}$, les opérations sont:
