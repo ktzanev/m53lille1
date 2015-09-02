@@ -5,6 +5,9 @@
 
 \hautdepage{TD1: Espaces affines, notions de base}
 
+% ==================================
+\section{Espaces et sous-espaces affines}
+% ==================================
 
 %-----------------------------------
 \begin{exo} (Droites)
@@ -21,9 +24,9 @@
     \item On considère le plan complexe $\mathbb{C}$ comme un espace affine réel.
     \begin{enumerate}
       \item Montrer que toute droite réel de $\mathbb{C}$ est définie par une équation complexe de la forme
-        $$
+        \[
           \big\{z \in \mathbb{C} \;\big|\; \overline{\beta}z+\beta\overline{z}+\gamma=0\big\}
-        $$
+        \]
         où $\beta \in \mathbb{C}^{*}$ et $\gamma \in \mathbb{R}$.
       \item Déterminer une équation complexe de la droite $\mathcal{D}$ de la question (\ref{q:reel}).
       \item Donner une condition sur les coefficients des équations complexes pour que deux droites soit parallèles.
@@ -48,75 +51,31 @@ On se place dans $\mathbb{R}^{2}$.
 
   \item Montrer que les médianes d'un triangle sont concourantes.
 
-  \item Discuter la position d'un point $M$ par rapport au triangle $\vartriangle\! ABC$ en fonction des signes de ses coordonnées barycentriques $(\alpha, \beta, \gamma)$.
+  \item Discuter la position d'un point $M$ par rapport au triangle $\vartriangle\! ABC$ en fonction des signes de ses coordonnées barycentriques $[\alpha, \beta, \gamma]$.
 
 \end{enumerate}
 
 \end{exo}
 
-
 %-----------------------------------
-\begin{exo} (Changement de repères)
-
-  Un repère de l'espace $\mathbb{R}^{3}$ est la donnée de 4 points ordonnés $\Omega$, $A$, $B$ et $C$ tels que les vecteurs $\overrightarrow{\Omega A}$, $\overrightarrow{\Omega B}$ et $\overrightarrow{\Omega C}$ soient linéairement indépendants.
-
+\begin{exo} (Exemples d'espaces affines)
   \begin{enumerate}
-    \item Montrer que pour un repère et tout point $M$ de $\mathbb{R}^{3}$ le vecteur $\overrightarrow{\Omega M}$ s'écrit de manière unique sous la forme:\vspace{-3mm}
-      $$
-        \overrightarrow{\Omega M} = \lambda\overrightarrow{\Omega A} + \mu\overrightarrow{\Omega B} + \nu\overrightarrow{\Omega C},
-      $$
-    le triplet $(\lambda, \mu, \nu)$ correspond aux coordonnées du point $M$ dans ce repère.
-
-    \begin{convention}\unindentlist
-      L'espace $\mathbb{R}^{3}$ est muni de son repère cartésien canonique $\mathcal{R}=(O,I,J,K)$. On considère le nouveau repère $\mathcal{R}'=\left( O'=(0, 0, 1), I'=(0, 0, 0), J'=(1, 0, 2), K'=(0, 1, 1) \right)$.
-    \end{convention}
-
-    \item Soit un point de coordonnées $X=(x, y, z)$ dans le repère $\mathcal{R}$, donner ses coordonnées $X'=(x', y', z')$ dans le repère $\mathcal{R}'$ en fonction de $X=(x, y, z)$ .
-
-    \item \label{chrep} Donner la formule de changement de repère de $\mathcal{R}$ à $\mathcal{R'}$ sous la forme:
+    \item Montrer que pour tout $n \in \N^\ast$ l'ensemble $\ens{E}_{n}$ des polynômes unitaires de degré $n$ à coefficients réels est un espace affine. Quelle est sa dimension? En donner un repère affine.
+    \item Soient $d$ un entier non nul, et $a_1,\ldots, a_d$ et $b$ des réels. Soit $\ens{E}$ l'ensemble des suites réelles $u=\big(u_n\big)_{n\in\N}$ vérifiant
       \[
-        \left(\begin{array}{c} x' \\ y' \\ z'\end{array}\right) =
-        M \left(\begin{array}{c} x \\ y \\ z \end{array}\right) +
-          \left(\begin{array}{c} u \\ v \\ w \end{array}\right),
+        u_{n+d} = a_{1} u_{n+d-1} + \cdots + a_{d-1} u_{n+1} + a_d u_n + b \quad \text{pour tout }n \in \N.
       \]
-    où $M$ est une matrice $3\times3$. Puis écrire sous la même forme la formule de changement de repère inverse, de $\mathcal{R'}$ à $\mathcal{R}$.
-
-    \item On se donne $A=(0, 0, 3)$, $B=(1, 0, 4)$, $C=(1, 1, 1)$, trois points dont les coordonnées sont exprimées dans $\mathcal{R}$. Donner l'équation plan $(ABC)$ dans le repère $\mathcal{R}$, puis dans le repère $\mathcal{R}'$.
-
-    \item \label{compchrep} De la question \ref{chrep}) on déduit qu'un changement de repères $P_{\mathcal{R}'}^{\mathcal{R}}$ s'écrit sous la forme $X'=P_{\mathcal{R}'}^{\mathcal{R}}(X)=M_{\mathcal{R}'}^{\mathcal{R}}X+V_{\mathcal{R}'}^{\mathcal{R}}$. Soit un troisième repère $\mathcal{R}''$, quelle formule relie les couples $(M_{\mathcal{R}'}^{\mathcal{R}},V_{\mathcal{R}'}^{\mathcal{R}})$, $(M_{\mathcal{R}''}^{\mathcal{R}'},V_{\mathcal{R}''}^{\mathcal{R}'})$ et $(M_{\mathcal{R}''}^{\mathcal{R}},V_{\mathcal{R}''}^{\mathcal{R}})$ ?
-
-    \item\hard On note $GA$ l'ensemble des couples $(M,V)$ où $M\in GL_{3}(\mathbb{R})$ et $V\in\mathbb{R}^{3}$. On munit $GA$ d'une opération binaire:\vspace{-3mm}
-      \[
-        (M',V')\circ(M,V)=(M'M,M'V+V')
-      \]
-    Montrer que cette opération munit $GA$ d'une loi de groupe.
-
-    \item\hard On note $\mathfrak{Rep}$ l'ensemble des repère de $\mathbb{R}^{3}$. Montrer que l'application:
-      \[
-        Act:
-        \begin{cases}
-          GA \times \mathfrak{Rep} \rightarrow \mathfrak{Rep} \\
-          \left((A,V),(\Omega,P,Q,R)\right) \mapsto (A\Omega+V,AP+V,AQ+V,AR+V)
-        \end{cases}
-      \]
-    est bien définie et qu'elle vérifie:
-    \begin{description}
-      \item[A1] $Act\left((Id,0),(\Omega,P,Q,R)\right)=(\Omega,P,Q,R)$;
-
-      \item[A2] $Act\left((A',V'),Act\left((A,V),(\Omega,P,Q,R)\right)\right) = Act\left((A',V')\circ(A,V),(\Omega,P,Q,R)\right)$.
-    \end{description}
-    \textit{On dit que le groupe $GA$ agit sur l'ensemble $\mathfrak{Rep}$.}
-
-    \item\hard Déduire de la question \ref{compchrep}) que pour deux repères $\mathcal{R}$ et $\mathcal{R}'$ il existe un unique $(A,V)$ tel que $Act\left((A,V),\mathcal{R}\right)=\mathcal{R}'$.
-
-    \item\hard En déduire que $GA$ est en bijection avec l'ensemble $\mathfrak{Rep}$. \\
-    Cette bijection est-elle unique ?
-  \end{enumerate}
+      \begin{enumerate}
+        \item Montrer que $\ens{E}$ est un espace affine.
+        \item Quelle est sa dimension?
+        \item Décrire les éléments de $\ens{E}$ lorsque $d=1$ (distinguer les cas $a_1 \neq 1$ et $a_1=1$).
+        \item On suppose maintenant $d=2$. Donner une base de la direction $\vv{\ens{E}}$ de $\ens{E}$. Donner un repère affine de $\ens{E}$ dans le cas où $a_1+a_2 \neq 1$.
+      \end{enumerate}
+    \end{enumerate}
 \end{exo}
 
-
 %-----------------------------------
-\begin{exo} (Vers les espaces affines)
+\begin{exo} (EDO et espaces affines)
 
   Dans ce qui suit on s'intéresse aux structures portées par les espaces de solutions des équations différentielles dans $C^{\infty}(\mathbb{R})$:\vspace{-4mm}
     \begin{align*}
@@ -152,6 +111,53 @@ On se place dans $\mathbb{R}^{2}$.
   \end{enumerate}
 \end{exo}
 
+%-----------------------------------
+\begin{exo} (Changement de repères)
+
+  L'espace $\mathbb{R}^{3}$ est muni de son repère cartésien canonique $\mathcal{R}=(O,I,J,K)$. On considère le nouveau repère $\mathcal{R}'=\left( O'=(0, 0, 1), I'=(0, 0, 0), J'=(1, 0, 2), K'=(0, 1, 1) \right)$.
+  \begin{enumerate}
+    \item Soit un point de coordonnées $X=(x, y, z)$ dans le repère $\mathcal{R}$, donner ses coordonnées cartésiennes $X'=(x', y', z')$ dans le repère $\mathcal{R}'$ en fonction de $X=(x, y, z)$ .
+
+    \item \label{chrep} Donner la formule de changement de repère de $\mathcal{R}$ à $\mathcal{R'}$ sous la forme:
+      \[
+        \left(\begin{array}{c} x' \\ y' \\ z'\end{array}\right) =
+        M \left(\begin{array}{c} x \\ y \\ z \end{array}\right) +
+          \left(\begin{array}{c} u \\ v \\ w \end{array}\right),
+      \]
+    où $M$ est une matrice $3\times3$. Puis écrire sous la même forme la formule de changement de repère inverse, de $\mathcal{R'}$ à $\mathcal{R}$.
+
+    \item On se donne $A=(0, 0, 3)$, $B=(1, 0, 4)$, $C=(1, 1, 1)$, trois points dont les coordonnées cartésiennes sont exprimées dans $\mathcal{R}$. Donner une équation du plan $\left<A,B,C\right>$ dans le repère $\mathcal{R}$, puis dans le repère $\mathcal{R}'$.
+
+    \item \label{compchrep} De la question \ref{chrep}) on déduit qu'un changement de repères $P_{\mathcal{R}'}^{\mathcal{R}}$ s'écrit sous la forme $X'=P_{\mathcal{R}'}^{\mathcal{R}}(X)=M_{\mathcal{R}'}^{\mathcal{R}}X+V_{\mathcal{R}'}^{\mathcal{R}}$. Soit un troisième repère $\mathcal{R}''$, quelle formule relie les couples $(M_{\mathcal{R}'}^{\mathcal{R}},V_{\mathcal{R}'}^{\mathcal{R}})$, $(M_{\mathcal{R}''}^{\mathcal{R}'},V_{\mathcal{R}''}^{\mathcal{R}'})$ et $(M_{\mathcal{R}''}^{\mathcal{R}},V_{\mathcal{R}''}^{\mathcal{R}})$ ?
+
+    \item\hard On note $GA$ l'ensemble des couples $(M,V)$ où $M\in GL_{3}(\mathbb{R})$ et $V\in\mathbb{R}^{3}$. On munit $GA$ d'une opération binaire:\vspace{-3mm}
+      \[
+        (M',V')\circ(M,V)=(M'M,M'V+V')
+      \]
+    Montrer que cette opération munit $GA$ d'une loi de groupe.
+
+    \item\hard On note $\mathfrak{Rep}$ l'ensemble des repère de $\mathbb{R}^{3}$. Montrer que l'application:
+      \[
+        Act:
+        \begin{cases}
+          GA \times \mathfrak{Rep} \rightarrow \mathfrak{Rep} \\
+          \left((A,V),(\Omega,P,Q,R)\right) \mapsto (A\Omega+V,AP+V,AQ+V,AR+V)
+        \end{cases}
+      \]
+    est bien définie et qu'elle vérifie:
+    \begin{description}
+      \item[A1] $Act\left((Id,0),(\Omega,P,Q,R)\right)=(\Omega,P,Q,R)$;
+
+      \item[A2] $Act\left((A',V'),Act\left((A,V),(\Omega,P,Q,R)\right)\right) = Act\left((A',V')\circ(A,V),(\Omega,P,Q,R)\right)$.
+    \end{description}
+    \textit{On dit que le groupe $GA$ agit sur l'ensemble $\mathfrak{Rep}$.}
+
+    \item\hard Déduire de la question \ref{compchrep}) que pour deux repères $\mathcal{R}$ et $\mathcal{R}'$ il existe un unique $(A,V)$ tel que $Act\left((A,V),\mathcal{R}\right)=\mathcal{R}'$.
+
+    \item\hard En déduire que $GA$ est en bijection avec l'ensemble $\mathfrak{Rep}$. \\
+    Cette bijection est-elle unique ?
+  \end{enumerate}
+\end{exo}
 
 %-----------------------------------
 \begin{exo} (Exemples de sous-espaces affines)
@@ -186,7 +192,6 @@ On se place dans $\mathbb{R}^{2}$.
   \end{enumerate}
 \end{exo}
 
-
 %-----------------------------------
 \begin{exo} \hard (Des triangles sur un corps fini)
 
@@ -196,6 +201,31 @@ On se place dans $\mathbb{R}^{2}$.
     \item Combien contient-il de points et de droites? Faire des dessins !
 
     \item Etant donné deux points $M$ et $N$ de $\mathcal{E}$, le milieu de $(M,N)$ est le point $\overline{\frac{1}{2}}M+\overline{\frac{1}{2}}N$. On considère les points $A=(\overline{0}, \overline{0})$, $B=(\overline{2}, \overline{0})$, $C=(\overline{0}, \overline{2})$. Déterminer les médianes du triangle $ABC$. Sont-elles concourantes?
+  \end{enumerate}
+\end{exo}
+
+
+% ==================================
+\section{Applications affines}
+% ==================================
+
+%-----------------------------------
+\begin{exo} (Projections et symétries)
+
+  On se place dans l'espace affine (euclidien) $\mathbb{R}^{3}$. Le but de cet exercice est de donner des expressions analytiques pour des projections et des symétries. On considère le plan $\mathcal{P}$ d'équation $\{x+y+z=1\}$ et la droite $\mathcal{D}$ d'équations $\{z=4,\ y=0\}$.
+
+  \begin{enumerate}
+
+    \item Donner l'expression analytique de la projection $p$ sur le plan $\mathcal{P}$ suivant la direction $\mathcal{D}$.
+
+    \item Donner l'expression analytique de la symétrie $s$ par rapport à $\mathcal{P}$ suivant la direction $\mathcal{D}$.
+
+    \item Donner l'expression analytique de la projection orthogonale $\pi$ sur le plan $\mathcal{P}$.
+
+    \item Calculer la distance de $A=(1,0,1)$ au plan $\mathcal{P}$.
+
+    \item Donner l'expression analytique de la symétrie orthogonale $\sigma$ par rapport à $\mathcal{P}$.
+
   \end{enumerate}
 \end{exo}
 
@@ -209,7 +239,6 @@ On se place dans $\mathbb{R}^{2}$.
     \item Soit $f$ et $f'$ deux homothéties de mêmes rapport quelle est la nature de la transformation $f\circ f'^{-1}$ ?
   \end{enumerate}
 \end{exo}
-
 
 %-----------------------------------
 \begin{exo} (Polygone des milieux)
@@ -228,7 +257,6 @@ On se place dans $\mathbb{R}^{2}$.
 
   \end{enumerate}
 \end{exo}
-
 
 %-----------------------------------
 \begin{exo} (Homothéties)
@@ -264,6 +292,10 @@ On se place dans $\mathbb{R}^{2}$.
 \end{exo}
 
 
+% ==================================
+\section{Compléments}
+% ==================================
+
 %-----------------------------------
 \begin{exo} (Quelques théorèmes classiques)
 
@@ -290,7 +322,6 @@ On se place dans $\mathbb{R}^{2}$.
   \end{enumerate}
 \end{exo}
 
-
 %-----------------------------------
 \begin{exo} (Ensembles convexes)
 
@@ -301,12 +332,10 @@ On se place dans $\mathbb{R}^{2}$.
   \end{enumerate}
 \end{exo}
 
-
 %-----------------------------------
 \begin{exo} (Demi-espaces)
 
   Soit $E$ un espace affine réel de dimension $n$ et $H$ un hyperplan affine de $E$.
-
   \begin{enumerate}
 
     \item Montrer que la relation $\sim $ définie sur $E\backslash H$ par:
@@ -318,7 +347,6 @@ On se place dans $\mathbb{R}^{2}$.
     \item Montrer que les demi-espaces sont convexes.
   \end{enumerate}
 \end{exo}
-
 
 %-----------------------------------
 \begin{exo} (Théorème fondamental de la géométrie affine)
@@ -370,43 +398,5 @@ On se place dans $\mathbb{R}^{2}$.
     \item Montrer que $\phi$ est affine.
   \end{enumerate}
 \end{exo}
-
-
-%-----------------------------------
-\begin{exo} (Perpendiculaire commune)
-
-  On se place dans l'espace $\mathbb{R}^{3}$.
-  \begin{enumerate}
-    \item Soient $\mathcal{D}_{1}$ et $\mathcal{D}_{2}$ deux droites distinctes de l'espace. Justifier l'existence d'une perpendiculaire commune à ces deux droites. Sous quelles conditions est-elle unique?
-
-    \item Donner des équations de la perpendiculaire commune aux droites $\mathcal{D}_{1}$ d'équations\newline \{$x+y-z-1=0,\ 2x+y+z=0\}$ et $\mathcal{D}_{2}$ déterminée par le point $A$ de coordonnées $(1,0,1)$ et le vecteur directeur $\overrightarrow{u}$ de composantes $(1,-1,0)$.
-
-    \item Quelle est la distance entre $\mathcal{D}_{1}$ et $\mathcal{D}_{2}$?
-  \end{enumerate}
-\end{exo}
-
-
-
-%-----------------------------------
-\begin{exo} (Projections et symétries)
-
-  On se place dans l'espace $\mathbb{R}^{3}$. Le but de cet exercice est de donner des expressions analytiques pour des projections et des symétries. On considère le plan $\mathcal{P}$ d'équation $\{x+y+z=1\}$ et la droite $\mathcal{D}$ d'équations $\{z=4,\ y=0\}$.
-
-  \begin{enumerate}
-
-    \item Donner l'expression analytique de la projection $p$ sur le plan $\mathcal{P}$ suivant la direction $\mathcal{D}$.
-
-    \item Donner l'expression analytique de la symétrie $s$ par rapport à $\mathcal{P}$ suivant la direction $\mathcal{D}$.
-
-    \item Donner l'expression analytique de la projection orthogonale $\pi$ sur le plan $\mathcal{P}$.
-
-    \item Calculer la distance de $A=(1,0,1)$ au plan $\mathcal{P}$.
-
-    \item Donner l'expression analytique de la symétrie orthogonale $\sigma$ par rapport à $\mathcal{P}$.
-
-  \end{enumerate}
-\end{exo}
-
-
 
 \end{document}
