@@ -1,50 +1,12 @@
-\documentclass[aspectratio=1610 ,handout % handtout = pas de transitions
-]{beamer}
-% =============================================================
-% --------------- XeLaTeX spécifique
-\usepackage{fontspec} % pour le bon encodage des PDFs => police lmodern
-  \defaultfontfeatures{Ligatures=TeX} % pour avoir les ligatures standards
-% ---------------
-\usepackage{mathtools,amssymb,bm,amsthm} % pour des possibilités en math étendus (mathtools => amsmath)
-\usepackage[francais]{babel} % pour franciser LaTeX
-\uselanguage{French}
-\languagepath{French}
-\usepackage[e]{esvect} % pour les vecteurs
-
-%==============================================================
-\usetheme[hideothersubsections,width=23mm,height=1cm]{Berkeley}
-% \usetheme{Antibes}
-% \usetheme{Montpellier}
-% \usetheme[hideothersubsections,width=23mm]{Goettingen}
-% \useinnertheme{rectangles}
-% \useinnertheme{circles}
-\setbeamercovered{transparent}
-\usefonttheme{serif}
-\usefonttheme{structuresmallcapsserif}
-\setbeamertemplate{navigation symbols}{}% pas de symboles de navigation
-%\useoutertheme{infolines}
-\setbeamertemplate{footline}[frame number]% rajout des numéros des frames
-\addtobeamertemplate{block begin}{%
-  \setlength\abovedisplayskip{3pt plus 2pt minus 2pt}%
-  \setlength\belowdisplayskip{1pt}%
-}
-
-% ---------------
-\newcommand{\myemph}[1]{\textcolor{green!70!black}{\emph{#1}}}
-\newtheorem{defprop}[theorem]{Définition-Proposition}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{question}{Question}
-\let\ens\mathcal
-
-\DeclareMathOperator{\Aff}{Aff}
-\let\ker\relax\DeclareMathOperator{\ker}{Ker}
-\DeclareMathOperator{\im}{Im}
-\newcommand{\id}{\mathrm{Id}}
-
+\documentclass[
+%negatif,
+simple,
+%handout,
+bigger]{m53beamer}
 % ---------------
 \title{M53 - Cours 1}
 %\author{Kroum Tzanev}
-\date{\today}
+\date{septembre 2015}
 % ---------------
 
 \begin{document}
@@ -390,7 +352,7 @@
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   % -----------
   \begin{frame}{Définition d'une application affine}
-    Soient $\ens{E}$ et $\ens{F}$ deux espaces affines dirigés respectivement par $\vv{\ens{E}}$ et $\vv{\ens{F}}$.
+    Soient $\ens{E}$ et $\ens{F}$ deux espaces affines de directions $\vv{\ens{E}}$ et $\vv{\ens{F}}$.
     \begin{defprop}
       Une application $\phi:\ens{E}\rightarrow\ens{F}$ est dite \alert{affine} si elle satisfait une des trois conditions équivalentes:
       \begin{enumerate}[<+(1)->]
@@ -399,13 +361,13 @@
           $$
             \vv\phi(\vv{AB})=\vv{\phi(A)\phi(B)}.
           $$
-        (L'application $\vv\phi$ est unique et est appelée \myemph{partie linéaire} de $\phi$.)
+        ($\vv\phi$ est unique et est appelée \myemph{partie linéaire} de $\phi$.)
         \item $\phi$ préserve les barycentres, c.-à.-d. pour $\sum_{i=1}^{n}\mu_{i}=1$
           $$
             \phi(\sum_{i=1}^{n}\mu_{i}A_{i})=\sum_{i=1}^{n}\mu_{i}\phi(A_{i}).
           $$
       \end{enumerate}\pause
-      L'ensemble des applications affines de $\vv{\ens{E}}$ dans $\vv{\ens{F}}$ est noté $\Aff\left(\vv{\ens{E}},\vv{\ens{F}}\right)$.
+      L'ensemble des applications affines est noté $\Aff\left(\ens{E},\ens{F}\right)$.
     \end{defprop}
   \end{frame}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
