@@ -99,14 +99,14 @@ bigger]{m53beamer}
       B \mapsto \vv{\Omega B}
     \end{gather*}\pause
     Cet espace vectoriel est noté $\ens{E}_{\Omega}$ et est isomorphe (par définition) à $\vv{\ens{E}}$.
-    \begin{itemize}[<+(1)->]
+    \begin{enumerate}[<+(1)->]
       \item L'origine de $\ens{E}_{\Omega}$ est le point $\Omega$.
       \item Avec l'écriture $\Omega+\vv{v}$, les opérations sont:
       \begin{itemize}[<+(1)->]
         \item $(\Omega+\vv{v})+(\Omega+\vv{w})=(\Omega+\vv{v}+\vv{w})$.
         \item $\lambda(\Omega+\vv{v})=\Omega+\lambda\vv{v}$.
       \end{itemize}
-    \end{itemize}
+    \end{enumerate}
   \end{frame}
   % -----------
   \begin{frame}{Produit d'espaces affines}
@@ -122,7 +122,7 @@ bigger]{m53beamer}
   % -----------
   \begin{frame}{Propriétés calculatoires}
     Soit $\ens{E}$ un $\mathbb{K}$-espace affine de direction $\vv{\ens{E}}$.
-    \begin{itemize}[<+(1)->]
+    \begin{enumerate}[<+(1)->]
       \item $A \in \ens{E} \quad\Rightarrow\quad \vv{AA}=\vv{0}$ et $A+\vv{0}=A$.
       \item $A,B \in \ens{E} \quad\Rightarrow\quad \vv{AB}=-\vv{BA}$.
       \item $A+\vv{v}=B  \quad\Leftrightarrow\quad \forall (\exists) C \in \ens{E}, \vv{CA}+\vv{v}=\vv{CB}$.
@@ -135,7 +135,7 @@ bigger]{m53beamer}
           \item Si $\sum_{i=1}^{k}\lambda_{i}=1$ alors $\sum_{i=1}^{k}\lambda_{i}A_{i} \in \ens{E}$ est bien définie.
           \item Si $\sum_{i=1}^{k}\lambda_{i}\notin \{0,1\}$ alors $\sum_{i=1}^{k}\lambda_{i}A_{i}$ n'est pas bien définie.
         \end{itemize}\pause
-    \end{itemize}
+    \end{enumerate}
   \end{frame}
 % =======================================
 \section{Barycentre et repères}
@@ -163,14 +163,14 @@ bigger]{m53beamer}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   % -----------
   \begin{frame}{Propriétés des barycentres}
-    \begin{itemize}[<+(1)->]
+    \begin{enumerate}[<+(1)->]
       \item Si on remplace les poids $\mu_{i}$ par $\lambda\mu_{i}$ pour $\lambda \neq 0$, le barycentre ne change pas.
       \item Si on rajoute un point pondéré par un poids nul, le barycentre ne change pas.
       \item Soit $\ens{E} \times \ens{F}$ un espace affine produit.\\
       Le barycentre des points pondérés $\{\big((A_{1},B_{1}),\mu_{1}\big),\ldots,\big((A_{k},B_{k}),\mu_{k}\big)\}$ est $G=(G_{A},G_{B})$,\\
       où $G_{A}$ est le barycentre de $\{(A_{1},\mu_{1}\big),\ldots,(A_{k},\mu_{k})\}$ dans $\ens{E}$,\\
       et $G_{B}$ est le barycentre de $\{(B_{1},\mu_{1}),\ldots,(B_{k},\mu_{k})\}$ dans $\ens{F}$.
-    \end{itemize}
+    \end{enumerate}
   \end{frame}
   % -----------
   \begin{frame}{Associativité du barycentre}
@@ -232,12 +232,12 @@ bigger]{m53beamer}
   % -----------
   \begin{frame}{Sous-espaces affines et dimensions}
     Soit $\ens{E}$ un espace affine de dimension $n$.
-    \begin{itemize}[<+(1)->]
+    \begin{enumerate}[<+(1)->]
       \item Les sous-espaces affines de dimension $0$ sont les points $\{M\}$ de $\ens{E}$.
       \item Les sous-espaces affines de dimension $1$ sont appelés \alert{des droites affines}.
       \item Les sous-espaces affines de dimension $2$ sont appelés \alert{des plans affines}.
       \item Les sous-espaces affines de dimension $n-1$ sont appelés \alert{des hyperplans affines}.
-    \end{itemize}\pause
+    \end{enumerate}\pause
 
     Soient $A$ et $B$ deux points distincts de $\ens{E}$. On note $AB$ ou $\left<A,B\right>$ la droite affine qui passe par $A$ et $B$.
   \end{frame}
@@ -247,19 +247,19 @@ bigger]{m53beamer}
     \begin{proposition}
       Pour tout $\vv{v}\in\im\vv\phi\subset\vv{\ens{F}}$, l'image réciproque $\vv\phi^{-1}(\vv{v})$ est un sous-espace affine de $\vv{\ens{E}}$ de direction $\ker{\vv\phi}$.
     \end{proposition}
-    \begin{itemize}[<+(1)->]
+    \begin{enumerate}[<+(1)->]
       \item En particulier, en prenant $\vv\phi(x,y)=x+y$ de $\mathbb{R}^{2}$ dans $\mathbb{R}$ et $\vv{v}=1$, on retrouve le sous-espace affine $\ens{E}=\{(x,y)\ |\ x+y=1 \}$ de direction $\vv{\ens{E}}=\{(x,y)\ |\ x+y=0 \}$.
       \item L'ensemble $\mathcal{S}$ des solutions d'un système linéaire $AX=B$ est vide ou est un sous-espace affine de direction l'ensemble $\mathcal{S^{\,\ast}}$ des solutions homogènes $AX=0$. Et $\mathcal{S}=X_{0}+\mathcal{S}'$, où $X_{0}$ est une solution particulière.
-    \end{itemize}
+    \end{enumerate}
   \end{frame}
   % -----------
   \begin{frame}{Les sous-espaces affines d'un espace vectoriel}
     Soient $\vv{\ens{E}}$ un espace vectoriel et $\ens{F}$ un sous-espace affine de $\vv{\ens{E}}$.
-    \begin{itemize}[<+(1)->]
+    \begin{enumerate}[<+(1)->]
       \item $\ens{F}$ est un sous-espace vectoriel ssi $0 \in \ens{F}$.
       \item $\ens{F}$ est un hyperplan affine ssi il existe une forme linéaire non nulle $\vv\phi\in\vv{\ens{E}}^{\,*}$ et $a \in \mathbb{R}$, tels que $\ens{F}=\vv\phi^{-1}(a)$.
       \item Tous les sous-espaces affines de $\mathbb{R}^{n}$ sont des ensembles de solutions de systèmes linéaires.
-    \end{itemize}
+    \end{enumerate}
   \end{frame}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 \subsection{Propriétés}
@@ -272,10 +272,10 @@ bigger]{m53beamer}
     \end{definition}\pause
     Attention : «disjoints» $\not\Rightarrow$ «parallèles».\pause
     \begin{proposition}
-      \begin{itemize}[<+->]
+      \begin{enumerate}[<+->]
         \item Deux sous-espaces parallèles sont disjoints ou confondus.
         \item Par tout point d'un espace affine, il passe une unique droite \uncover<+>{(sous-espace)} parallèle à une droite \uncover<.>{(sous-espace)} donnée.
-      \end{itemize}
+      \end{enumerate}
     \end{proposition}
   \end{frame}
   % -----------
@@ -310,7 +310,7 @@ bigger]{m53beamer}
   \begin{frame}{Somme de sous-espaces affines}
     \begin{proposition}
       Soient $\ens{F}$ et $\ens{G}$ deux sous-espaces affines du même espace affine, et $\left<\ens{F},\ens{G}\,\right>$ le sous-espace affine engendré par $\ens{F} \cup \ens{G}$.
-      \begin{itemize}[<+(1)->]
+      \begin{enumerate}[<+(1)->]
         \item Si $\ens{F} \cap \ens{G} \neq \emptyset$, alors $\left<\ens{F},\ens{G}\,\right>$ est de direction $\vv{\ens{F}}+\vv{\ens{G}}$\pause, et
             $$
               \dim\left<\ens{F},\ens{G}\,\right> = \dim \left(\vv{\ens{F}}+\vv{\ens{G}}\right).
@@ -319,7 +319,7 @@ bigger]{m53beamer}
             $$
               \dim\left<\ens{F},\ens{G}\,\right> = \dim \left(\vv{\ens{F}}+\vv{\ens{G}}\right)+1.
             $$
-      \end{itemize}
+      \end{enumerate}
     \end{proposition}
   \end{frame}
   % -----------
@@ -361,9 +361,9 @@ bigger]{m53beamer}
             \vv\phi(\vv{AB})=\vv{\phi(A)\phi(B)}.
           $$
         ($\vv\phi$ est unique et est appelée \myemph{partie linéaire} de $\phi$.)
-        \item $\phi$ préserve les barycentres, c.-à.-d. pour $\sum_{i=1}^{n}\mu_{i}=1$
+        \item $\phi$ préserve les barycentres, c.-à.-d. pour $\sum_{i=0}^{k}\mu_{i}=1$
           $$
-            \phi(\sum_{i=1}^{n}\mu_{i}A_{i})=\sum_{i=1}^{n}\mu_{i}\phi(A_{i}).
+            \phi(\sum_{i=0}^{k}\mu_{i}A_{i})=\sum_{i=0}^{k}\mu_{i}\phi(A_{i}).
           $$
       \end{enumerate}\pause
       L'ensemble des applications affines est noté $\Aff\left(\ens{E},\ens{F}\right)$.
@@ -423,10 +423,10 @@ bigger]{m53beamer}
       \item Une homothétie qui fixe deux points est l'identité.
       \item Une application affine est une homothétie affine différente de l'identité ssi sa partie vectorielle est une homothétie vectorielle différente de l'identité.
       \item La composée de deux homothéties, l'une de rapport $\lambda$ et l'autre de rapport $\mu$, est :
-      \begin{enumerate}[<+(1)->]
+      \begin{itemize}[<+(1)->]
         \item Une homothétie de rapport $\lambda\mu$, si $\lambda\mu \neq 1$.
         \item Une translation, si $\lambda\mu=1$.
-      \end{enumerate}
+      \end{itemize}
       \item Soit $\phi \in Aut(\mathcal{E})$ un automorphisme affine de $\mathcal{E}$ et $h_{\Omega,\lambda}$ une homothétie de centre $\Omega$ et de rapport $\lambda$, alors $\phi\circ h_{\Omega,\lambda}\circ\phi^{-1}=h_{\phi(\Omega),\lambda}$.
     \end{enumerate}
   \end{frame}
@@ -491,6 +491,7 @@ bigger]{m53beamer}
     \item Les demi-espaces (ouverts, fermés) sont convexes.
     \item L'image d'un convexe par une application affine est convexe.
     \item L'image réciproque d'un convexe par une application affine est convexe.
+    \item Une fonction réelle est convexe ssi la partie au-dessus du graphe est convexe.
   \end{enumerate}
 \end{frame}
 
