@@ -244,7 +244,9 @@ bigger]{m53beamer}
   % -----------
   \begin{frame}{Les sous-espaces affines d'un espace vectoriel}
     Soient $\vv{\ens{E}}$ et $\vv{\ens{F}}$ deux espaces vectoriels, et $\vv\phi \in \mathcal{L}(\vv{\ens{E}},\vv{\ens{F}})$ une application linéaire.\pause\\
-    Alors pour tout $\vv{v}\in\im\vv\phi\subset\vv{\ens{F}}$, l'image réciproque $\vv\phi^{-1}(\vv{v})$ est un sous-espace affine de $\vv{\ens{E}}$ de direction $\ker{\vv\phi}$.
+    \begin{proposition}
+      Pour tout $\vv{v}\in\im\vv\phi\subset\vv{\ens{F}}$, l'image réciproque $\vv\phi^{-1}(\vv{v})$ est un sous-espace affine de $\vv{\ens{E}}$ de direction $\ker{\vv\phi}$.
+    \end{proposition}
     \begin{itemize}[<+(1)->]
       \item En particulier, en prenant $\vv\phi(x,y)=x+y$ de $\mathbb{R}^{2}$ dans $\mathbb{R}$ et $\vv{v}=1$, on retrouve le sous-espace affine $\ens{E}=\{(x,y)\ |\ x+y=1 \}$ de direction $\vv{\ens{E}}=\{(x,y)\ |\ x+y=0 \}$.
       \item L'ensemble $\mathcal{S}$ des solutions d'un système linéaire $AX=B$ est vide ou est un sous-espace affine de direction l'ensemble $\mathcal{S^{\,\ast}}$ des solutions homogènes $AX=0$. Et $\mathcal{S}=X_{0}+\mathcal{S}'$, où $X_{0}$ est une solution particulière.
