@@ -68,8 +68,8 @@ On se place dans $\mathbb{R}^{2}$.
       \begin{enumerate}
         \item Montrer que $\ens{E}$ est un espace affine.
         \item Quelle est sa dimension?
-        \item Décrire les éléments de $\ens{E}$ lorsque $d=1$ (distinguer les cas $a_1 \neq 1$ et $a_1=1$).
-        \item On suppose maintenant $d=2$. Donner une base de la direction $\vv{\ens{E}}$ de $\ens{E}$. Donner un repère affine de $\ens{E}$ dans le cas où $a_1+a_2 \neq 1$.
+        \item\hard Décrire les éléments de $\ens{E}$ lorsque $d=1$ (distinguer les cas $a_1 \neq 1$ et $a_1=1$).
+        \item\hard On suppose maintenant $d=2$. Donner une base de la direction $\vv{\ens{E}}$ de $\ens{E}$. Donner un repère affine de $\ens{E}$ dans le cas où $a_1+a_2 \neq 1$.
       \end{enumerate}
     \end{enumerate}
 \end{exo}
@@ -94,20 +94,6 @@ On se place dans $\mathbb{R}^{2}$.
 
     \item\hard En déduire que les solutions $\mathcal{S}_{G}$ de $(G)$ sont en bijection avec les solutions $\mathcal{S}_{H}$ de $(H)$. Cette bijection est-elle unique?
 
-    \item\hard Montrer que l'application
-      \[
-        Act:
-        \begin{cases}
-          \mathcal{S}_{H}\times \mathcal{S}_{G}\rightarrow \mathcal{S}_{G}\\
-          (f,C)\mapsto f+C
-        \end{cases}
-      \]
-    est bien définie et qu'elle vérifie:
-    \begin{description}
-      \item[A1] $Act(0,C)=C$;
-
-      \item[A2] $Act(f,Act(g,C))=Act(f+g,C)$.
-    \end{description}
   \end{enumerate}
 \end{exo}
 
@@ -136,25 +122,7 @@ On se place dans $\mathbb{R}^{2}$.
       \]
     Montrer que cette opération munit $GA$ d'une loi de groupe.
 
-    \item\hard On note $\mathfrak{Rep}$ l'ensemble des repères de $\mathbb{R}^{3}$. Montrer que l'application:
-      \[
-        Act:
-        \begin{cases}
-          GA \times \mathfrak{Rep} \rightarrow \mathfrak{Rep} \\
-          \left((A,V),(\Omega,P,Q,R)\right) \mapsto (A\Omega+V,AP+V,AQ+V,AR+V)
-        \end{cases}
-      \]
-    est bien définie et qu'elle vérifie:
-    \begin{description}
-      \item[A1] $Act\left((Id,0),(\Omega,P,Q,R)\right)=(\Omega,P,Q,R)$;
-
-      \item[A2] $Act\left((A',V'),Act\left((A,V),(\Omega,P,Q,R)\right)\right) = Act\left((A',V')\circ(A,V),(\Omega,P,Q,R)\right)$.
-    \end{description}
-    \textit{On dit que le groupe $GA$ agit sur l'ensemble $\mathfrak{Rep}$.}
-
-    \item\hard Déduire de la question \ref{compchrep}) que pour deux repères $\mathcal{R}$ et $\mathcal{R}'$ il existe un unique $(A,V)$ tel que $Act\left((A,V),\mathcal{R}\right)=\mathcal{R}'$.
-
-    \item\hard En déduire que $GA$ est en bijection avec l'ensemble $\mathfrak{Rep}$. \\
+    \item\hard Montrer que $GA$ est en bijection avec l'ensemble $\mathfrak{Rep}$. \\
     Cette bijection est-elle unique ?
   \end{enumerate}
 \end{exo}
