@@ -109,9 +109,15 @@
 \newtheorem{defprop}[theorem]{Définition-Proposition}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{question}{Question}
+
 \let\ens\mathcal
+\newcommand{\ev}[1]{\vv{\ens{#1}}}
 
 \DeclareMathOperator{\Aff}{Aff}
 \let\ker\relax\DeclareMathOperator{\ker}{Ker}
 \DeclareMathOperator{\im}{Im}
 \newcommand{\id}{\mathrm{Id}}
+% Produit scalaire à utiliser ainsi :
+% \scalprod uv, \scalprod{\vv u}{\vv v}, \scalprod[\big]{\vv A}{\vv B}
+\newcommand{\scalprod}[3][]{#1\langle{#2}#1|{#3}#1\rangle}
+

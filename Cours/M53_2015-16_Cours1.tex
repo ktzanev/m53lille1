@@ -31,17 +31,17 @@ bigger]{m53beamer}
 % -----------
 \begin{frame}{La définition d'un espace affine}
   \begin{definition}
-    Soit $\vv{\ens{E}}$ un espace vectoriel \emph{(si non précisé, sur $\mathbb{R}$)}.\pause\\
-    Un ensemble (non vide) $\ens{E}$ est muni de la structure d'\alert{espace affine de direction $\vv{\ens{E}}$}
+    Soit $\ev{E}$ un espace vectoriel \emph{(si non précisé, sur $\mathbb{R}$)}.\pause\\
+    Un ensemble (non vide) $\ens{E}$ est muni de la structure d'\alert{espace affine de direction $\ev{E}$}
     par la donnée d'une application
     \begin{gather*}
-      \ens{E} \times \ens{E} \longrightarrow \vv{\ens{E}}\\
+      \ens{E} \times \ens{E} \longrightarrow \ev{E}\\
       (A,B) \mapsto \vv{AB}
     \end{gather*}\pause
     qui satisfait les deux conditions:
     \begin{enumerate}[<+(1)->]
       \item $\vv{AB}+\vv{BC}=\vv{AC}$ \myemph{(relation de Chasles)}
-      \item $\forall A \in \ens{E}, \vv{v} \in \vv{\ens{E}}$\pause , $\exists ! B \in \ens{E}$ t.q. $\vv{AB}=\vv{v}$
+      \item $\forall A \in \ens{E}, \vv{v} \in \ev{E}$\pause , $\exists ! B \in \ens{E}$ t.q. $\vv{AB}=\vv{v}$
       \myemph{($B=A+\vv{v}$)}
     \end{enumerate}
   \end{definition}
@@ -49,7 +49,7 @@ bigger]{m53beamer}
 % -----------
 \begin{frame}{La dimension d'un espace affine}
   \begin{definition}
-    L'espace affine $\ens{E}$ est de dimension $n$ si sa direction, l'espace vectoriel $\vv{\ens{E}}$, est de dimension $n$.
+    L'espace affine $\ens{E}$ est de dimension $n$ si sa direction, l'espace vectoriel $\ev{E}$, est de dimension $n$.
   \end{definition}
 \end{frame}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -57,9 +57,9 @@ bigger]{m53beamer}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   % -----------
   \begin{frame}{Les espaces vectoriels}
-    Tout espace vectoriel $\vv{\ens{E}}$ peut être muni naturellement d'une structure d'espace affine, avec direction lui-même, via l'application :
+    Tout espace vectoriel $\ev{E}$ peut être muni naturellement d'une structure d'espace affine, avec direction lui-même, via l'application :
     \begin{gather*}
-      \vv{\ens{E}} \times \vv{\ens{E}} \longrightarrow \vv{\ens{E}}\\
+      \ev{E} \times \ev{E} \longrightarrow \ev{E}\\
       (\vv{A},\vv{B}) \mapsto \vv{AB}=\vv{B}-\vv{A}
     \end{gather*}\pause
     \begin{block}{Convention}
@@ -68,9 +68,9 @@ bigger]{m53beamer}
   \end{frame}
   % -----------
   \begin{frame}{Les droites (sous-espaces) affines}
-    Le sous-ensemble de $\mathbb{R}^{2}$, $\ens{E}=\{(x,y)\ |\ x+y=1 \}$ est un espace affine de direction $\vv{\ens{E}}=\{(x,y)\ |\ x+y=0 \}$, via l'application
+    Le sous-ensemble de $\mathbb{R}^{2}$, $\ens{E}=\{(x,y)\ |\ x+y=1 \}$ est un espace affine de direction $\ev{E}=\{(x,y)\ |\ x+y=0 \}$, via l'application
     \begin{gather*}
-      \ens{E} \times \ens{E} \longrightarrow \vv{\ens{E}}\\
+      \ens{E} \times \ens{E} \longrightarrow \ev{E}\\
       (A,B) \mapsto \vv{AB}=B-A
     \end{gather*}\pause
     \begin{question}
@@ -95,10 +95,10 @@ bigger]{m53beamer}
   \begin{frame}{Vectorialisé d'un espace affine}
     En fixant un point $\Omega$ d'un espace affine $\ens{E}$, on peut définir sur celui-ci une structure d'espace vectoriel via la bijection:
     \begin{gather*}
-      \ens{E} \longrightarrow \vv{\ens{E}}\\
+      \ens{E} \longrightarrow \ev{E}\\
       B \mapsto \vv{\Omega B}
     \end{gather*}\pause
-    Cet espace vectoriel est noté $\ens{E}_{\Omega}$ et est isomorphe (par définition) à $\vv{\ens{E}}$.
+    Cet espace vectoriel est noté $\ens{E}_{\Omega}$ et est isomorphe (par définition) à $\ev{E}$.
     \begin{enumerate}[<+(1)->]
       \item L'origine de $\ens{E}_{\Omega}$ est le point $\Omega$.
       \item Avec l'écriture $\Omega+\vv{v}$, les opérations sont:
@@ -110,8 +110,8 @@ bigger]{m53beamer}
   \end{frame}
   % -----------
   \begin{frame}{Produit d'espaces affines}
-    Soient $\ens{E}$ et $\ens{F}$ deux espaces affines, sur le même corps, de directions respectives $\vv{\ens{E}}$ et $\vv{\ens{F}}$.\\
-    On définit la structure d'espace affine \myemph{produit} sur $\ens{E} \times \ens{F}$ de direction $\vv{\ens{E}} \times \vv{\ens{F}}$ par:
+    Soient $\ens{E}$ et $\ens{F}$ deux espaces affines, sur le même corps, de directions respectives $\ev{E}$ et $\ev{F}$.\\
+    On définit la structure d'espace affine \myemph{produit} sur $\ens{E} \times \ens{F}$ de direction $\ev{E} \times \ev{F}$ par:
     $$
       \vv{(A,B)(C,D)}:=(\vv{AC},\vv{BD}).
     $$
@@ -121,17 +121,17 @@ bigger]{m53beamer}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   % -----------
   \begin{frame}{Propriétés calculatoires}
-    Soit $\ens{E}$ un $\mathbb{K}$-espace affine de direction $\vv{\ens{E}}$.
+    Soit $\ens{E}$ un $\mathbb{K}$-espace affine de direction $\ev{E}$.
     \begin{enumerate}[<+(1)->]
       \item $A \in \ens{E} \quad\Rightarrow\quad \vv{AA}=\vv{0}$ et $A+\vv{0}=A$.
       \item $A,B \in \ens{E} \quad\Rightarrow\quad \vv{AB}=-\vv{BA}$.
       \item $A+\vv{v}=B  \quad\Leftrightarrow\quad \forall (\exists) C \in \ens{E}, \vv{CA}+\vv{v}=\vv{CB}$.
-      \item $(A+\vv{v})+\vv{w}=A+(\vv{v}+\vv{w})$ \myemph{($\vv{\ens{E}}$ agit sur $\ens{E}$)}.
+      \item $(A+\vv{v})+\vv{w}=A+(\vv{v}+\vv{w})$ \myemph{($\ev{E}$ agit sur $\ens{E}$)}.
       \item $\vv{AB}=\vv{DC} \Leftrightarrow \vv{AD}=\vv{BC}$ \myemph{($ABCD$ est un parallélogramme)}.
       \item $\vv{(A+\vv{v})(B+\vv{w})}=\vv{AB}-\vv{v}+\vv{w}$.
       \item Soient $A_{1},\ldots,A_{k} \in \ens{E}$ et $\lambda_{1},\ldots,\lambda_{k} \in \mathbb{K}$
         \begin{itemize}[<+(1)->]
-          \item Si $\sum_{i=1}^{k}\lambda_{i}=0$ alors $\sum_{i=1}^{k}\lambda_{i}A_{i} \in \vv{\ens{E}}$ est bien définie \myemph{($\vv{AB} = B - A$)}.
+          \item Si $\sum_{i=1}^{k}\lambda_{i}=0$ alors $\sum_{i=1}^{k}\lambda_{i}A_{i} \in \ev{E}$ est bien définie \myemph{($\vv{AB} = B - A$)}.
           \item Si $\sum_{i=1}^{k}\lambda_{i}=1$ alors $\sum_{i=1}^{k}\lambda_{i}A_{i} \in \ens{E}$ est bien définie.
           \item Si $\sum_{i=1}^{k}\lambda_{i}\notin \{0,1\}$ alors $\sum_{i=1}^{k}\lambda_{i}A_{i}$ n'est pas bien définie.
         \end{itemize}\pause
@@ -190,7 +190,7 @@ bigger]{m53beamer}
     \begin{defprop}
       On dit que $(A_{0},\ldots,A_{n})$ est \alert{un repère affine} de $\ens{E}$ s'il satisfait une des conditions équivalentes:
       \begin{enumerate}[<+(1)->]
-        \item $(\vv{A_{0}A_{1}},\ldots,\vv{A_{0}A_{n}})$ est une base de $\vv{\ens{E}}$.
+        \item $(\vv{A_{0}A_{1}},\ldots,\vv{A_{0}A_{n}})$ est une base de $\ev{E}$.
         \item Pour tout point $B$ de $\ens{E}$ il existe un unique $(n+1)$-uplet de poids $(\mu_{0},\ldots,\mu_{n})$, avec $\sum_{i=0}^{n}\mu_{i}=1$ et $B=\sum_{i=1}^{n}\mu_{i}A_{i}$.
       \end{enumerate}
     \end{defprop}
@@ -219,12 +219,12 @@ bigger]{m53beamer}
       \begin{defprop}
       Un sous-ensemble non vide $\ens{F} \subset \ens{E}$ est dit \alert{sous-espace affine} s'il satisfait une des conditions équivalentes:
       \begin{enumerate}[<+(1)->]
-        \item Il existe un sous-espace vectoriel $\vv{\ens{F}}$ de $\vv{\ens{E}}$ et $\Omega \in \ens{E}$ tels que $\ens{F}=\Omega+\vv{\ens{F}}$.
+        \item Il existe un sous-espace vectoriel $\ev{F}$ de $\ev{E}$ et $\Omega \in \ens{E}$ tels que $\ens{F}=\Omega+\ev{F}$.
         \item $\exists (\forall)\Omega \in \ens{F}$, $\ens{F}$ est un sous-espace vectoriel de $\ens{E}_{\Omega}$.
         \item $\ens{F}$ est stable par barycentres.
       \end{enumerate}
     \end{defprop}\pause
-    Un sous-espace affine $\ens{F}=\Omega+\vv{\ens{F}}$ est un espace affine de direction $\vv{\ens{F}}$, via la restriction de l'application $(A,B)\mapsto\vv{AB}$.
+    Un sous-espace affine $\ens{F}=\Omega+\ev{F}$ est un espace affine de direction $\ev{F}$, via la restriction de l'application $(A,B)\mapsto\vv{AB}$.
   \end{frame}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 \subsection{Exemples}
@@ -243,21 +243,21 @@ bigger]{m53beamer}
   \end{frame}
   % -----------
   \begin{frame}{Les sous-espaces affines d'un espace vectoriel}
-    Soient $\vv{\ens{E}}$ et $\vv{\ens{F}}$ deux espaces vectoriels, et $\vv\phi \in \mathcal{L}(\vv{\ens{E}},\vv{\ens{F}})$ une application linéaire.\pause\\
+    Soient $\ev{E}$ et $\ev{F}$ deux espaces vectoriels, et $\vv\phi \in \mathcal{L}(\ev{E},\ev{F})$ une application linéaire.\pause\\
     \begin{proposition}
-      Pour tout $\vv{v}\in\im\vv\phi\subset\vv{\ens{F}}$, l'image réciproque $\vv\phi^{-1}(\vv{v})$ est un sous-espace affine de $\vv{\ens{E}}$ de direction $\ker{\vv\phi}$.
+      Pour tout $\vv{v}\in\im\vv\phi\subset\ev{F}$, l'image réciproque $\vv\phi^{-1}(\vv{v})$ est un sous-espace affine de $\ev{E}$ de direction $\ker{\vv\phi}$.
     \end{proposition}
     \begin{enumerate}[<+(1)->]
-      \item En particulier, en prenant $\vv\phi(x,y)=x+y$ de $\mathbb{R}^{2}$ dans $\mathbb{R}$ et $\vv{v}=1$, on retrouve le sous-espace affine $\ens{E}=\{(x,y)\ |\ x+y=1 \}$ de direction $\vv{\ens{E}}=\{(x,y)\ |\ x+y=0 \}$.
+      \item En particulier, en prenant $\vv\phi(x,y)=x+y$ de $\mathbb{R}^{2}$ dans $\mathbb{R}$ et $\vv{v}=1$, on retrouve le sous-espace affine $\ens{E}=\{(x,y)\ |\ x+y=1 \}$ de direction $\ev{E}=\{(x,y)\ |\ x+y=0 \}$.
       \item L'ensemble $\mathcal{S}$ des solutions d'un système linéaire $AX=B$ est vide ou est un sous-espace affine de direction l'ensemble $\mathcal{S^{\,\ast}}$ des solutions homogènes $AX=0$. Et $\mathcal{S}=X_{0}+\mathcal{S}'$, où $X_{0}$ est une solution particulière.
     \end{enumerate}
   \end{frame}
   % -----------
   \begin{frame}{Les sous-espaces affines d'un espace vectoriel}
-    Soient $\vv{\ens{E}}$ un espace vectoriel et $\ens{F}$ un sous-espace affine de $\vv{\ens{E}}$.
+    Soient $\ev{E}$ un espace vectoriel et $\ens{F}$ un sous-espace affine de $\ev{E}$.
     \begin{enumerate}[<+(1)->]
       \item $\ens{F}$ est un sous-espace vectoriel ssi $0 \in \ens{F}$.
-      \item $\ens{F}$ est un hyperplan affine ssi il existe une forme linéaire non nulle $\vv\phi\in\vv{\ens{E}}^{\,*}$ et $a \in \mathbb{R}$, tels que $\ens{F}=\vv\phi^{-1}(a)$.
+      \item $\ens{F}$ est un hyperplan affine ssi il existe une forme linéaire non nulle $\vv\phi\in\ev{E}^{\,*}$ et $a \in \mathbb{R}$, tels que $\ens{F}=\vv\phi^{-1}(a)$.
       \item Tous les sous-espaces affines de $\mathbb{R}^{n}$ sont des ensembles de solutions de systèmes linéaires.
     \end{enumerate}
   \end{frame}
@@ -284,13 +284,13 @@ bigger]{m53beamer}
       L'intersection de deux sous-espaces affines $\ens{F}$ et $\ens{G}$ est:
       \begin{itemize}\pause
           \item vide\pause, ou
-          \item un sous-espace affine de direction $\vv{\ens{F}}\cap\vv{\ens{G}}$.
+          \item un sous-espace affine de direction $\ev{F}\cap\ev{G}$.
         \end{itemize}
     \end{proposition}\pause
     \begin{proposition}
       L'intersection de deux sous-espaces affines $\ens{F}$ et $\ens{G}$ est vide si et seulement si $\exists(\forall) A \in \ens{F}, B \in \ens{G}$,
       $$
-        \vv{AB} \notin \vv{\ens{F}}+\vv{\ens{G}}.
+        \vv{AB} \notin \ev{F}+\ev{G}.
       $$
     \end{proposition}
   \end{frame}
@@ -311,13 +311,13 @@ bigger]{m53beamer}
     \begin{proposition}
       Soient $\ens{F}$ et $\ens{G}$ deux sous-espaces affines du même espace affine, et $\left<\ens{F},\ens{G}\,\right>$ le sous-espace affine engendré par $\ens{F} \cup \ens{G}$.
       \begin{enumerate}[<+(1)->]
-        \item Si $\ens{F} \cap \ens{G} \neq \emptyset$, alors $\left<\ens{F},\ens{G}\,\right>$ est de direction $\vv{\ens{F}}+\vv{\ens{G}}$\pause, et
+        \item Si $\ens{F} \cap \ens{G} \neq \emptyset$, alors $\left<\ens{F},\ens{G}\,\right>$ est de direction $\ev{F}+\ev{G}$\pause, et
             $$
-              \dim\left<\ens{F},\ens{G}\,\right> = \dim \left(\vv{\ens{F}}+\vv{\ens{G}}\right).
+              \dim\left<\ens{F},\ens{G}\,\right> = \dim \left(\ev{F}+\ev{G}\right).
             $$
-        \item Si $\ens{F} \cap \ens{G} = \emptyset$, alors $\left<\ens{F},\ens{G}\,\right>$ est de direction $\vv{\ens{F}}+\vv{\ens{G}}+\vv{D}$, où $\vv{D}$ est une droite engendrée par $\vv{AB}$ avec $A \in \ens{F}$ et $B \in \ens{G}$\pause, et
+        \item Si $\ens{F} \cap \ens{G} = \emptyset$, alors $\left<\ens{F},\ens{G}\,\right>$ est de direction $\ev{F}+\ev{G}+\vv{D}$, où $\vv{D}$ est une droite engendrée par $\vv{AB}$ avec $A \in \ens{F}$ et $B \in \ens{G}$\pause, et
             $$
-              \dim\left<\ens{F},\ens{G}\,\right> = \dim \left(\vv{\ens{F}}+\vv{\ens{G}}\right)+1.
+              \dim\left<\ens{F},\ens{G}\,\right> = \dim \left(\ev{F}+\ev{G}\right)+1.
             $$
       \end{enumerate}
     \end{proposition}
@@ -351,12 +351,12 @@ bigger]{m53beamer}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   % -----------
   \begin{frame}{Définition d'une application affine}
-    Soient $\ens{E}$ et $\ens{F}$ deux espaces affines de directions $\vv{\ens{E}}$ et $\vv{\ens{F}}$.
+    Soient $\ens{E}$ et $\ens{F}$ deux espaces affines de directions $\ev{E}$ et $\ev{F}$.
     \begin{defprop}
       Une application $\phi:\ens{E}\rightarrow\ens{F}$ est dite \alert{affine} si elle satisfait une des trois conditions équivalentes:
       \begin{enumerate}[<+(1)->]
         \item $\exists(\forall) \Omega \in \ens{E}$, $\phi\in\mathcal{L}(\ens{E}_{\Omega},\ens{F}_{\phi(\Omega)})$.
-        \item $\exists \vv\phi \in \mathcal{L}(\vv{\ens{E}},\vv{\ens{F}})$ telle que $\forall A,B \in \ens{E}$,
+        \item $\exists \vv\phi \in \mathcal{L}(\ev{E},\ev{F})$ telle que $\forall A,B \in \ens{E}$,
           $$
             \vv\phi(\vv{AB})=\vv{\phi(A)\phi(B)}.
           $$
