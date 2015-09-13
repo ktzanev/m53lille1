@@ -1,8 +1,7 @@
-\documentclass[
-%negatif,
-%simple,
-%handout,
-bigger]{m53beamer}
+%\PassOptionsToClass{negatif}{m53beamer}
+%\PassOptionsToClass{simple}{m53beamer}
+%\PassOptionsToClass{handout}{m53beamer}
+\documentclass[bigger]{m53beamer}
 % ---------------
 \title{M53 - Cours 1}
 %\author{Kroum Tzanev}
@@ -133,7 +132,7 @@ bigger]{m53beamer}
         \begin{itemize}[<+(1)->]
           \item Si $\sum_{i=1}^{k}\lambda_{i}=0$ alors $\sum_{i=1}^{k}\lambda_{i}A_{i} \in \ev{E}$ est bien définie \myemph{($\vv{AB} = B - A$)}.
           \item Si $\sum_{i=1}^{k}\lambda_{i}=1$ alors $\sum_{i=1}^{k}\lambda_{i}A_{i} \in \ens{E}$ est bien définie.
-          \item Si $\sum_{i=1}^{k}\lambda_{i}\notin \{0,1\}$ alors $\sum_{i=1}^{k}\lambda_{i}A_{i}$ n'est pas bien définie.
+          \item Si $\sum_{i=1}^{k}\lambda_{i}\notin \{0,1\}$ alors $\sum_{i=1}^{k}\lambda_{i}A_{i}$ «n'est pas bien définie».
         \end{itemize}\pause
     \end{enumerate}
   \end{frame}
@@ -197,12 +196,12 @@ bigger]{m53beamer}
   \end{frame}
   % -----------
   \begin{frame}{Coordonnées affines}
-    Soit $\mathcal{A}=(A_{0},\ldots,A_{n})$ un repère affine de $\ens{E}$.\pause\\
+    Soit $\ens{A}=(A_{0},\ldots,A_{n})$ un repère affine de $\ens{E}$.\pause\\
     \begin{definition}
-      Pour $B \in \ens{E}$, on dit que $(x_{1},\ldots,x_{n})_{\mathcal{A}}$ sont les \alert{coordonnées cartésiennes} de $B$ dans le repère $\mathcal{A}$, si $\vv{A_{0}B} = \sum_{i=1}^{n} x_{i}\vv{A_{0}A_{i}}$.
+      Pour $B \in \ens{E}$, on dit que $(x_{1},\ldots,x_{n})_{\ens{A}}$ sont les \alert{coordonnées cartésiennes} de $B$ dans le repère $\ens{A}$, si $\vv{A_{0}B} = \sum_{i=1}^{n} x_{i}\vv{A_{0}A_{i}}$.
     \end{definition}\pause
     \begin{definition}
-      Pour $B \in \ens{E}$, on dit que $[\mu_{0},\ldots,\mu_{n}]_{\mathcal{A}}$ sont les \alert{coordonnées barycentriques} de $B$ dans le repère $\mathcal{A}$, si $\sum_{i=0}^{n}\mu_{i}=1$ et $B=\sum_{i=0}^{n}\mu_{i}A_{i}$.
+      Pour $B \in \ens{E}$, on dit que $[\mu_{0},\ldots,\mu_{n}]_{\ens{A}}$ sont les \alert{coordonnées barycentriques} de $B$ dans le repère $\ens{A}$, si $\sum_{i=0}^{n}\mu_{i}=1$ et $B=\sum_{i=0}^{n}\mu_{i}A_{i}$.
     \end{definition}\pause
     La relation entre ces deux systèmes de coordonnées est : $\mu_{i}=x_{i}, \forall i=1,\ldots,n$ et $\mu_{0}=1-\sum_{i=1}^{n}x_{i}$.
   \end{frame}
@@ -239,7 +238,7 @@ bigger]{m53beamer}
       \item Les sous-espaces affines de dimension $n-1$ sont appelés \alert{des hyperplans affines}.
     \end{enumerate}\pause
 
-    Soient $A$ et $B$ deux points distincts de $\ens{E}$. On note $AB$ ou $\left<A,B\right>$ la droite affine qui passe par $A$ et $B$.
+    Soient $A$ et $B$ deux points distincts de $\ens{E}$. On note $AB$ ou $\affspan{A,B}$ la droite affine qui passe par $A$ et $B$.
   \end{frame}
   % -----------
   \begin{frame}{Les sous-espaces affines d'un espace vectoriel}
@@ -249,7 +248,7 @@ bigger]{m53beamer}
     \end{proposition}
     \begin{enumerate}[<+(1)->]
       \item En particulier, en prenant $\vv\phi(x,y)=x+y$ de $\mathbb{R}^{2}$ dans $\mathbb{R}$ et $\vv{v}=1$, on retrouve le sous-espace affine $\ens{E}=\{(x,y)\ |\ x+y=1 \}$ de direction $\ev{E}=\{(x,y)\ |\ x+y=0 \}$.
-      \item L'ensemble $\mathcal{S}$ des solutions d'un système linéaire $AX=B$ est vide ou est un sous-espace affine de direction l'ensemble $\mathcal{S^{\,\ast}}$ des solutions homogènes $AX=0$. Et $\mathcal{S}=X_{0}+\mathcal{S}'$, où $X_{0}$ est une solution particulière.
+      \item L'ensemble $\ens{S}$ des solutions d'un système linéaire $AX=B$ est vide ou est un sous-espace affine de direction l'ensemble $\ens{S^{\,\ast}}$ des solutions homogènes $AX=0$. Et $\ens{S}=X_{0}+\ens{S}'$, où $X_{0}$ est une solution particulière.
     \end{enumerate}
   \end{frame}
   % -----------
@@ -297,27 +296,27 @@ bigger]{m53beamer}
   % -----------
   \begin{frame}{Sous-espace engendré}
     \begin{defprop}
-      Soit $\mathcal{A}$ un sous-ensemble non vide d'un espace affine $\ens{E}$. Le sous-espace affine $\left<\mathcal{A}\right>$ engendré par $\mathcal{A}$ est défini par une des conditions équivalentes:
+      Soit $\ens{A}$ un sous-ensemble non vide d'un espace affine $\ens{E}$. Le sous-espace affine $\affspan{\ens{A}}$ engendré par $\ens{A}$ est défini par une des conditions équivalentes:
         \begin{enumerate}[<+(1)->]
-          \item $\left<\mathcal{A}\right>$ est le plus petit sous-espace affine contenant $\mathcal{A}$.
-          \item $\left<\mathcal{A}\right>$ est l'intersection de tous les sous-espaces affines contenant $\mathcal{A}$.
-          \item $\left<\mathcal{A}\right>$ est l'ensemble des barycentres de points de $\mathcal{A}$.
-          \item $\forall(\exists) \Omega \in \mathcal{A}$, $\left<\mathcal{A}\right>$ est le sous-espace vectoriel engendré par $\mathcal{A}$ dans $\ens{E}_{\Omega}$.
+          \item $\affspan{\ens{A}}$ est le plus petit sous-espace affine contenant $\ens{A}$.
+          \item $\affspan{\ens{A}}$ est l'intersection de tous les sous-espaces affines contenant $\ens{A}$.
+          \item $\affspan{\ens{A}}$ est l'ensemble des barycentres de points de $\ens{A}$.
+          \item $\forall(\exists) \Omega \in \ens{A}$, $\affspan{\ens{A}}$ est le sous-espace vectoriel engendré par $\ens{A}$ dans $\ens{E}_{\Omega}$.
         \end{enumerate}
     \end{defprop}
   \end{frame}
   % -----------
   \begin{frame}{Somme de sous-espaces affines}
     \begin{proposition}
-      Soient $\ens{F}$ et $\ens{G}$ deux sous-espaces affines du même espace affine, et $\left<\ens{F},\ens{G}\,\right>$ le sous-espace affine engendré par $\ens{F} \cup \ens{G}$.
+      Soient $\ens{F}$ et $\ens{G}$ deux sous-espaces affines du même espace affine, et $\affspan{\ens{F},\ens{G}}$ le sous-espace affine engendré par $\ens{F} \cup \ens{G}$.
       \begin{enumerate}[<+(1)->]
-        \item Si $\ens{F} \cap \ens{G} \neq \emptyset$, alors $\left<\ens{F},\ens{G}\,\right>$ est de direction $\ev{F}+\ev{G}$\pause, et
+        \item Si $\ens{F} \cap \ens{G} \neq \emptyset$, alors $\affspan{\ens{F},\ens{G}}$ est de direction $\ev{F}+\ev{G}$\pause, et
             $$
-              \dim\left<\ens{F},\ens{G}\,\right> = \dim \left(\ev{F}+\ev{G}\right).
+              \dim\affspan{\ens{F},\ens{G}} = \dim \left(\ev{F}+\ev{G}\right).
             $$
-        \item Si $\ens{F} \cap \ens{G} = \emptyset$, alors $\left<\ens{F},\ens{G}\,\right>$ est de direction $\ev{F}+\ev{G}+\vv{D}$, où $\vv{D}$ est une droite engendrée par $\vv{AB}$ avec $A \in \ens{F}$ et $B \in \ens{G}$\pause, et
+        \item Si $\ens{F} \cap \ens{G} = \emptyset$, alors $\affspan{\ens{F},\ens{G}}$ est de direction $\ev{F}+\ev{G}+\vv{D}$, où $\vv{D}$ est une droite engendrée par $\vv{AB}$ avec $A \in \ens{F}$ et $B \in \ens{G}$\pause, et
             $$
-              \dim\left<\ens{F},\ens{G}\,\right> = \dim \left(\ev{F}+\ev{G}\right)+1.
+              \dim\affspan{\ens{F},\ens{G}} = \dim \left(\ev{F}+\ev{G}\right)+1.
             $$
       \end{enumerate}
     \end{proposition}
@@ -326,10 +325,10 @@ bigger]{m53beamer}
   \begin{frame}{Familles affinement libres et génératrices}
     Soit $\ens{F}$ un sous-espace affine d'un espace affine $\ens{E}$.\pause
     \begin{definition}
-      Soient $\{A_{0},\ldots,A_{k}\}$ des points de $\ens{F}$. On dit que cette famille est \alert{affinement génératrice} pour $\ens{F}$ si $\left<A_{0},\ldots,A_{k}\,\right>=\ens{F}$.
+      Soient $\{A_{0},\ldots,A_{k}\}$ des points de $\ens{F}$. On dit que cette famille est \alert{affinement génératrice} pour $\ens{F}$ si $\affspan{A_{0},\ldots,A_{k}}=\ens{F}$.
     \end{definition}\pause
     \begin{definition}
-      Soient $(k+1)$ points $\{A_{0},\ldots,A_{k}\}$ de $\ens{E}$. On dit que cette famille est \alert{affinement libre} si $\dim\left<A_{0},\ldots,A_{k}\,\right>=k$.
+      Soient $(k+1)$ points $\{A_{0},\ldots,A_{k}\}$ de $\ens{E}$. On dit que cette famille est \alert{affinement libre} si $\dim\affspan{A_{0},\ldots,A_{k}}=k$.
     \end{definition}
   \end{frame}
   \begin{frame}{Caractérisation d'un repère}
@@ -378,8 +377,9 @@ bigger]{m53beamer}
       \item Les applications constantes sont affines, de partie vectorielle $0$.
       \item Les applications affines de $\mathbb{R}$ dans $\mathbb{R}$ sont de la forme $x \mapsto ax+b$.
       \item Les applications affines de $\mathbb{R}^{n}$ dans $\mathbb{R}^{m}$ sont de la forme $X \mapsto AX+B$, où $M \in \mathcal{M}_{m,n}$ et $B \in \mathbb{R}^{m}$.
+      \item Les applications affines de $\mathbb{C}$ dans $\mathbb{C}$, vu comme $\mathbb{R}$-espace vectoriel, sont de la forme $z \mapsto az+b\overline{z}+c$, où $a,b,c \in \mathbb{C}$.
       \item Les translations $T_{\vv{v}}:M \mapsto M+\vv{v}$ (où $\vv{v} \in \vv{E}$) sont des automorphismes affines de $E$.
-      \item Soient $\vv{\mathcal{E}}$ et $\vv{\mathcal{F}}$ deux espaces vectoriels. Les applications affines sont toutes de la forme $\vv{x} \mapsto \vv{\phi}(\vv{x}) + \vv{v}=T_{\vv{v}}\circ\vv{\phi}(\vv{x})$, où $\vv{\phi}$ est linéaire.
+      \item Soient $\ev{E}$ et $\ev{F}$ deux espaces vectoriels. Les applications affines sont toutes de la forme $\vv{x} \mapsto \vv{\phi}(\vv{x}) + \vv{v}=T_{\vv{v}}\circ\vv{\phi}(\vv{x})$, où $\vv{\phi}$ est linéaire.
     \end{enumerate}
   \end{frame}
 
@@ -389,13 +389,13 @@ bigger]{m53beamer}
   % -----------
   \begin{frame}{Premières propriétés}
     \begin{proposition}
-      Soit $\phi\in\Aff(\mathcal{E},\mathcal{F})$ et $\psi\in\Aff(\mathcal{F},\mathcal{G})$, alors $\psi\circ\phi\in\Aff(\mathcal{E},\mathcal{G})$ et a pour partie linéaire $\vv{\psi}\circ\vv{\phi}$.
+      Soit $\phi\in\Aff(\ens{E},\ens{F})$ et $\psi\in\Aff(\ens{F},\ens{G})$, alors $\psi\circ\phi\in\Aff(\ens{E},\ens{G})$ et a pour partie linéaire $\vv{\psi}\circ\vv{\phi}$.
     \end{proposition}\pause
     \begin{proposition}
-      Soit $\phi\in\Aff(\mathcal{E},\mathcal{F})$, $\mathcal{A} \subset \mathcal{E}$ et $\mathcal{B} \subset \mathcal{F}$.
+      Soit $\phi\in\Aff(\ens{E},\ens{F})$, $\ens{A} \subset \ens{E}$ et $\ens{B} \subset \ens{F}$.
       \begin{enumerate}
-        \item $\phi(\mathcal{A})$ est un s.e.a. de $\mathcal{F}$ de direction $\vv\phi(\vv{\mathcal{A}})$.
-        \item $\phi^{-1}(\mathcal{B})$ est vide ou un s.e.a. de $\mathcal{E}$ de direction $\vv\phi^{-1}(\vv{\mathcal{B}})$.
+        \item $\phi(\ens{A})$ est un s.e.a. de $\ens{F}$ de direction $\vv\phi(\ev{A})$.
+        \item $\phi^{-1}(\ens{B})$ est vide ou un s.e.a. de $\ens{E}$ de direction $\vv\phi^{-1}(\ev{B})$.
       \end{enumerate}
       Ainsi les images de trois points alignés sont alignées.
     \end{proposition}\pause
@@ -408,47 +408,63 @@ bigger]{m53beamer}
     \end{proposition}
   \end{frame}
   % -----------
-  \begin{frame}{Les translations}
-    \begin{definition}
-      Une application affine de $\mathcal{E}$ est dite \alert{translation} si elle est de la forme $T_{\vv{v}}:M \mapsto M+\vv{v}$ avec $\vv{v} \in \vv{E}$.
-    \end{definition}
+  \begin{frame}{Les translations (définition)}
+    \begin{defprop}
+      Une \alert{translation} est  une application affine $T \in \Aff(\ens{E})$ qui satisfait une des conditions équivalentes :
+      \begin{enumerate}[<+(1)->]
+        \item elle est de la forme $T=T_{\vv{v}}:M \mapsto M+\vv{v}$, où $\vv{v} \in \ev{E}$,
+        \item sa partie linéaire est $\vv{\phi}=\id \in \mathcal{L}(\ev{E})$.
+      \end{enumerate}
+    \end{defprop}
+  \end{frame}
+  % -----------
+  \begin{frame}{Les translations (propriétés)}
     \begin{enumerate}[<+(1)->]
       \item Une translation qui fixe un point est l'identité.
-      \item Une application $\phi\in\Aff(\mathcal{E})$ est une translation ssi sa partie linéaire est $\id \in \mathcal{L}(\mathcal{E})$.
-      \item $T_{\vv{u}}\circ T_{\vv{v}} = T_{\vv{u}+\vv{v}}$ : les translations forment un groupe abélien isomorphe à $\vv{\mathcal{E}}$.
-      \item Soit $\phi \in Aut(\mathcal{E})$ un automorphisme affine de $\mathcal{E}$ et $\vv{v} \in \vv{\mathcal{E}}$, alors $\phi\circ T_{\vv{v}}\circ\phi^{-1}=T_{\vv{\phi}(\vv{v})}$.
+      \item $T_{\vv{u}}\circ T_{\vv{v}} = T_{\vv{u}+\vv{v}}$ : les translations forment un groupe abélien isomorphe à $\ev{E}$.
+      \item Les translations de $\mathbb{C}$ sont de la forme $z \mapsto z+c$, pour $c \in \mathbb{C}$.
+      \item Soit $\phi \in Aut(\ens{E})$ un automorphisme affine de $\ens{E}$ et $\vv{v} \in \ev{E}$, alors $\phi\circ T_{\vv{v}}\circ\phi^{-1}=T_{\vv{\phi}(\vv{v})}$.
     \end{enumerate}
   \end{frame}
   % -----------
-  \begin{frame}{Homothéties affines}
-    \begin{definition}
-      Une application affine de $\mathcal{E}$ est dite \alert{homothétie affine de rapport $\lambda$ et de centre $\Omega$}$\in\mathcal{E}$ si elle est une homothétie vectorielle de $\mathcal{E}_{\Omega}$ de rapport $\lambda$.
-    \end{definition}
+  \begin{frame}{Homothéties affines (définition)}
+    \begin{defprop}
+      Une \alert{homothétie affine de rapport $\lambda$ et de centre $\Omega$} est une application affine de $H \in\Aff(\ens{E})$ qui satisfait une des conditions équivalentes :
+      \begin{itemize}[<+(1)->]
+        \item $H$ est une homothétie vectorielle de $\ens{E}_{\Omega}$ de rapport $\lambda$;
+        \item $H$ fixe $\Omega$ et $\vv{H}=\lambda\id \in \mathcal{L}(\ev{E})$;
+        \item elle est de la forme $H=H_{\Omega,\lambda}:M \mapsto \lambda M + (1- \lambda)\Omega$.
+      \end{itemize}
+    \end{defprop}
+  \end{frame}
+  % -----------
+  \begin{frame}{Homothéties affines (propriétés)}
     \begin{enumerate}[<+(1)->]
       \item Une homothétie qui fixe deux points est l'identité.
-      \item Une application affine est une homothétie affine différente de l'identité ssi sa partie vectorielle est une homothétie vectorielle différente de l'identité.
+      \item Si $\vv{H}=\lambda\id$ avec $\lambda\neq1$, alors $H$ est une homothétie affine.
       \item La composée de deux homothéties, l'une de rapport $\lambda$ et l'autre de rapport $\mu$, est :
       \begin{itemize}[<+(1)->]
         \item Une homothétie de rapport $\lambda\mu$, si $\lambda\mu \neq 1$.
         \item Une translation, si $\lambda\mu=1$.
       \end{itemize}
-      \item Soit $\phi \in Aut(\mathcal{E})$ un automorphisme affine de $\mathcal{E}$ et $h_{\Omega,\lambda}$ une homothétie de centre $\Omega$ et de rapport $\lambda$, alors $\phi\circ h_{\Omega,\lambda}\circ\phi^{-1}=h_{\phi(\Omega),\lambda}$.
+      \item Les homothéties $h_{\omega,\lambda}$ du $\mathbb{R}$-espace vectoriel $\mathbb{C}$ sont de la forme $z \mapsto \lambda z + (1-\lambda)w$, pour $\lambda \in \mathbb{R}, \omega \in \mathbb{C}$.
+      \item Soit $\phi \in Aut(\ens{E})$ un automorphisme affine de $\ens{E}$ et $h_{\Omega,\lambda}$ une homothétie de centre $\Omega$ et de rapport $\lambda$, alors $\phi\circ h_{\Omega,\lambda}\circ\phi^{-1}=h_{\phi(\Omega),\lambda}$.
     \end{enumerate}
   \end{frame}
   % -----------
   \begin{frame}{Les points fixes}
     \begin{proposition}
-      Soit $\phi\in\Aff(\mathcal{E})$, alors $\phi$ possède un unique point fixe ssi $\vv{\phi}$ possède un unique point fixe (forcément $0\in\vv{\mathcal{E}}$)\pause, autrement dit, ssi $1 \notin Sp(\vv{\phi})$.
+      Soit $\phi\in\Aff(\ens{E})$, alors $\phi$ possède un unique point fixe ssi $\vv{\phi}$ possède un unique point fixe (forcément $0\in\ev{E}$)\pause, autrement dit, ssi $1 \notin Sp(\vv{\phi})$.
     \end{proposition}\pause
     \begin{proposition}
-      Soit $\vv*{\mathcal{E}}{1} \neq 0$ l'ensemble de points fixes de $\vv{\phi}$, alors
+      Soit $\vv*{\ens{E}}{1} \neq 0$ l'ensemble de points fixes de $\vv{\phi}$, alors
       \begin{enumerate}[<+(1)->]
-        \item si $\phi$ possède un point fixe $\Omega$, l'ensemble de points fixes de $\phi$ est $\Omega+\vv*{\mathcal{E}}{1}$;
+        \item si $\phi$ possède un point fixe $\Omega$, l'ensemble de points fixes de $\phi$ est $\Omega+\vv*{\ens{E}}{1}$;
         \item si $\phi$ n'a pas de points fixes\pause, et
           $$
-            \ker(\vv{\phi}-\id) \oplus \im(\vv{\phi}-\id) = \vv{\mathcal{E}}
+            \ker(\vv{\phi}-\id) \oplus \im(\vv{\phi}-\id) = \ev{E}
           $$\pause
-        alors il existe un unique $\vv{v}\in\vv*{\mathcal{E}}{1}$ tel que $T_{\vv{v}}\circ\phi$ possède un point fixe.\newline\pause
+        alors il existe un unique $\vv{v}\in\vv*{\ens{E}}{1}$ tel que $T_{\vv{v}}\circ\phi$ possède un point fixe.\newline\pause
         Par ailleurs $T_{\vv{v}}\circ\phi=\phi\circ T_{\vv{v}}$.
       \end{enumerate}
     \end{proposition}
@@ -459,10 +475,10 @@ bigger]{m53beamer}
   % -----------
   \begin{frame}{Le groupe affine}
     \begin{proposition}
-      Soit $\phi\in\Aff(\mathcal{E})$, alors $\phi$ est une bijection ssi $\vv\phi$ l'est, et dans ce cas $\phi^{-1}$ est une application affine avec partie linéaire $\vv\phi^{-1}$.
+      Soit $\phi\in\Aff(\ens{E})$, alors $\phi$ est une bijection ssi $\vv\phi$ l'est, et dans ce cas $\phi^{-1}$ est une application affine avec partie linéaire $\vv\phi^{-1}$.
     \end{proposition}\pause
     \begin{proposition}
-      Les bijections affines de $\mathcal{E}$ dans lui-même forment un groupe, le groupe affine $GA(\mathcal{E})$.\pause\ Et l'application $\phi\mapsto\vv\phi$ est un morphisme surjectif de groupes $GA(\mathcal{E})\twoheadrightarrow GL(\vv{\mathcal{E}})$\pause, de noyau le sous-groupe abélien des translations de $\mathcal{E}$.
+      Les bijections affines de $\ens{E}$ dans lui-même forment un groupe, le groupe affine $GA(\ens{E})$.\pause\ Et l'application $\phi\mapsto\vv\phi$ est un morphisme surjectif de groupes $GA(\ens{E})\twoheadrightarrow GL(\ev{E})$\pause, de noyau le sous-groupe abélien des translations de $\ens{E}$.
     \end{proposition}
   \end{frame}
 % =======================================
@@ -474,13 +490,13 @@ bigger]{m53beamer}
 % ---------------
 \begin{frame}{Définition d'un convexe}
   \begin{definition}
-    Soient $A$ et $B$ deux points d'un espace affine. On note $[AB]=\left\{\lambda A + (1-\lambda)B\,|\, \lambda \in [0,1]\right\}$ l'ensemble des barycentres à poids positifs, appelé \myemph{le segment} $[AB]$.
+    Soient $A$ et $B$ deux points d'un espace affine. On note $\convhull{AB}=\left\{\lambda A + (1-\lambda)B\,|\, \lambda \in [0,1]\right\}$ l'ensemble des barycentres à poids positifs, appelé \myemph{le segment} $\convhull{AB}$.
   \end{definition}\pause
   \begin{definition}
-    On dit que $\mathcal{C}$ est un ensemble \myemph{convexe}, si pour tous deux points $A,B \in \mathcal{C}$ le segment $[AB]$ est entièrement contenu dans $\mathcal{C}$.
+    On dit que $\ens{C}$ est un ensemble \myemph{convexe}, si pour tous deux points $A,B \in \ens{C}$ le segment $\convhull{AB}$ est entièrement contenu dans $\ens{C}$.
   \end{definition}\pause
   \begin{proposition}
-    Un ensemble $\mathcal{C}$ est convexe ssi tout barycentre de points de $\mathcal{C}$ à poids \textbf{positifs} est dans $\mathcal{C}$.
+    Un ensemble $\ens{C}$ est convexe ssi tout barycentre de points de $\ens{C}$ à poids \textbf{positifs} est dans $\ens{C}$.
   \end{proposition}
 \end{frame}
 
@@ -506,14 +522,14 @@ bigger]{m53beamer}
 % ---------------
 \begin{frame}{Enveloppe convexe}
   \begin{defprop}
-    Soit $\mathcal{A}$ une partie d'un espace affine. L'enveloppe convexe, noté $[\mathcal{A}]$, est :
+    Soit $\ens{A}$ une partie d'un espace affine. L'enveloppe convexe, noté $\convhull{\ens{A}}$, est :
     \begin{enumerate}[<+(1)->]
-      \item Le plus petit convexe contenant $\mathcal{A}$.
-      \item L'intersection de tous les convexes contenant $\mathcal{A}$.
-      \item L'ensemble de barycentres de points de $\mathcal{A}$ de poids positifs.
+      \item Le plus petit convexe contenant $\ens{A}$.
+      \item L'intersection de tous les convexes contenant $\ens{A}$.
+      \item L'ensemble de barycentres de points de $\ens{A}$ de poids positifs.
     \end{enumerate}
   \end{defprop}\pause
-    Ainsi par exemple le segment $[AB]$ est l'enveloppe convexe de $\left\{A,B\right\}$.
+    Ainsi par exemple le segment $\convhull{AB}$ est l'enveloppe convexe de $\left\{A,B\right\}$.
 \end{frame}
 
 \end{document}

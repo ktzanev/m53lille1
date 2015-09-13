@@ -31,11 +31,7 @@
 
 %==============================================================
 \setbeamertemplate{navigation symbols}{}% pas de symboles de navigation
-% pour changer les spacement avant et après les bloques
-\addtobeamertemplate{block begin}{%
-  \setlength\abovedisplayskip{3pt plus 2pt minus 2pt}%
-  \setlength\belowdisplayskip{1pt}%
-}{}
+\setbeamercovered{transparent} % pour de la semi-transparence à la place de invisible
 
 \ifsidebar
   % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ standard
@@ -47,7 +43,6 @@
   % \usetheme[hideothersubsections,width=23mm]{Goettingen}
   % \useinnertheme{rectangles}
   % \useinnertheme{circles}
-  \setbeamercovered{transparent} % pour de la semi-transparence à la place de invisible
   %\usefonttheme{serif}
   %\usefonttheme{structuresmallcapsserif}
   %\setbeamertemplate{footline}[frame number] % rajout des numéros des frames
@@ -106,6 +101,13 @@
 \fi
 
 % ---------------
+% pour changer les spacement avant et après les bloques
+\addtobeamertemplate{block begin}{%
+  \setlength\abovedisplayskip{3pt plus 2pt minus 2pt}%
+  \setlength\belowdisplayskip{1pt}%
+}{}
+
+% ---------------
 \newtheorem{defprop}[theorem]{Définition-Proposition}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{question}{Question}
@@ -117,7 +119,11 @@
 \let\ker\relax\DeclareMathOperator{\ker}{Ker}
 \DeclareMathOperator{\im}{Im}
 \newcommand{\id}{\mathrm{Id}}
-% Produit scalaire à utiliser ainsi :
-% \scalprod uv, \scalprod{\vv u}{\vv v}, \scalprod[\big]{\vv A}{\vv B}
+% Espace affine engendré, à utiliser ainsi : \affspan{\ens{A}}, \affspan[\big]{A,B}
+\newcommand{\affspan}[2][]{#1\langle{#2}#1\kern.07em\rangle}
+% Enveloppe convexe, à utiliser ainsi : \convhull{\ens{A}}, \convhull[\big]{A,B}
+\newcommand{\convhull}[2][]{#1[{#2}#1\kern.14em]}
+% Produit scalaire à utiliser ainsi : \scalprod uv, \scalprod{\vv u}{\vv v}, \scalprod[\big]{\vv A}{\vv B}
 \newcommand{\scalprod}[3][]{#1\langle{#2}#1|{#3}#1\rangle}
+\newcommand{\norm}[1]{\left\|#1\right\|}
 
