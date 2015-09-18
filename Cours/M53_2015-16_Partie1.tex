@@ -365,7 +365,7 @@
             \phi(\sum_{i=0}^{k}\mu_{i}A_{i})=\sum_{i=0}^{k}\mu_{i}\phi(A_{i}).
           $$
       \end{enumerate}\pause
-      L'ensemble des applications affines est noté $\Aff\left(\ens{E},\ens{F}\right)$.
+      L'ensemble des applications affines est noté $\aff\left(\ens{E},\ens{F}\right)$.
     \end{defprop}
   \end{frame}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -389,10 +389,10 @@
   % -----------
   \begin{frame}{Premières propriétés}
     \begin{proposition}
-      Soit $\phi\in\Aff(\ens{E},\ens{F})$ et $\psi\in\Aff(\ens{F},\ens{G})$, alors $\psi\circ\phi\in\Aff(\ens{E},\ens{G})$ et a pour partie linéaire $\vv{\psi}\circ\vv{\phi}$.
+      Soit $\phi\in\aff(\ens{E},\ens{F})$ et $\psi\in\aff(\ens{F},\ens{G})$, alors $\psi\circ\phi\in\aff(\ens{E},\ens{G})$ et a pour partie linéaire $\vv{\psi}\circ\vv{\phi}$.
     \end{proposition}\pause
     \begin{proposition}
-      Soit $\phi\in\Aff(\ens{E},\ens{F})$, $\ens{A} \subset \ens{E}$ et $\ens{B} \subset \ens{F}$.
+      Soit $\phi\in\aff(\ens{E},\ens{F})$, $\ens{A} \subset \ens{E}$ et $\ens{B} \subset \ens{F}$.
       \begin{enumerate}
         \item $\phi(\ens{A})$ est un s.e.a. de $\ens{F}$ de direction $\vv\phi(\ev{A})$.
         \item $\phi^{-1}(\ens{B})$ est vide ou un s.e.a. de $\ens{E}$ de direction $\vv\phi^{-1}(\ev{B})$.
@@ -410,7 +410,7 @@
   % -----------
   \begin{frame}{Les translations (définition)}
     \begin{defprop}
-      Une \alert{translation} est  une application affine $T \in \Aff(\ens{E})$ qui satisfait une des conditions équivalentes :
+      Une \alert{translation} est  une application affine $T \in \aff(\ens{E})$ qui satisfait une des conditions équivalentes :
       \begin{enumerate}[<+(1)->]
         \item elle est de la forme $T=T_{\vv{v}}:M \mapsto M+\vv{v}$, où $\vv{v} \in \ev{E}$,
         \item sa partie linéaire est $\vv{\phi}=\id \in \mathcal{L}(\ev{E})$.
@@ -423,13 +423,13 @@
       \item Une translation qui fixe un point est l'identité.
       \item $T_{\vv{u}}\circ T_{\vv{v}} = T_{\vv{u}+\vv{v}}$ : les translations forment un groupe abélien isomorphe à $\ev{E}$.
       \item Les translations de $\mathbb{C}$ sont de la forme $z \mapsto z+c$, pour $c \in \mathbb{C}$.
-      \item Soit $\phi \in Aut(\ens{E})$ un automorphisme affine de $\ens{E}$ et $\vv{v} \in \ev{E}$, alors $\phi\circ T_{\vv{v}}\circ\phi^{-1}=T_{\vv{\phi}(\vv{v})}$.
+      \item Soit $\phi \in \aut(\ens{E})$ un automorphisme affine de $\ens{E}$ et $\vv{v} \in \ev{E}$, alors $\phi\circ T_{\vv{v}}\circ\phi^{-1}=T_{\vv{\phi}(\vv{v})}$.
     \end{enumerate}
   \end{frame}
   % -----------
   \begin{frame}{Homothéties affines (définition)}
     \begin{defprop}
-      Une \alert{homothétie affine de rapport $\lambda$ et de centre $\Omega$} est une application affine de $H \in\Aff(\ens{E})$ qui satisfait une des conditions équivalentes :
+      Une \alert{homothétie affine de rapport $\lambda$ et de centre $\Omega$} est une application affine de $H \in\aff(\ens{E})$ qui satisfait une des conditions équivalentes :
       \begin{itemize}[<+(1)->]
         \item $H$ est une homothétie vectorielle de $\ens{E}_{\Omega}$ de rapport $\lambda$;
         \item $H$ fixe $\Omega$ et $\vv{H}=\lambda\id \in \mathcal{L}(\ev{E})$;
@@ -448,13 +448,13 @@
         \item Une translation, si $\lambda\mu=1$.
       \end{itemize}
       \item Les homothéties $h_{\omega,\lambda}$ du $\mathbb{R}$-espace vectoriel $\mathbb{C}$ sont de la forme $z \mapsto \lambda z + (1-\lambda)w$, pour $\lambda \in \mathbb{R}, \omega \in \mathbb{C}$.
-      \item Soit $\phi \in Aut(\ens{E})$ un automorphisme affine de $\ens{E}$ et $h_{\Omega,\lambda}$ une homothétie de centre $\Omega$ et de rapport $\lambda$, alors $\phi\circ h_{\Omega,\lambda}\circ\phi^{-1}=h_{\phi(\Omega),\lambda}$.
+      \item Soit $\phi \in \aut(\ens{E})$ un automorphisme affine de $\ens{E}$ et $h_{\Omega,\lambda}$ une homothétie de centre $\Omega$ et de rapport $\lambda$, alors $\phi\circ h_{\Omega,\lambda}\circ\phi^{-1}=h_{\phi(\Omega),\lambda}$.
     \end{enumerate}
   \end{frame}
   % -----------
   \begin{frame}{Les points fixes}
     \begin{proposition}
-      Soit $\phi\in\Aff(\ens{E})$, alors $\phi$ possède un unique point fixe ssi $\vv{\phi}$ possède un unique point fixe (forcément $0\in\ev{E}$)\pause, autrement dit, ssi $1 \notin Sp(\vv{\phi})$.
+      Soit $\phi\in\aff(\ens{E})$, alors $\phi$ possède un unique point fixe ssi $\vv{\phi}$ possède un unique point fixe (forcément $0\in\ev{E}$)\pause, autrement dit, ssi $1 \notin Sp(\vv{\phi})$.
     \end{proposition}\pause
     \begin{proposition}
       Soit $\vv*{\ens{E}}{1} \neq 0$ l'ensemble de points fixes de $\vv{\phi}$, alors
@@ -475,7 +475,7 @@
   % -----------
   \begin{frame}{Le groupe affine}
     \begin{proposition}
-      Soit $\phi\in\Aff(\ens{E})$, alors $\phi$ est une bijection ssi $\vv\phi$ l'est, et dans ce cas $\phi^{-1}$ est une application affine avec partie linéaire $\vv\phi^{-1}$.
+      Soit $\phi\in\aff(\ens{E})$, alors $\phi$ est une bijection ssi $\vv\phi$ l'est, et dans ce cas $\phi^{-1}$ est une application affine avec partie linéaire $\vv\phi^{-1}$.
     \end{proposition}\pause
     \begin{proposition}
       Les bijections affines de $\ens{E}$ dans lui-même forment un groupe, le groupe affine $GA(\ens{E})$.\pause\ Et l'application $\phi\mapsto\vv\phi$ est un morphisme surjectif de groupes $GA(\ens{E})\twoheadrightarrow GL(\ev{E})$\pause, de noyau le sous-groupe abélien des translations de $\ens{E}$.

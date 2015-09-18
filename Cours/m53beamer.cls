@@ -115,7 +115,9 @@
 \let\ens\mathcal
 \newcommand{\ev}[1]{\vv{\ens{#1}}}
 
-\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\aff}{Aff}
+\DeclareMathOperator{\aut}{Aut}
+\DeclareMathOperator{\iso}{Iso}
 \let\ker\relax\DeclareMathOperator{\ker}{Ker}
 \DeclareMathOperator{\im}{Im}
 \newcommand{\id}{\mathrm{Id}}
@@ -124,6 +126,6 @@
 % Enveloppe convexe, à utiliser ainsi : \convhull{\ens{A}}, \convhull[\big]{A,B}
 \newcommand{\convhull}[2][]{#1[{#2}#1\kern.14em]}
 % Produit scalaire à utiliser ainsi : \scalprod uv, \scalprod{\vv u}{\vv v}, \scalprod[\big]{\vv A}{\vv B}
-\newcommand{\scalprod}[3][]{#1\langle{#2}#1|{#3}#1\rangle}
+\newcommand{\scalprod}[3][]{#1\langle{#2}\kern1pt #1|{#3}#1\rangle}
 \newcommand{\norm}[1]{\left\|#1\right\|}
 
