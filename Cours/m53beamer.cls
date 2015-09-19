@@ -7,6 +7,8 @@
   \sidebarfalse
   \PassOptionsToClass{aspectratio=43}{beamer}
 }
+\newcommand{\forsimple}[1]{\ifsidebar\relax\else#1\fi}
+\newcommand{\fornotsimple}[1]{\ifsidebar#1\fi}
 
 \newif\ifnegatif\negatiffalse % par defaut en couleur
 \DeclareOption{negatif}{
@@ -128,4 +130,5 @@
 % Produit scalaire à utiliser ainsi : \scalprod uv, \scalprod{\vv u}{\vv v}, \scalprod[\big]{\vv A}{\vv B}
 \newcommand{\scalprod}[3][]{#1\langle{#2}\kern1pt #1|{#3}#1\rangle}
 \newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\poplus}{\overset{\scriptscriptstyle\perp}{\oplus}}
 
