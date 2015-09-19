@@ -42,7 +42,6 @@
 
   À l'extérieur d'un triangle $ABC$, on construit trois carrés de bases les côtés et de centres $P$, $Q$ et $R$. Montrer que les segments $AP$ et $QR$ (resp. $BQ$ et $RP$, $CR$ et $PQ$) sont orthogonaux et de même longueur. En déduire que les droites $AP$, $BQ$ et $CR$ sont concourantes.
 \end{exo}
-\vspace{3mm}
 
 %-----------------------------------
 \begin{exo}
@@ -69,22 +68,20 @@
 %-----------------------------------
 \begin{exo} (Équation d'une droite)
 
-  On se place dans $\mathbb{C}$ que l'on considère comme un plan affine réel. On veut donner une équation complexe d'une droite $D$ passant par les points $A$ et $B$.
+  On se place dans $\mathbb{C}$ que l'on considère comme un plan affine réel. On se propose de retrouver la formule d'une droite affine
+    \begin{equation}\tag{\dag}\label{eq:droite}
+      \overline{\beta}z+\beta\overline{z}+\gamma=0
+      \text{,\qquad avec } \beta \in \mathbb{C} \text{ et } \gamma \in \mathbb{R}.
+    \end{equation}
+
+  en donnant une équation complexe de la droite $\ens{D}$ passant par deux points $A$ et $B$.
   \begin{enumerate}
     \item Montrer que si $M$ est aligné avec $A$ et $B$ alors $(z-a)(\overline{z}-\overline{b})$ est réel, où $z$ est l'affixe de $M$, $a$ celle de $A$ et $b$ celle de $B$.
     \item Montrer que $(z-a)(\overline{z}-\overline{b})$ est réel est équivalent à $z$ satisfait
       $$
         (z-a)(\overline{z}-\overline{b})=(\overline{z}-\overline{a})(z-b),
       $$
-      puis en posant $\beta=i(a-b)$ en déduire que c'est équivalent à $z$ satisfait
-      $$
-        \overline{\beta}z+\beta\overline{z}+\gamma=0 \text{, avec } \gamma \in \mathbb{R}.
-      $$
-    \item En partant d'une équation cartésienne de $D$:
-      $$
-        ux+vy+w=0
-      $$
-      et en posant $x=\frac{1}{2}(z+\overline{z})$ et $y=\frac{1}{2i}(z-\overline{z})$ retrouver l'équation complexe précédente.
+      puis en posant $\beta=i(a-b)$ en déduire que c'est équivalent à $z$ satisfait \eqref{eq:droite} pour un certain $\gamma \in \mathbb{R}$ à preciser.
   \end{enumerate}
 \end{exo}
 

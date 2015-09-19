@@ -84,18 +84,6 @@
 % ==================================
 
 %-----------------------------------
-\begin{exo} (Normes et convexes)
-
-    On se place dans l'espace euclidien standard $\mathbb{R}^{n}$. On appelle \emph{corps convexe} tout ensemble qui est convexe, compact et à intérieur non vide.
-    \begin{enumerate}
-       \item Montrer que la boule unité fermée d'une norme est un corps convexe symétrique par rapport à l'origine.
-
-       \item Montrer qu'étant donné un corps convexe symétrique par rapport à l'origine, alors il existe une unique norme dont la boule unité fermée est ce convexe.
-
-     \end{enumerate}
-\end{exo}
-
-%-----------------------------------
 \begin{exo} (Convexes euclidiens)
 
     Soient $\mathcal{C}$ un convexe fermé d'un espace euclidien et $P \notin \mathcal{C}$ un point de cet espace.
@@ -121,28 +109,6 @@
 % ==================================
 \section{Isométries}
 % ==================================
-
-%-----------------------------------
-\begin{exo} (Structure euclidienne sur $\mathbb{C}$)
-
-  Soit $f$ une application de $\mathbb{C}$ dans $\mathbb{C}$, $\mathbb{R}$-linéaire.
-  \begin{enumerate}
-    \item Montrer qu'il existe deux complexes $a$ et $b$ tels que pour tout $z\in\mathbb{C}$, $f(z)=az+b\overline{z}$.
-    \item A quelles conditions sur $a$ et $b$, $f$ est-elle $\mathbb{C}$-linéaire?
-    \item Calculer $\mathrm{tr}(f)$ et $\mathrm{det}(f)$ en fonction de a et b.
-
-    \begin{convention}
-      Pour la suite on considère $\mathbb{C}$ muni de sa structure euclidienne canonique.
-    \end{convention}
-
-    \item Donner la condition nécessaire et suffisante sur $(a,b)$ pour que $f$ soit autoadjoint.
-    \item Donner la condition nécessaire et suffisante sur $(a,b)$ pour que $f$ soit orthogonale.
-    \item À quelle condition sur $(a,b)$ l'application $f$ est à valeurs dans $\mathbb{R} \subset \mathbb{C}$ ?
-    \item Soit $z_{1}$ et $z_{2}$ les affixes de deux vecteurs $v_{1}$ et $v_{2}$.\newline
-    Exprimer le produit scalaire $<v_{1} ~|~ v_{2}>$ en fonction de $z_{1}$ et $z_{2}$.
-  \end{enumerate}
-\end{exo}
-
 %-----------------------------------
 \begin{exo} (Isométries du triangle)
   \begin{enumerate}
@@ -215,32 +181,5 @@
 \end{enumerate}
 
 \end{exo}
-
-% ==================================
-\section{Matrices et formes quadratiques}
-% ==================================
-
-%-----------------------------------
-\begin{exo} (Inégalité de Hadamard)
-
-  Soit E un espace euclidien de dimension $n\geq 1$ et $B$ une base orthonormée de $E$. Montrer que pour tout $n$-uplet de vecteurs $(x_1,\ldots ,x_n)$, on a:
-    $$
-      \|det_B(x_1,\ldots,x_n)\|\leq \Vert x_1\Vert....\Vert x_n\Vert .
-    $$
-    Dans quel cas on a l'égalité?
-\end{exo}
-
-%-----------------------------------
-\begin{exo} (Racines carrée de matrices)
-\newcommand{\transpose}[1]{\vphantom{#1}^t\!#1}
-  \begin{enumerate}
-    \item Soit $A$ une matrice carrée réelle de taille $n$, $\transpose{A}$ sa transposée et $S=\transpose{A}A$. Montrer que $S$ est symétrique positive.
-    \item Montrer que $S$ est définie positive si et seulement si $A$ est inversible.
-    \item Réciproquement, montrer que pour toute matrice $S$ symétrique positive, il existe une matrice $A$ carrée réelle de taille $n$ telle que $S=\transpose{A}A$. A-t-on l'unicité de A?
-    \item Soit S une matrice symétrique positive. Montrer qu'il existe une et une seule matrice $R$ symétrique positive telle que $R^2=S$.
-    \item Montrer que $\mathrm{rg}(A)=\mathrm{rg}(S)$.
-  \end{enumerate}
-\end{exo}
-
 
 \end{document}
