@@ -117,6 +117,7 @@
 \let\ens\mathcal
 \newcommand{\ev}[1]{\vv{\ens{#1}}}
 
+\DeclareMathOperator{\lin}{\mathcal{L}}
 \DeclareMathOperator{\aff}{Aff}
 \DeclareMathOperator{\aut}{Aut}
 \DeclareMathOperator{\iso}{Iso}

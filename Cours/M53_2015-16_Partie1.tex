@@ -242,7 +242,7 @@
   \end{frame}
   % -----------
   \begin{frame}{Les sous-espaces affines d'un espace vectoriel}
-    Soient $\ev{E}$ et $\ev{G}$ deux espaces vectoriels, et $\vv\phi \in \mathcal{L}(\ev{E},\ev{G})$ une application linéaire.\pause\\
+    Soient $\ev{E}$ et $\ev{G}$ deux espaces vectoriels, et $\vv\phi \in \lin(\ev{E},\ev{G})$ une application linéaire.\pause\\
     \begin{proposition}
       Pour tout $\vv{v}\in\im\vv\phi\subset\ev{G}$, l'image réciproque $\vv\phi^{-1}(\vv{v})$ est un sous-espace affine de $\ev{E}$ de direction $\ker{\vv\phi}$.
     \end{proposition}
@@ -334,7 +334,7 @@
   \begin{frame}{Caractérisation d'un repère}
     Soit $\ens{F}$ un sous-espace affine d'un espace affine $\ens{E}$.
     \begin{proposition}
-      Le $(k+1)$-uplet $(A_{0},\ldots,A_{k})$ est un repère affine pour $\ens{F}$ si il satisfait une des trois conditions équivalentes:
+      Le $(k+1)$-uplet $(A_{0},\ldots,A_{k})$ est un repère affine pour $\ens{F}$ s'il satisfait une des trois conditions équivalentes:
       \begin{enumerate}[<+(1)->]
         \item $\{A_{0},\ldots,A_{k}\}$ est affinement libre et génératrice pour $\ens{F}$.
         \item $\{A_{0},\ldots,A_{k}\}$ est une famille génératrice minimale pour $\ens{F}$.
@@ -354,10 +354,10 @@
     \begin{defprop}
       Une application $\phi:\ens{E}\rightarrow\ens{F}$ est dite \alert{affine} si elle satisfait une des trois conditions équivalentes:
       \begin{enumerate}[<+(1)->]
-        \item $\exists(\forall) \Omega \in \ens{E}$, $\phi\in\mathcal{L}(\ens{E}_{\Omega},\ens{F}_{\phi(\Omega)})$.
-        \item $\exists \vv\phi \in \mathcal{L}(\ev{E},\ev{F})$ telle que $\forall A,B \in \ens{E}$,
+        \item $\exists(\forall) \Omega \in \ens{E}$, $\phi\in\lin(\ens{E}_{\Omega},\ens{F}_{\phi(\Omega)})$.
+        \item $\exists \vv\phi \in \lin(\ev{E},\ev{F})$ telle que $\forall A,B \in \ens{E}$,
           $$
-            \vv\phi(\vv{AB})=\vv{\phi(A)\phi(B)}.
+            \vv\phi(\vv{AB})=\vv{\phi(A)\phi(B)} \uncover<+(1)->{\Leftrightarrow \phi(A+\vv{v})=\phi(A)+\vv\phi(\vv{v}).}
           $$
         ($\vv\phi$ est unique et est appelée \myemph{partie linéaire} de $\phi$.)
         \item $\phi$ préserve les barycentres, c.-à.-d. pour $\sum_{i=0}^{k}\mu_{i}=1$
@@ -379,7 +379,7 @@
       \item Les applications affines de $\mathbb{R}^{n}$ dans $\mathbb{R}^{m}$ sont de la forme $X \mapsto AX+B$, où $M \in \mathcal{M}_{m,n}$ et $B \in \mathbb{R}^{m}$.
       \item Les applications affines de $\mathbb{C}$ dans $\mathbb{C}$, vu comme $\mathbb{R}$-espace vectoriel, sont de la forme $z \mapsto az+b\overline{z}+c$, où $a,b,c \in \mathbb{C}$.
       \item Les translations $T_{\vv{v}}:M \mapsto M+\vv{v}$ (où $\vv{v} \in \vv{E}$) sont des automorphismes affines de $E$.
-      \item Soient $\ev{E}$ et $\ev{F}$ deux espaces vectoriels. Les applications affines sont toutes de la forme $\vv{x} \mapsto \vv{\phi}(\vv{x}) + \vv{v}=T_{\vv{v}}\circ\vv{\phi}(\vv{x})$, où $\vv{\phi}$ est linéaire.
+      \item Soient $\ev{E}$ et $\ev{F}$ deux espaces vectoriels. Les applications affines de $\aff(\ev{E},\ev{F})$ sont toutes de la forme $\vv{x} \mapsto \vv{\phi}(\vv{x}) + \vv{v}=T_{\vv{v}}\circ\vv{\phi}(\vv{x})$, où $\vv{\phi} \in \lin(\ev{E},\ev{F})$ est linéaire.
     \end{enumerate}
   \end{frame}
 
@@ -413,7 +413,7 @@
       Une \alert{translation} est  une application affine $T \in \aff(\ens{E})$ qui satisfait une des conditions équivalentes :
       \begin{enumerate}[<+(1)->]
         \item elle est de la forme $T=T_{\vv{v}}:M \mapsto M+\vv{v}$, où $\vv{v} \in \ev{E}$,
-        \item sa partie linéaire est $\vv{\phi}=\id \in \mathcal{L}(\ev{E})$.
+        \item sa partie linéaire est $\vv{\phi}=\id \in \lin(\ev{E})$.
       \end{enumerate}
     \end{defprop}
   \end{frame}
@@ -432,7 +432,7 @@
       Une \alert{homothétie affine de rapport $\lambda$ et de centre $\Omega$} est une application affine de $H \in\aff(\ens{E})$ qui satisfait une des conditions équivalentes :
       \begin{itemize}[<+(1)->]
         \item $H$ est une homothétie vectorielle de $\ens{E}_{\Omega}$ de rapport $\lambda$;
-        \item $H$ fixe $\Omega$ et $\vv{H}=\lambda\id \in \mathcal{L}(\ev{E})$;
+        \item $H$ fixe $\Omega$ et $\vv{H}=\lambda\id \in \lin(\ev{E})$;
         \item elle est de la forme $H=H_{\Omega,\lambda}:M \mapsto \lambda M + (1- \lambda)\Omega$.
       \end{itemize}
     \end{defprop}
