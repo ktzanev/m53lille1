@@ -454,7 +454,7 @@
   % -----------
   \begin{frame}{Les points fixes}
     \begin{proposition}
-      Soit $\phi\in\aff(\ens{E})$, alors $\phi$ possède un unique point fixe ssi $\vv{\phi}$ possède un unique point fixe (forcément $0\in\ev{E}$)\pause, autrement dit, ssi $1 \notin Sp(\vv{\phi})$.
+      Soit $\dim \ens{E} < \infty$, alors $\phi\in\aff(\ens{E})$ possède un unique point fixe ssi $\vv{\phi}$ possède un unique point fixe (forcément $0\in\ev{E}$)\pause, autrement dit, ssi $1 \notin Sp(\vv{\phi})$.
     \end{proposition}\pause
     \begin{proposition}
       Soit $\vv*{\ens{E}}{1} \neq 0$ l'ensemble de points fixes de $\vv{\phi}$, alors
@@ -464,8 +464,8 @@
           $$
             \ker(\vv{\phi}-\id) \oplus \im(\vv{\phi}-\id) = \ev{E}
           $$\pause
-        alors il existe un unique $\vv{v}\in\vv*{\ens{E}}{1}$ tel que $T_{\vv{v}}\circ\phi$ possède un point fixe.\newline\pause
-        Par ailleurs $T_{\vv{v}}\circ\phi=\phi\circ T_{\vv{v}}$.
+        alors il existe un unique $\vv{v}\in\vv*{\ens{E}}{1}$ tel que $T_{\vv{v}}\circ\phi=\phi\circ T_{\vv{v}}$\pause\\
+        et $T_{\vv{v}}\circ\phi$ possède un point fixe.
       \end{enumerate}
     \end{proposition}
   \end{frame}
@@ -475,7 +475,7 @@
   % -----------
   \begin{frame}{Le groupe affine}
     \begin{proposition}
-      Soit $\phi\in\aff(\ens{E})$, alors $\phi$ est une bijection ssi $\vv\phi$ l'est, et dans ce cas $\phi^{-1}$ est une application affine avec partie linéaire $\vv\phi^{-1}$.
+      Soit $\phi\in\aff(\ens{E})$, alors $\phi$ est une bijection ssi $\vv\phi$ l'est, et dans ce cas $\phi^{-1}$ est une application affine avec partie linéaire $\big(\vv\phi\big)^{-1}$.
     \end{proposition}\pause
     \begin{proposition}
       Les bijections affines de $\ens{E}$ dans lui-même forment un groupe, le groupe affine $GA(\ens{E})$.\pause\ Et l'application $\phi\mapsto\vv\phi$ est un morphisme surjectif de groupes $GA(\ens{E})\twoheadrightarrow GL(\ev{E})$\pause, de noyau le sous-groupe abélien des translations de $\ens{E}$.
