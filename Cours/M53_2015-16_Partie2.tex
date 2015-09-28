@@ -122,7 +122,7 @@
     \]\forsimple{\vspace*{-.7\baselineskip}}
   \end{definition}
   \begin{enumerate}[<+(1)->]
-    \item Si $\ens{A}$ est compacte et $\ens{B}$ est fermée, alors il existe un couple de points $(M,N) \in \ens{A}\times\ens{B}$ tel que $d(\ens{A},\ens{B}) = d(M,N)$. \pause Et pour $\ens{A}$ seulement fermée ?
+    \item Si $\ens{A}$ est compacte et $\ens{B}$ est fermée, les deux non vides, alors il existe un couple de points $(M,N) \in \ens{A}\times\ens{B}$ tel que $d(\ens{A},\ens{B}) = d(M,N)$.\pause\\ Et pour $\ens{A}$ seulement fermée ?
     \item La propriété précédente reste vraie pour $\ens{A}$ et $\ens{B}$ des sous-espaces affines. De plus $\vv{MN}\perp(\vv{A}+\vv{B})$.
     \item Deux hyperplans $\ens{F}$ et $\ens{G}$ de $\ens{E}$ sont parallèles ssi $d(\ens{F},\ens{G}) > 0$. \pause Et pour s.e.a. quelconques ?
     \item Deux sous-espaces affines $\ens{F}$ et $\ens{G}$ de $\ens{E}$ sont parallèles ssi $\forall (M,N) \in \ens{F}\times\ens{G}, d(M,\ens{G})=d(\ens{F},\ens{G})=d(\ens{F},N)$.
@@ -140,7 +140,7 @@
 % -----------
 \begin{frame}{Rappels : isométrie vectorielle }
   \begin{defprop}
-    L'application linéaire $\vv{\phi}$ est une \alert{isométrie} de $\ev{E}$ si elle satisfait une des deux conditions équivalentes
+    L'application linéaire $\vv{\phi}$ est une \alert{isométrie} (dit également \alert{orthogonale}) de $\ev{E}$ si elle satisfait une des conditions équivalentes
     \begin{enumerate}[<+(1)->]
       \item $\forall \vv{v} \in \ev{E}$,
         \[
@@ -149,11 +149,31 @@
       \item $\forall \vv{v},\vv{w} \in \ev{E}$,
         \[
           \scalprod{\vv{\phi}(\vv{v})}{\vv{\phi}(\vv{w})}=\scalprod{\vv{v}}{\vv{w}}.
+        \]
+      \item
+        \[
+          \vv{\phi}\circ\vv{\phi}^{t} = \id \pause\quad\Leftrightarrow\quad
+          \vv{\phi}^{t}\circ\vv{\phi} = \id \pause\quad\Leftrightarrow\quad
+          \vv{\phi}^{-1} = \vv{\phi}^{t}
         \]\forsimple{\vspace*{-.7\baselineskip}}
     \end{enumerate}
-  \end{defprop}\pause
-  Si une isométrie $\vv{\phi}$ de $\ev{E}$ préserve un s.e.v. $\ev{F}$ \pause(c.-à-d. $\vv{\phi}(\ev{F})\subset\ev{F}$ $\Leftrightarrow$ $\vv{\phi}(\ev{F})=\ev{F}$)\pause, alors elle préserve aussi son orthogonal\pause, $\vv{\phi}(\ev{F}^{\perp})=\ev{F}^{\perp}$. \pause
-  En particulier, si $\ev{F}$ n'est pas trivial, $\ev{E}$ se décompose en somme directe orthogonale de deux sous-espaces stables par $\vv{\phi}$ : $\ev{E}=\ev{F}\poplus\ev{F}^{\perp}$.
+  \end{defprop}
+\end{frame}
+
+% -----------
+\begin{frame}{Rappels : décomposition et spectre des isométries }
+  \begin{enumerate}[<+(1)->]
+    \item Si une isométrie $\vv{\phi}$ de $\ev{E}$ préserve un s.e.v. $\ev{F}$ \pause(c.-à-d. $\vv{\phi}(\ev{F})\subset\ev{F}$ $\Leftrightarrow$ $\vv{\phi}(\ev{F})=\ev{F}$)\pause, alors elle préserve aussi son orthogonal\pause,
+      \[
+        \vv{\phi}(\ev{F}^{\perp})=\ev{F}^{\perp}.
+      \]
+    \item En particulier, si $\ev{F}$ n'est pas trivial, $\ev{E}$ se décompose en somme directe orthogonale de deux sous-espaces stables par $\vv{\phi}$ : $\ev{E}=\ev{F}\poplus\ev{F}^{\perp}$.\pause\\
+    Si on note $\vv{\phi}_{1} = \vv{\phi}|_{\ev{F}}$ et $\vv{\phi}_{2} = \vv{\phi}|_{\ev{F}^{\perp}}$, alors $\vv{\phi}_{1}$ et $\vv{\phi}_{2}$ sont orthogonales et
+      \[
+        \vv{\phi}=\vv{\phi}_{1}\poplus\vv{\phi}_{2}.
+      \]
+    \item Si $\lambda$ est valeur propre (réelle) de $\vv{\phi}$ alors $\lambda = \pm 1$.
+  \end{enumerate}
 \end{frame}
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -163,7 +183,8 @@
 \begin{frame}{Rappels : Groupe des isométries vectorielles}
   \begin{itemize}[<+(1)->]
     \item Le \alert{groupe des isométries} de $\ev{E}$ est noté $O(\ev{E})$.\\
-      Et on note $O_{n} = O(\mathbb{R}^{n})$.
+      Et on note $O_{n} = O(\mathbb{R}^{n})$.\pause\\
+      \myemph{($O_{n}=\big\{ M \in M_2(\mathbb{R}) \big| M^{t}M=I_{n}\big\}$.)}
     \item Soit $\vv{\phi} \in O(\ev{E})$, alors $\det(\vv{\phi}) = \pm 1$.\pause\\
       \begin{itemize}[<+(1)->]
         \item On note $O^{+}(\ev{E})$ ou $SO(\ev{E})$ (resp.$O_{n}^{+}$ ou $SO_{n}$) l'ensemble des isométries à déterminant $1$, dites \alert{directes}, de $\ev{E}$ (resp. $\mathbb{R}^{n}$).
@@ -182,8 +203,8 @@
     \item $O_{1} = \{1,-1\}$.
     \item $O_{2} = O_{2}^{+} \sqcup O_{2}^{-}$, où
       \begin{itemize}[<+(1)->]
-        \item $O_{2}^{+}=\big\{ \vv{R}_{\alpha}=\begin{psmallmatrix}\cos(\alpha)&-\sin(\alpha)\\\sin(\alpha)&\phantom{-}\cos(\alpha)\end{psmallmatrix} \big|\ \alpha \in \mathbb{R}/2\pi\mathbb{R} \big\}$\\ est le sous-groupe des rotations,
-        \item $O_{2}^{-}=\big\{ \vv{S}_{\alpha}=\begin{psmallmatrix}\cos(\alpha)&\phantom{-}\sin(\alpha)\\\sin(\alpha)&-\cos(\alpha)\end{psmallmatrix} \big|\ \alpha \in \mathbb{R}/2\pi\mathbb{R} \big\}$\\ est l'ensemble des réflexions.\pause\\
+        \item $O_{2}^{+}=\big\{ \vv{R}_{\alpha}=\begin{psmallmatrix}\cos(\alpha)&-\sin(\alpha)\\\sin(\alpha)&\phantom{-}\cos(\alpha)\end{psmallmatrix} \big|\ \alpha \in \mathbb{R}/2\pi\mathbb{Z} \big\}$\\ est le sous-groupe des rotations,
+        \item $O_{2}^{-}=\big\{ \vv{S}_{\alpha}=\begin{psmallmatrix}\cos(\alpha)&\phantom{-}\sin(\alpha)\\\sin(\alpha)&-\cos(\alpha)\end{psmallmatrix} \big|\ \alpha \in \mathbb{R}/2\pi\mathbb{Z} \big\}$\\ est l'ensemble des réflexions.\pause\\
         \myemph{($\vv{S}_{\alpha}$ est la symétrie par rapport à la droite d'angle $\alpha/2$.)}
       \end{itemize}\pause
       Les règles de composition sont :
