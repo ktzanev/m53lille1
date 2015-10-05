@@ -124,7 +124,7 @@
   \begin{enumerate}[<+(1)->]
     \item Si $\ens{A}$ est compacte et $\ens{B}$ est fermée, les deux non vides, alors il existe un couple de points $(M,N) \in \ens{A}\times\ens{B}$ tel que $d(\ens{A},\ens{B}) = d(M,N)$.\pause\\ Et pour $\ens{A}$ seulement fermée ?
     \item La propriété précédente reste vraie pour $\ens{A}$ et $\ens{B}$ des sous-espaces affines. De plus $\vv{MN}\perp(\vv{A}+\vv{B})$.
-    \item Deux hyperplans $\ens{F}$ et $\ens{G}$ de $\ens{E}$ sont parallèles ssi $d(\ens{F},\ens{G}) > 0$. \pause Et pour s.e.a. quelconques ?
+    \item Deux hyperplans distincts $\ens{F}$ et $\ens{G}$ de $\ens{E}$ sont parallèles ssi $d(\ens{F},\ens{G}) > 0$. \pause Et pour s.e.a. quelconques ?
     \item Deux sous-espaces affines $\ens{F}$ et $\ens{G}$ de $\ens{E}$ sont parallèles ssi $\forall (M,N) \in \ens{F}\times\ens{G}, d(M,\ens{G})=d(\ens{F},\ens{G})=d(\ens{F},N)$.
   \end{enumerate}
 \end{frame}
@@ -184,8 +184,8 @@
   \begin{itemize}[<+(1)->]
     \item Le \alert{groupe des isométries} de $\ev{E}$ est noté $O(\ev{E})$.\\
       Et on note $O_{n} = O(\mathbb{R}^{n})$.\pause\\
-      \myemph{($O_{n}=\big\{ M \in M_2(\mathbb{R}) \big| M^{t}M=I_{n}\big\}$.)}
-    \item Soit $\vv{\phi} \in O(\ev{E})$, alors $\det(\vv{\phi}) = \pm 1$.\pause\\
+      \myemph{($O_{n}=\big\{ M \in M_{n}(\mathbb{R}) \big| M^{t}M=I_{n}\big\}$.)}
+    \item Soit $\vv{\phi} \in O(\ev{E})$, alors $\det(\vv{\phi}) = \pm 1$.
       \begin{itemize}[<+(1)->]
         \item On note $O^{+}(\ev{E})$ ou $SO(\ev{E})$ (resp.$O_{n}^{+}$ ou $SO_{n}$) l'ensemble des isométries à déterminant $1$, dites \alert{directes}, de $\ev{E}$ (resp. $\mathbb{R}^{n}$).
         \item De même l'ensemble des isométries à déterminant $-1$, dites \alert{indirectes}, est noté $O^{-}(\ev{E})$ (resp.$O_{n}^{-}$).
@@ -383,7 +383,7 @@
         \item Si $a \neq 1$, alors $\phi$ est la rotation de centre $\frac{b}{1-a}$.
         \item Si $a=1$, alors $\phi$ est la translation de $b$.
       \end{itemize}
-    \item $\phi \in \iso^{+}(\mathbb{C})$ ssi $\phi(z)=a\overline{z}+b$ avec $|a|=1$.
+    \item $\phi \in \iso^{-}(\mathbb{C})$ ssi $\phi(z)=a\overline{z}+b$ avec $|a|=1$.
       \begin{itemize}[<+(1)->]
         \item Si $\overline{a}b^{2} \in \mathbb{R}_{-}$, alors $\phi$ est une symétrie d'axe $\sqrt{a}\mathbb{R}+b/2$.
         \item Sinon $\phi$ est une symétrie glissée.
