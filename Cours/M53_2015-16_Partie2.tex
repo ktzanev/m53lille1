@@ -373,8 +373,8 @@
 \end{frame}
 
 % -----------
-\begin{frame}{Les isométrie affines de $\mathbb{C}$}
-  \textit{Rappel :} Les application affines de l'espace euclidien $\mathbb{C}$ sont de la forme $z \mapsto \alpha z+\beta\overline{z}+\gamma$.\pause\medskip
+\begin{frame}{Les isométries affines de $\mathbb{C}$}
+  \textit{Rappel :} Les applications affines de l'espace euclidien $\mathbb{C}$ sont de la forme $z \mapsto \alpha z+\beta\overline{z}+\gamma$.\pause\medskip
 
   $\iso(\mathbb{C}) = \iso^{+}(\mathbb{C}) \sqcup \iso^{-}(\mathbb{C})$
   \begin{itemize}[<+(1)->]
@@ -439,11 +439,11 @@
 \begin{frame}{Définition d'une similitude}
   \begin{definition}
     \begin{itemize}[<+(1)->]
-      \item Une application linéaire $\vv{\phi} \in \lin(\ev{E})$ est dit \alert{similitude vectorielle} si elle multiplie les normes par une constante $k > 0$ :
+      \item Une application linéaire $\vv{\phi} \in \lin(\ev{E})$ est dite \alert{similitude vectorielle} si elle multiplie les normes par une constante $k > 0$ :
       \[
           \norm{\vv{\phi}(\vv{v})} = k\norm{\vv{v}},\qquad \forall \vv{v} \in \ev{E}.
       \]
-      \item Une application affine $\phi  \in \aff(E)$ est dit \alert{similitude affine} si elle multiplie les distance par une constante $k > 0$ :
+      \item Une application affine $\phi  \in \aff(E)$ est dite \alert{similitude affine} si elle multiplie les distances par une constante $k > 0$ :
       \[
           d(\phi(A),\phi(B)) = k\!\cdot\!d(A,B),\qquad \forall A,B \in \ens{E}.
       \]
@@ -459,16 +459,17 @@
 \begin{frame}{Propriétés des similitudes}
   \begin{itemize}[<+(1)->]
     \item Une application affine est une similitude ssi sa partie linéaire est une similitude vectorielle.
+    \item Les isométries sont des similitudes ($k=1$).
     \item Toute similitude vectorielle se décompose de façon unique en $\vv{\phi} = \vv{h}_{k}\circ \vv{\psi}$, où $\vv{h}_{k}$ est une homothétie de rapport $k > 0$ et $\vv{\psi}$ est une isométrie.
     \item Une similitude est dite \alert{directe} (resp. \alert{indirecte}) si son déterminant est positif (resp. négatif).
     \item Les similitudes sont des automorphismes (vectoriels, affines). L'inverse d'une similitude de rapport $k$ est une similitude de rapport $1/k$.
-    \item Les similitudes vectoriels (resp. affines, resp. directes) forment un groupe.
-    \item Toute similitude affine, qui n'est pas une isométrie, possède un unique point fixe, dit \alert{le centre de la similitude}.
+    \item Les similitudes vectorielles (resp. affines, resp. directes) forment un groupe.
   \end{itemize}
 \end{frame}
 % -----------
 \begin{frame}{Propriétés des similitudes (bis)}
   \begin{itemize}[<+(1)->]
+    \item Toute similitude affine, qui n'est pas une isométrie, possède un unique point fixe, dit \alert{le centre de la similitude}.
     \item Les similitudes préservent les angles.
     \item En particulier :
     \begin{itemize}[<+(1)->]
