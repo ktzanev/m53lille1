@@ -302,7 +302,7 @@
 \subsection{Définition}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 % -----------
-\begin{frame}{Définition}
+\begin{frame}{Définition d'une isométrie affine}
   \begin{defprop}
     On dit qu'une application affine $\phi \in\aff(\ens{E})$ est une \alert{isométrie} si une des conditions équivalentes est satisfaite:
     \begin{itemize}[<+(1)->]
@@ -322,7 +322,7 @@
   \begin{itemize}[<+(1)->]
     \item $\iso(\ens{E})$ est un sous-groupe de $\aut(\ens{E})$.
     \item $\iso^{+}(\ens{E})$ est un sous-groupe de $\iso(\ens{E})$.
-    \item Les translations sont des isométries.
+    \item Les translations sont des isométries (directes).
     \item Une homothétie de rapport $\lambda$ multiplie les distances par $|\lambda|$\pause ,
       et donc n'est isométrie que si c'est l'identité ou une symétrie centrale.
     \item $\phi \in\aff(\ens{E})$ est dite \alert{symétrie (affine) orthogonale} \uncover<+(1)->{(resp. \alert{réflexion})} s'il existe $\Omega \in \ens{E}$ telle que $\phi$ est une symétrie (vectorielle) orthogonale \uncover<.(1)->{(resp. réflexion)} dans $\ens{E}_{\Omega}$. \pause Les symétries orthogonales sont des isométries.
@@ -337,7 +337,7 @@
 \begin{frame}{Structure des isométries affines}
   \begin{lemma}
     Soit $\vv{\phi} \in O(\ev{E})$, alors $\ev{E} = \ker(\vv{\phi}-\id)\poplus\im(\vv{\phi}-\id)$.
-  \end{lemma}
+  \end{lemma}\pause
   \begin{proposition}
     Soit $\phi \in\iso(\ens{E})$, alors
     \begin{itemize}[<+(1)->]
@@ -365,7 +365,7 @@
         \item $\phi\in\iso^{-}(\mathbb{R}^{2})$ ssi\pause
           \begin{itemize}[<.(1)->]
             \item $\phi = S_{\ens{D}}$ est la symétrie par rapport à une droite affine $\ens{D}$\pause, ou
-            \item $\phi = T_{\vv{v}}\circ S_{\ens{D}}$ avec $\vv{v}\neq0$ est un vecteur fixe par la symétrie $\vv{\phi}$\pause, et dans ce cas on dit que $\phi$ est une \alert{symétrie glissée}.
+            \item $\phi = T_{\vv{v}}\circ S_{\ens{D}}$ avec $\vv{v}\neq0$ un vecteur fixe par la symétrie $\vv{\phi}$\pause\ (c.-à-d. $\vv{\phi} \in \ev{D}$)\pause, et dans ce cas on dit que $\phi$ est une \alert{symétrie glissée}.
           \end{itemize}
       \end{itemize}\pause
     \myemph{($\phi$ est la composée d'au plus $3$ réflexions.)}
