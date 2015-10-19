@@ -428,4 +428,55 @@
   \end{proposition}
 \end{frame}
 
+% =======================================
+\section{Similitudes}
+% =======================================
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\subsection{Définition}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% -----------
+\begin{frame}{Définition d'une similitude}
+  \begin{definition}
+    \begin{itemize}[<+(1)->]
+      \item Une application linéaire $\vv{\phi} \in \lin(\ev{E})$ est dit \alert{similitude vectorielle} si elle multiplie les normes par une constante $k > 0$ :
+      \[
+          \norm{\vv{\phi}(\vv{v})} = k\norm{\vv{v}},\qquad \forall \vv{v} \in \ev{E}.
+      \]
+      \item Une application affine $\phi  \in \aff(E)$ est dit \alert{similitude affine} si elle multiplie les distance par une constante $k > 0$ :
+      \[
+          d(\phi(A),\phi(B)) = k\!\cdot\!d(A,B),\qquad \forall A,B \in \ens{E}.
+      \]
+    \end{itemize}\pause
+    Le nombre strictement positif $k$ est dit \alert{rapport de la similitude}.
+  \end{definition}
+\end{frame}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\subsection{Propriétés}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% -----------
+\begin{frame}{Propriétés des similitudes}
+  \begin{itemize}[<+(1)->]
+    \item Une application affine est une similitude ssi sa partie linéaire est une similitude vectorielle.
+    \item Toute similitude vectorielle se décompose de façon unique en $\vv{\phi} = \vv{h}_{k}\circ \vv{\psi}$, où $\vv{h}_{k}$ est une homothétie de rapport $k > 0$ et $\vv{\psi}$ est une isométrie.
+    \item Une similitude est dite \alert{directe} (resp. \alert{indirecte}) si son déterminant est positif (resp. négatif).
+    \item Les similitudes sont des automorphismes (vectoriels, affines). L'inverse d'une similitude de rapport $k$ est une similitude de rapport $1/k$.
+    \item Les similitudes vectoriels (resp. affines, resp. directes) forment un groupe.
+    \item Toute similitude affine, qui n'est pas une isométrie, possède un unique point fixe, dit \alert{le centre de la similitude}.
+  \end{itemize}
+\end{frame}
+% -----------
+\begin{frame}{Propriétés des similitudes (bis)}
+  \begin{itemize}[<+(1)->]
+    \item Les similitudes préservent les angles.
+    \item En particulier :
+    \begin{itemize}[<+(1)->]
+      \item Les similitudes préservent les sous-espaces parallèles.
+      \item Les similitudes préservent les sous-espaces orthogonaux (perpendiculaires).
+    \end{itemize}
+    \item L'image d'une sphère par une similitude est une sphère.
+  \end{itemize}
+\end{frame}
+
 \end{document}
