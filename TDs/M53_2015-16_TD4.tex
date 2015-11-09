@@ -9,51 +9,14 @@
 \section{Ellipses}
 % ==================================
 
-
-%-------------------------------------
-\begin{exo} (Équation d'une ellipse)
-
-  \image{r}{4cm}{-17mm}{0mm}{M53_2015-16_TD4_ellipse_geometrique.tikz}
-
-  Soient une droite $\mathcal{D}$ et un point $F$ en dehors de cette droite. Une ellipse d'excentricité $\varepsilon \in ]0,1[$, de directrice $\mathcal{D}$ et de foyer $F$ est l'ensemble des points $M$ tels qu'on ait le rapport des distances
-  $$
-    \frac{d(M,F)}{d(M,\mathcal{D})}=\varepsilon.
-  $$
-
-  \begin{enumerate}
-    \item On note $K$ la projection orthogonale de $F$ sur $\mathcal{D}$, $u$ un vecteur directeur unitaire de la droite $KF$ (appelée axe focal) et $v$ un vecteur directeur unitaire de $\mathcal{D}$.
-    Montrer qu'il existe un point $O$ sur l'axe focal tel que l'équation de l'ellipse dans le repère $(O,u,v)$ s'écrive:
-    $$
-      \frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1 .
-    $$
-
-    \item Montrer que $O$ est un point de symétrie de l'ellipse et qu'il existe deux axes de symétrie de l'ellipse.
-  \end{enumerate}
-
-\end{exo}
-
-
 %-----------------------------------
-\begin{exo} (Construction avec clous et corde d'une ellipse)
+\begin{exo} (Paramétrisation d'une ellipse)
 
-  \image{r}{4cm}{-7mm}{0mm}{M53_2015-16_TD4_ellipse_clous_corde.tikz}
+  \image{r}{4cm}{-11mm}{0mm}{M53_2015-16_TD4_ellipse_clous_corde.tikz}
 
-  Étant donnée une ellipse, montrer qu'il existe deux points $F_{1}$ et $F_{2}$ et une constante $k$ tels que pour tout $M \in \mathcal{E}$ on ait $| F_{1}M | + | MF_{2} | = k$.
+  Soit une ellipse $E = \{ M \in \mathbb{R}^{2} \,|\, \d(F_{1},M)+\d(M,F_{2})=2a\}$ définie par ses deux foyers $F_{1}$ et $F_{2}$ à distance $\d(F_{1},F_{2})=2c$, et une constante réelle $a > c$.
 
-  Et réciproquement, montrer qu'étant donnés deux points $F_{1}$ et $F_{2}$ et une constante $k > | F_{1}F_{2} |$, alors l'ensemble des points $M$ tels que $| F_{1}M | + | MF_{2} | = k$ forment une ellipse.
-
-\end{exo}
-
-%-----------------------------------
-\begin{exo} (L'espace des ellipses)
-
-  \begin{enumerate}
-    \item Montrer que les transformations affines envoient ellipses sur ellipses, paraboles sur paraboles et hyperboles sur hyperboles.
-    \item Soient $C_1$ et $C_2$ deux ellipses quelconques, montrer qu'il existe une transformation affine $f$ telle que $f(C_1)=C_2$. Une telle transformation est-elle unique?
-    \item Soit $C$ une ellipse, montrer que le sous-groupe des transformations affines qui préservent $C$ est conjugué au groupe orthogonal $O(2)$.
-    \item\hard En déduire qu'il existe un espace des ellipses que l'on peut identifier au quotient $GA(2, \mathbb{R})/O(2)$.
-  \end{enumerate}
-
+  Détreminer une courbe paramétrée $f:\mathbb{R}\to\mathbb{R}^{2}$ dont l'image est $E$.
 \end{exo}
 
 
@@ -79,6 +42,19 @@
 \end{exo}
 
 
+%-----------------------------------
+\begin{exo} (L'espace des ellipses)
+
+  \begin{enumerate}
+    \item Montrer que les transformations affines envoient ellipses sur ellipses, paraboles sur paraboles et hyperboles sur hyperboles.
+    \item Soient $C_1$ et $C_2$ deux ellipses quelconques, montrer qu'il existe une transformation affine $f$ telle que $f(C_1)=C_2$. Une telle transformation est-elle unique?
+    \item Soit $C$ une ellipse, montrer que le sous-groupe des transformations affines qui préservent $C$ est conjugué au groupe orthogonal $O(2)$.
+    \item\hard En déduire qu'il existe un espace des ellipses que l'on peut identifier au quotient $GA(2, \mathbb{R})/O(2)$.
+  \end{enumerate}
+
+\end{exo}
+
+
 % ==================================
 \section{Paraboles et hyperboles}
 % ==================================
@@ -93,13 +69,15 @@
     d(M,F)= d(M,\mathcal{D}).
   $$
 
-  \image{r}{3.5cm}{17mm}{-70mm}{M53_2015-16_TD4_parabole_miroir.tikz}
+  \image{r}{3.5cm}{35mm}{-70mm}{M53_2015-16_TD4_parabole_miroir.tikz}
 
   On se place dans le repère affine orthonormé $(O,u,v)$, où $u$ et $v$ sont des vecteurs directeurs respectivement de l'axe focal et de la directrice. Soient $(a,0)$ les coordonnées de $F$ dans ce repère.
 
   \begin{enumerate}
 
     \item Déterminer l'équation de la parabole dans ce repère.
+
+    \item Donner une courbe paramétrée $f:\mathbb{R}\to\mathbb{R}^{2}$ dont l'image est cette parabole.
 
     \item Soient $M$ un point de la parabole et $P$ sa projection sur la directrice.\\
     Montrer que la tangente en $M$ est orthogonale à $FP$.
@@ -111,6 +89,17 @@
   \end{enumerate}
 
 \end{exo}
+
+%-----------------------------------
+\begin{exo} (Paramétrisation d'une hyperbole)
+
+  % \image{r}{4cm}{-11mm}{0mm}{M53_2015-16_TD4_ellipse_clous_corde.tikz}
+
+  Soit une ellipse $H = \{ M \in \mathbb{R}^{2} \,|\ \big|\d(F_{1},M)-\d(M,F_{2})\big|=2a\}$ définie par ses deux foyers $F_{1}$ et $F_{2}$ à distance $\d(F_{1},F_{2})=2c$, et une constante réelle $a \in ]0,c[$.
+
+  Détreminer une courbe paramétrée $f:\mathbb{R}\to\mathbb{R}^{2}$ dont l'image est la branche $\{ M \in \mathbb{R}^{2} \,|\, \d(F_{1},M)-\d(M,F_{2})=2a\}$ de $H$.
+\end{exo}
+
 
 %---------------------------------------
 \begin{exo} ( Parallélogrammes à surface constante)
