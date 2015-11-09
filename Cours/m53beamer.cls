@@ -115,21 +115,26 @@
 \newtheorem{question}{Question}
 
 \let\ens\mathcal
-\newcommand{\ev}[1]{\vv{\ens{#1}}}
+\newcommand*{\ev}[1]{\vv{\ens{#1}}}
+\let\ssi\Leftrightarrow % ou \newcommand\ssi{\;\Leftrightarrow\;}
+\newcommand*\isoto{\xrightarrow{\smash{\raisebox{-.28em}{\ensuremath{\sim\kern1pt}}}}}
 
 \DeclareMathOperator{\lin}{\mathcal{L}}
 \DeclareMathOperator{\aff}{Aff}
 \DeclareMathOperator{\aut}{Aut}
 \DeclareMathOperator{\iso}{Iso}
+\DeclareMathOperator{\card}{card}
 \let\ker\relax\DeclareMathOperator{\ker}{Ker}
 \DeclareMathOperator{\im}{Im}
-\newcommand{\id}{\mathrm{Id}}
+\DeclareMathOperator{\signe}{signe}
+\newcommand*{\id}{\mathrm{Id}}
 % Espace affine engendré, à utiliser ainsi : \affspan{\ens{A}}, \affspan[\big]{A,B}
-\newcommand{\affspan}[2][]{#1\langle{#2}#1\kern.07em\rangle}
+\newcommand*{\affspan}[2][]{#1\langle{#2}#1\kern.07em\rangle}
 % Enveloppe convexe, à utiliser ainsi : \convhull{\ens{A}}, \convhull[\big]{A,B}
-\newcommand{\convhull}[2][]{#1[{#2}#1\kern.14em]}
+\newcommand*{\convhull}[2][]{#1[{#2}#1\kern.14em]}
 % Produit scalaire à utiliser ainsi : \scalprod uv, \scalprod{\vv u}{\vv v}, \scalprod[\big]{\vv A}{\vv B}
-\newcommand{\scalprod}[3][]{#1\langle{#2}\kern1pt #1|{#3}#1\rangle}
-\newcommand{\norm}[1]{\left\|#1\right\|}
-\newcommand{\poplus}{\overset{\scriptscriptstyle\perp}{\oplus}}
+\newcommand*{\scalprod}[3][]{#1\langle{#2}\kern1pt #1|{#3}#1\rangle}
+\newcommand*{\norm}[1]{\left\|#1\right\|}
+\let\d\relax\DeclareMathOperator{\d}{d}
+\newcommand*{\poplus}{\overset{\scriptscriptstyle\perp}{\oplus}}
 
