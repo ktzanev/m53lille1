@@ -6,7 +6,7 @@
 % ---------------
 \title{M53 - Partie 2}
 %\author{Kroum Tzanev}
-\date{septembre 2015}
+\date{octobre 2015}
 % ---------------
 
 \begin{document}
@@ -392,24 +392,28 @@
 \end{frame}
 % -----------
 \begin{frame}{Dimension 3}
-  \begin{itemize}[<+(1)->]
-    \item $\iso(\mathbb{R}^{3}) = \iso^{+}(\mathbb{R}^{3}) \sqcup \iso^{-}(\mathbb{R}^{3})$.
+    $\iso(\mathbb{R}^{3}) = \iso^{+}(\mathbb{R}^{3}) \sqcup \iso^{-}(\mathbb{R}^{3})$.
       \begin{itemize}[<+(1)->]
-        \item $\phi\in\iso^{+}(\mathbb{R}^{3})$ ssi\pause
-          \begin{itemize}[<.(1)->]
-            \item $\phi = R_{\ens{D},\alpha}$ est la rotation d'angle $\alpha$ autour de l'axe $\ens{D}$\pause, ou
-            \item $\phi = T_{\vv{v}}$ est une translation\pause, ou
-            \item $\phi = T_{\vv{v}}\circ R_{\ens{D},\alpha}$, avec $\ev{D}=\affspan{\vv{v}}$ et $\alpha\neq 0$. \pause Dans ce cas on dit que $\phi$ est un \alert{vissage} d'axe $\ens{D}$ et d'angle $\alpha$.
+        \item $\phi\in\iso^{+}(\mathbb{R}^{3})$ ssi
+          \begin{itemize}[<+(1)->]
+            \item $\phi = R_{\ens{D},\alpha}$ est la rotation d'angle $\alpha$ autour de l'axe $\ens{D}$, ou bien
+            \item $\phi = T_{\vv{v}}\circ R_{\ens{D},\alpha}$, avec $\ev{D}=\affspan{\vv{v}}$
+            \begin{itemize}[<+(1)->]
+              \item si $\alpha=0$, c.-à-d. $\phi = T_{\vv{v}}$, c'est une translation,
+              \item si $\alpha\neq 0$, on dit que $\phi$ est un \alert{vissage} d'axe $\ens{D}$ et d'angle $\alpha$.
+            \end{itemize}
           \end{itemize}
-        \item $\phi\in\iso^{-}(\mathbb{R}^{3})$ ssi\pause
-          \begin{itemize}[<.(1)->]
-            \item $\phi = S_{\ens{H}}$ est la symétrie par rapport au plan affine $\ens{H}$\pause, ou
-            \item $\phi = T_{\vv{v}}\circ S_{\ens{H}}$ avec $\vv{v}\neq0$ est un vecteur fixe par la symétrie $\vv{\phi}$\pause, et dans ce cas on dit que $\phi$ est une \alert{symétrie glissée}.\pause
-            \item $\phi = R_{\ens{D},\alpha}\circ S_{\ens{H}}$ avec $\ens{D}\perp\ens{H}$\pause, et dans ce cas on dit que $\phi$ est une \alert{anti-rotation}.
+        \item $\phi\in\iso^{-}(\mathbb{R}^{3})$ ssi
+          \begin{itemize}[<+(1)->]
+            \item $\phi = R_{\ens{D},\alpha}\circ S_{\ens{H}}$ avec $\ens{D}\perp\ens{H}$
+            \begin{itemize}[<+(1)->]
+              \item si $\alpha=0$, c.-à-d. $\phi = S_{\ens{H}}$, est la symétrie par rapport au plan affine $\ens{H}$
+              \item si $\alpha\neq 0$, on dit que $\phi$ est une \alert{anti-rotation}.
+            \end{itemize}
+            \item $\phi = T_{\vv{v}}\circ S_{\ens{H}}$ avec $\vv{v}\neq0$ est un vecteur fixe par la symétrie $\vv{\phi}$\pause, et dans ce cas on dit que $\phi$ est une \alert{symétrie glissée}.
           \end{itemize}
       \end{itemize}\pause
     \myemph{($\phi$ est la composée d'au plus $4$ réflexions.)}
-  \end{itemize}
 \end{frame}
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
