@@ -1,0 +1,366 @@
+% \PassOptionsToClass{negatif}{m53beamer}
+% \PassOptionsToClass{simple}{m53beamer}
+% \PassOptionsToClass{handout}{m53beamer}
+\documentclass[11pt]{m53beamer}
+
+% ---------------
+\title{M53 - Partie 3}
+%\author{Kroum Tzanev}
+\date{novembre 2015}
+% ---------------
+
+\begin{document}
+
+% ------- Le titre --------
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% =======================================
+\section{Cônes et cylindres}
+% =======================================
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\subsection{Cône}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+% -----------
+\begin{frame}{Définition d'un cône}
+  Soient $\ens{E}$ un espace affine sur $\mathbb{R}$ et $O \in \ens{E}$.\pause
+  \begin{definition}
+    Un ensemble $\ens{C}$ est dit \alert{cône de centre $O$}\,$\in \ens{C}$ si pour tout $M \in \ens{C}\setminus\!\{O\}$, $\ens{C}$ contient la droite $\affspan{O,M}$.\pause{}
+    Et on dit que $\ens{C}$ est de \alert{base} $\ens{B} \subset \ens{C}$ si pour tout $M \in \ens{C}\setminus\!\{O\}$, $\card\big(\affspan{O,M} \cap \ens{B}\big)=1$.
+  \end{definition}\pause
+  \begin{defprop}
+    Soient $O \in \ens{E}$ et $\ens{F} \subset \ens{E}$ non vide, on dit que $\ens{C}$ est \alert{le cône de centre $O$ engendré par $\ens{F}$} si l'une des conditions équivalentes suivantes est satisfaite:
+    \begin{enumerate}[<+(1)->]
+         \item $\ens{C}$ est le plus petit cône de centre $O$ contenant $\ens{F}$.
+         \item $\ens{C}=\bigcup_{M \in \ens{F}} \affspan{O,M}$.
+         \item $\ens{C}=\bigcup_{\lambda \in \mathbb{R}} H_{O,\lambda}(\ens{F})$, où $H_{O,\lambda}$ est l'homothétie de centre $O$ et de rapport $\lambda$.
+       \end{enumerate}
+  \end{defprop}
+\end{frame}
+% -----------
+\begin{frame}{Le cône standard}
+  On se place dans $\mathbb{R}^{3}$, vu comme espace affine.
+  \begin{defprop}
+    \alert{Le cône standard} $\ens{C}$ de $\mathbb{R}^{3}$ est défini par l'une des conditions équivalentes:
+    \begin{enumerate}[<+(1)->]
+         \item $\ens{C}=\{x^{2}+y^{2}=z^{2}\}$\pause$=\{x^{2}+y^{2}-z^{2}=0\}$.
+         \item $\ens{C}$ est le cône de centre $0$ engendré par le cercle $\{x^{2}+y^{2}=1, z=1\}$.
+         \item $\ens{C}$ est l'ensemble obtenu par la rotation autour de l'axe $Oz$ de la droite vectorielle $\{x=z, y=0\}$.
+       \end{enumerate}
+  \end{defprop}\pause
+  Les intersections du cône standard avec les hyperplans non vectoriels sont les \textbf{coniques} \uncover<+(1)->{(\textbf{ellipses}, \textbf{paraboles} et \textbf{hyperboles}\uncover<+(1)->{, éventuellement dégénérées en des droites ou en un point})} qui vont être l'objet d'étude de cette troisième partie du cours.
+\end{frame}
+% -----------
+\begin{frame}{Exemples moins standards}
+  \begin{enumerate}[<+(1)->]
+    \item L'espace tout entier $\mathbb{R}^{n}$ est un cône de centre $0$ et de base «~la~moitié~» de la sphère $\mathbb{S}^{n-1}$.
+    \item Toute réunion d'espaces vectoriels est un cône de centre $0$.
+    \item $\ens{C}=\{x^{2}=yz\}$ est un cône de centre $0$ et de base l'ellipse $\{x^{2}+(y-1)^{2}=1, y+z=2\}$.
+    \item Les images directes et inverses d'un cône par des applications affines sont des cônes.
+  \end{enumerate}
+\end{frame}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\subsection{Cylindre}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+% -----------
+\begin{frame}{Définition d'un cylindre}
+  Soient $\ens{E}$ un espace affine et $\ev{F} \subset \ev{E}$ un sous-espace vectoriel de directions.\pause
+  \begin{definition}
+    Un ensemble non vide $\ens{C}$ est dit \alert{cylindre de direction $\ev{F}$} si pour tout $M \in \ens{C}$, $\ens{C}$ contient le sous-espace affine $M+\ev{F}$.\pause{} Et on dit que $\ens{C}$ est de \alert{base} $\ens{B} \subset \ens{C}$ si pour tout $M \in \ens{C}$, $\card\big( (M+\ev{F}) \cap \ens{B}\big)=1$.\pause\newline
+    Le plus souvent la direction $\ev{F}$ est une droite.
+  \end{definition}\pause
+  \begin{defprop}
+    Soient $\ev{F} \subset \ev{E}$ un sous-espace vectoriel de directions, et $\ens{B} \subset \ens{E}$ non vide, on dit que $\ens{C}$ est \alert{le cylindre de direction $\ev{F}$ engendré par $\ens{B}$} si l'une des conditions équivalentes suivantes est satisfaite:
+    \begin{enumerate}[<+(1)->]
+         \item $\ens{C}$ est le plus petit cylindre de direction $\ev{F}$ contenant $\ens{B}$.
+         \item $\ens{C}=\bigcup_{M \in \ens{B}} (M+\ev{F})$.
+         \item $\ens{C}=\bigcup_{\vv{v} \in \ev{F}} T_{\vv{v}}(\ens{B})$, où $T_{\vv{v}}$ est la translation par le vecteur $\vv{v}$.
+       \end{enumerate}
+  \end{defprop}
+\end{frame}
+% -----------
+\begin{frame}{Le cylindre standard}
+  On se place dans $\mathbb{R}^{3}$, vu comme espace affine.
+  \begin{defprop}
+    \alert{Le cylindre standard} $\ens{C}$ de $\mathbb{R}^{3}$ est défini par l'une des conditions équivalentes:
+    \begin{enumerate}[<+(1)->]
+      \item $\ens{C}=\{x^{2}+y^{2}=1\}$.
+      \item $\ens{C}$ est le cylindre de direction $Oz$ engendré par le cercle $\{x^{2}+y^{2}=1, z=0\}$.
+      \item $\ens{C}$ est l'ensemble obtenu par la rotation autour de l'axe $Oz$ de la droite vectorielle $\{x=1, y=0\}$.
+    \end{enumerate}
+  \end{defprop}\pause
+  L'intersection du cylindre standard avec un hyperplan est une ellipse\pause, deux droites\pause, une droite\pause, ou bien vide.
+\end{frame}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\subsection{Courbes de niveaux}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+% -----------
+\begin{frame}{Définition de courbe de niveau}
+  Soit une application $f:A \to B$ entre ensembles.
+  \begin{definition}
+    Soit $k \in B$, l'ensemble $\ens{L}_{k}=f\,^{-1}(\{k\})$ est appelé \alert{la courbe de niveau $k$} de $f$.\pause{} On peut également l'appeler \alert{la ligne de niveau $k$} ou \alert{l'ensemble de niveau $k$} de $f$, et des notations alternatives sont $\ens{L}_{k}(f\,)$ ou $\ens{L}_{f,k}$.
+  \end{definition}\pause
+  La terminologie «courbe de niveau» prend tout son sens quand $f:\mathbb{R}^{2} \to \mathbb{R}$ est différentiable et $k$ une valeur régulière.
+\end{frame}
+% -----------
+\begin{frame}{Exemples de courbes de niveaux}
+  \begin{enumerate}[<+(1)->]
+    \item Pour $f(x,y)=x^{2}+y^{2}$, $\ens{L}_{k}$ est un cercle, un point, ou vide, selon que $k$ soit positif (valeur régulière), nul ou négatif.
+    \item Pour $f(x,y)=ax+by$, avec $(a,b)\neq(0,0)$, les $\ens{L}_{k}$ sont les droites affines de direction la droite vectorielle $\ens{L}_{0}$.
+    \item Plus généralement tout ensemble défini par des équations $\{ x \in \ens{E} \,|\, f_{1}(x)=b_{1},\ldots,f_{p}(x)=b_{p}\}$ est la courbe de niveau $(b_{1},\ldots,b_{p})$ de l'application $f(x)=\big(f_{1}(x),\ldots,f_{p}(x)\big)$.
+  \end{enumerate}
+\end{frame}
+% -----------
+\begin{frame}{Image d'une courbe de niveau}
+  \begin{proposition}
+    Soit un isomorphisme $\phi:A\isoto B$ et $f:A\to C$, alors l'image de $\ens{L}_{k}(f\,)$ par $\phi$ est $\ens{L}_{k}(f\circ \phi^{-1}\,)$.
+  \end{proposition}\pause
+  Exemples :
+  \begin{enumerate}[<+(1)->]
+  \item Soit $\phi:\mathbb{R}^{2}\isoto\mathbb{R}^{2}$ définie par $\phi(x,y)=(ax,by)$. Alors l'image du cercle unité par $\phi$ est l'ellipse d'équation $\big(\frac{x}{a}\big)^{2}+\big(\frac{y}{b}\big)^{2}=1$.
+  \item Soit $\phi:\mathbb{R}^{2}\isoto\mathbb{R}^{2}$ définie par $\phi(x,y)=(x-y,x+y)$.
+    \begin{enumerate}[<+(1)->]
+      \item $\phi(\{x^{2}+y^{2}=1\}) = \{x^{2}+y^{2}=2\}$.
+      \item $\phi(\{ax+by=1\}) = \{x(a-b)+y(a+b)=2\}$.
+    \end{enumerate}\pause
+  \item Soit $\phi:\mathbb{R}^{3}\isoto\mathbb{R}^{3}$ définie par $\phi(x,y,z)=(x,z-y,z+y)$.\pause{} Alors l'image du cône standard est le cône d'équation $\{x^{2}=yz\}$.
+  \end{enumerate}
+\end{frame}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\section{Ellipse}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+% -----------
+\begin{frame}{Définition d'une ellipse}
+  \begin{defprop}
+    Soit $\ens{E}$ un plan affine euclidien. Un sous-ensemble $E$ est dit une \alert{ellipse} s'il satisfait une des conditions équivalentes:
+    \begin{enumerate}[<+(1)->]
+      \item Dans un repère orthonormé, $E$ est défini par une équation cartésienne de la forme $\big(\frac{x}{a}\big)^{2}+\big(\frac{y}{b}\big)^{2}=1$, où les constantes $a \geq b > 0$ sont appelées \alert{les rayons}.
+      \item Il existe deux points $F_{1}$ et $F_{2}$ à distance $\d(F_{1},F_{2})=2c$, appelés \alert{foyers},  et $a > c$ tels que $E = \{ M \in \ens{E} \,|\, \d(F_{1},M)+\d(M,F_{2})=2a\}$.
+      \item Soit $E$ est un cercle, soit il existe une droite $\ens{D}$, appelée \alert{la directrice}, un point $F \notin \ens{D}$, appelé \alert{foyer}, et $\varepsilon \in ]0,1[$, appelé \alert{excentricité}, tels que $E = \{ M \in \ens{E} \,|\, \d(F,M)=\varepsilon\,\d(M,\ens{D})\}$.
+    \end{enumerate}
+  \end{defprop}\pause
+  D'autres définitions équivalentes d'une ellipse existent.\pause{}\newline
+  Si $\d(F,\ens{D})=h$, alors on a les relations entre les paramètres : $a^{2}=c^{2}+b^{2}$, $\varepsilon^{2} =1-\big(\frac{b}{a}\big)^{2}$, et $(a-c)=\frac{\varepsilon}{1+\varepsilon}h$.
+\end{frame}
+% -----------
+\begin{frame}{Propriétés des ellipses}
+  \begin{enumerate}[<+(1)->]
+    \item Toute ellipse possède un unique point de symétrie centrale, appelé \alert{le centre} de l'ellipse.
+    \item Toute ellipse qui n'est pas un cercle admet exactement $2$ axes de symétrie orthogonaux qui se coupent dans le centre.
+    \item Les cercles ont une infinité d'axes de symétrie: toute droite qui passe par le centre en est un.
+    \item L'image par un isomorphisme (resp. similitude, resp. isométrie) affine d'une ellipse est une ellipse (resp. de même excentricité, resp. de mêmes rayons).
+  \end{enumerate}
+\end{frame}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\section{Parabole}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+% -----------
+\begin{frame}{Définition d'une parabole}
+  \begin{defprop}
+    Soit $\ens{E}$ un plan affine euclidien. Un sous-ensemble $P$ est dit une \alert{parabole} s'il satisfait une des conditions équivalentes:
+    \begin{enumerate}[<+(1)->]
+      \item Dans un repère orthonormé, $P$ est défini par une équation cartésienne de la forme $x^{2}=2py$ avec $p>0$.
+      \item Il existe une droite $\ens{D}$, appelée \alert{la directrice}, et un point $F \notin \ens{D}$, appelé le \alert{foyer}, tels que $P = \{ M \in \ens{E} \,|\, \d(F,M)=\d(M,\ens{D})\}$.
+    \end{enumerate}
+  \end{defprop}\pause
+  Les deux conditions sont reliées par l'équation $\d(F,\ens{D})=p$.\pause{}\newline
+  Au vu de la deuxième condition, on dit que l'excentricité d'une parabole est $\varepsilon=1$.
+\end{frame}
+% -----------
+\begin{frame}{Propriétés des paraboles}
+  \begin{enumerate}[<+(1)->]
+    \item Les paraboles n'ont pas de centre de symétrie.
+    \item Toute parabole admet un unique axe de symétrie. Il est orthogonal à la directrice et passe par le foyer.
+    \item L'image par un isomorphisme affine d'une parabole est une parabole.
+  \end{enumerate}
+\end{frame}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\section{Hyperbole}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+% -----------
+\begin{frame}{Définition d'une hyperbole}
+  \begin{defprop}
+    Soit $\ens{E}$ un plan affine euclidien. Un sous-ensemble $H$ est dit une \alert{hyperbole} s'il satisfait une des conditions équivalentes:
+    \begin{enumerate}[<+(1)->]
+      \item Dans un repère orthonormé, $H$ est défini par une équation cartésienne de la forme $\big(\frac{x}{a}\big)^{2}-\big(\frac{y}{b}\big)^{2}=1$ avec $a>0$ et $b>0$.
+      \item Il existe deux points $F_{1}$ et $F_{2}$ à distance $\d(F_{1},F_{2})=2c$, appelés \alert{foyers},  et $a \in ]0,c\,[$ tels que $H = \big\{ M \in \ens{E} \,\big|\; |\!\d(F_{1},M)-\d(M,F_{2})|=2a\big\}$.
+      \item Il existe une droite $\ens{D}$, appelée la \alert{la directrice}, un point $F \notin \ens{D}$, appelé \alert{foyer}, et $\varepsilon \in ]1,\infty[$, appelée \alert{excentricité}, tels que $H = \{ M \in \ens{E} \,|\, \d(F,M)=\varepsilon\,\d(M,\ens{D})\}$.
+    \end{enumerate}
+  \end{defprop}\pause
+  D'autres définitions équivalentes d'une hyperbole existent.\pause{}\newline
+  Si $\d(F,\ens{D})=h$, alors on a les relations entre les paramètres : $c^{2}=a^{2}+b^{2}$, $\varepsilon^{2} =1+\big(\frac{b}{a}\big)^{2}$, et $(c-a)=\frac{\varepsilon}{1+\varepsilon}h$.
+\end{frame}
+% -----------
+\begin{frame}{Propriétés des hyperboles}
+  \begin{enumerate}[<+(1)->]
+    \item Il existe un repère (pas forcement orthonormé, ni même orthogonal) dans lequel l'équation de l'hyperbole est $xy=1$. Autrement dit c'est la graphe de la fonction $x\mapsto\frac{1}{x}$.
+    \item Toute hyperbole possède un unique point de symétrie centrale, appelé \alert{le centre} de l'hyperbole.
+    \item Toute hyperbole admet $2$ axes de symétrie orthogonaux qui se coupent dans le centre.
+    \item Les deux droites d'équations $\frac{x}{a}\pm\frac{y}{b}=0$ sont appelées \alert{les asymptotes} de l'hyperbole $\big\{\big(\frac{x}{a}\big)^{2}-\big(\frac{y}{b}\big)^{2}=1\big\}$.
+    \item L'image par un isomorphisme (resp. similitude, resp. isométrie) affine d'une hyperbole est une hyperbole (resp. de même excentricité, resp. de mêmes excentricité et distance entre les foyers).
+  \end{enumerate}
+\end{frame}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\section{Niveaux des formes quadratiques}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+% -----------
+\begin{frame}{Niveaux des formes quadratiques}
+  Étant donnée une forme quadratique $Q$ de rang $r$ sur un espace vectoriel euclidien $\ev{E}$ de dimension $n$\pause, il existe une b.o.n dans laquelle $Q(\vv{v})=\lambda_{1}x_{1}^{2}+\cdots+\lambda_{r}x_{r}^{2}$\pause, où $(x_{1},\ldots,x_{n})$ sont les coordonnées de $\vv{v}$ dans cette b.o.n.\pause, et $\lambda_{i} \neq 0, \forall i=1,\ldots,r$.\pause
+
+  Si on note $Q\,'$ la restriction de $Q$ sur l'espace $\ev{F}$ engendré par les $r$ premiers vecteurs de cette b.o.n., alors
+  \begin{itemize}[<+(1)->]
+    \item $\ev{F} = (\ker Q)^{\perp}$;
+    \item $Q\,'$ est non dégénéré sur $\ev{F}$;
+    \item La courbe de niveau $\ens{L}_{k}(Q)$ est un cylindre de direction $\ker Q$ et de base $\ens{L}_{k}(Q\,') \subset \ev{F}$.
+  \end{itemize}\pause
+
+  Donc pour étudier les courbes de niveaux des formes quadratiques, il suffit de connaître les courbes de niveaux des formes quadratiques \textbf{non dégénérées}.
+
+\end{frame}
+
+% -----------
+\begin{frame}{En dimension 1}
+  \begin{itemize}[<+(1)->]
+    \item Toute forme quadratique non dégénérée sur $\mathbb{R}$ est de la forme $x\mapsto a x^{2}$ avec $a \neq 0$, et donc les courbes de niveaux $\ens{L}_{k}$ sont:
+    \begin{itemize}[<+(1)->]
+      \item \myemph{si $\signe(a)\neq\signe(k)$:} vides,
+      \item \myemph{si $k=0$:} le point $\{0\}$,
+      \item \myemph{si $\signe(a)=\signe(k)$:} l'ensemble de deux points $\{\pm\sqrt{k/a}\}$.
+    \end{itemize}
+    \item La seule forme quadratique dégénérée sur $\mathbb{R}$ est $x\mapsto 0$ dont les lignes de niveaux $\ens{L}_{k}$ sont:
+    \begin{itemize}[<+(1)->]
+      \item \myemph{si $k \neq 0$:} vides,
+      \item \myemph{si $k=0$:} $\mathbb{R}$  qui est un cylindre de base $0$ et de direction $\mathbb{R}$.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+% -----------
+\begin{frame}{En dimension 2}
+  \begin{itemize}[<+(1)->]
+  \item Les formes quadratiques non dégénérées de $\mathbb{R}^{2}$ s'écrivent dans une b.o.n. sous la forme $(x,y)\mapsto \lambda_{1}x^{2}+\lambda_{2}y^{2}$ avec $\lambda_{i}\neq0$ pour $i=1,2$.
+    \begin{itemize}[<+(1)->]
+      \item Si $\signe(\lambda_{1})=\signe(\lambda_{2})$ les courbes de niveaux $\ens{L}_{k}$ sont:
+      \begin{itemize}[<+(1)->]
+        \item \myemph{si $\signe(\lambda_{i})\neq\signe(k)$:} vide,
+        \item \myemph{si $k=0$:} le point $\{0\}$,
+        \item \myemph{si $\signe(\lambda_{i})=\signe(k)$:} une ellipse d'équation $\big(\frac{x}{a}\big)^{2}+\big(\frac{y}{b}\big)^{2}=1$ où $a=\sqrt{k/\lambda_{1}}$ et $b=\sqrt{k/\lambda_{2}}$.
+      \end{itemize}
+      \item Si $\signe(\lambda_{1})\neq\signe(\lambda_{2})$ les courbes de niveaux $\ens{L}_{k}$ sont:
+      \begin{itemize}[<+(1)->]
+        \item \myemph{si $k=0$:} deux droites de pentes $\pm\sqrt{-\lambda_{1}/\lambda_{2}}$,
+        \item \myemph{si $k\neq0$:} une hyperbole dont l'équation standard dans le cas $k>0$ est $\big(\frac{x}{a}\big)^{2}-\big(\frac{y}{b}\big)^{2}=1$ où $a=\sqrt{k/\lambda_{1}}$ et $b=\sqrt{-k/\lambda_{2}}$.
+      \end{itemize}\pause
+      \myemph{Les asymptotes de l'hyperbole $\ens{L}_{k}$ sont les deux droites de $\ens{L}_{0}$.}
+    \end{itemize}
+  \item Les formes quadratiques dégénérées de $\mathbb{R}^{2}$ non nulles s'écrivent dans une b.o.n. sous la forme $(x,y)\mapsto \lambda x^{2}$ avec $\lambda\neq0$.\pause{} Et donc leurs courbes de niveaux $\ens{L}_{k}$ sont vides, une ou deux droites selon que $k/\lambda<0$, $k=0$ ou $k/\lambda>0$.
+  \end{itemize}
+\end{frame}
+
+% -----------
+\begin{frame}{En dimension 3}
+  \begin{itemize}[<+(1)->]
+  \item Les formes quadratiques non dégénérées de $\mathbb{R}^{3}$ s'écrivent dans une b.o.n. sous la forme $(x,y,z)\mapsto \lambda_{1}x^{2}+\lambda_{2}y^{2}+\lambda_{3}z^{2}$ avec $\lambda_{i}\neq0$ pour $i=1,2,3$.\pause{} Comme $\ens{L}_{k}(Q)=\ens{L}_{-k}(-Q)$ on peut restreindre notre étude au cas de $2$ ou $3$ valeurs propres positives\pause, et quitte à échanger les coordonnées on peut supposer $\lambda_{1},\lambda_{2} > 0$.
+    \begin{itemize}[<+(1)->]
+      \item Si $\lambda_{i}>0$ les courbes de niveaux $\ens{L}_{k}$ sont:
+      \begin{itemize}[<+(1)->]
+        \item \myemph{si $k<0$:} vide,
+        \item \myemph{si $k=0$:} le point $\{0\}$,
+        \item \myemph{si $k>0$:} un ellipsoïde d'équation $\big(\frac{x}{a}\big)^{2}+\big(\frac{y}{b}\big)^{2}+\big(\frac{z}{c}\big)^{2}=1$ où $a=\sqrt{k/\lambda_{1}}$, $b=\sqrt{k/\lambda_{2}}$ et $c=\sqrt{k/\lambda_{3}}$.
+      \end{itemize}
+      \item Si $\lambda_{1},\lambda_{2} > 0$ et $\lambda_{3} < 0$ les courbes de niveaux $\ens{L}_{k}$ sont:
+      \begin{itemize}[<+(1)->]
+        \item \myemph{si $k=0$:} un cône elliptique de base l'ellipse d'équations $\lambda_{1}x^{2}+\lambda_{2}y^{2}=|\lambda_{3}|$ et $z=1$,
+        \item \myemph{si $k>0$:} un hyperboloïde à une nappe dont la section avec le plan $z=h$ est l'ellipse $\lambda_{1}x^{2}+\lambda_{2}y^{2}=k+|\lambda_{3}|h^{2}$.
+        \item \myemph{si $k < 0$:} un hyperboloïde à deux nappes\pause{} dont la section avec le plan $z=h$ est vide si $|h|<\sqrt{k/\lambda_{3}}$\pause{} et est une l'ellipse $\lambda_{1}x^{2}+\lambda_{2}y^{2}=k+|\lambda_{3}|h^{2}$ si $|h|\geq\sqrt{k/\lambda_{3}}$.
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\section{Coniques et quadriques}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+% -----------
+\begin{frame}{Fonctions polynomiales}
+  \begin{defprop}
+    On dit que $f$ est une \alert{fonction polynomiale} de degré $n$ sur l'espace affine $\ens{E}$ si dans un repère (dans tout repère) la valeur de $f(x_{1},\ldots,x_{n})$ est un polynôme de degré $n$ en les coordonnées $(x_{1},\ldots,x_{n})$.
+  \end{defprop}\pause
+  Dans le suite de ce cours on va étudier les courbes de niveaux des fonctions polynomiales de degré 2.
+\end{frame}
+
+% -----------
+\begin{frame}{Pourquoi les polynômes de degré 2 ?}
+  \begin{enumerate}[<+(1)->]
+    \item Les courbes de niveaux des polynômes de degré 0 sont : vide ou tout l'espace.
+    \item Les courbes de niveaux des polynômes de degré 1 sont les hyperplans affines.
+    \item On vient de discuter les courbes de niveaux des polynômes homogènes de degré 2, qui sont les courbes de niveaux des formes quadratiques.
+    \item Une fonction qui est un polynôme homogène de degré 2 dans un repère n'est pas forcement homogène dans un autre repère.
+    \item On ne retrouve pas la parabole si on se limite aux polynômes homogènes.
+  \end{enumerate}\pause
+  Pour toutes ces raisons, il est naturel d'étudier en toute généralité les courbes de niveaux des fonctions polynomiales de degré 2 d'un espace affine (euclidien) $\ens{E}$ dans $\mathbb{R}$.
+\end{frame}
+
+% -----------
+\begin{frame}{Forme standard des polynômes de degré 2}
+  \begin{proposition}
+    Soit $f$ est une fonction polynomiale de degré $2$ sur l'espace affine $\ens{E}$ de dimension $n$, alors il existe une b.o.n. dans laquelle soit
+    \[
+      f(x_{1},\ldots,x_{n}) = \lambda_{1}x_{1}^{2}+\cdots+\lambda_{r}x_{r}^{2}+\mu
+    \]
+    avec $\lambda_{i}\neq 0$ pour $i=1,\ldots,r$\pause, soit
+    \[
+      f(x_{1},\ldots,x_{n}) = \lambda_{1}x_{1}^{2}+\cdots+\lambda_{r}x_{r}^{2}+\mu x_{r+1}
+    \]
+     avec $\mu\neq0$ et $\lambda_{i}\neq 0$ pour $i=1,\ldots,r$.
+  \end{proposition}\pause
+  Dans le premier cas on se retrouve dans le cas déjà discuté des formes quadratiques.\pause\newline
+  Dans le deuxième cas, en notant $\ens{F}=\{(x_{1},\ldots,x_{r+1},0,\ldots,0)\}$ et $\ens{F}^{\perp}=\{(0,\ldots,0,x_{r+2},\ldots,x_{n})\}$, vu que $\ens{L}_{k}(f\,)$ est un cylindre de direction $\ev{F^{\perp}}$ et de base $\ens{L}_{k}(f\,|_{\ens{F}}) \subset \ens{F}$, on peut se restreindre à l'étude du cas où $n=r+1$.
+\end{frame}
+
+% -----------
+\begin{frame}{polynômes de degré 2, en dimension 1}
+  En dimension $1$ il n'y a pas de polynômes de degré $2$ qui ne soient pas dans une base de la forme déjà étudiée $AX^{\,2}-C$.\pause\newline
+  Calcul avec $a\neq0$ :
+  \[
+    ax^{2}+bx+c=a(x+\frac{b}{2a})^{2}-\frac{b^{2}}{4a}+c=AX^{\,2}-C,
+  \]
+  avec $A=a$, $X=x+\frac{b}{2a}$ et $C=\frac{b^{2}-4ac}{4a}$.
+\end{frame}
+
+% -----------
+\begin{frame}{polynômes de degré 2, en dimension 2}
+  En dimension $2$ les polynômes qui manquent dans notre étude s'écrivent dans une b.o.n. sous la forme $ax^{2}+by$ avec $a\neq0$ et $b\neq0$.\pause\newline
+  Donc leurs courbes de niveaux $\ens{L}_{k}$ sont des paraboles $X^{\,2}=2pY$, avec $X=x$, $p=-\frac{b}{2a}$ et $Y=y-\frac{k}{b}$.
+\end{frame}
+
+% -----------
+\begin{frame}{polynômes de degré 2, en dimension 3}
+  En dimension $3$ il y a deux types de polynômes qu'il faut étudier en plus des formes quadratiques déjà étudiées :
+  \begin{enumerate}[<+(1)->]
+    \item $ax^{2}+by^{2}+cz$, avec $a$ et $b$ de même signe.\pause{} Ces courbes de niveaux sont appelées des \alert{paraboloïdes elliptiques}.\pause\newline
+    Leur intersection avec un plan $\{z=h\}$ est une ellipse\pause, un point ou vide.\pause\newline
+    Leur intersection avec un plan $\{x=h\}$ ou $\{y=h\}$ est une parabole.
+    \item $ax^{2}-by^{2}+cz$, avec $a>0$ et $b>0$. \pause{} Ces courbes de niveaux sont appelées des \alert{paraboloïdes hyperboliques}.\pause\newline
+    Leur intersection avec un plan $\{z=h\}$ est une hyperbole\pause{} ou deux droites.\pause\newline
+    Leur intersection avec un plan $\{x=h\}$ ou $\{y=h\}$ est une parabole.
+  \end{enumerate}
+\end{frame}
+
+\end{document}
