@@ -10,6 +10,8 @@
 \newcommand{\forsimple}[1]{\ifsidebar\relax\else#1\fi}
 \newcommand{\fornotsimple}[1]{\ifsidebar#1\fi}
 
+\fornotsimple{\PassOptionsToClass{bigger}{beamer}}
+
 \newif\ifnegatif\negatiffalse % par defaut en couleur
 \DeclareOption{negatif}{
   \negatiftrue
