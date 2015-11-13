@@ -1,0 +1,4 @@
+[submodule "gh-pages"]
+	path = gh-pages
+	url = git@github_ktzanev:ktzanev/m53lille1.git
+	branch = gh-pages
