@@ -1,4 +1,0 @@
-[submodule "TDs/gh-pages"]
-	path = TDs/gh-pages
-	url = git@github_ktzanev:ktzanev/m53lille1.git
-	branch = gh-pages
