@@ -116,11 +116,11 @@
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{question}{Question}
 
+%  -------------- Les abréviations standards
 \let\ens\mathcal
 \newcommand*{\ev}[1]{\vv{\ens{#1}}}
 \let\ssi\Leftrightarrow % ou \newcommand\ssi{\;\Leftrightarrow\;}
 \newcommand*\isoto{\xrightarrow{\smash{\raisebox{-.28em}{\ensuremath{\sim\kern1pt}}}}}
-
 \DeclareMathOperator{\lin}{\mathcal{L}}
 \DeclareMathOperator{\aff}{Aff}
 \DeclareMathOperator{\aut}{Aut}
