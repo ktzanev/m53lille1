@@ -66,4 +66,9 @@ Documents
 Olivier
 *.sh
 gh-pages/
+*.ods
+*.xlsx
+*Olivier*
+Interro/
+
 
