@@ -1,0 +1,119 @@
+\documentclass[a4paper,12pt,reqno]{amsart}
+\usepackage{graphicx}
+\usepackage{macros_M53}
+
+% pour voir les solution il faut enlever le commentaire de la ligne suivante
+% \solutionstrue
+
+\begin{document}
+
+% ==================================
+\hautdepage{
+
+\ifsolutions{Solutions de l'interrogation}\else{Interrogation}\fi\par\normalfont\normalsize
+13 octobre 2015\\{[ durée: 1 heure ]}\par
+}
+% ==================================
+\ifsolutions\else
+% {\fontencoding{U}\fontfamily{futs}\selectfont\char 66\relax}
+\tikz[baseline=(e.base)]{\NoAutoSpacing\node(e){!};\draw[red,ultra thick,line join=round,yshift=-.15ex](90:1em)--(210:1em)--(330:1em)--cycle;}
+\textit{Les documents ne sont pas autorisés.}\newline
+\textit{$(\star)$ Les exercices avec étoile sont des exercices plus difficiles.}
+
+\vspace{4mm}
+\fi
+
+%-----------------------------------
+\begin{exo}
+
+  On note $\tr(M)$ la trace de la matrice $M$. On considère les sous-ensembles des espaces vectoriels suivants :\vskip-7ex
+  \begin{eqnarray*}
+    \ens{A} = \big\{ (x,y,z) \in \mathbb{R}^{3} \:\big|\: (x+1)^{2}-x^{2}+2y-z=0\big\} &\subset& \mathbb{R}^{3}\\
+    \ens{B} = \big\{ (x,y) \in \mathbb{R}^{2} \:\big|\: (x-y)(x+y)=0\big\} &\subset& \mathbb{R}^{2}\\
+    \ens{C} = \big\{ M \in M_{2}(\mathbb{R}) \:\big|\: \operatorname{tr}(M) \geq 0 \big\} &\subset& M_{2}(\mathbb{R})\\
+    \textit{$(\star)$\qquad}\ens{D} = \big\{ f \in C^{0}(\mathbb{R}) \:\big|\: x\mapsto f(x)-| x | \in C^{1}(\mathbb{R}) \big\} &\subset& C^{0}(\mathbb{R})\\
+  \end{eqnarray*}\vskip-5ex
+  Pour chacun de ces sous-ensembles :
+  \begin{enumerate}
+    \item Déterminer, en justifiant, s'il est un sous-espace affine.
+  \end{enumerate}
+  Si c'en est un:
+  \begin{enumerate}[resume]
+    \item déterminer sa direction et un point de ce sous-espace affine;
+    \item si possible, donner une droite affine de ce sous-espace affine.
+  \end{enumerate}
+\end{exo}
+
+\begin{solution}
+  \begin{enumerate}[label=$\mathcal{\Alph*}$)]
+    \item
+      \begin{enumerate}[\bf a)]
+        \item $\ens{A} = \big\{ (x,y,z) \in \mathbb{R}^{3} \:\big|\: 2x+2y-z=-1 \big\}$ est un hyperplan affine, car c'est l'image réciproque de $-1$ par la forme linéaire $\phi(x,y,z)=2x+2y-z$.
+        \item $\ev{A} = \ker\phi = \big\{ (x,y,z) \in \mathbb{R}^{3} \:\big|\: 2x+2y-z=0 \big\}$. Le point $\Omega=(0,0,1)$ est un point de $\ens{A}$ car $2.0+2.0-1=-1$.
+        \item Nous avons (arbitrairement choisi) $\vv{v}=(1,-1,0) \in \ev{A}$ car $2.1+2.(-1)-0=0$.\newline Ainsi $\ens{D}=\Omega+\mathbb{R}\vv{v} = \big\{ (\lambda,-\lambda,1) \in \mathbb{R}^{3} \:\big|\: \lambda \in \mathbb{R} \big\}$ est une droite affine de $\ens{A}$.
+      \end{enumerate}
+    \item
+      \begin{enumerate}[\bf a)]
+        \item Le sous-ensemble $\ens{B}$ n'est pas un sous-espace affine car il n'est pas stable par barycentre: $(1,1) \in \ens{B}$ et $(1,-1) \in \ens{B}$, mais $\frac12 (1,1)+\frac12 (1,-1)=(1,0) \notin \ens{B}$.\newline
+        \textit{Remarque: $\ens{B}$ est la réunion de deux droites affines distinctes, il ne peut pas être un sous-espace affine.}
+      \end{enumerate}
+    \item
+      \begin{enumerate}[\bf a)]
+        \item Le sous-ensemble $\ens{E}$ n'est pas un sous-espace affine, car il n'est pas stable par barycentre: $O=\begin{psmallmatrix}0 0\\0 0\end{psmallmatrix} \in \ens{E}$, $I=\begin{psmallmatrix}1 0\\0 1\end{psmallmatrix} \in \ens{E}$, mais $2O-I=\begin{psmallmatrix}-1 \phantom{-}0\\\phantom{-}0 -1\end{psmallmatrix}\notin\ens{E}$.\newline
+        \textit{Remarque: $\ens{E}$ est un demi-espace fermé.}
+      \end{enumerate}
+    \item
+      \begin{enumerate}[\bf a)]
+        \item $f \in \ens{D}$ $\Leftrightarrow$ $\exists g \in C^{1}(\mathbb{R})$ telle que $f(x)-|x|=g(x)$ $\Leftrightarrow$ $f(x)=|x|+g(x)$. En notant $|\cdot| \in C^{0}(\mathbb{R})$ la fonction $x\mapsto|x|$, $\ens{D}=|\cdot|+C^{1}(\mathbb{R})$, avec $|\cdot|\in\ens{D}$ et $C^{1}(\mathbb{R})$ sous-espace vectoriel de $C^{0}(\mathbb{R})$. Donc $\ens{D}$ est un sous-espace affine de $C^{0}(\mathbb{R})$.
+        \item D'après la question précédente $\ev{D}=C^{1}(\mathbb{R})$, et le point (fonction) $\Omega=|\cdot| \in \ens{D}$ convient.
+        \item Soit $\vv{v}(x)=x$, alors $\vv{v} \in \ev{D}$ est un vecteur (fonction) non nul. Donc $\ens{D}=\Omega+\mathbb{R}\vv{v} = \big\{ x\mapsto|x|+\lambda x \in C^{0}(\mathbb{R}) \:\big|\: \lambda\in\mathbb{R} \big\}$ est une droite de $\ens{D}$.
+      \end{enumerate}
+  \end{enumerate}
+\end{solution}
+
+%-----------------------------------
+\begin{exo}
+
+  On note $\tr(M)$ la trace de la matrice $M$, et $H_{\Omega,\lambda}$ l'homothétie de centre $\Omega$ et de rapport $\lambda$.
+
+  On considère les applications suivantes entre espaces vectoriels:
+  \begin{eqnarray*}
+    \psi:\mathbb{R}^{2}\longrightarrow\mathbb{R}^{2},&\quad& \psi=H_{(1,0),2}\circ H_{(0,1),-1}\\
+    \xi:\mathbb{R}\longrightarrow\mathbb{R},&\quad& \xi(x)=(x+1)^{3}\\
+    \textit{($\star$)\quad}\phi:M_{2}(\mathbb{R})\longrightarrow\mathbb{R},&\quad& \phi(M)=\tr(M+I_{2})\\
+  \end{eqnarray*}\vskip-5ex
+  Pour chacune de ces applications:
+  \begin{enumerate}
+    \item Déterminer, en justifiant, s'il s'agit d'une application affine.
+    \item Si c'en est une, déterminer sa partie linéaire, et si possible sa nature.
+    \item Est-ce un automorphisme affine? Si c'en est un, déterminer son inverse.
+  \end{enumerate}
+\end{exo}
+
+\begin{solution}
+  \begin{enumerate}
+    \item[$\psi$)]
+      \begin{enumerate}[\bf a)]
+        \item $\psi$ est une application affine, comme la composée de deux applications affines.
+        \item $\psi$ est la composée de deux homothéties de rapports $2$ et $-1$, et comme $2.(-1)=-2\neq 1$, $\psi$ est une homothétie de rapport $-2$. Donc $\vv{\psi}=-2\id$.
+        \item $\psi$ est une homothétie de rapport $\lambda=-2$ non nul, donc c'est un automorphisme. L'application inverse de $\psi$ est une homothétie de rapport $\frac{1}{\lambda}=-\frac12$. Pour déterminer $\psi^{-1}$ il suffit de déterminer le centre de $\psi^{-1}$, qui est le même que celui de $\psi$.\newline
+        $\psi(x,y)=-(1,0)+2\big(2(0,1)-(x,y)\big)=(-1,4)-2(x,y)=3(-\frac13,\frac43)-2(x,y)$, donc le centre de $\psi$ est $\Omega=(-\frac13,\frac43)$. Ainsi $\psi^{-1}=H_{(-\frac13,\frac43),-\frac12}$.
+      \end{enumerate}
+    \item[$\xi$)]
+      \begin{enumerate}[\bf a)]
+        \item $\xi$ n'est pas une application affine, car elle ne préserve pas les barycentres: $\xi(-1)=0$, $\xi(0)=1$, $\xi(1)=8$, et donc $\xi(\frac12(-1)+\frac12 1)=\xi(0)=1 \neq 4=\frac12 \xi(-1) + \frac12 \xi(1)$.
+      \end{enumerate}
+      \textit{Remarque: même si $\xi$ est bijective, ce n'est pas un automorphisme affine.}
+    \item[$\phi$)]
+      \begin{enumerate}[\bf a)]
+        \item On note $T_{I_{2}}$ la translation par $I_{2}$. Ainsi $\phi=\tr\circ T_{I_{2}}$ est une application affine, comme la composée de la forme linéaire $\tr$ avec l'application affine $T_{I_{2}}$.
+        \item $\vv{\phi}=\vv{\tr}\circ\vv{T_{I_{2}}}=\tr$, car $\tr$ est linéaire et $\vv{T_{I_{2}}}=\id$.
+        \item Comme $\dim(M_{2}(\mathbb{R})) \neq \dim(\mathbb{R})$, $\phi$ n'est pas un automorphisme.
+      \end{enumerate}
+  \end{enumerate}
+\end{solution}
+
+
+\end{document}
+
+

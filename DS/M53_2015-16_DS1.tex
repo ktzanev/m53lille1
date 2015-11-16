@@ -1,0 +1,153 @@
+\documentclass[a4paper,12pt,reqno]{amsart}
+\usepackage{graphicx}
+\usepackage{macros_M53}
+
+% pour voir les solutions il faut enlever le commentaire de la ligne suivante
+% \solutionstrue
+
+\begin{document}
+
+% ==================================
+\hautdepage{
+
+\ifsolutions{Solutions de l'interrogation}\else{Interrogation}\fi\par\normalfont\normalsize
+3 novembre 2015\\{[ durée: 2 heures ]}\par
+}
+% ==================================
+\ifsolutions\else
+% {\fontencoding{U}\fontfamily{futs}\selectfont\char 66\relax}
+\tikz[baseline=(e.base)]{\NoAutoSpacing\node(e){!};\draw[red,ultra thick,line join=round,yshift=-.15ex](90:1em)--(210:1em)--(330:1em)--cycle;}
+\textbf{Documents autorisés :}\textit{Une feuille A4 recto-verso écrite à la main.}
+
+\vspace{14mm}
+\fi
+
+%-----------------------------------
+\begin{exo} (Question de cours)
+
+  Démontrer le résultat du cours suivant :
+
+  \setlength{\leftskip}{1cm}
+
+    \emph{Dans un espace affine euclidien, une homothétie affine de rapport $\lambda$ multiplie les distances par $|\lambda|$, et donc n'est une isométrie que si c'est l'identité ou une symétrie centrale.}
+
+  \setlength{\leftskip}{0cm}
+\end{exo}
+
+\begin{solution}
+  \newcommand\circled[1]{\textcircled{\scriptsize #1}}
+  \newcommand\scriptcircled[1]{\scriptsize\textcircled{\raisebox{-0.3pt}{\tiny #1}}}
+
+  Soient $A$ et $B$ deux points de l'espace affine euclidien et $H$ une homothétie affine de rapport $\lambda$. On a :
+    \[
+      d(H(A),H(B)) \stackrel{\scriptcircled{1}}{=} \norm{\vv{H(A)H(B)}} \stackrel{\scriptcircled{2}}{=} \norm{\vv{H}(\vv{AB})} \stackrel{\scriptcircled{3}}{=} \norm{\lambda\vv{AB}} \stackrel{\scriptcircled{4}}{=} |\lambda| \norm{\vv{AB}} \stackrel{\scriptcircled{5}}{=} |\lambda| d(A,B).
+    \]
+    \begin{itemize}[leftmargin=!]
+      \item[\circled{1}+\circled{5}] Par la définition de la distance dans un espace affine euclidien.
+      \item[\circled{2}] Par la définition de la partie linéaire d'une application affine.
+      \item[\circled{3}] Car $\vv{H}=\lambda\id$, vu que $H$ une homothétie affine de rapport $\lambda$.
+      \item[\circled{4}] Par la définition de la norme.
+    \end{itemize}
+    Ainsi $H$ est une isométrie ssi $|\lambda|=1$, c.-à-d. ssi $\lambda=1$, auquel cas $H=\id$, ou $\lambda=-1$ auquel cas $\vv{H}=-\id$ et donc $H$ est une symétrie centrale (par définition).
+\end{solution}
+
+%-----------------------------------
+\begin{exo} (Espaces affines euclidiens)
+
+  On se place dans l'espace vectoriel $M_2(\mathbb{R})$ des matrices $2\times 2$, muni du produit scalaire $\scalprod{A}{B}=\tr(A^{t}B)$, où $A^{t}$ est la transposée de la matrice $A$, et $\tr$ est l'application trace.
+  \begin{enumerate}
+    \item Soient $A=\begin{psmallmatrix} a_{11} & a_{12}\\ a_{21} & a_{22}\end{psmallmatrix}$ et $B=\begin{psmallmatrix} b_{11} & b_{12}\\ b_{21} & b_{22}\end{psmallmatrix}$ deux éléments de $M_2(\mathbb{R})$. Montrer que
+    \[
+      \scalprod{A}{B} = \sum_{i=1}^{2}\sum_{j=1}^{2} a_{ij}b_{ij}.
+    \]
+    \item Déterminer une matrice $T$ telle que $\tr(M)=\scalprod{T}{M}$, pour tout $M \in M_2(\mathbb{R})$.
+    \end{enumerate}
+
+    Soit $\ens{H}=\big\{ M \in M_2(\mathbb{R})\big| \tr(M)=2 \big\}$.
+
+    \begin{enumerate}[resume]
+    \item Montrer que $\ens{H}$ est un sous-espace affine de $M_2(\mathbb{R})$, puis déterminer sa direction $\ev{H}$.
+    \item Déterminer la direction orthogonale $\ev{H}^{\perp}$.
+    \item Calculer la distance de la matrice $A=\begin{psmallmatrix} 1 & 2\\ 3 & 4\end{psmallmatrix}$ au sous-espace affine $\ens{H}$.
+    \item Soit $\pi$ la projection orthogonale sur $\ens{H}$. Calculer $\pi\begin{psmallmatrix} a & b\\ c & d\end{psmallmatrix}$.
+    \item Déterminer la partie linéaire $\vv{\pi}$ de la projection $\pi$. Quelle est la nature de $\vv{\pi}$?
+  \end{enumerate}
+
+\end{exo}
+
+\begin{solution}
+  \begin{enumerate}
+    \item $A^{t}B=
+            \begin{pmatrix}
+              a_{11}b_{11} + a_{21}b_{21} & a_{11}b_{12} + a_{21}b_{22}\\
+              a_{12}b_{11} + a_{22}b_{21} & a_{12}b_{12} + a_{22}b_{22}\\
+            \end{pmatrix}
+          $
+          et donc
+    \[
+      \scalprod{A}{B} = \tr(A^{t}B) = a_{11}b_{11} + a_{21}b_{21} + a_{12}b_{12} + a_{22}b_{22} = \sum_{i=1}^{2}\sum_{j=1}^{2} a_{ij}b_{ij}.
+    \]
+    \item\label{id} Soit $\I2=\begin{psmallmatrix} 1 & 0\\ 0 & 1\end{psmallmatrix}$. Comme $\scalprod{\I2}{M}=\tr(\I2^{t}M)=\tr(M)$, $T=\I2$ convient.
+  \end{enumerate}
+
+  Soit $\ens{H}=\big\{ M \in M_2(\mathbb{R})\big| \tr(M)=2 \big\}$.
+
+  \begin{enumerate}[resume]
+    \item\label{ker} On applique le résultat du cours sur la pré-image d'un espace affine par une application linéaire. Comme $\tr$ est une forme linéaire surjective, alors $\ens{H}=\tr^{-1}(\{2\})$ est un espace affine de direction $\ev{H}=\ker\tr$. Autrement dit, $\ev{H}$ est l'espace des matrices de trace nulle.
+    \item D'après \ref{id}) $\tr(M)=0 \Leftrightarrow M \perp \I2$, et donc, d'après \ref{ker}), $\ev{H} = \{\I2\}^{\perp}$.\\ Ainsi $\ev{H}^{\perp} = \affspan{\I2}=\big\{ \lambda\I2 \in M_2(\mathbb{R})\big| \lambda \in \mathbb{R} \big\}$.
+    \item Nous savons que $d(A,\ens{H})=\norm{\vv{V}}$ si $A + \vv{V} \in \ens{H}$ et $\vv{V} \perp \ens{H}$, autrement dit si $A + \vv{V}$ est la projection orthogonale de $A$ sur $\ens{H}$. D'après la question précédente on cherche $\lambda$ (avec $\vv{V}=\lambda\I2$) tel que $\tr(A+\lambda\I2)=2 \Leftrightarrow 5+2\lambda=2 \Leftrightarrow \lambda=-3/2$. Ainsi $d(A,\ens{H})=\norm{-\frac32\I2}=\frac32\norm{\I2}=\frac32 \sqrt{2} = \frac{3}{\sqrt{2}}$.
+    \item Comme dans la question précédente, $\pi(A) = A+\lambda\I2$ avec $\tr(A+\lambda\I2)=2 \Leftrightarrow \lambda=1-\tr(A)/2 \Leftrightarrow \lambda=1-(a+d)/2$. Ainsi $\pi\begin{psmallmatrix} a & b\\ c & d\end{psmallmatrix} = \begin{psmallmatrix} a & b\\ c & d\end{psmallmatrix} + (1-\frac{a+d}{2})\I2 = \begin{psmallmatrix} 1+(a-d)/2 & b\\ c & 1+(d-a)/2\end{psmallmatrix}$.
+    \item Comme $\pi\begin{psmallmatrix} a & b\\ c & d\end{psmallmatrix} = \begin{psmallmatrix} (a-d)/2 & b\\ c & (d-a)/2\end{psmallmatrix}+\I2$ est la composée d'une application linéaire et de la translation par $\I2$, nous avons que $\vv{\pi}$ est l'application linéaire donnée par $\vv{\pi}\begin{psmallmatrix} a & b\\ c & d\end{psmallmatrix} = \begin{psmallmatrix} (a-d)/2 & b\\ c & (d-a)/2\end{psmallmatrix}$.
+  \end{enumerate}
+\end{solution}
+
+\tsvp
+
+%-----------------------------------
+\begin{exo} (Géométrie dans $\mathbb{C}$)
+
+  On considère le triangle $ABC$ défini par trois points du plan $A,B,C$ non alignés. On rappelle que \emph{la médiatrice} du segment $[MN]$, $M\neq N$, est la droite perpendiculaire à la droite $\affspan{MN}$ passant par le milieu de $[MN]$.
+
+  \begin{enumerate}
+    \item Montrer que les médiatrices de $[AB]$, de $[BC]$ et de $[CA]$ se coupent en un point $\Omega$ tel que $A, B$ et $C$ sont sur un cercle de centre $\Omega$. Ce cercle est appelé \emph{cercle circonscrit} au triangle $ABC$.\newline
+    \emph{Indication: on pourra remarquer que deux des trois médiatrices se coupent en un point également situé sur la troisième.}
+  \end{enumerate}
+
+  On identifie le plan euclidien au corps des nombres complexes $\mathbb{C}$.
+
+  \begin{enumerate}[resume]
+    \item On suppose que le centre du cercle circonscrit au triangle $ABC$ est le point $O$ d'affixe $0$. Soient $a,b,c$ les affixes des points $A,B,C$. On note $H$ le point d'affixe $a+b+c$.
+    \begin{enumerate}
+      \item Calculer $(b+c)\overline{(c-b)}$ et $\overline{(b+c)}(c-b)$.
+      \item En déduire que $\affspan{AH}$ est orthogonale à $\affspan{BC}$.
+      \item Montrer que les trois hauteurs du triangle $ABC$ se coupent en $H$, dit \emph{orthocentre} du triangle.
+      \item En déduire que le centre $O$ du cercle circonscrit, l'orthocentre $H$ et \emph{le centre de gravité} $G$ du triangle $ABC$ (c.-à-d. l'isobarycentre de $A$, $B$ et $C$) sont alignés. Peut-on préciser comment?
+    \end{enumerate}
+    \item Montrer que dans tout triangle du plan le centre $\Omega$ du cercle circonscrit, l'orthocentre $H$ et le centre de gravité $G$ sont alignés, et exprimer $G$ comme barycentre de $\Omega$ et $H$.
+  \end{enumerate}
+\end{exo}
+
+\begin{solution}\newline
+  \image{r}{5cm}{-7mm}{7mm}{M53_2015-16_DS1_solution_exo3.tikz}\\[-17mm]
+  \begin{enumerate}
+    \item La médiatrice de $[MN]$, noté $\ens{M}_{[MN]}$ est l'ensemble des points qui sont à distance égale de $M$ et de $N$. Comme $[AB]$ et $[BC]$ ne sont pas parallèles, leurs médiatrices ne sont pas parallèles, et donc se coupent en un point $\Omega=\ens{M}_{[AB]}\cap\ens{M}_{[BC]}$. Nous avons $\Omega \in \ens{M}_{[AB]}$ $\Rightarrow$ $d(\Omega,A)=d(\Omega,B)$, et $\Omega \in \ens{M}_{[BC]}$ $\Rightarrow$ $d(\Omega,B)=d(\Omega,C)$. Ainsi $d(\Omega,A)=d(\Omega,B)=d(\Omega,C)$ et donc d'une part $d(\Omega,A)=d(\Omega,C)$ $\Rightarrow$ $\Omega \in \ens{M}_{[AC]}$, et d'autre part le cercle de centre $\Omega$ et de rayon $R=d(\Omega,A)=d(\Omega,B)=d(\Omega,C)$ contient les points $A$, $B$ et $C$.
+  \end{enumerate}
+
+  On identifie le plan euclidien au corps des nombres complexes $\mathbb{C}$.
+
+  \begin{enumerate}[resume]
+    \item On suppose que le centre du cercle circonscrit au triangle $ABC$ est le point $O$ d'affixe $0$. Soient $a,b,c$ les affixes des points $A,B,C$. On note $H$ le point d'affixe $h=a+b+c$.
+    \begin{enumerate}
+      \item Comme $\norm{OA}=\norm{OB}=\norm{OC}$, nous avons $a\overline{a}=b\overline{b}=c\overline{c}$. Ainsi\\
+      $(b+c)\overline{(c-b)}=b\overline{c} - b\overline{b} + c\overline{c} - c\overline{b}=b\overline{c}- c\overline{b}$,\ \ et\\
+      $\overline{(b+c)}(c-b)=\overline{b}c-\overline{b}b+\overline{c}c-\overline{c}b=\overline{b}c-\overline{c}b$.
+      \item Nous avons $\affspan{AH}\perp\affspan{BC}$ $\Leftrightarrow$ $\scalprod{\vv{AH}}{\vv{BC}}=0$ $\Leftrightarrow$ $(h-a)\overline{(c-b)}+\overline{(h-a)}(c-b)=0$ $\Leftrightarrow$ $(b+c)\overline{(c-b)}+\overline{(b+c)}(c-b)=0$. Mais d'après la question précédente $(b+c)\overline{(c-b)}+\overline{(b+c)}(c-b)=b\overline{c}- c\overline{b}+\overline{b}c-\overline{c}b=0$.
+      \item D'après la question précédente $H$ est sur la hauteur de $A$ vers $BC$. On peut déduire de même que $H$ est également sur les deux autres hauteurs.
+      \item L'affixe de l'isobarycentre $G$ est $\frac{a+b+c}3$ et donc $G = \frac23 O + \frac13 H$. Ainsi $G$ se situe sur le segment $[OH]$ en le divisant dans le rapport $1\!:\!2$. \tikz[baseline={(0,0)}]\draw (0,0) node[scale=3]{.} node[above](O){$O$} -- node[below]{$l$}++(1,0) node[scale=3]{.} node[above]{$G$}  -- node[below]{$2l$}++(2,0) node[scale=3]{.} node[above]{$H$};
+    \end{enumerate}
+    \item Soit $ABC$ un triangle quelconque de centre du cercle circonscrit $\Omega$, d'orthocentre $H$ et de centre de gravité $G$. Soit $T$ la translation de vecteur $\vv{\Omega O}$. Comme $T$ préserve les barycentres, $T(G)$ est le centre de gravité du triangle $T(ABC)$. Comme $T$ est une isométrie, $T(\Omega)=O$ est le centre du cercle circonscrit de $T(ABC)$ ($T$ préserve les distances de $\Omega$ à $A$,$B$ et $C$), et $T(H)$ est l'orthocentre de $T(ABC)$ ($T$ préserve l'orthogonalité).\\
+    Ainsi d'après la question précédente $T(G)=\frac13 T(\Omega) + \frac23 T(H)$ et donc, en appliquant $T^{-1}$ des deux côtés, on trouve $G=\frac13 \Omega + \frac23 H$.
+  \end{enumerate}
+\end{solution}
+
+\end{document}

@@ -1,0 +1,157 @@
+\ProvidesPackage{macros_M53}
+% ------------- encodage
+\usepackage{iftex}
+\ifPDFTeX % PDFLaTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{textcomp} % pour utiliser certains caractères
+  \usepackage{lmodern}
+\else % LuaLaTeX & XeLaTeX
+  \usepackage{fontspec}
+\fi% ------------- Page
+\usepackage[top=21mm,left=23mm,right=21mm,nohead]{geometry}
+% pour espacer un peut le texte
+\parskip=1mm
+\parindent=0mm
+\renewcommand{\baselinestretch}{1.3}
+\setlength{\abovedisplayskip}{2pt plus 4pt}
+\setlength{\belowdisplayskip}{3pt plus 4pt}
+\setlength{\abovedisplayshortskip}{1pt plus 4pt}
+\setlength{\belowdisplayshortskip}{2pt plus 4pt}
+% ------------- Les standards
+\usepackage{mathtools,amssymb,bm,amsthm}
+\usepackage[french]{babel}
+\usepackage[babel=true]{csquotes}
+\frenchspacing
+% ------------- Pour ajuster les enumerate
+\usepackage[shortlabels]{enumitem}
+% compatibilite enumitem - franch babel (d'après la doc de 28 septembre 2014, p.14)
+\newlength\mylabelwidth
+\newcommand*{\mylabel}{\textemdash} % ou \textendash (tiret plus court)
+\settowidth{\mylabelwidth}{\mylabel}
+\setlist[itemize]{label=\mylabel, nosep}
+\setlist[1]{labelindent=\parindent}
+\setlist{labelwidth=\mylabelwidth,
+        itemsep=0.4ex plus 0.2ex minus 0.2ex,
+        parsep=0.4ex plus 0.2ex minus 0.2ex,
+        topsep=0.8ex plus 0.4ex minus 0.4ex,
+        partopsep=0.4ex plus 0.2ex minus 0.2ex,
+        leftmargin=!}
+% mon changement perso
+\setlist{leftmargin=7mm}
+% ------------- TikZ pour les dessins
+\usepackage{tikz}
+\usetikzlibrary{calc,through,intersections,arrows.meta,shapes.symbols,shapes.arrows,shapes.geometric,backgrounds,decorations.pathreplacing,decorations.pathmorphing,decorations.markings,svg.path}
+\usetikzlibrary{babel} % pour les problèmes de caractères actifs
+% ------------- Pour prevenir les coupures des pages au mauvaise endroits
+\usepackage{needspace}
+% ------------- Pour des questions sur plusieurs colones
+\usepackage{multicol}
+
+%       Macros
+% ---------------------
+
+% sections
+\renewcommand{\section}[1]{\needspace{11\baselineskip}\vspace{4mm}\hfill
+            \tikz{\draw (0,0) node[align=center, text width=11cm, black,rounded corners,fill=black!1, draw=black,inner sep=2.1mm]{\textsf{\large #1}};}
+            \hfill\vspace{3mm}}
+
+% Les exercices
+\newcounter{numeroexo}
+\setcounter{numeroexo}{0}
+\def\exoimg{\tikz[overlay]{\NoAutoSpacing;\draw[red, opacity=0.7] (-0.1,0.4) -- (-0.1,-2.1) (-0.4,-0.1) -- (2.1,-0.1);}}
+
+\newlength{\afterexo}\setlength{\afterexo}{3mm plus 4mm}
+\newenvironment{exercice}[1]
+   {\needspace{4\baselineskip}\vspace{1mm}\par\refstepcounter{numeroexo}\hspace*{-1mm}\noindent{\exoimg\bfseries\sffamily #1 \arabic{numeroexo}}}
+   {\ifsolutions\else\par\vspace{\afterexo}\fi}
+
+\newenvironment{exo}{\setcounter{equation}{0}\begin{exercice}{Exercice} \normalfont}{\end{exercice}}
+
+% Les solutions
+\usepackage{environ}
+\newif\ifsolutions\solutionsfalse % par defaut les solution sont cachées
+\def\exosol{\tikz[overlay]{\draw[red, opacity=0.7] (-0.1,0.9) -- (-0.1,-1.6) (-0.4,0.4) -- (2.1,0.4);}}
+\NewEnviron{solution}{\ifsolutions\needspace{2\baselineskip}\hspace*{-1mm}\noindent{\exoimg\bfseries\sffamily Solution: }\BODY\par\vspace{\afterexo}\fi}
+
+% les questions
+\renewcommand{\theenumi}{\alph{enumi}}
+\renewcommand{\labelenumi}{\bf\theenumi)}
+\renewcommand{\theenumii}{\roman{enumii}}
+\renewcommand{\labelenumii}{(\theenumii)}
+
+\newenvironment{questions}{\begin{enumerate}}{\end{enumerate}}
+\newenvironment{examples}{\begin{enumerate}}{\end{enumerate}}
+\newenvironment{examplescol}[1]
+    {\vspace{-4mm}\begin{multicols}{#1}\begin{enumerate}}
+    {\end{enumerate}\end{multicols}}
+
+% exo difficile
+\newcommand{\hard}{\hspace{-2.1mm}\raisebox{.7ex}{${}^{\star}$}\hspace{.7mm}}
+
+% convention
+\newcommand{\unindentlist}{\advance\leftskip-4cm}
+\newenvironment{convention}{\vspace{-.7\parskip}\par\noindent\em\ignorespaces}{\vspace{.3\parskip}}
+
+% indication
+\newenvironment{indication}{\noindent\em Indication:}{}
+
+%  -------------- Les abreviations standards
+\RequirePackage[e]{esvect} % pour les vecteurs
+\let\ens\mathcal
+\newcommand{\ev}[1]{\vv{\ens{#1}}}
+
+\DeclareMathOperator{\aff}{Aff}
+\DeclareMathOperator{\aut}{Aut}
+\DeclareMathOperator{\iso}{Iso}
+\let\ker\relax\DeclareMathOperator{\ker}{Ker}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\tr}{tr}
+\newcommand{\id}{\mathrm{Id}}
+% Espace affine engendré, à utiliser ainsi : \affspan{\ens{A}}, \affspan[\big]{A,B}
+\newcommand{\affspan}[2][]{#1\langle{#2}#1\kern.07em\rangle}
+% Enveloppe convexe, à utiliser ainsi : \convhull{\ens{A}}, \convhull[\big]{A,B}
+\newcommand{\convhull}[2][]{#1[{#2}#1\kern.14em]}
+% Produit scalaire à utiliser ainsi : \scalprod uv, \scalprod{\vv u}{\vv v}, \scalprod[\big]{\vv A}{\vv B}
+\newcommand{\scalprod}[3][]{#1\langle{#2}\kern1pt #1|{#3}#1\rangle}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\poplus}{\overset{\scriptscriptstyle\perp}{\oplus}}
+
+% -------------- Pour les figures
+\usepackage{graphicx}
+\usepackage{wrapfig}
+%---- wrap figures ----
+%
+% example d'utilisation : \image{r}{5cm}{-7mm}{-21mm}{ballon_rugby.tikz}
+% #1 : r ou l (pour right ou left)
+% #2 : la largeur
+% #3 : l'espace avant
+% #4 : l'espace après
+% #5 : le nom du fichier à inclure
+\newcommand {\image}[5] {
+    \begin{wrapfigure}{#1}{#2}
+        \begin{center}
+            \vspace{#3}
+            \input{#5}
+            \vspace{#4}
+        \end{center}
+    \end{wrapfigure}
+}
+
+% ---- haut de la page ------
+\newcommand{\hautdepage}[1]{
+\thispagestyle{empty}
+\clearpage
+\textsc{Licence 3\textsuperscript{ème} année, parcours Mathématiques} \hfill \textsc{\large 2015-2016}\\
+\textsc{\large M53, Géométrie affine et euclidienne}
+
+\rule[0.5ex]{\textwidth}{0.1mm}
+\vskip 3mm
+\begin{center}
+    {\sc{\Large #1}}
+\end{center}
+\rule[0.5ex]{\textwidth}{0.1mm}
+}
+
+% ---- pas de numéros des pages ------
+\pagestyle{empty}

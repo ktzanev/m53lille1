@@ -1,0 +1,18 @@
+\begin{tikzpicture}[point/.style={scale=2}]
+  \path
+    (210:2) coordinate(A) node[point]{.} node[left]{$A$}
+    (0:2) coordinate(B) node[point]{.} node[right]{$B$}
+    (90:2) coordinate(C) node[point]{.} node[above]{$C$}
+    (0,0) coordinate(O) node[point]{.} node[shift={(-.23,.1)}]{$\Omega$}
+    ($(A)!(O)!(B)$) coordinate (MC)
+    ($(B)!(O)!(C)$) coordinate (MA)
+    ($(C)!(O)!(A)$) coordinate (MB)
+    ;
+  \draw[thick] (A) -- (B) -- (C) -- cycle;
+  \draw[thick,shorten >=-1cm, shorten <=-7mm] (O) -- (MC) node[shift={(.73,-.7)},font=\scriptsize]{$\mathcal{M}_{[AB]}$};
+  \draw[thick,shorten >=-1cm, shorten <=-7mm] (O) -- (MA) node[shift={(1.1,.5)},font=\scriptsize]{$\mathcal{M}_{[BC]}$};
+  \draw (A) -- (O) node[pos=.5,sloped,scale=.7]{$||$};
+  \draw (B) -- (O) node[pos=.5,sloped,scale=.7]{$||$};
+  \draw (C) -- (O) node[pos=.5,sloped,scale=.7]{$||$};
+  \draw (0,0) circle(2);
+\end{tikzpicture}
