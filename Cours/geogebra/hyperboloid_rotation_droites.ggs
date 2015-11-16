@@ -1,0 +1,39 @@
+# Slider[ <Min>, <Max>, <Increment>, <Speed>, <Width>,<Is Angle>, <Horizontal>, <Animating>, <Boolean Random>]
+
+r = Slider[ 0, 5, 1, 1, 140 ];
+r = 1;
+z_{max} = Slider[ 0, 10, 1, 1, 140 ];
+z_{max} = 7;
+α_{max} = Slider[ 0°, 360°, 5°, 1, 140 , true];
+α_{max} = 240°;
+θ = Slider[ 0°, 90°, 5°, 1, 140 , true];
+θ = 35°;
+
+C_0 = Cercle[axeZ, (r, 0, 0)];
+SetLineStyle[C_0, 2];
+SetColor[C_0, "Orange"];
+SetVisibleInView[C_0, 1, false];
+SetVisibleInView[C_0, 2, false];
+
+C_{haut} = Cercle[axeZ, (r, z_{max} tan(θ), z_{max})];
+SetLineStyle[C_{haut}, 2];
+SetColor[C_{haut}, "Orange"];
+SetVisibleInView[C_{haut}, 1, false];
+SetVisibleInView[C_{haut}, 2, false];
+
+C_{bas} = Cercle[axeZ, (r, -z_{max} tan(θ), -z_{max})]
+SetLineStyle[C_{bas}, 2];
+SetColor[C_{bas}, "Orange"];
+SetVisibleInView[C_{bas}, 1, false];
+SetVisibleInView[C_{bas}, 2, false];
+
+Hyperboloide = Surface[r cos(α) - t tan(θ) sin(α), r sin(α) + t tan(θ) cos(α), t, α, 0, α_{max},t,-z_{max},z_{max}];
+SetColor[Hyperboloide, "Red"];
+SetFilling[Hyperboloide, .5];
+
+D = Segment[(r, z_{max} tan(θ), z_{max}), (r, - z_{max} tan(θ), -z_{max})];
+SetLineThickness[D, 4];
+
+Droites = Séquence[Segment[(r cos(α) - z_{max} tan(θ) sin(α), r sin(α) + z_{max} tan(θ) cos(α), z_{max}), (r cos(α) + z_{max} tan(θ) sin(α), r sin(α) - z_{max} tan(θ) cos(α), -z_{max})], α, 10°, α_{max}, 10°];
+SetColor[Droites, "Blue"];
+SetLineThickness[Droites, 2];
