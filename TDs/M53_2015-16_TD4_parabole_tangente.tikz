@@ -23,8 +23,8 @@
   \draw (K) +(0,-2) -- +(0,2)node[rotate=-45, above, scale=.7, pos=.9]{directrice};
   \draw[ultra thin] (K) -- +(3.5,0) node[rotate=45, above, scale=.7, pos=.9]{axe focal};
   \draw[semithick, domain=-2.5:1.7] plot (.25*\x*\x, \x);
-  \draw[thick, -latex] (O) -- +(.7,0) node[pos=.7, above]{$u$};
-  \draw[thick, -latex] (O) -- +(0,0.7) node[pos=.7, left]{$v$};
+  \draw[thick, -latex] (O) -- +(.7,0) node[pos=.7, above]{$\vv{u}$};
+  \draw[thick, -latex] (O) -- +(0,0.7) node[pos=.7, left]{$\vv{v}$};
   \draw[very thin, densely dashed] (F) -- (M) -- (P);
   \draw[thin] (F) -- (P);
   \draw[thin, shorten >=-.5cm, shorten <=-1.3cm] (M) -- (FP);
