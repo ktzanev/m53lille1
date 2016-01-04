@@ -1,0 +1,18 @@
+\documentclass[tikz,border=7mm]{standalone}
+\usetikzlibrary{nicepoints}
+\begin{document}
+  \begin{tikzpicture}[scale=3,font=\scriptsize,thick]
+    \def~{(0,0)rectangle(1,1)[shift={(1,1)},rotate=-90,scale=0.61803398875]}
+    \draw~~~~~~~;
+    \def~{(0,0)arc(180:90:1)[shift={(1,1)},rotate=-90,scale=0.61803398875]}
+    \draw[blue]~~~~~~~~~~~;
+    \draw (0,0) [point] node[below]{$A(0)$}
+    	  (1,0) [point] node[below]{$B(1)$}
+    	  (1,1) [point] node[above]{$C=A'$}
+    	  (0,1) [point] node[above]{$D(i)$}
+    	  (1,1-0.61803398875) [point="B'"left]
+    	  (1+0.61803398875,1) [point="D'"right]
+          (1+0.61803398875,0) [point="D''"right]
+    	  (1+0.61803398875,1-0.61803398875) [point="C'"right];
+  \end{tikzpicture}
+\end{document}

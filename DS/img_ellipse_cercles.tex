@@ -1,0 +1,17 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{nicepoints}
+\begin{document}
+  \begin{tikzpicture}[scale=1.4,thick,rotate=15]
+    \draw[-latex] (-2.1,0) -- (2.5,0) node[below]{$\mathcal{D}_1$};
+    \draw[-latex] (0,-2.1) -- (0,2.5) node[below left]{$\mathcal{D}_2$};
+    \draw (0,0) [point="O"below right] circle(1) circle(2)
+      (45:1)[point="P"below] (45:2)[point="Q"{right,yshift=1mm}]
+      (135:2) node[below right]{$\mathcal{C}_2$} (135:1)
+      node[below right]{$\mathcal{C}_1$};
+    \draw[dashed,xscale=2] ellipse(1) (45:1)[point="M"{anchor=235}];
+    \draw[shorten <=-1cm, shorten >=-1cm] (O) -- (Q);
+    \draw[shorten <=-17mm] (M)--+(1,0) node[below]{$\mathcal{D}'_1$};
+    \draw[shorten <=-7mm] (M)--+(0,1.4) node[left]{$\mathcal{D}'_2$};
+  \end{tikzpicture}
+\end{document}
