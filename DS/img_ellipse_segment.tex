@@ -1,0 +1,13 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc,nicepoints}
+\begin{document}
+  \begin{tikzpicture}[scale=1.5,ultra thick,rotate=15]
+    \draw[-latex] (-2.1,0) -- (3,0) node[below]{$\mathcal{D}_1$};
+    \draw[-latex] (0,-1.1) -- (0,2.1) node[below left]{$\mathcal{D}_2$};
+    \draw (0,0) [point="O"below right];
+    \draw[dashed,xscale=2] ellipse(1) (30:1)[point="M"above];
+    \draw[very thick] let \p1=(M) in (3/2*\x1,0) [point="P"below] (0,3*\y1) [point="Q"left] (P) -- (Q) node[pos=.17,above]{b} node[pos=.7,above]{a};
+    \draw[dotted] (O|-M) -- (M) -- (M|-O);
+  \end{tikzpicture}
+\end{document}

@@ -103,7 +103,7 @@
 
 \let\ssi\Leftrightarrow % ou \newcommand\ssi{\;\Leftrightarrow\;}
 \newcommand*\isoto{\xrightarrow{\smash{\raisebox{-.28em}{\ensuremath{\sim\kern1pt}}}}}
-
+\DeclareMathOperator{\lin}{\mathcal{L}}
 \DeclareMathOperator{\aff}{Aff}
 \DeclareMathOperator{\aut}{Aut}
 \DeclareMathOperator{\iso}{Iso}
@@ -119,6 +119,7 @@
 % Produit scalaire à utiliser ainsi : \scalprod uv, \scalprod{\vv u}{\vv v}, \scalprod[\big]{\vv A}{\vv B}
 \newcommand{\scalprod}[3][]{#1\langle{#2}\kern1pt #1|{#3}#1\rangle}
 \newcommand{\norm}[2][]{#1\|#2#1\|}
+\let\d\relax\DeclareMathOperator{\d}{d}
 \newcommand{\poplus}{\overset{\scriptscriptstyle\perp}{\oplus}}
 
 % -------------- Pour les figures
@@ -146,7 +147,7 @@
 \newcommand{\hautdepage}[1]{
 \thispagestyle{empty}
 \clearpage
-\textsc{Licence 3\textsuperscript{ème} année, parcours Mathématiques} \hfill \textsc{\large 2015-2016}\\
+\textsc{Licence 3\textsuperscript{e} année, parcours Mathématiques} \hfill \textsc{\large 2015-2016}\\
 \textsc{\large M53, Géométrie affine et euclidienne}
 
 \rule[0.5ex]{\textwidth}{0.1mm}
