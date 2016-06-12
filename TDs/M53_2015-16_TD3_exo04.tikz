@@ -6,10 +6,10 @@
       diagonal/.style = {draw=lightgray},
       square/.style = {ultra thick}
     ]
-  \coordinate (A) at (0,0);
-  \coordinate (B) at (2,0);
-  \coordinate (C) at (3,1);
-  \coordinate (D) at (1,1);
+  \coordinate (A) at (0,0);         % 0
+  \coordinate (B) at (2.1,0);       % 1
+  \coordinate (D) at (35:1.4);      % z
+  \coordinate (C) at ($(B)+(D)$);   % 1+z
   % -------------------
   \coordinate (A1) at ($ (A) ! 1 ! -90:(B) $);
   \coordinate (A2) at ($ (A1) ! 1 ! -90:(A) $);
