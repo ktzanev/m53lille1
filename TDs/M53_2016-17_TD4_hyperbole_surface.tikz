@@ -1,0 +1,35 @@
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{main,foreground}
+
+\tikzset{
+  every point/.style = {circle, inner sep={.75\pgflinewidth}, outer sep={-.7\pgflinewidth}, draw, fill=white, opacity=1, solid},
+  point/.style={insert path={node[every point, #1]{}}},
+  point/.default={},
+  colored point/.style = {point={fill=#1}},
+}
+
+\begin{tikzpicture}[yscale=.5, rotate=45, font=\tiny, scale=.7]
+
+  \draw (-5,0) -- (5,0) (0,-5) -- (0,5);
+
+  \begin{scope}[domain=0.2:5, samples=100, thick]
+    \draw plot (\x,1/\x);
+    \draw plot (\x,-1/\x);
+    \draw plot (-\x,1/\x);
+    \draw plot (-\x,-1/\x);
+  \end{scope}
+
+  \begin{pgfonlayer}{foreground}
+    \path (0,0) coordinate (O) node[thick, point, below] {$O$};
+    \path (1,-1) coordinate (M) node[thick, point, right] {$M$};
+    \path (2,-.5) coordinate (M1) node[thick, point, right] {$M'$};
+    \path (.25,4) coordinate (M2) node[thick, point, above right] {$M''$};
+  \end{pgfonlayer}
+
+  \begin{scope}[fill opacity=.1]
+    \filldraw (O) rectangle (M);
+    \filldraw (O) rectangle (M1);
+    \filldraw (O) rectangle (M2);
+  \end{scope}
+
+\end{tikzpicture}

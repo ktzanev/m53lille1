@@ -1,0 +1,23 @@
+% layers (definition)
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{main,foreground}
+% points (definition)
+\tikzset{
+  every point/.style = {circle, inner sep={.75\pgflinewidth}, outer sep={-.7\pgflinewidth}, draw, fill=white, opacity=1, solid},
+  point/.style={insert path={node[every point, #1]{}}},
+  point/.default={},
+  colored point/.style = {point={fill=#1}},
+}
+% picture
+\begin{tikzpicture}[font=\tiny]
+  \begin{pgfonlayer}{foreground}
+    \path (1,0) coordinate (F) node[point, right=.5em, fill=white, inner sep=0] {$F$};
+  \end{pgfonlayer}
+
+  \draw[ultra thin] (-.5,0) -- +(3.5,0) node[above, scale=.7, pos=.9]{axe focal};
+  \draw[ultra thick, domain=-1.7:1.7] plot (.25*\x*\x, \x);
+  \foreach \x/\y in {0.5625/1.5, 0.25/1.0, 0.0625/0.5, 0.0625/-0.5, 0.25/-1.0, 0.5625/-1.5} {
+      \draw[very thin, shorten >=-1cm, -latex]  (3,\y) -- (\x,\y) -- (F);
+    }
+
+\end{tikzpicture}

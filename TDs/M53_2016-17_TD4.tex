@@ -1,0 +1,186 @@
+\documentclass[a4paper,12pt,reqno]{amsart}
+\usepackage{macros_M53}
+
+\begin{document}
+
+\hautdepage{TD4: Coniques et quadriques}
+
+% ==================================
+\section{Ellipses}
+% ==================================
+
+%-----------------------------------
+\begin{exo} (Paramétrisation d'une ellipse)
+
+  \image{r}{4cm}{-13mm}{-7mm}{M53_2016-17_TD4_ellipse_clous_corde.tikz}
+
+  Soit une ellipse $E = \{ M \in \mathbb{R}^{2} \,|\, \d(F_{1},M)+\d(M,F_{2})=2a\}$ définie par ses deux foyers $F_{1}$ et $F_{2}$ à distance $\d(F_{1},F_{2})=2c$, et une constante réelle $a > c$.
+
+  Déterminer une courbe paramétrée $f:\mathbb{R}\to\mathbb{R}^{2}$ dont l'image est $E$. Donner l'expression explicite de $f$ dans le cas où $F_{1}=(-2,-1)$, $F_{2}=(2,2)$ et $a=3$.
+\end{exo}
+
+%-----------------------------------
+\begin{exo} (Grand diamètre d'une ellipse)
+
+  Soit dans un plan affine euclidien une ellipse $E$ qui n'est pas un cercle. Montrer qu'il existe un unique couple (non ordonné) de points $\{M_{1},M_{2}\}$ tel que
+  \[
+    \d(M_{1},M_{2})=\max_{A,B \in E}\d(A,B).
+  \]
+  En déduire qu'il n'y a que deux symétries orthogonales qui préservent cette ellipse.
+\end{exo}
+
+
+%-------------------------------------
+\begin{exo} (Projection d'un cercle)
+
+  \begin{enumerate}
+    \item  Soit $P$ un plan d'équation cartésienne $ax+by+cz+d=0$, donner une condition sur $a,b,c,d$ pour que $P$ ne soit pas orthogonal au plan $z=0$.
+    \item Soit $A\in P$, donner des équations du cercle $C\subset P$ de centre $A$ et de rayon $R$.
+    \item On suppose que $P$ n'est pas orthogonal à $z=0$, montrer que le projeté orthogonal du cercle $C$ sur le plan $z=0$ est une ellipse.  À quelle condition est-ce un cercle?
+  \end{enumerate}
+
+\end{exo}
+
+
+%-------------------------------------
+\begin{exo} (Théorème de Hire)
+
+  \image{r}{4cm}{-17mm}{0mm}{M53_2016-17_TD4_hire.tikz}
+
+  Soient un disque de rayon $R$ qui roule à l'intérieur d'un cercle de rayon $2R$ et $M$ un point fixe du premier disque. Montrer que $M$ décrit une ellipse et réciproquement que toute ellipse peut être obtenue de cette façon.
+
+\end{exo}
+
+
+% ==================================
+\section{Paraboles et hyperboles}
+% ==================================
+
+%---------------------------------------
+\begin{exo} (Miroir parabolique)
+
+  \image{r}{5cm}{-17mm}{0mm}{M53_2016-17_TD4_parabole_tangente.tikz}
+
+  Soient une droite $\mathcal{D}$ et un point $F$ en dehors de cette droite. On rappelle qu'une parabole de directrice $\mathcal{D}$ et de foyer $F$ est l'ensemble des points $M$ tels qu'on ait l'égalité des distances
+  $$
+    d(M,F)= d(M,\mathcal{D}).
+  $$
+
+  \image{r}{3.5cm}{35mm}{-85mm}{M53_2016-17_TD4_parabole_miroir.tikz}
+
+  On se place dans le repère affine orthonormé $(O,\vv{u},\vv{v})$, où $O$ est le point d'intersection de l'axe focal avec la parabole, $\vv{u}$ et $\vv{v}$ sont des vecteurs directeurs respectivement de l'axe focal et de la directrice. Soient $(a,0)$ les coordonnées de $F$ dans ce repère.
+
+  \begin{enumerate}
+
+    \item Déterminer l'équation de la parabole dans ce repère.
+
+    \item Donner une courbe paramétrée $f:\mathbb{R}\to\mathbb{R}^{2}$ dont l'image est cette parabole.
+
+    \item Soient $M$ un point de la parabole et $P$ sa projection sur la directrice.\\
+    Montrer que la tangente en $M$ est orthogonale à $FP$.
+
+    \item En déduire que la tangente en $M$ est la bissectrice de l'angle $\widehat{FMP}$.
+
+    \item Montrer qu'étant donné un miroir concave parabolique, les rayons\\
+    parallèles à l'axe focal passent par le foyer.
+  \end{enumerate}
+
+\end{exo}
+
+%-----------------------------------
+\begin{exo} (Paramétrisation d'une hyperbole)
+
+  % \image{r}{4cm}{-11mm}{0mm}{M53_2016-17_TD4_ellipse_clous_corde.tikz}
+
+  Soit une hyperbole $H = \{ M \in \mathbb{R}^{2} \,|\ \big|\d(F_{1},M)-\d(M,F_{2})\big|=2a\}$ définie par ses deux foyers $F_{1}$ et $F_{2}$ à distance $\d(F_{1},F_{2})=2c$, et une constante réelle $a \in ]0,c[$.
+
+  Déterminer une courbe paramétrée $f:\mathbb{R}\to\mathbb{R}^{2}$ dont l'image est la branche $\{ M \in \mathbb{R}^{2} \,|\, \d(F_{1},M)-\d(M,F_{2})=2a\}$ de $H$.
+\end{exo}
+
+
+%---------------------------------------
+\begin{exo} ( Parallélogrammes à surface constante)
+
+  \image{r}{5cm}{-7mm}{0mm}{M53_2016-17_TD4_hyperbole_surface.tikz}
+
+  Soient deux droites qui se coupent en un point $O$. On considère l'ensemble des points $M$ tels que le parallélogramme ayant $O$ et $M$ comme sommets opposés et deux côtés sur les droites données a une surface fixé $S>0$.\\
+  Montrer que cet ensemble est formé par deux hyperboles ayant les deux droites comme asymptotes. \\
+  Et réciproquement, étant donné une hyperbole, montrer que les parallélogrammes formés par les asymptotes, le centre et les points $M$ de l'hyperbole, ont une surface constante (ne dépendant pas du choix de $M$).
+\end{exo}
+
+%---------------------------------------
+\begin{exo} (Sécantes et tangentes à une hyperbole)
+
+\image{r}{5cm}{-17mm}{0mm}{M53_2016-17_TD4_hyperbole_secantes.tikz}
+
+On rappelle que l'équation de l'hyperbole dans le repère affine orthonormé $(O,\vv{u},\vv{v})$, où $\vv{u}$ et $\vv{v}$ sont des vecteurs directeurs respectivement de l'axe focal et de la directrice, s'écrit
+$$
+  \frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=1
+$$
+
+\begin{enumerate}
+  \item Montrer que toute droite parallèle à l'une des asymptotes de l'hyperbole (et distincte de cette asymptote) coupe l'hyperbole en exactement un point.
+
+  \item Montrer que si une droite $\mathcal{D}$ coupe l'hyperbole en deux points $M$ et $N$ et les asymptotes en deux points $P$ et $Q$, les segments MN et PQ ont le même milieu (on écrira une équation du second degré dont les abscisses des points $M$ et $N$ (resp. $P$ et $Q$) sont solutions et on évaluera la demi-somme de ces solutions).
+
+  \item En déduire une construction de l'hyperbole point par point connaissant les asymptotes et un point.
+
+  \item Montrer que les milieux des cordes $MN$ de l'hyperbole parallèles à une direction donnée appartiennent tous à une même droite passant par le centre $O$ de l'hyperbole.
+
+  \item Soit $\tau$ une tangente à l'hyperbole en $T$, $R$ et $S$ les points d'intersection de $\tau$ avec les asymptotes. Montrer que $| TR | = | TS |$.
+
+  \item Montrer que l'aire du triangle $ORS$ ne dépend pas de $T$.
+\end{enumerate}
+
+\end{exo}
+
+% ==================================
+\section{Coniques et quadriques}
+% ==================================
+
+
+%---------------------------------------
+\begin{exo} (Équations et natures des coniques)
+
+  Déterminer la nature des courbes suivantes et, quand il existe, leur centre.
+  \begin{examplescol}{2}
+    \item $(x-y+1)^2+(x+y-1)^2=0$,
+    \item $x(x-1)+(y-2)(y-3)=0$,
+    \item $4x^{2}+y^{2}+4xy+2x+3y=1$.
+    \item $(x+y+1)(x-y+3)=3$.
+    \item $2x^{2}+4xy+y^{2}+x+y=0$.
+  \end{examplescol}
+
+\end{exo}
+
+
+%----------------------------------------
+\begin{exo} (Quadriques)
+
+  Dessiner les surfaces:
+  \begin{examplescol}{2}
+    \item $x^2-2y^2+2z^2=1$
+    \item $xy=1$
+    \item $x^2+y^2+4z^2=6$
+    \item $z-4xy=0$
+    \item $z^2-4xy=0$
+  \end{examplescol}
+
+\end{exo}
+
+
+%----------------------------------------
+\begin{exo} (Hyperboloïde à une nappe)
+
+  On considère l'hyperboloïde standard à une nappe $H$ défini par l'équation $x^{2}+y^{2}-z^{2}=1$.
+  \begin{enumerate}
+    \item Montrer que l'image de $t\mapsto[\cos(u)-t\sin(u),\sin(u)+t\cos(u),t]\in \mathbb{R}^{3}$ est une droite contenue dans $H$.
+    \item Montrer que $H$ est une réunion de droites deux à deux disjointes.
+    \item Déterminer une autre famille de droites dont la réunion est $H$.
+    \item Est-ce que tout hyperboloïde à une nappe est la réunion de droites ?
+    \item Soit $\ens{D}$ une droite non coplanaire avec $Oz$. Soit $R_{\theta}$ la rotation de $\theta$ autour de l'axe $Oz$. Montrer que $\bigcup_{\theta}R_{\theta}(\ens{D})$ est un hyperboloïde à une nappe.
+  \end{enumerate}
+
+\end{exo}
+
+\end{document}
