@@ -61,11 +61,12 @@ TeXAux/
 *.zip
 *.sublime*
 *.pdf
+!/docs
+
 Administratif
 Documents
 Olivier
 *.sh
-gh-pages/
 *.ods
 *.xlsx
 *Olivier*

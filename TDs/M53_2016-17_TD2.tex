@@ -1,0 +1,185 @@
+\documentclass[a4paper,12pt,reqno]{amsart}
+\usepackage{macros_M53}
+
+\begin{document}
+
+\hautdepage{TD2: Espaces euclidiens, notions de base}
+
+% ==================================
+\section{Questions métriques}
+% ==================================
+
+%-----------------------------------
+\begin{exo} (Perpendiculaire commune)
+
+  On se place dans l'espace $\mathbb{R}^{3}$.
+  \begin{enumerate}
+    \item Soient $\mathcal{D}_{1}$ et $\mathcal{D}_{2}$ deux droites distinctes de l'espace. Justifier l'existence d'une perpendiculaire commune à ces deux droites. Sous quelles conditions est-elle unique?
+
+    \item Donner des équations de la perpendiculaire commune aux droites $\mathcal{D}_{1}$ d'équations\newline \{$x+y-z-1=0,\ 2x+y+z=0\}$ et $\mathcal{D}_{2}$ déterminée par le point $A$ de coordonnées $(1,0,1)$ et le vecteur directeur $\overrightarrow{u}$ de composantes $(1,-1,0)$.
+
+    \item Quelle est la distance entre $\mathcal{D}_{1}$ et $\mathcal{D}_{2}$?
+  \end{enumerate}
+\end{exo}
+
+%-----------------------------------
+\begin{exo} (Distance pondérée à un ensemble de points)
+
+  Soit $(A_i,\lambda_i)_{1\leq i\leq n}$ un système pondéré de $n$ points d'un espace affine euclidien de poids total $\sum_{i=1}^n \lambda_i$ non nul. Pour tout point $M$ on définit la fonction
+    $$
+      \phi(M)=\sum_{i=1}^n \lambda_i |\overrightarrow{MA_i}|^2.
+    $$
+  \begin{enumerate}
+    \item Soit $G$ le barycentre du système pondéré $(A_i,\lambda_i)_{1\leq i\leq n}$\,, montrer que:
+      $$
+        \phi(M)=(\sum_{i=1}^n\lambda_i) |\overrightarrow{MG}|^2+\phi(G).
+      $$
+    \item Discuter des lignes de niveau de la fonction $\phi$ dans le plan et dans l'espace.
+  \end{enumerate}
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo} (L'espace euclidien des matrices)
+
+  On se place dans l'espace vectoriel $M_3(\mathbb{R})$ des matrices $3\times 3$.
+  \begin{enumerate}
+    \item Rappeler comment munir $M_3(\mathbb{R})$ d'une structure d'espace euclidien. En donner une base orthonormée.
+    \item Donner une base orthonormée de l'espace des matrices antisymétriques.
+    \item Calculer l'orthogonal des matrices antisymétriques.
+    \item Calculer la distance de la matrice%
+      \scalebox{.7}{
+        $
+          \begin{pmatrix}
+            1 & 0 & 0 \\
+            1 & 0 & 1 \\
+            0 & 0 & 1
+          \end{pmatrix}
+        $
+      }
+    au sous-espace des matrices diagonales.
+  \end{enumerate}
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Théorème de Sylvester-Gallai)
+  \begin{enumerate}
+    \item Étant donné un nombre fini de points dans un plan affine (euclidien), montrer qu'on a l'alternative suivante:
+      \begin{itemize}
+        \item soit tous les points sont alignés,
+        \item soit il existe une droite qui contient exactement deux points de l'ensemble.
+      \end{itemize}
+      \emph{Indication: Considérer un couple $(P,\mathcal{D})$, où $\mathcal{D}$ est une droite contenant au moins deux points de l'ensemble et $P\notin \mathcal{D}$ est un point de l'ensemble, tel que la distance $\mathrm{d}(P,\mathcal{D})$ est minimale.}
+
+    \item Est-ce que la question précédente reste vraie si les points sont dans un espace de dimension quelconque?
+
+    \item Est-ce que la première question reste vraie pour un nombre infini de points?
+  \end{enumerate}
+\end{exo}
+
+
+% ==================================
+\section{Convexes}
+% ==================================
+
+%-----------------------------------
+\begin{exo} (Convexes euclidiens)
+
+    Soient $\mathcal{C}$ un convexe fermé non vide d'un espace euclidien et $P \notin \mathcal{C}$ un point de cet espace.
+    \begin{enumerate}
+       \item Montrer qu'il existe un unique point $Q \in \mathcal{C}$ tel que $d(P,Q) = d(P,\mathcal{C})$. \newline
+       \emph{On dit que $Q$ est la projection de $P$ sur $\mathcal{C}$.}
+
+       \item Montrer que l'hyperplan $\mathcal{H}$ passant par $Q$ et orthogonal à $\overrightarrow{QP}$ est un \emph{plan de support}, c'est-à-dire que $\mathcal{H}$ rencontre $\mathcal{C}$, mais pas son intérieur.
+
+       \item Montrer que tout convexe fermé peut s'écrire comme l'intersection de demi-espaces affines.
+
+       \item Est-ce que la question précédente reste vraie si on se place dans un espace affine de dimension finie, plutôt que dans un espace euclidien?
+     \end{enumerate}
+\end{exo}
+
+%-----------------------------------
+\begin{exo} (Séparation de convexes)
+
+  Étant donnés deux convexes compacts non vides disjoints dans un espace affine de dimension finie, montrer qu'il existe un hyperplan qui les sépare strictement (c'est-à-dire qu'il ne les rencontre pas et que les deux convexes ne sont pas dans le même demi-espace délimité par cet hyperplan).
+\end{exo}
+
+
+% ==================================
+\section{Isométries}
+% ==================================
+%-----------------------------------
+\begin{exo} (Isométries du triangle)
+  \begin{enumerate}
+    \item Déterminer le groupe des isométries d'un triangle dans le plan, la discussion sera menée en fonction des propriétés métriques du triangle.
+    \item Même question avec un quadrilatère.
+  \end{enumerate}
+\end{exo}
+
+%-----------------------------------
+\begin{exo} (Isométries du tétraèdre)
+
+    Montrer que le groupe des isométries affines qui préserve un tétraèdre régulier est isomorphe à $\mathfrak{G}_{4}$, le groupe de permutations de $4$ points.
+\end{exo}
+
+%-----------------------------------
+\begin{exo} (Nature de certaines isométrie)
+  \begin{enumerate}
+    \item Soit l'isométrie linéaire%
+      \scalebox{.7}{
+        $
+          \begin{pmatrix}
+            0 & 0 & 1 \\
+            1 & 0 & 0 \\
+            0 & 1 & 0
+          \end{pmatrix}
+        $.
+      }
+      Décrire la nature de cette isométrie.
+    \item Soient $R$ et $T$ une rotation et une translation de $\mathbb{R}^{3}$. Quelle est la nature de $T \circ R$ ?
+    \item Quelle est la composée de trois symétries de plans parallèles de $\mathbb{R}^{3}$?
+  \end{enumerate}
+\end{exo}
+
+%-----------------------------------
+\begin{exo} (Capes 2007, 2\ieme\ épreuve)
+% Pour voir l'image originale
+% \usepackage{graphicx}
+% \hspace{-7mm}\includegraphics[scale=0.55]{CAPES2007.png}
+
+\begin{center}
+  \textbf{Partie V. GROUPES DIÉDRAUX}
+\end{center}
+
+\begin{enumerate}
+  \renewcommand{\theenumi}{\arabic{enumi}}
+  \renewcommand{\labelenumi}{\bf\theenumi.}
+  \renewcommand{\theenumii}{\alph{enumii}}
+  \renewcommand{\labelenumii}{\theenumii)}
+
+  \item Soit $E$ un plan affine euclidien orienté. Soit $p \in \mathbb{N}$, $p \geq 2$. On appelle groupe diédral d'ordre $2p$, noté $D_{2p}$, le groupe des isométries laissant invariant un polygone régulier
+  \[
+    \mathcal{P}_{p}=\left\{M_{0},\ldots,M_{p-1}\right\}
+  \]
+  à $p$ sommets, parcourus dans le sens direct. On pose $M_{p}=M_{0}$.
+  \begin{enumerate}
+    \item Montrer que le sous-groupe $C_{p}$ de $D_{p}$ constitué des isométries directes est un groupe cyclique d'ordre $p$ engendré par la rotation $\rho$ de centre $O$ et d'angle $\frac{2 \pi}{p}$, où $O$ est le centre du polygone $\mathcal{P}_{p}$.
+
+    \item Préciser une symétrie orthogonale $\sigma$ laissant le polygone $\mathcal{P}_{p}$ invariant.
+
+    \item Montrer que
+    \[
+      D_{2p} = \left\{
+        \rho^{i}\circ \sigma^{j} \,;\, i \in \{1,\ldots,p-1\} \text{ et } j \in \{0,1\}
+      \right\}
+    \]
+    et en déduire que $D_{2p}$ est un groupe d'ordre $2p$.
+
+    \item Soit $k \in \{1,\ldots,p-1\}$. Montrer que $\sigma \circ \rho^{k} \circ \sigma = \rho^{p-k}$.
+  \end{enumerate}
+\end{enumerate}
+
+\end{exo}
+
+\end{document}
