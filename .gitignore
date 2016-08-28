@@ -58,6 +58,7 @@ TeXAux/
 *.tdo
 
 #perso
+*.lnk
 *.zip
 *.sublime*
 *.pdf
