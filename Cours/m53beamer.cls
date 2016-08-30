@@ -1,21 +1,33 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{m53beamer}[3/9/2015 class pour le cours de M53]
 
-\newif\ifsidebar\sidebartrue % par defaut 16:10 avec sidebar, sinon 4:3 simplifié
-\PassOptionsToClass{aspectratio=1610}{beamer}
+\newif\ifsidebar\sidebarfalse % par defaut 4:3 simplifié, sinon 16:10 avec sidebar
 \DeclareOption{simple}{
   \sidebarfalse
   \PassOptionsToClass{aspectratio=43}{beamer}
 }
+\ifsidebar
+  \PassOptionsToClass{aspectratio=1610}{beamer}
+\else
+  \PassOptionsToClass{aspectratio=43}{beamer}
+\fi
 \newcommand{\forsimple}[1]{\ifsidebar\relax\else#1\fi}
 \newcommand{\fornotsimple}[1]{\ifsidebar#1\fi}
 
-\fornotsimple{\PassOptionsToClass{bigger}{beamer}}
 
 \newif\ifnegatif\negatiffalse % par defaut en couleur
 \DeclareOption{negatif}{
   \negatiftrue
 }
+
+\newif\ifprint\printfalse % par defaut en couleur
+\DeclareOption{print}{
+  \printtrue
+  \PassOptionsToClass{handout}{beamer}
+}
+
+\PassOptionsToClass{bigger}{beamer}
+
 \DeclareOption*{
   \PassOptionsToClass{\CurrentOption}{beamer}
 }
@@ -102,6 +114,13 @@
   \fi
   \newcommand{\myemph}[1]{\textcolor{green!70!black}{\emph{#1}}}
   \setbeamercolor{alerted text}{fg=red!70!black}
+\fi
+
+
+\ifprint
+  % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ pour impression
+  \usepackage{pgfpages}
+  \pgfpagesuselayout{4 on 1}[a4paper,border shrink=7mm,landscape]
 \fi
 
 % ---------------
