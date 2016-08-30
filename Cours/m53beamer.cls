@@ -2,9 +2,8 @@
 \ProvidesClass{m53beamer}[3/9/2015 class pour le cours de M53]
 
 \newif\ifsidebar\sidebarfalse % par defaut 4:3 simplifié, sinon 16:10 avec sidebar
-\DeclareOption{simple}{
-  \sidebarfalse
-  \PassOptionsToClass{aspectratio=43}{beamer}
+\DeclareOption{withsidebar}{
+  \sidebartrue
 }
 \ifsidebar
   \PassOptionsToClass{aspectratio=1610}{beamer}
@@ -134,6 +133,8 @@
 \newtheorem{defprop}[theorem]{Définition-Proposition}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{question}{Question}
+\theoremstyle{remark}
+\newtheorem*{remarque}{Remarque}
 
 %  -------------- Les abréviations standards
 \let\ens\mathcal
