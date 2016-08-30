@@ -1,6 +1,6 @@
 %\PassOptionsToClass{negatif}{m53beamer}
-%\PassOptionsToClass{simple}{m53beamer}
-%\PassOptionsToClass{handout}{m53beamer}
+% \PassOptionsToClass{withsidebar}{m53beamer}
+% \PassOptionsToClass{handout}{m53beamer}
 %\PassOptionsToClass{print}{m53beamer}
 \documentclass{m53beamer}
 % ---------------
@@ -182,29 +182,35 @@
     \end{proposition}
   \end{frame}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-\subsection{Repère}
+\subsection{Repères}
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   % -----------
-  \begin{frame}{Définition d'un repère}
-    Soit $(A_{0},\ldots,A_{n})$ un $(n+1)$-uplet de l'espace affine $\ens{E}$.\pause\\
-    \begin{defprop}
-      On dit que $(A_{0},\ldots,A_{n})$ est \alert{un repère affine} de $\ens{E}$ s'il satisfait une des conditions équivalentes:
-      \begin{enumerate}[<+(1)->]
-        \item $(\vv{A_{0}A_{1}},\ldots,\vv{A_{0}A_{n}})$ est une base de $\ev{E}$.
-        \item Pour tout point $B$ de $\ens{E}$ il existe un unique $(n+1)$-uplet de poids $(\mu_{0},\ldots,\mu_{n})$, avec $\sum_{i=0}^{n}\mu_{i}=1$ et $B=\sum_{i=1}^{n}\mu_{i}A_{i}$.
-      \end{enumerate}
-    \end{defprop}
+  \begin{frame}{Repère cartésien}
+    \begin{definition}
+      Un \alert{repère cartésien} d'un espace affine $\ens{E}$ de dimension $n$ est la donnée $\mathcal{C}=(\Omega, \vv{v_{1}}, \ldots,\vv{v_{n}})$ d'un point $\Omega$ de $\ens{E}$, \myemph{  l'origine du repère}, et d'une base $(\vv{v_{1}}, \ldots,\vv{v_{n}})$ de la direction $\ev{E}$.
+    \end{definition}\pause
+    \begin{definition}
+      Soit $\mathcal{C}=(\Omega, \vv{v_{1}}, \ldots,\vv{v_{n}})$ un repère cartésien de $\ens{E}$ et $M$ un point de $\ens{E}$. On dit que $(x_{1},\ldots,x_{n})_{\mathcal{C}}$ sont les \alert{coordonnées cartésiennes} de $M$ dans le repère $\mathcal{C}$ si ceux sont les coordonnées de $\vv{\Omega M}$ dans la base $(\vv{v_{1}}, \ldots,\vv{v_{n}})$ de la direction $\ev{E}$.\pause\ Autrement dit $M=(x_{1},\ldots,x_{n})_{\mathcal{C}}$ si et seulement si $M=\Omega+\sum_{i=1}^{n}x_{i}\vv{v_{i}}$.
+    \end{definition}
   \end{frame}
   % -----------
-  \begin{frame}{Coordonnées affines}
-    Soit $\ens{A}=(A_{0},\ldots,A_{n})$ un repère affine de $\ens{E}$.\pause\\
+  \begin{frame}{Repère affine}
     \begin{definition}
-      Pour $B \in \ens{E}$, on dit que $(x_{1},\ldots,x_{n})_{\ens{A}}$ sont les \alert{coordonnées cartésiennes} de $B$ dans le repère $\ens{A}$, si $\vv{A_{0}B} = \sum_{i=1}^{n} x_{i}\vv{A_{0}A_{i}}$.
+      On dit que le $(n+1)$-uplet $(A_{0},\ldots,A_{n})$ est un \alert{repère affine} de $\ens{E}$ si pour tout point $M$ de $\ens{E}$ il existe un unique $(n+1)$-uplet de poids $(\mu_{0},\ldots,\mu_{n})$, avec $\sum_{i=0}^{n}\mu_{i}=1$ et $M=\sum_{i=1}^{n}\mu_{i}A_{i}$.
     \end{definition}\pause
     \begin{definition}
-      Pour $B \in \ens{E}$, on dit que $[\mu_{0},\ldots,\mu_{n}]_{\ens{A}}$ sont les \alert{coordonnées barycentriques} de $B$ dans le repère $\ens{A}$, si $\sum_{i=0}^{n}\mu_{i}=1$ et $B=\sum_{i=0}^{n}\mu_{i}A_{i}$.
+      Soit $\mathcal{A}=(A_{0},\ldots,A_{n})$ est un repère affine de $\ens{E}$.On dit que $[\mu_{0},\ldots,\mu_{n}]_{\ens{A}}$ sont les \alert{coordonnées barycentriques} dans le repère $\ens{A}$ d'un point $M$ de $\ens{E}$ si $\sum_{i=0}^{n}\mu_{i}=1$ et $M=\sum_{i=0}^{n}\mu_{i}A_{i}$.
     \end{definition}\pause
-    La relation entre ces deux systèmes de coordonnées est : $\mu_{i}=x_{i}, \forall i=1,\ldots,n$ et $\mu_{0}=1-\sum_{i=1}^{n}x_{i}$.
+    \begin{remarque}
+      Si $\mathcal{A}=(A_{0},\ldots,A_{n})$ est un repère affine de $\ens{E}$, alors toute permutation $\mathcal{A}=(A_{\sigma(0)},\ldots,A_{\sigma(n)})$ l'est aussi.
+    \end{remarque}
+  \end{frame}
+  % -----------
+  \begin{frame}{Relations entre repères cartésiens et affines}
+    \begin{proposition}
+      Le $(n+1)$-uplet $\mathcal{A}=(A_{0},\ldots,A_{n})$ est un \myemph{repère affine} de $\ens{E}$ si et seulement si $\mathcal{C}=(A_{0},\vv{A_{0}A_{1}}\ldots,\vv{A_{0}A_{n}})$ est un \myemph{repère cartésien} de $\ens{E}$.\pause\newline
+      De plus si $M = (x_{1},\ldots,x_{n})_{\mathcal{C}}$ et $M = [\mu_{0},\ldots,\mu_{n}]_{\ens{A}}$ alors la relation entre ces deux systèmes de coordonnées est : $\mu_{i}=x_{i}, \forall i=1,\ldots,n$ et $\mu_{0}=1-\sum_{i=1}^{n}x_{i}$.
+    \end{proposition}
   \end{frame}
 
 % =======================================
