@@ -1,6 +1,6 @@
 %\PassOptionsToClass{negatif}{m53beamer}
-% \PassOptionsToClass{withsidebar}{m53beamer}
-% \PassOptionsToClass{handout}{m53beamer}
+%\PassOptionsToClass{withsidebar}{m53beamer}
+\PassOptionsToClass{handout}{m53beamer}
 %\PassOptionsToClass{print}{m53beamer}
 \documentclass{m53beamer}
 % ---------------
@@ -15,6 +15,59 @@
 \begin{frame}
   \titlepage
 \end{frame}
+% =======================================
+\section{« Rappelles » sur la géométrie plane}
+% =======================================
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\subsection{Le plan réel}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+% -----------
+\begin{frame}{Le plan réel}
+  \begin{itemize}[<+(1)->]
+    \item Un ensemble $\ens{P}$ est un \myemph{plan} s'il est isomorphe à $\mathbb{R}^{2}$. Les éléments de $\ens{P}$ sont appelés des \myemph{points} ou des \myemph{vecteurs} en fonction du contexte.
+    \item Si on fixe un isomorphisme entre un plan $\ens{P}$ et $\mathbb{R}^{2}$, à tout point (vecteur) $a \in \ens{P}$ on fait correspondre un couple de nombres $(x,y)$ appelé \myemph{coordonnées (cartésiennes)} de $a$.
+    \item Ainsi toute notion de $\mathbb{R}^{2}$ peut être \frquote{transportée} à $\ens{P}$ : droites, cercles, distances, produit scalaire, angles, \ldots
+    \item L'application $(\rho,\theta) \mapsto (\rho\cos(\theta),\rho\sin(\theta))$ est une surjection de $\mathbb{R}_{+}\times\mathbb{R}$ sur $\mathbb{R}^{2}$. \pause Ainsi la donnée d'un couple $(\rho,\theta)$, appelé \myemph{coordonnées polaires}, détermine un unique point de $\mathbb{R}^{2}$ (et ainsi éventuellement de $\ens{P}$).
+  \end{itemize}
+\end{frame}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\subsection{Les droites de \texorpdfstring{$\mathbb{R}^{2}$}{R²}}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+% -----------
+\begin{frame}{Les droites de \texorpdfstring{$\mathbb{R}^{2}$}{R²}}
+  \begin{itemize}[<+(1)->]
+    \item Une droite (affine) de $\mathbb{R}^{2}$ est un ensemble défini par une équation de la forme $ax+by=d$ avec $(a,b) \neq (0,0)$.
+    \item Une telle droite est vectorielle ssi $d=0$.
+    \item Une droite n'a pas une équation unique : toutes les équations qui définissent la même droite que $ax+by=d$ sont de la forme $\lambda ax+\lambda by=\lambda d$ avec $\lambda\neq0$.
+    \item Le vecteur $(a,b)$ est \alert{normal} à la droite définie par $ax+by=d$.
+    \item On dit que l'équation $ax+by=d$ est \myemph{normalisée} si $\norm{(a,b)}=1$. La droite définie par une telle équation normalisée est à distance $|d|$ de $0$.
+    \item Deux droites définies par $a_{1}x+b_{1}y=d_{1}$ et $a_{2}x+b_{2}y=d_{2}$ sont parallèles ssi les vecteurs $(a_{1},b_{1})$ et $(a_{2},b_{2})$ sont colinéaires.
+    \item Toutes les droites parallèles à une droite $ax+by=d$ admettent une équation de la forme $ax+by=\delta$ ($\delta \in \mathbb{R}$).
+  \end{itemize}
+\end{frame}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\subsection{Le plan complexe}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+% -----------
+\begin{frame}{Le plan complexe}
+  \begin{itemize}[<+(1)->]
+    \item Comme $\mathbb{C}$ est isomorphe à $\mathbb{R}^{2}$ on peut le considérer comme un plan (appelé \myemph{le plan complexe}).
+    \item Ainsi à tout point (vecteur) de $\mathbb{R}^{2}$ on peut faire correspondre un nombre complexe appelé son \myemph{affixe}.
+    \item La formule d'Euler $e^{i\theta}=\cos(\theta)+i\sin(\theta)$ nous permet d'identifier les coordonnées polaires $(\rho,\theta)$ d'un point avec le module et l'argument de son affixe.
+    \item Le produit scalaire de deux vecteurs $\vv{v_{1}}$ et $\vv{v_{2}}$ d'affixes respectives $z_{1}$ et $z_{2}$ s'écrit
+    \[
+        \scalprod{v_{1}}{v_{2}} = \frac{z_{1}\overline{z_{2}}+\overline{z_{1}}z_{2}}{2}\,.
+    \]
+    \item Une grande partie des opérations algébriques sur $\mathbb{C}$ ont une interprétation géométrique.
+  \end{itemize}
+\end{frame}
+
 
 % =======================================
 \section{Espace affine}
@@ -25,7 +78,7 @@
 % -----------
 \begin{frame}{La définition d'un espace affine}
   \begin{definition}[heuristique]
-    «Un espace affine est un espace vectoriel dont on a oublié l'origine.»
+    \frquote{Un espace affine est un espace vectoriel dont on a oublié l'origine.}
   \end{definition}
 \end{frame}
 % -----------
@@ -133,7 +186,7 @@
         \begin{itemize}[<+(1)->]
           \item Si $\sum_{i=1}^{k}\lambda_{i}=0$ alors $\sum_{i=1}^{k}\lambda_{i}A_{i} \in \ev{E}$ est bien définie \myemph{($\vv{AB} = B - A$)}.
           \item Si $\sum_{i=1}^{k}\lambda_{i}=1$ alors $\sum_{i=1}^{k}\lambda_{i}A_{i} \in \ens{E}$ est bien définie.
-          \item Si $\sum_{i=1}^{k}\lambda_{i}\notin \{0,1\}$ alors $\sum_{i=1}^{k}\lambda_{i}A_{i}$ «n'est pas bien définie».
+          \item Si $\sum_{i=1}^{k}\lambda_{i}\notin \{0,1\}$ alors $\sum_{i=1}^{k}\lambda_{i}A_{i}$ \frquote{n'est pas bien définie}.
         \end{itemize}\pause
     \end{enumerate}
   \end{frame}
@@ -190,7 +243,7 @@
       Un \alert{repère cartésien} d'un espace affine $\ens{E}$ de dimension $n$ est la donnée $\mathcal{C}=(\Omega, \vv{v_{1}}, \ldots,\vv{v_{n}})$ d'un point $\Omega$ de $\ens{E}$, \myemph{  l'origine du repère}, et d'une base $(\vv{v_{1}}, \ldots,\vv{v_{n}})$ de la direction $\ev{E}$.
     \end{definition}\pause
     \begin{definition}
-      Soit $\mathcal{C}=(\Omega, \vv{v_{1}}, \ldots,\vv{v_{n}})$ un repère cartésien de $\ens{E}$ et $M$ un point de $\ens{E}$. On dit que $(x_{1},\ldots,x_{n})_{\mathcal{C}}$ sont les \alert{coordonnées cartésiennes} de $M$ dans le repère $\mathcal{C}$ si ceux sont les coordonnées de $\vv{\Omega M}$ dans la base $(\vv{v_{1}}, \ldots,\vv{v_{n}})$ de la direction $\ev{E}$.\pause\ Autrement dit $M=(x_{1},\ldots,x_{n})_{\mathcal{C}}$ si et seulement si $M=\Omega+\sum_{i=1}^{n}x_{i}\vv{v_{i}}$.
+      Soit $\mathcal{C}=(\Omega, \vv{v_{1}}, \ldots,\vv{v_{n}})$ un repère cartésien de $\ens{E}$ et $M$ un point de $\ens{E}$. On dit que $(x_{1},\ldots,x_{n})_{\mathcal{C}}$ sont les \alert{coordonnées cartésiennes} de $M$ dans le repère $\mathcal{C}$ si ce sont les coordonnées de $\vv{\Omega M}$ dans la base $(\vv{v_{1}}, \ldots,\vv{v_{n}})$ de la direction $\ev{E}$.\pause\ Autrement dit $M=(x_{1},\ldots,x_{n})_{\mathcal{C}}$ si et seulement si $M=\Omega+\sum_{i=1}^{n}x_{i}\vv{v_{i}}$.
     \end{definition}
   \end{frame}
   % -----------
@@ -199,7 +252,7 @@
       On dit que le $(n+1)$-uplet $(A_{0},\ldots,A_{n})$ est un \alert{repère affine} de $\ens{E}$ si pour tout point $M$ de $\ens{E}$ il existe un unique $(n+1)$-uplet de poids $(\mu_{0},\ldots,\mu_{n})$, avec $\sum_{i=0}^{n}\mu_{i}=1$ et $M=\sum_{i=1}^{n}\mu_{i}A_{i}$.
     \end{definition}\pause
     \begin{definition}
-      Soit $\mathcal{A}=(A_{0},\ldots,A_{n})$ est un repère affine de $\ens{E}$.On dit que $[\mu_{0},\ldots,\mu_{n}]_{\ens{A}}$ sont les \alert{coordonnées barycentriques} dans le repère $\ens{A}$ d'un point $M$ de $\ens{E}$ si $\sum_{i=0}^{n}\mu_{i}=1$ et $M=\sum_{i=0}^{n}\mu_{i}A_{i}$.
+      Soit $\mathcal{A}=(A_{0},\ldots,A_{n})$ est un repère affine de $\ens{E}$. On dit que $[\mu_{0},\ldots,\mu_{n}]_{\ens{A}}$ sont les \alert{coordonnées barycentriques} dans le repère $\ens{A}$ d'un point $M$ de $\ens{E}$ si $\sum_{i=0}^{n}\mu_{i}=1$ et $M=\sum_{i=0}^{n}\mu_{i}A_{i}$.
     \end{definition}\pause
     \begin{remarque}
       Si $\mathcal{A}=(A_{0},\ldots,A_{n})$ est un repère affine de $\ens{E}$, alors toute permutation $\mathcal{A}=(A_{\sigma(0)},\ldots,A_{\sigma(n)})$ l'est aussi.
@@ -276,7 +329,7 @@
       On dit que deux (plusieurs) sous-espaces affines d'un même espace affine sont
       \alert{parallèles} s'ils ont la même direction.\pause\myemph{(C'est une relation d'équivalence.)}
     \end{definition}\pause
-    Attention : «disjoints» $\not\Rightarrow$ «parallèles».\pause
+    Attention : \frquote{disjoints} $\not\Rightarrow$ \frquote{parallèles}.\pause
     \begin{proposition}
       \begin{enumerate}[<+->]
         \item Deux sous-espaces parallèles sont disjoints ou confondus.
