@@ -120,6 +120,24 @@
   % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ pour impression
   \usepackage{pgfpages}
   \pgfpagesuselayout{4 on 1}[a4paper,border shrink=7mm,landscape]
+  \usepackage{everypage}
+  \usepackage{tikz}
+    \AddEverypageHook{%
+      \pgfmathsetmacro{\mpage}{int(mod(\thepage,2))}
+      \ifnum \mpage=0\relax
+        \begin{tikzpicture}[remember picture,overlay]
+          \draw[shift={(current page.west)},line width=3.5mm,gray!14,-latex]
+            (-2.1,0)--(-.21,0);
+        \end{tikzpicture}%
+      \fi
+      \pgfmathsetmacro{\mpage}{int(mod(\thepage,4))}
+      \ifnum \mpage=3\relax
+        \begin{tikzpicture}[remember picture,overlay]
+          \draw[shift={(current page.north east)},line width=3.5mm,gray!14,-latex]
+            (2.1,1.4) -- (.21,.21);
+        \end{tikzpicture}%
+      \fi
+    }
 \fi
 
 % ---------------
