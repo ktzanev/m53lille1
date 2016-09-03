@@ -182,4 +182,93 @@
 
 \end{exo}
 
+% ==================================
+\section{Géométrie projective sans le dire}
+% ==================================
+
+%-----------------------------------
+\begin{exo} (points cocycliques et le théorème de Ptolémée)
+
+  On se donne $4$ points distincts $A$, $B$, $C$ et $D$ du plan complexe d'affixes $a$, $b$, $c$ et $d$ respectivement.
+  \begin{enumerate}
+    \item Montrer que l'on a toujours
+      $$
+        |AC|.|BD| \leq |AB|.|CD|+|AD|.|BC|
+      $$
+      avec égalité si et seulement s'il existe un réel $\lambda > 0$ tel que $(b-a)(d-c)=\lambda (d-a)(c-b)$.
+    \item Déduire de la question précédente que le cas d'égalité est équivalent à
+      $$
+        \arg(\frac{b-a}{d-a})-\arg(\frac{b-c}{d-c}) = \pm\pi.
+      $$
+    \item Montrer le théorème de Ptolémée :
+
+    \textit{Un quadrilatère convexe est inscrit dans un cercle si et seulement si le produit des longueurs de ses diagonales est égal à la somme des produits des longueurs des côtés opposés.}
+  \end{enumerate}
+ \end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Birapports)
+
+  Soient $4$ points du plan complexe avec affixes $a$, $b$, $c$, $d$ distincts deux à deux. On définit leur birapport comme étant la quantité:
+  $$
+    [a,b,c,d]=\frac{a-c}{b-c}\cdot\frac{b-d}{a-d} \in \mathbb{C}.
+  $$
+  \begin{enumerate}
+    \item Montrer que si $4$ points sont alignés alors leur birapport est un nombre réel. Dans quel cas ce birapport est positif ?
+    \item Montrer que si $4$ points sont cocycliques alors leur birapport est un nombre réel. Dans quel cas ce birapport est positif ?
+    \item Montrer que le birapport de $4$ points est réel si et seulement si les $4$ points sont alignés ou cocycliques.
+    \item Prouver que si $4$ points d'affixes non nulles sont alignés alors leurs images par $1/\overline{z}$ sont alignées ou cocycliques.
+    \item Montrer que les homothéties de rapport non nul, les rotations et les translations préservent les birapports, et que les symétries les transforment en leurs conjugués.
+    \item Montrer que les points d'affixes $-2+6i$, $1+7i$, $4+6i$, $6+2i$ sont cocycliques.
+  \end{enumerate}
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Inversions)
+
+  Une inversion $i(\Omega,r)$ de centre $\Omega$ et de rapport $r \in \mathbb{R}^{*}_{+}$ est une application du plan $P$ privé de $\Omega$ dans $P$ qui à tout point $M$ associe le point $M'$ tel que
+  \begin{itemize}
+    \item $M'$ soit sur la droite $\Omega M$,
+    \item $\overline{\Omega M}.\overline{\Omega M'}=r^2$.
+  \end{itemize}
+  \begin{enumerate}
+    \item Déterminer l'image de $i(\Omega,r)$.
+    \item Montrer que l'inversion est une involution.
+    \item En identifiant le plan $P$ avec $\mathbb{C}$, donner l'expression analytique de l'inversion $i(0,1)$, puis, plus généralement, de $i(\omega,r)$ avec $\omega \in \mathbb{C}$ et $r \in \mathbb{R}^{*}_{+}$.
+    \item  Montrer que chaque point du cercle de centre $\Omega$ et de rayon $r$ est invariant par l'inversion.
+    \item Montrer qu'une inversion transforme un birapport en son conjugué.
+    \item Montrer que l'inversion préserve les droites qui passent par $\Omega$.
+    \item Montrer qu'elle envoie une droite qui ne passe par $\Omega$ sur un cercle qui passe par $\Omega$.
+    \item Montrer aussi qu'elle envoie tout cercle qui ne passe pas par $\Omega$ sur un cercle qui ne passe pas par $\Omega$.
+  \end{enumerate}
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo} (Homographies)
+
+  Une homographie est une application de $\mathbb{C}$ dans $\mathbb{C}$ de la forme
+  $$
+    z\mapsto \frac{az+b}{cz+d}
+  $$
+  avec $a,b,c,d$ complexes, tels que $ad-bc\neq 0$.
+  \begin{enumerate}
+    \item Montrer que toute homographie est la composée de translations, d'homothéties et au plus d'une inversion et d'une réflexion.
+    \item Montrer que toute homographie envoie droites ou cercles sur droites ou cercles.
+    \item Montrer que les homographies forment un groupe.
+  \end{enumerate}
+\end{exo}
+
+
+%-----------------------------------
+\begin{exo}
+
+  \image{r}{7cm}{-17mm}{0mm}{M53_2016-17_TD2_exo15.tikz}
+
+  Deux cercles $\mathcal{C}$ et $\mathcal{C}'$ sont tangents intérieurement en $O$. On considère une famille de cercles deux à deux tangents entre eux et tangents à $\mathcal{C}$ et $\mathcal{C}'$. Montrer que les points de contact de ces cercles entre eux sont situés sur un même cercle tangent en $O$ aux deux cercles $\mathcal{C}$ et $\mathcal{C}'$.
+\end{exo}
+
+
 \end{document}
