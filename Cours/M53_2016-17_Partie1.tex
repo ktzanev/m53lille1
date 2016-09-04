@@ -26,8 +26,8 @@
 % -----------
 \begin{frame}{Le plan réel}
   \begin{itemize}[<+(1)->]
-    \item Un ensemble $\ens{P}$ est un \myemph{plan} s'il est \frquote{naturellement} isomorphe à $\mathbb{R}^{2}$. Les éléments de $\ens{P}$ sont appelés des \myemph{points} ou des \myemph{vecteurs} en fonction du contexte.
-    \item Si on fixe un isomorphisme entre un plan $\ens{P}$ et $\mathbb{R}^{2}$, à tout point (vecteur) $a \in \ens{P}$ on fait correspondre un couple de nombres $(x,y)$ appelé \myemph{coordonnées (cartésiennes)} de $a$.
+    \item Un ensemble $\ens{P}$ peut être considéré comme un \myemph{plan} s'il est \frquote{naturellement} isomorphe à $\mathbb{R}^{2}$. \pause Dans ce cas, les éléments de $\ens{P}$ sont appelés des \myemph{points} ou des \myemph{vecteurs} en fonction du contexte.
+    \item Si on fixe un isomorphisme entre un plan $\ens{P}$ et $\mathbb{R}^{2}$, à tout point (vecteur) $M \in \ens{P}$ on fait correspondre un couple de nombres $(x,y)$ appelé \myemph{coordonnées (cartésiennes)} de $M$.
     \item Ainsi toute notion de $\mathbb{R}^{2}$ peut être \frquote{transportée} à $\ens{P}$ : droites, cercles, distances, produit scalaire, angles, \ldots
     \item L'application $(\rho,\theta) \mapsto (\rho\cos(\theta),\rho\sin(\theta))$ est une surjection de $\mathbb{R}_{+}\times\mathbb{R}$ sur $\mathbb{R}^{2}$. \pause Ainsi la donnée d'un couple $(\rho,\theta)$, appelé \myemph{coordonnées polaires}, détermine un unique point de $\mathbb{R}^{2}$ (et ainsi éventuellement de $\ens{P}$).
   \end{itemize}
@@ -243,7 +243,7 @@
       Un \alert{repère cartésien} d'un espace affine $\ens{E}$ de dimension $n$ est la donnée $\mathcal{C}=(\Omega, \vv{v_{1}}, \ldots,\vv{v_{n}})$ d'un point $\Omega$ de $\ens{E}$, \myemph{  l'origine du repère}, et d'une base $(\vv{v_{1}}, \ldots,\vv{v_{n}})$ de la direction $\ev{E}$.
     \end{definition}\pause
     \begin{definition}
-      Soit $\mathcal{C}=(\Omega, \vv{v_{1}}, \ldots,\vv{v_{n}})$ un repère cartésien de $\ens{E}$ et $M$ un point de $\ens{E}$. On dit que $(x_{1},\ldots,x_{n})_{\mathcal{C}}$ sont les \alert{coordonnées cartésiennes} de $M$ dans le repère $\mathcal{C}$ si ce sont les coordonnées de $\vv{\Omega M}$ dans la base $(\vv{v_{1}}, \ldots,\vv{v_{n}})$ de la direction $\ev{E}$.\pause\ Autrement dit $M=(x_{1},\ldots,x_{n})_{\mathcal{C}}$ si et seulement si $M=\Omega+\sum_{i=1}^{n}x_{i}\vv{v_{i}}$.
+      Soit $\mathcal{C}=(\Omega, \vv{v_{1}}, \ldots,\vv{v_{n}})$ un repère cartésien de $\ens{E}$ et $M$ un point de $\ens{E}$. On dit que $(x_{1},\ldots,x_{n})$ sont les \alert{coordonnées cartésiennes} de $M$ dans le repère $\mathcal{C}$, et on note $M=(x_{1},\ldots,x_{n})_{\mathcal{C}}$, si ce sont les coordonnées de $\vv{\Omega M}$ dans la base $(\vv{v_{1}}, \ldots,\vv{v_{n}})$ de la direction $\ev{E}$.\pause\ Autrement dit $M=(x_{1},\ldots,x_{n})_{\mathcal{C}}$ si et seulement si $M=\Omega+\sum_{i=1}^{n}x_{i}\vv{v_{i}}$.
     \end{definition}
   \end{frame}
   % -----------
@@ -252,7 +252,7 @@
       On dit que le $(n+1)$-uplet $(A_{0},\ldots,A_{n})$ est un \alert{repère affine} de $\ens{E}$ si pour tout point $M$ de $\ens{E}$ il existe un unique $(n+1)$-uplet de poids $(\mu_{0},\ldots,\mu_{n})$, avec $\sum_{i=0}^{n}\mu_{i}=1$ et $M=\sum_{i=1}^{n}\mu_{i}A_{i}$.
     \end{definition}\pause
     \begin{definition}
-      Soit $\mathcal{A}=(A_{0},\ldots,A_{n})$ est un repère affine de $\ens{E}$. On dit que $[\mu_{0},\ldots,\mu_{n}]_{\ens{A}}$ sont les \alert{coordonnées barycentriques} dans le repère $\ens{A}$ d'un point $M$ de $\ens{E}$ si $\sum_{i=0}^{n}\mu_{i}=1$ et $M=\sum_{i=0}^{n}\mu_{i}A_{i}$.
+      Soit $\mathcal{A}=(A_{0},\ldots,A_{n})$ est un repère affine de $\ens{E}$. On dit que $(\mu_{0},\ldots,\mu_{n})$ sont les \alert{coordonnées barycentriques} dans le repère $\ens{A}$ d'un point $M$ de $\ens{E}$, et on note $M=[\mu_{0},\ldots,\mu_{n}]_{\ens{A}}$, si $\sum_{i=0}^{n}\mu_{i}=1$ et $M=\sum_{i=0}^{n}\mu_{i}A_{i}$.
     \end{definition}\pause
     \begin{remarque}
       Si $\mathcal{A}=(A_{0},\ldots,A_{n})$ est un repère affine de $\ens{E}$, alors toute permutation $\mathcal{A}=(A_{\sigma(0)},\ldots,A_{\sigma(n)})$ l'est aussi.
