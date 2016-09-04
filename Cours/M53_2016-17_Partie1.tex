@@ -101,6 +101,13 @@
 \end{frame}
 % -----------
 \begin{frame}{La dimension d'un espace affine}
+  Si $\ens{E}$ est un espace affine sur $\ev{E}$ et $\phi:\ev{E}\isoto\ev{F}$ un isomorphisme d'espaces vectoriels, alors la composition
+    \begin{gather*}
+      \ens{E} \times \ens{E} \longrightarrow \ev{E}\isoto\ev{F}\\
+      (A,B) \mapsto \phi(\vv{AB})
+    \end{gather*}
+  définit une structure d'espace affine sur $\ens{E}$ de direction $\ev{F}$. \pause On parle dans ce cas de \myemph{changement de direction} de $\ens{E}$.
+  \pause
   \begin{definition}
     L'espace affine $\ens{E}$ est de dimension $n$ si sa direction, l'espace vectoriel $\ev{E}$, est de dimension $n$.
   \end{definition}
@@ -159,7 +166,10 @@
         \item $(\Omega+\vv{v})+(\Omega+\vv{w})=(\Omega+\vv{v}+\vv{w})$.
         \item $\lambda(\Omega+\vv{v})=\Omega+\lambda\vv{v}$.
       \end{itemize}
-    \end{enumerate}
+    \end{enumerate}\pause
+    \begin{remarque}
+      On peut considérer $\ens{E}_{\Omega}$ comme espace affine avec direction lui même \pause ou avec direction $\ev{E}$\pause, la différence est le \frquote{changement de direction} via l'isomorphisme linéaire $\ens{E}_{\Omega}\isoto\ev{E}$.
+    \end{remarque}
   \end{frame}
   % -----------
   \begin{frame}{Produit d'espaces affines}
