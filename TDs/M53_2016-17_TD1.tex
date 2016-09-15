@@ -80,30 +80,21 @@ On se place dans $\mathbb{R}^{2}$.
 %-----------------------------------
 \begin{exo} (Changement de repères)
 
-  L'espace $\mathbb{R}^{3}$ est muni de son repère cartésien canonique $\mathcal{R}=(O,I,J,K)$. On considère le nouveau repère $\mathcal{R}'=\left( O'=(0, 0, 1), I'=(0, 0, 0), J'=(1, 0, 2), K'=(0, 1, 1) \right)$.
+  L'espace $\mathbb{R}^{2}$ est muni de son repère cartésien canonique $\mathcal{R}=\left( O,\vv{i},\vv{j} \right)$. On considère le nouveau repère $\mathcal{R}'=\left( O'=(0, 1), \vv{i'}=(1, 1), \vv{j'}=(-1, 0) \right)$.
   \begin{enumerate}
-    \item Soit un point de coordonnées $X=(x, y, z)$ dans le repère $\mathcal{R}$. Donner ses coordonnées cartésiennes $X'=(x', y', z')$ dans le repère $\mathcal{R}'$ en fonction de $X=(x, y, z)$ .
+    \item Soit un point de coordonnées $(x, y)$ dans le repère $\mathcal{R}$. Donner ses coordonnées cartésiennes $(x', y')$ dans le repère $\mathcal{R}'$ en fonction de $x$ et $y$.
 
     \item \label{chrep} Donner la formule de changement de repère de $\mathcal{R}$ à $\mathcal{R'}$ sous la forme:
       \[
-        \left(\begin{array}{c} x' \\ y' \\ z'\end{array}\right) =
-        M \left(\begin{array}{c} x \\ y \\ z \end{array}\right) +
-          \left(\begin{array}{c} u \\ v \\ w \end{array}\right),
+          \begin{pmatrix} x' \\[-5pt] y' \end{pmatrix} =
+        M \begin{pmatrix} x  \\[-5pt] y  \end{pmatrix} +
+          \begin{pmatrix} u  \\[-5pt] v  \end{pmatrix},
       \]
-    où $M$ est une matrice $3\times3$. Puis écrire sous la même forme la formule de changement de repère inverse, de $\mathcal{R'}$ à $\mathcal{R}$.
+    où $M$ est une matrice $2\times2$ et $u$,$v$ sont des constantes.\\
+    Puis écrire sous la même forme la formule de changement de repère inverse, de $\mathcal{R'}$ à $\mathcal{R}$.
 
-    \item On se donne $A=(0, 0, 3)$, $B=(1, 0, 4)$, $C=(1, 1, 1)$, trois points dont les coordonnées cartésiennes sont exprimées dans $\mathcal{R}$. Donner une équation du plan $\left<A,B,C\right>$ dans le repère $\mathcal{R}$, puis dans le repère $\mathcal{R}'$.
+    \item On se donne deux points $A=(1, 0)$ et $B=(3, -1)$ de $\mathbb{R}^{2}$. Donner une équation de la droite $\affspan{A,B}$ dans le repère $\mathcal{R}$, puis dans le repère $\mathcal{R}'$.
 
-    \item \label{compchrep} De la question \ref{chrep}) on déduit qu'un changement de repères $P_{\mathcal{R}'}^{\mathcal{R}}$ s'écrit sous la forme $X'=P_{\mathcal{R}'}^{\mathcal{R}}(X)=M_{\mathcal{R}'}^{\mathcal{R}}X+V_{\mathcal{R}'}^{\mathcal{R}}$. Soit un troisième repère $\mathcal{R}''$, quelle formule relie les couples $(M_{\mathcal{R}'}^{\mathcal{R}},V_{\mathcal{R}'}^{\mathcal{R}})$, $(M_{\mathcal{R}''}^{\mathcal{R}'},V_{\mathcal{R}''}^{\mathcal{R}'})$ et $(M_{\mathcal{R}''}^{\mathcal{R}},V_{\mathcal{R}''}^{\mathcal{R}})$ ?
-
-    \item\hard On note $GA_{3}(\mathbb{R})$ l'ensemble des couples $(M,V)$ où $M\in GL_{3}(\mathbb{R})$ et $V\in\mathbb{R}^{3}$. On munit $GA_{3}(\mathbb{R})$ d'une opération binaire:\vspace{-3mm}
-      \[
-        (M',V')\circ(M,V)=(M'M,M'V+V')
-      \]
-    Montrer que cette opération munit $GA_{3}(\mathbb{R})$ d'une loi de groupe.
-
-    \item\hard Montrer que $GA_{3}(\mathbb{R})$ est en bijection avec l'ensemble des repères de $\mathbb{R}^{3}$. \\
-    Cette bijection est-elle canonique?
   \end{enumerate}
 \end{exo}
 
