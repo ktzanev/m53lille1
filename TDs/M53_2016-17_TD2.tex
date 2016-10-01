@@ -112,7 +112,7 @@
 %-----------------------------------
 \begin{exo} (Isométries du triangle)
   \begin{enumerate}
-    \item Déterminer le groupe des isométries d'un triangle dans le plan, la discussion sera menée en fonction des propriétés métriques du triangle.
+    \item Déterminer le groupe des isométries d'un triangle dans le plan\footnote{Il s'agit des isométries qui préservent l'ensemble des sommets du triangle.}, la discussion sera menée en fonction des propriétés métriques du triangle.
     \item Même question avec un quadrilatère.
   \end{enumerate}
 \end{exo}
@@ -124,29 +124,60 @@
 \end{exo}
 
 %-----------------------------------
-\begin{exo} (Nature de certaines isométrie)
+\begin{exo} (Étude d'isométries du plan)
+
+  On considère le plan $\mathbb{R}^{2}$ muni de sa structure euclidienne standard. Soient les applications linéaires suivantes:
+  \begin{align*}
+  f_{1}(x,y) &= (x+3y+1,-3x+y) & f_{2}(x,y) &= \frac{1}{\sqrt{5}}(x-2y+1,2x+y-1)\\
+  f_{3}(x,y) &= \frac{1}{5}(3x+4y-1,4x-3y+2) & f_{4}(x,y) &= (x+3,y)\\
+  f_{5}(x,y) &= \frac{1}{\sqrt{2}}(x-y+\sqrt{2},-x-y-2+\sqrt{2}) & f_{6}(x,y) &= (\sqrt{x^{2}+y^{2}},x+y)
+  \end{align*}
   \begin{enumerate}
-    \item Soit l'isométrie linéaire%
-      \scalebox{.7}{
-        $
-          \begin{pmatrix}
-            0 & 0 & 1 \\
-            1 & 0 & 0 \\
-            0 & 1 & 0
-          \end{pmatrix}
-        $.
-      }
-      Décrire la nature de cette isométrie.
+    \item Lesquelles de ces applications sont des isométries ?
+    \item Lesquelles des isométries sont directes ?
+    \item Pour chacune des isométries déterminer sa nature et ses paramètres ?
+    \item Décomposer ces isométries en produit de réflexions ?
+  \end{enumerate}
+\end{exo}
+
+%-----------------------------------
+\begin{exo} (Étude d'isométries de l'espace)
+  \begin{enumerate}
     \item Soient $R$ et $T$ une rotation et une translation de $\mathbb{R}^{3}$. Quelle est la nature de $T \circ R$ ?
+    \item Soit l'isométrie
+      $R=
+          \begin{psmallmatrix}
+            0 & 0 & 1 \\[3pt]
+            1 & 0 & 0 \\[3pt]
+            0 & 1 & 0
+          \end{psmallmatrix}
+      $.
+      Décrire la nature et les paramètres de cette isométrie.
+      \item On considère la même matrice $R$. Décrire la nature et les paramètres de l'application
+        $
+          X \mapsto
+          RX+
+          \begin{psmallmatrix}
+            0 \\[3pt]
+            1 \\[3pt]
+            0
+          \end{psmallmatrix}
+        $.
+    \item Soit l'isométrie
+      $S=
+          \begin{psmallmatrix}
+                    0         & 1 &         0          \\[3pt]
+            \frac{1}{\sqrt{2}} & 0 & -\frac{1}{\sqrt{2}} \\[3pt]
+            \frac{1}{\sqrt{2}} & 0 &  \frac{1}{\sqrt{2}}
+          \end{psmallmatrix}
+      $.
+      Décrire la nature et les paramètres de cette isométrie.
     \item Quelle est la composée de trois symétries de plans parallèles de $\mathbb{R}^{3}$?
   \end{enumerate}
 \end{exo}
 
 %-----------------------------------
 \begin{exo} (Capes 2007, 2\ieme\ épreuve)
-% Pour voir l'image originale
-% \usepackage{graphicx}
-% \hspace{-7mm}\includegraphics[scale=0.55]{CAPES2007.png}
 
 \begin{center}
   \textbf{Partie V. GROUPES DIÉDRAUX}
