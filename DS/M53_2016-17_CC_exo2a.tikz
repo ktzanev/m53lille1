@@ -1,0 +1,19 @@
+\usetikzlibrary{calc}
+\begin{tikzpicture}[scale=3]
+   \path
+    (-0.25,0.933012701892) coordinate(v)
+    (0,.5) coordinate (N)
+    (0,1) coordinate (F0)
+    ($(F0)-(v)$) coordinate (S0)
+   ;
+   \draw[gray] (-.3,0) edge[-latex] (.7,0) (0,-.3) edge[-latex] (0,1.4);
+   \draw ($(N)+(v)$) -- ($(N)-.84*(v)$);
+   \draw[dashed] (0,0) -- (S0) edge[solid,-latex,thick] node[right]{$\vv{v}$} (F0);
+   \draw (N) edge[solid,-latex,thick] +(v) +(v) node[scale=2]{.} node[above]{$f(N)=N+\vv{v}$};
+   \draw
+    (0,0) node[scale=2]{.} node[below left]{$(0,0)$}
+    (F0) node[scale=2]{.} node[right]{$f(0,0)$}
+    (N) node[scale=2]{.} node[left]{$N$}
+    (S0) node[scale=2]{.}
+   ;
+\end{tikzpicture}
