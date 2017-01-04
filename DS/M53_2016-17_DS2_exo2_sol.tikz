@@ -1,0 +1,20 @@
+\begin{tikzpicture}[z={(35:1)},>=latex, scale=3.5]
+	\path
+		(1,0,0) coordinate (A) node[scale=2]{.} node[below]{$A$}
+		(2,0,0) coordinate (B) node[scale=2]{.} node[below]{$B$}
+		(1,1,0) coordinate (C) node[scale=2]{.} node[above]{$C$}
+		(1,0,1) coordinate (D) node[scale=2]{.} node[right]{$D$}
+		(4/3,1/3,1/3) coordinate (G) node[scale=2]{.} node[above]{$G$}
+	;
+		
+
+	\draw 
+		(A) -- node[scale=.4,sloped]{/} (B)
+		(A) -- node[scale=.4,sloped]{/} (C)
+		(A) -- node[scale=.4,sloped]{/} (D)
+		(B) -- node[scale=.4,sloped]{//} (C)
+		(C) -- node[scale=.4,sloped]{//} (D)
+		(D) -- node[scale=.4,sloped]{//} (B)
+	;
+	\draw[dashed, shorten <=-2cm, shorten >=-2cm] (A) -- (G);
+\end{tikzpicture}

@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+	\path 
+		(3,1) coordinate (M1) node[scale=2]{.} node[below=4pt]{$M_1$}
+		(1,3) coordinate (M2) node[scale=2]{.} node[above=4pt]{$M_2$}
+		({2-1/sqrt(2)},{2-1/sqrt(2)}) coordinate (N1) node[scale=2]{.} node[below=4pt]{$N_1$}
+		({2+1/sqrt(2)},{2+1/sqrt(2)}) coordinate (N2) node[scale=2]{.} node[above=4pt]{$N_2$}
+		(2,2) coordinate (Omega) node[scale=2]{.} node[above=4pt]{$\Omega$};
+	\draw [rotate=-45, shift={($(M1)!.5!(M2)$)}]ellipse(1.41421356237cm and 1cm);	
+	\draw 
+		($(M1)!1.5!(M2)$) -- ($(M2)!1.5!(M1)$) coordinate (S1) node[above right] {$S_1$}
+		($(M1)!.5!(M2)!2!90:(M2)$) -- ($(M2)!.5!(M1)!2!90:(M1)$) coordinate (S2) node[below right] {$S_2$};
+	\draw[swap/.style={latex-latex, bend right}] 
+		([shift={(90:.4)}]S1) edge[swap] ([shift={(0:-.4)}]S1)
+		([shift={(180:.4)}]S2) edge[swap] ([shift={(90:-.4)}]S2);
+\end{tikzpicture}

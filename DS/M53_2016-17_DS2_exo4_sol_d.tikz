@@ -1,0 +1,23 @@
+\begin{tikzpicture}[z={(35:1)},>=latex, scale=1.5]
+	\path
+		(0,0) coordinate (0) node[scale=2]{.} node[above]{$O$}
+		(-150:1) coordinate (A) node[scale=2]{.} node[below left]{$A$}
+		(-30:1) coordinate (B) node[scale=2]{.} node[below]{$B$}
+		(90:1) coordinate (C) node[scale=2]{.} node[above left]{$C$}
+		(30:2) coordinate (OA) node[scale=2]{.} node[above right]{$O_A$}
+		(-150:.5) coordinate (0) node[scale=1.7]{.}
+		(30:.5) coordinate (0) node[scale=1.7]{.}
+		(30:1) coordinate (0) node[scale=1.7]{.}
+		(30:1.5) coordinate (0) node[scale=1.7]{.}
+	;
+	\draw[shorten >= -2cm] (A) -- (B); 
+	\draw[shorten >= -2cm] (A) -- (C);
+	\draw (C) -- (B);
+	\draw[dashed] (B) -- (OA) --(C);
+	\draw[dotted] (A) -- (OA);
+	
+	\draw[|-|, shift={(B)}] (0,0) ++(0:.4) arc(0:60:.4) node[pos=.5, sloped, scale=.7, above]{$60^{\circ}$};
+	\draw[|-|, shift={(B)}] (0,0) ++(60:.4) arc(60:120:.4) node[pos=.5, sloped, scale=.7, above]{$60^{\circ}$};
+	\draw[|-|, shift={(C)}] (0,0) ++(0:.4) arc(0:60:.4) node[pos=.5, sloped, scale=.7, above]{$60^{\circ}$};
+	\draw[|-|, shift={(C)}] (0,0) ++(0:.4) arc(0:-60:.4) node[pos=.5, sloped, scale=.7, swap, above, allow upside down]{$60^{\circ}$};
+\end{tikzpicture}
