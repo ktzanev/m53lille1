@@ -99,7 +99,7 @@
       \end{psmallmatrix}
     $, alors le changement de coordonnées proposé dans l'indication correspond à un autre repère cartésien orthonormé $\mathcal{R}$ dans lequel l'équation de $\ens{E}$ devient
     \[
-      \ens{E}=\{ (X,Y) \in \mathbb{R}^{2} \mid \big(\frac{X}{\sqrt{2}}^{2}\big)+\big(\frac{Y}{2\sqrt{2}}^{2}\big)=1\},
+      \ens{E}=\{ (X,Y) \in \mathbb{R}^{2} \mid \Big(\frac{X}{\sqrt{2}}\Big)^{2}+\Big(\frac{Y}{2\sqrt{2}}\Big)^{2}=1\},
     \]
     qui est, d'après le cours, l'équation d'une ellipse de rayons $\sqrt{2}$ et $2\sqrt{2}$.
     \item D'après la question précédente le grand axe de $\ens{E}$ est l'axe des $Y$, et donc les points $M_{1}$ et $M_{2}$ ont pour coordonnées $(0,2\sqrt{2})_{\mathcal{R}}$ et $(0,-2\sqrt{2})_{\mathcal{R}}$ dans le repère $\mathcal{R}$. Ainsi en appliquant le changement de coordonnées inverse, $x=\frac{1}{\sqrt{2}}(X+Y)+2$ et $y=\frac{1}{\sqrt{2}}(X-Y)+2$, on trouve les coordonnées dans la base canonique $(4,0)$ et $(0,4)$.
@@ -175,7 +175,7 @@
 
 \begin{solution}
   \begin{enumerate}
-    \item Comme l'intégrale $Q \mapsto \int_{0}^{1}Q(t)\operatorname{d}\!t $ est une application linéaire sur $\mathbb{R}_{2}[X]$, notons la $I$, alors $\ens{P}=I^{-1}(1)$ est un sous espace affine de $\mathbb{R}_{2}[X]$ de direction $\ev{P}=I^{-1}(0)$, les polynômes à intégrale $0$. Nous avons $\int_{0}^{1}1\operatorname{d}\!t=1$, donc le polynôme constant $1$ est un élément de $\ens{P}$.
+    \item Comme l'intégrale $Q \mapsto \int_{0}^{1}Q(t)\operatorname{d}\!t $ est une forme linéaire non nulle sur $\mathbb{R}_{2}[X]$, notons la $I$, $\ens{P}=I^{-1}(1)$ est un sous espace affine de $\mathbb{R}_{2}[X]$, car $1 \in \im(I)$, de direction $\ev{P}=I^{-1}(0)$, les polynômes à intégrale $0$. Nous avons $\int_{0}^{1}1\operatorname{d}\!t=1$, donc le polynôme constant $1$ est un élément de $\ens{P}$.
     \item Soit $Q(X)=aX^{2}+bX+c$, alors $\int_{0}^{1}Q(t)\operatorname{d}\!t=\frac{a}{3}+\frac{b}{2}+c$, et donc $\ev{P} = \{aX^{2}+bX+c \,\mid\, \frac{a}{3}+\frac{b}{2}+c=0\}=\affspan{3X^{2}-1, 2X-1}$. Ainsi un repère cartésien de $\ens{P}$ est $\left(1,3X^{2}-1,2X-1\right)$, et un repère affine est $\left(1,3X^{2},2X\right)$.
   \end{enumerate}
 \end{solution}
