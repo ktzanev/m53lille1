@@ -1,0 +1,14 @@
+\begin{tikzpicture}[etiquette/.style={scale=.35, circle, inner sep=2pt}]
+	\draw
+		(230:1) coordinate(A)
+		(170:1) coordinate(B)
+		(0:1) coordinate(C)
+	;
+	\draw (A) -- (B) -- (C) -- cycle;
+	\draw[very thin] (A) -- +($(C)-(B)$) --+($.5*(B)-.5*(C)$) node[etiquette,above right]{$\mathcal{D}$};
+	\path
+		(A) node{.} node[etiquette,below]{$A$}
+		(B) node{.} node[etiquette,above]{$B$}
+		(C) node{.} node[etiquette,right]{$C$}
+	;
+\end{tikzpicture}
