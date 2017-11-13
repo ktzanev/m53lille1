@@ -1,0 +1,107 @@
+\documentclass[a4paper,12pt,reqno]{amsart}
+\usepackage{graphicx}
+\usepackage{macros_M53}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+% pour voir les solutions il faut enlever le commentaire de la ligne suivante
+% \solutionstrue
+
+\begin{document}
+
+% ==================================
+\hautdepage{
+
+\ifsolutions{Solutions de l'interrogation}\else{Interrogation}\fi\par\normalfont\normalsize
+10 octobre 2017\\{[ durée: 1 heure ]}\par
+}
+% ==================================
+\ifsolutions\else
+% {\fontencoding{U}\fontfamily{futs}\selectfont\char 66\relax}
+\tikz[baseline=(e.base)]{\NoAutoSpacing\node(e){!};\draw[red,ultra thick,line join=round,yshift=-.15ex](90:1em)--(210:1em)--(330:1em)--cycle;}
+\textbf{Aucun document n'est autorisé.}
+
+\vspace{7mm}
+\fi
+
+%-----------------------------------
+\begin{exo} (Géométrie du plan complexe)
+
+  On se place dans le plan complexe $\mathbb{C}$. Soit $ABC$ un triangle équilatéral positivement orienté dont les sommets ont pour affixes respectifs $a$, $b$ et $c$.
+  \begin{enumerate}
+    \item Exprimer les nombres complexes $c-b$ et $a-c$ en fonction de $b-a$.
+    \item En utilisant la question précédente, montrer l'identité
+    \[
+      \frac{1}{b-a}+\frac{1}{c-b}+\frac{1}{a-c}=0.
+    \]
+  \end{enumerate}
+  \image{r}{49mm}{-14mm}{0mm}{M53_2017-18_CC_exo1.tikz}
+
+  On considère un point arbitraire $M$ d'affixe $m \in \mathbb{C}$.
+  \begin{enumerate}[resume]
+    \item Montrer que l'expression
+    \[
+      \frac{m-a}{b-a}+\frac{m-b}{c-b}+\frac{m-c}{a-c}
+    \]
+    ne dépend pas du choix de $M$.
+    \item En déduire que pour tout $M$ on a
+    \[
+      \left| \frac{m-a}{b-a}+\frac{m-b}{c-b}+\frac{m-c}{a-c} \right| = \sqrt{3}.
+    \]
+    \emph{Indication : Choisissez judicieusement un point $M$ particulier.}
+  \end{enumerate}
+
+
+\end{exo}
+
+\begin{solution}
+
+  \begin{enumerate}
+    \item Comme le vecteur $\vv{BC}$ est l'image par rotation à $+\frac{2 \pi}{3}$ de $\vv{AB}$, on a $(c-b)=e^{i \frac{2 \pi}{3}}(b-a)$. De même $(a-c)=e^{-i \frac{2 \pi}{3}}(b-a)$.
+    \item Soit $\xi = e^{i \frac{2 \pi}{3}} = -\frac{1}{2} + \frac{\sqrt{3}}{2}i$\footnote{ $\xi$ est une racine troisième de l'unité.}, alors $\overline{\xi} = e^{-i \frac{2 \pi}{3}} = \frac{1}{\xi}$ et $\xi + \overline{\xi} = -1$. Ainsi
+    \[
+      \frac{1}{b-a}+\frac{1}{c-b}+\frac{1}{a-c} = \frac{1}{b-a}\left( 1 + \frac{1}{\xi} + \frac{1}{\overline{\xi}} \right) = \frac{1}{b-a}\left( 1 + \overline{\xi} + \xi \right) = 0.
+    \]
+    \item En utilisant la question précédente nous avons
+    \[
+      \frac{m-a}{b-a}+\frac{m-b}{c-b}+\frac{m-c}{a-c} = m \underbrace{\left( \frac{1}{b-a}+\frac{1}{c-b}+\frac{1}{a-c} \right)}_{=0} - \left( \frac{a}{b-a}+\frac{b}{c-b}+\frac{c}{a-c} \right)
+    \]
+    qui ne dépend pas de $m$.
+    \item En choisissant $m=a$ on trouve
+    \[
+      \frac{m-a}{b-a}+\frac{m-b}{c-b}+\frac{m-c}{a-c} = \frac{a-b}{c-b}+\frac{a-c}{a-c} = e^{i \frac{\pi}{3}} + 1 = \frac{3}{2}+\frac{\sqrt{3}}{2}i.
+    \]
+    et donc, en utilisant la question précédente, on trouve que pour tout $m \in \mathbb{C}$ on a
+    \[
+      \left| \frac{m-a}{b-a}+\frac{m-b}{c-b}+\frac{m-c}{a-c} \right| = \sqrt{\frac{9}{4}+\frac{3}{4}} = \sqrt{3}.
+    \]
+  \end{enumerate}
+\end{solution}
+
+%-----------------------------------
+\begin{exo} (Sous-espaces affines)
+
+  \begin{enumerate}
+
+    \item Montrer que l'ensemble $F \subset \mathbb{R}_{2}[X] $ des polynômes de degré au plus 2 et vérifiant
+    \[
+      \int_{0}^{1} P(x) \,dx = 1, \quad \text{pour} \quad P \in F,
+    \]
+    est un sous-espace affine de l'espace vectoriel $\mathbb{R}_{2}[X]$.
+
+    \item Donner un repère cartésien, puis un repère affine de $F$.
+
+    \item\emph{[bonus]} Donner un exemple d'application affine de $\mathbb{R}$ dans $F$.
+   \end{enumerate}
+
+\end{exo}
+
+\begin{solution}
+  \begin{enumerate}
+    \item Soit $\phi: \mathbb{R}_{2}[X] \longrightarrow \mathbb{R}$ avec $\phi(P) = \int_{0}^{1} P(x) \,dx$ pour $P \in \mathbb{R}_{2}[X]$. Comme $\phi$ est une application linéaire (car l'intégrale est linéaire), d'après le cours, on déduit que $F = \phi^{-1}(1)$ est un sous-espace affine de $\mathbb{R}_{2}[X]$ de direction $\vv{F} = \ker\phi$.
+    \item D'après la question précédente, pour donner un repère affine de $F$, il suffit de donner un point de $F$ (par exemple $\Omega = 1$, le polynôme constant, convient), et une base de $\vv{F}$ qui est un hyperplan (noyau d'une forme linéaire non nulle) dans $\mathbb{R}_{2}[X]$, donc de dimension $2$. Ainsi les polynômes $\vv{E_{1}}(X) = 2X-1$ et $\vv{E_{2}}(X) = 3X^{2}-1$ conviennent car ils forment une famille libre (ils n'ont pas le même degré) de deux vecteurs de $\vv{F} = \ker\phi$ (en effet $\phi(\vv{E_{1}})=\int_{0}^{1} 2X-1 \,dx =0$ et $\phi(\vv{E_{2}}) = \int_{0}^{1} 3X^{2}-1 \,dx = 0$).\\
+    Pour conclure, $\left\{ \Omega, \vv{E_{1}}, \vv{E_{2}} \right\} = \left\{ 1, 2X-1, 3X^{2}-1 \right\}$ est un repère cartésien, et donc $\left\{ \Omega, \Omega+\vv{E_{1}}, \Omega+\vv{E_{2}} \right\} = \left\{ 1, 2X, 3X^{2} \right\}$ est un repère affine.
+    \item Par exemple $\psi : \alpha \mapsto \Omega + \alpha \vv{E_{1}} = 1+\alpha(2X-1)$ convient\footnote{C'est une paramétrisation de la droite affine $\affspan{1,2X}$.}, avec $\psi(0)=1 \in F$ et $\vv\psi \in \mathcal{L}(\mathbb{R}, \vv{F})$ étant donné par $\vv\psi(\alpha) = \alpha(2X-1)$.
+  \end{enumerate}
+\end{solution}
+
+\end{document}

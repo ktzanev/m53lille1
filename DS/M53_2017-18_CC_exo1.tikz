@@ -1,0 +1,13 @@
+\begin{tikzpicture}[scale=3]
+  \path
+    (0:0) coordinate (A) node[scale=2]{.} node[left]{$A(a)$}
+    (-45:1) coordinate (B) node[scale=2]{.} node[below]{$B(b)$}
+    (15:1) coordinate (C) node[scale=2]{.} node[right]{$C(c)$}
+    (70:.7) coordinate (M) node[scale=2]{.} node[above]{$M(m)$};
+  \draw[-latex] (A) -- (B);
+  \draw[-latex] (B) -- (C);
+  \draw[-latex] (C) -- (A);
+  \draw[-latex,dashed] (M)--(A);
+  \draw[-latex,dashed] (M)--(B);
+  \draw[-latex,dashed] (M)--(C);
+\end{tikzpicture}
