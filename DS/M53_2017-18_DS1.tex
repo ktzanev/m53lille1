@@ -1,0 +1,163 @@
+\documentclass[a4paper,12pt,reqno]{amsart}
+\usepackage{graphicx}
+\usepackage{macros_M53}
+
+% pour voir les solutions il faut enlever le commentaire de la ligne suivante
+% \solutionstrue
+
+\begin{document}
+
+% ==================================
+\hautdepage{
+
+\ifsolutions{Solutions de l'interrogation}\else{Interrogation}\fi\par\normalfont\normalsize
+7 novembre 2017\\{[ durée: 2 heures ]}\par
+}
+% ==================================
+\ifsolutions\else
+% {\fontencoding{U}\fontfamily{futs}\selectfont\char 66\relax}
+\tikz[baseline=(e.base)]{\NoAutoSpacing\node(e){!};\draw[red,ultra thick,line join=round,yshift=-.15ex](90:1em)--(210:1em)--(330:1em)--cycle;}
+\textbf{Documents autorisés :}\textit{Une feuille A4 recto-verso écrite à la main.}
+
+\vspace{28mm}
+\fi
+
+%-----------------------------------
+\begin{exo} (Espaces euclidiens)
+
+  \begin{enumerate}
+    \item \emph{(Question de cours)} Démontrer le résultat suivant vu en cours :
+
+    \vspace{7pt}
+    \framebox{
+      \parbox{\textwidth-35mm}{\vspace{1mm}
+        \emph{%
+          Soient $\ens{A}$ et $\ens{B}$ deux sous-espaces affines d'un espace affine euclidien $\ens{E}$ dont la distance est notée $d$.\\
+          Montrer que si $M\in\ens{A}$ et $N\in\ens{B}$ vérifient $\vv{MN} \perp \Big(\ev{A} \oplus \ev{B}\Big)$, alors
+          \[\hspace{-35mm}
+            d(\ens{A}, \ens{B}) = d(M,N).
+          \]\vspace{-14pt}
+        }
+      }
+    }
+    \vspace{7pt}
+
+    \item\label{q:sea} Parmi les trois sous-ensembles de $\mathbb{R}^{3}$ suivants
+    \begin{gather*}
+      \ens{A} = \{ (x,y,z) \in \mathbb{R}^{3} \,\mid\, (x-y)(y-z) = 0 \},\\
+      \ens{B} = \{ (x,y,z) \in \mathbb{R}^{3} \,\mid\, (x-y)^{2} = 0 \},\\
+      \ens{C} = \{ (1+t,2+t,3) \in \mathbb{R}^{3} \,\mid\, t \in \mathbb{R} \},
+    \end{gather*}
+    déterminer (en justifiant) lesquels sont des sous-espaces affines.
+    \item Trouver un repère cartésien pour chacun des sous-espaces affines de la question précédente.
+    \item Déterminer la distance entre les deux sous espaces affines de la question \ref{q:sea}).
+   \end{enumerate}
+
+\end{exo}
+
+\begin{solution}
+  \begin{enumerate}
+    \item Soient $M\in\ens{A}$ et $N\in\ens{B}$ qui vérifient $\vv{MN} \perp \Big(\ev{A} \oplus \ev{B}\Big)$. Soient $K \in \ens{A}$, $L \in \ens{B}$, alors  en appliquant le théorème de Pythagore on a $\| \vv{KL} \|^{2} = \| \vv{KM} + \vv{MN} + \vv{NL} \|^{2} = \|\vv{MN}\|^{2} + \| \vv{KM} + \vv{NL} \|^{2} \geq \|\vv{MN}\|^{2}$, car $\vv{MN} \perp (\vv{KM} + \vv{NL})$ vu que $\vv{KM} + \vv{NL} \in \Big(\ev{A} \oplus \ev{B}\Big)$. Ainsi $d(K,L) \geq d(M,N)$ et donc $d(\ens{A}, \ens{B}) = \displaystyle\inf_{K \in \ens{A}, L \in \ens{B}} d(K,L) \geq d(M,N)$.\\
+    Nous avons aussi $d(\ens{A}, \ens{B}) = \displaystyle\inf_{K \in \ens{A}, L \in \ens{B}} d(K,L) \leq d(M,N)$ car $M\in\ens{A}$ et $N\in\ens{B}$.\\
+    Ainsi on trouve $d(\ens{A}, \ens{B}) =  d(M,N)$.
+    \item $\ens{A}$ n'est pas un sous-espace affine car $(1,1,0) \in \ens{A}$ et $(0,1,1) \in \ens{A}$, mais leur isobarycentre $\frac{1}{2}(1,1,0) + \frac{1}{2}(1,1,0) = (\frac{1}{2},1,\frac{1}{2}) \notin \ens{A}$.\\
+    $\ens{B}$ est un sous-espace linéaire car $\ens{B} = \{ (x,y,z) \in \mathbb{R}^{3} \,\mid\, x-y = 0 \}$ vu que $x-y = 0 \ssi (x-y)^{2} = 0$ et ainsi $\ens{B} = \ker \varphi$, où $\varphi \in \mathcal{L}(\mathbb{R}^{3},\mathbb{R})$ est l'application linéaire définie par $\varphi(x,y,z)=x-y$. Ainsi $\ens{B}$ est un sous-espace affine avec $\ev{B} = \ens{B}$.\\
+    $\ens{C} = \{ (1,2,3)+t(1,1,0) \in \mathbb{R}^{3} \,\mid\, t \in \mathbb{R} \} = (1,2,3)+ \affspan{(1,1,0)}$ est la droite affine de direction $\ev{C}=\affspan{(1,1,0)}$ qui passe par le point $(1,2,3)$.
+    \item D'après le théorème du rang pour l'application $\vv\varphi$, définie dans la question précédente, nous avons $\dim \ev{B} = 3-1=2$. Les vecteurs $\vv{v}_{1} = (1,1,0) \in \ev{B}$ et $\vv{v}_{2} = (0,0,1) \in \ev{B}$ forment une famille libre, donc une base de $\ev{B}$. Ainsi $\{O, \vv{v}_{1}, \vv{v}_{2}\} = \{(0,0,0), (1,1,0), (0,0,1)\}$ est un repère cartésien de $\ens{B} = \ev{B}$.\\
+    Comme $\vv{v}_{1} = (1,1,0)$ est une base de $\ev{C}$ et $\Omega = (1,2,3)$ est un point de $\ens{C}$, on trouve que $\{\Omega,\vv{v}_{1}\} = \{(1,2,3),(1,1,0)\}$ est un repère cartésien de $\ens{C}$.
+    \item Pour déterminer $d(\ens{B},\ens{C})$ on cherche $M=(0,0,0)+s(1,1,0)+t(0,0,1) \in \ens{B}$ et $N=(1,2,3)+u(1,1,0) \in \ens{C}$ tels que $\vv{MN}\perp(\ev{B}\oplus\ev{C})$. Ainsi comme $\ev{B}\oplus\ev{C} = \affspan{\vv{v}_{1},\vv{v}_{2}}$ et $\vv{MN} = (1+u-s,2+u-s,3-t)$ on cherche $s$,$t$ et $u$ tels que $\scalprod{(1+u-s,2+u-s,3-t)}{(1,1,0)}=0$ et $\scalprod{(1+u-s,2+u-s,3-t)}{(0,0,1)}=0$. En résolvant le système on trouve $u-s = -\frac{3}{2}$ et $t=3$. Ainsi $\| \vv{MN} \|  = \| (-\frac{1}{2},\frac{1}{2},0) \| = \frac{1}{\sqrt{2}}$ et donc $d(\ens{B},\ens{C}) = \frac{1}{\sqrt{2}}$.
+  \end{enumerate}
+
+\end{solution}
+
+\tsvp
+\ifsolutions\else\newpage\fi
+
+%-----------------------------------
+\begin{exo} (Transformations affines)
+
+  On considère l'espace vectoriel $\mathbb{R}_{2}[X]$ des polynômes de degré au plus $2$ à coefficients réels.
+
+  \begin{enumerate}
+    \item Soit $\phi(P)(X) = X^{2}\left( P(\frac{1}{X}) + 1 \right)$ pour $P \in \mathbb{R}_{2}[X]$. Montrer que $\phi$ est un automorphisme affine de $\mathbb{R}_{2}[X]$.
+  \end{enumerate}
+  \emph{Étant donnés $\Omega \in \mathbb{R}_{2}[X]$ et $\lambda \in \mathbb{R}$ on note $h_{\Omega,\lambda}$ l'homothétie de centre $\Omega$ et de rapport $\lambda$.}
+  \begin{enumerate}[resume]
+    \item Calculer $h_{X,2}(X^{2}+1)$.
+    \item Justifier que la composée $h_{X,2}\circ h_{X^{2},\frac{1}{3}}$ est une homothétie. Puis déterminer ses paramètres (son centre et son rapport).
+    \item Est-ce que $h_{X,2}\circ h_{X^{2},\frac{1}{2}}$ est une homothétie ? Justifier votre réponse.
+    \item Justifier que $h_{X,2}$ est un automorphisme affine et déterminer son inverse.
+  \end{enumerate}
+
+\end{exo}
+
+\begin{solution}
+  \begin{enumerate}
+    \item Soit $P(X)=a+bX+cX^{2}$, on trouve $\phi(P)(X) = X^{2}\left( a+b\frac{1}{X}+c\frac{1}{X^{2}} + 1 \right) = c+bX+(a+1)X^{2}$. Pour voir que $\phi$ est une application affine il suffit de remarquer que $\phi(0+P) = \phi(0) + \vv\phi(P)$ où $\phi(0) = X^{2}$ et $\vv\phi$ est l'application linéaire qui permute $a$ et $c$, c.-à-d. $\vv\phi(a+bX+cX^{2}) = c+bX+aX^{2}$. Et maintenant pour conclure il suffit d'utiliser que $\phi$ est un automorphisme affine si et seulement si $\vv\phi$ est un automorphisme linéaire, ce qui est le cas car $\vv\phi\circ\vv\phi=\id$.
+    \item Nous avons $h_{\Omega,\lambda}(P) = (1- \lambda)\Omega+\lambda P$. Ainsi $h_{X,2}(X^{2}+1) = (1-2)X+2(X^{2}+1) = 2-X+2X^{2}$.
+    \item Pour $P \in \mathbb{R}_{2}[X]$ on a $h_{X,2}\circ h_{X^{2},\frac{1}{3}}(P) = h_{X,2}\left(\frac{2}{3}X^{2}+\frac{1}{3}P\right) = -X+2\left(\frac{2}{3}X^{2}+\frac{1}{3}P\right)= \frac{1}{3}\left( 4X^{2}-3X \right)+\frac{2}{3}P$. Donc $h_{X,2}\circ h_{X^{2},\frac{1}{3}} = h_{4X^{2}-3X,\frac{2}{3}}$ est l'homothétie de centre $4X^{2}-3X$ est de rapport $\frac{2}{3}$.
+    \item Pour $P \in \mathbb{R}_{2}[X]$ on a $h_{X,2}\circ h_{X^{2},\frac{1}{2}}(P) = h_{X,2}\left(\frac{1}{2}X^{2}+\frac{1}{2}P\right) = -X+2\left(\frac{1}{2}X^{2}+\frac{1}{2}P\right)= ( X^{2}-X )+P$. Ainsi $h_{X,2}\circ h_{X^{2},\frac{1}{2}}$ n'est pas une homothétie, mais la translation par le vecteur (polynôme) $X^{2}-X$.
+    \item Comme toute homothétie de rapport non nul, $h_{X,2}$ est un automorphisme affine dont l'inverse est l'homothétie du même centre et du rapport inverse, c.-à-d.  $h_{X,\frac{1}{2}}$.
+  \end{enumerate}
+\end{solution}
+
+\ifsolutions\else\vspace{7mm}\fi
+
+%-----------------------------------
+\begin{exo} (Géométrie du plan et barycentres)
+
+  Soient $A$, $B$ et $C$ trois points fixes d'un plan affine euclidien. On se propose dans cet exercice de déterminer l'ensemble $\ens{S}$ des points $M$ qui vérifient
+  \[
+    \| \vv{MA} - 2\vv{MB}+\vv{MC} \| = \| \vv{MA} - 4\vv{MB}+\vv{MC} \|.
+  \]
+  \begin{enumerate}
+    \item Montrer que $B \in \ens{S}$.
+    \item Montrer que $\vv{MA} - 2\vv{MB}+\vv{MC}$ ne dépend pas du choix du point $M$.
+    \item Soit $G$ le barycentre de $(A,1)$, $(B,-4)$ et $(C,1)$. Montrer sur un dessin la position de $G$ par rapport à $A$, $B$ et $C$ (pris en position générale\footnote{C.-à-d. de sorte que le triangle $ABC$ soit non dégénéré.}).
+    \item Exprimer $\vv{MA} - 4\vv{MB}+\vv{MC}$ en fonction de $\vv{GM}$.
+    \item En déduire que $\ens{S}$ est un cercle dont on précisera le centre et qu'on représentera sur un dessin.
+   \end{enumerate}
+
+\end{exo}
+
+\begin{solution}
+  \begin{enumerate}
+    \item\label{parb} $\| \vv{BA} - 2\vv{BB}+\vv{BC} \| = \| \vv{BA}+\vv{BC} \| = \| \vv{BA} - 4\vv{BB}+\vv{BC} \|$ car $\vv{BB}=\vv{0}$. Donc $B \in \ens{S}$.
+    \item\label{indep} Soit $M' \in \ens{S}$, on a $\vv{M'A} - 2\vv{M'B}+\vv{M'C} = (\vv{M'M}+\vv{MA}) - 2(\vv{M'M}+\vv{MB})+(\vv{M'M}+\vv{MC}) = (1-2+1)\vv{M'M}+\vv{MA} - 2\vv{MB}+\vv{MC} = \vv{MA} - 2\vv{MB}+\vv{MC}$. Ainsi le vecteur $\vv{MA} - 2\vv{MB}+\vv{MC}$ ne dépend pas du choix du point $M$.
+    \item Soit $F=\frac{1}{2}A+\frac{1}{2}C$ l'isobarycentre de $A$ et $C$, qui est aussi le milieu du segment $\convhull{A,C}$. Ainsi nous avons $G = -\frac{1}{2}A+2B-\frac{1}{2}C = 2B-F$, et donc $B = \frac{1}{2}F+\frac{1}{2}G$ est le milieu du segment $\convhull{F,G}$.
+    \begin{center}
+      \input{M53_2017-18_DS1_exo3b.tikz}
+    \end{center}
+    \item\label{bary} D'après la définition de $G$ nous avons $\vv{GA} - 4\vv{GB}+\vv{GC} = \vv{0}$ et donc $\vv{MA} - 4\vv{MB}+\vv{MC} = (\vv{MG}+\vv{GA}) - 4(\vv{MG}+\vv{GB})+(\vv{MG}+\vv{GC}) = (1-4+1)\vv{MG}+(\vv{GA} - 4\vv{GB}+\vv{GC}) = 2\vv{GM}$.
+    \item D'après \ref{indep}) le nombre $\| \vv{MA} - 2\vv{MB}+\vv{MC} \|$ est indépendant de $M$, notons le $K = \| \vv{BA}+\vv{BC} \|$ (on a pris $M=B$). Et comme d'après \ref{bary}) nous avons $\| \vv{MA} - 4\vv{MB}+\vv{MC} \| = 2 \| \vv{GM} \| $, on trouve que $\ens{S}$ est l'ensemble des points $M$ qui vérifient $2 \| \vv{GM} \| = K$, autrement dit c'est le cercle de centre $G$ et de rayon $\frac{K}{2}$, qui d'après \ref{parb}) passe par $B$.
+    \begin{center}
+      \input{M53_2017-18_DS1_exo3d.tikz}
+    \end{center}
+  \end{enumerate}
+
+\end{solution}
+
+\end{document}
+
+
+% ================== exo supplémentaire ================
+
+\begin{exo} (Géométrie du plan complexe et barycentres)
+
+  On considère trois points $A_{1}$, $A_{2}$ et $A_{3}$ du plan complexe dont les affixes $z_{1}$, $z_{2}$ et $z_{3}$ sont les racines complexes du polynôme $P(Z) = Z^{3} + 2Z + \sqrt{3}$, fixées arbitrairement une fois pour toute.
+  \begin{enumerate}
+    \item Déterminer l'isobarycentre des trois points $A_{1}$, $A_{2}$ et $A_{3}$.\\
+    \begin{indication}
+      Rappeler comment s'expriment les coefficients de $P$ en fonction de ses racines.
+    \end{indication}
+    \item Montrer que pour $A_{1}$, $A_{2}$ et $A_{3}$ fixées, le vecteur $\vv{MA_{1}} - 2\vv{MA_{2}}+\vv{MA_{3}}$ ne dépend pas du choix du point $M$.
+    \item Déterminer l'ensemble des points $M$ qui vérifie
+    \[
+      \vv{MA_{1}} - 2\vv{MA_{2}}+\vv{MA_{3}}=\vv{0}.
+    \]
+    \begin{indication}
+      Montrer que $P$ a une seule racine réelle.
+    \end{indication}
+   \end{enumerate}
+
+\end{exo}

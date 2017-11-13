@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+  \path (0,0) coordinate (A) node[scale=2]{.} node[below]{$A$};
+  \path (21:3) coordinate (B) node[scale=2]{.} node[above right]{$B$};
+  \path (70:3) coordinate (C) node[scale=2]{.} node[above]{$C$};
+  \path ($(A)!.5!(C)$) coordinate (F) node[scale=2]{.} node[left]{$F$};
+  \path ($(B)!-1!(F)$) coordinate (G) node[scale=2]{.} node[above]{$G$};
+  \draw (A)--(B)--(C)--node[sloped,scale=.7]{$|$}(F)--node[sloped,scale=.7]{$|$}cycle;
+  \draw[dashed] (F)--node[sloped,scale=.7]{$||$}(B)--node[sloped,scale=.7]{$||$}(G);
+  \draw let \p1 = ($(B)-(G)$),\n1={veclen(\x1,\y1)} in (G) circle(\n1)  +(35:\n1) node[above right]{$\ens{S}$};
+\end{tikzpicture}
