@@ -1,0 +1,16 @@
+# Slider[ <Min>, <Max>, <Increment>, <Speed>, <Width>,<Is Angle>, <Horizontal>, <Animating>, <Boolean Random>]
+
+a = Slider[ -5, 5, 0.1, 1, 140 ];
+a = 1.7;
+b = Slider[ -5, 5, 0.1, 1, 140 ];
+b = -0.4;
+c = Slider[ 1, 5, 0.1, 1, 140 ];
+c = 5;
+k = Slider[ -5, 5, 1, 1, 140 ];
+k = 0;
+
+Legende = FormulaText["$("+a+")x^2+("+b+")y^2+("+c+")z="+k+"$"];
+
+Hyperboloide = Surface[s, t, (k - a*s^2 - b*t^2)/c, s, -10, 10,t,-10,10];
+SetColor[Hyperboloide, "Red"];
+SetFilling[Hyperboloide, .5];
