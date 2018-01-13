@@ -1,0 +1,236 @@
+\documentclass[a4paper,12pt,reqno]{amsart}
+\usepackage{graphicx}
+\usepackage{macros_M53}
+
+% pour voir les solutions il faut enlever le commentaire de la ligne suivante
+\solutionstrue
+
+\begin{document}
+
+% ==================================
+\hautdepage{
+
+\ifsolutions{Solutions de l'examen final}\else{Examen final}\fi\par\normalfont\normalsize
+13 janvier 2017\\{[ durée: 3 heures ]}\par
+}
+% ==================================
+\ifsolutions\else
+% {\fontencoding{U}\fontfamily{futs}\selectfont\char 66\relax}
+\tikz[baseline=(e.base)]{\NoAutoSpacing\node(e){!};\draw[red,ultra thick,line join=round,yshift=-.15ex](90:1em)--(210:1em)--(330:1em)--cycle;}
+\textbf{Documents autorisés :}\textit{Une feuille A4 recto-verso écrite à la main.}
+
+\vspace{28mm}
+\tsvp
+\fi
+
+
+%-----------------------------------
+\begin{exo} (Géométrie du plan complexe)
+
+On se place dans le plan complexe. Soit l'application $\phi : \mathbb{C}\setminus \{3i\} \rightarrow \mathbb{C}$ définie par
+\[
+  \phi(z) = \frac{z-2}{iz+3}\quad\text{ pour } z\neq3i.
+\]
+
+  \begin{enumerate}
+    \item Déterminer et dessiner l'ensemble $\phi^{-1}(\mathbb{R})$.
+    \item Déterminer et dessiner l'ensemble $\phi^{-1}(i\mathbb{R})$.
+  \end{enumerate}
+  \begin{indication}
+    Dans les deux questions, vous pouvez déterminer les couples de réels $(x,y)$ tels que $z = x+iy$ soit dans l'ensemble recherché.
+  \end{indication}
+
+\end{exo}
+
+\begin{solution}
+  Soit $z=x+iy$ avec $x,y \in \mathbb{R}$ (comme suggéré dans l'indication), alors
+  \[
+    \phi(z) = \frac{x+iy-2}{i(x+iy)+3} = \frac{(x-2+iy)(3-y-ix)}{x^{2}+(3-y)^{2}} = \frac{(3x+2y-6) + i \big(x(2-x)+y(3-y)\big)}{x^{2}+(3-y)^{2}}.
+  \]
+
+    ~\image{r}{49mm}{-7mm}{-7mm}{M53_2017-18_DS2_exo1_solution.tikz}
+  \vspace{-14mm}
+
+  \begin{enumerate}
+    \item Comme le $x^{2}+(3-y)^{2}$ est réel, nous avons $\phi(z) \in \mathbb{R}$ si et seulement si $\big(x(2-x)+y(3-y)\big) = 0 \iff (x-1)^{2}+(y- \frac{3}{2})^{2} = 1^{2}+\frac{3}{2}^{2} = \frac{13}{4}$ et $(x,y) \neq (0,3)$. Ainsi on trouve que $\phi^{-1}(\mathbb{R})$ est le cercle de centre $(1,\frac{3}{2})$ et de rayon $\frac{\sqrt{13}}{2}$ ($\approx 1,8$) privé du point d'affixe $3i$.
+    \item Comme le $x^{2}+(3-y)^{2}$ est réel, nous avons $\phi(z) \in i\mathbb{R}$ si et seulement si $(3x+2y-6) = 0$ et $(x,y) \neq (0,3)$. Ainsi on trouve que $\phi^{-1}(i\mathbb{R})$ est la droite d'équation $3x+2y=6$ privée du point d'affixe $3i$.
+  \end{enumerate}
+\end{solution}
+
+
+\sisujet{\bigskip}
+%-----------------------------------
+\begin{exo} (Espaces affines et transformations affines)
+
+  Soit $\ens{E}$ un espace affine. Pour $\Omega \in \ens{E}$ et $\lambda \in \mathbb{R}$, on note $H_{\Omega,\lambda}$ l'homothétie de centre $\Omega$ et de rapport $\lambda \neq 1$. Et pour $\vv{v} \in \vv{E}$, on désigne par $T_{\vv{v}}$ la translation du vecteur $\vv{v}$.
+  \begin{enumerate}
+    \item Déterminer la nature et les paramètres de $H_{\Omega,\lambda}\circ T_{\vv{v}}$.
+    \item Déterminer la nature et les paramètres de $T_{\vv{v}}\circ H_{\Omega,\lambda}$.
+    \item Soit $\ens{E}$ l'espace affine des polynômes de degré $2$. Déterminer l'image de $P(X)=X^{2}+2X$ par l'homothétie de centre $\Omega(X) = (X-1)(X+1)$ et de rapport $-2$.
+  \end{enumerate}
+
+\end{exo}
+
+\begin{solution}
+
+  Pour $M \in  \ens{E}$ nous avons $H_{\Omega,\lambda}(M) = (1-\lambda)\Omega + \lambda M$.
+  \begin{enumerate}
+    \item Pour $M \in  \ens{E}$ nous avons $H_{\Omega,\lambda}\circ T_{\vv{v}}(M) = (1-\lambda)\Omega + \lambda (M+\vv{v})$. Ainsi $H_{\Omega,\lambda}\circ T_{\vv{v}}(M) = (1-\lambda)(\Omega + \frac{\lambda}{1-\lambda}\vv{v}) + \lambda M = H_{\Omega + \frac{\lambda}{1-\lambda}\vv{v},\lambda}(M)$ est l'homothétie du même rapport $\lambda$ et de centre $\Omega + \frac{\lambda}{1-\lambda}\vv{v}$.
+    \item Pour $M \in  \ens{E}$ nous avons $T_{\vv{v}}\circ H_{\Omega,\lambda} (M) = (1-\lambda)\Omega + \lambda M+\vv{v}$. Ainsi $T_{\vv{v}} \circ H_{\Omega,\lambda}(M) = (1-\lambda)(\Omega + \frac{1}{1-\lambda}\vv{v}) + \lambda M = H_{\Omega + \frac{1}{1-\lambda}\vv{v},\lambda}(M)$ est l'homothétie du même rapport $\lambda$ et de centre $\Omega + \frac{1}{1-\lambda}\vv{v}$.
+    \item $H_{\Omega,-2}(P) = (1+2)\Omega-2P$, ainsi l'image de $P(X)$ par cette homothétie est le polynôme $3(X-1)(X+1)-2(X^{2}+2X) = X^{2} -7X$.
+
+  \end{enumerate}
+\end{solution}
+
+
+\sisujet{\newpage}
+%-----------------------------------
+\begin{exo} (Espaces euclidiens et isométries)
+
+  On considère l'espace affine $\mathbb{R}^{3}$ muni de sa structure euclidienne standard. Soit l'application $\phi : \mathbb{R}^{3} \rightarrow \mathbb{R}^{3}$, dont l'expression dans la base canonique est
+  \[
+    \phi(x,y,z) = \frac{1}{3}(-x+2y+2z+3,2x-y+2z,2x+2y-z).
+  \]
+
+  \begin{enumerate}
+    \item Montrer que $\phi$ est une application affine.
+    \item Donner la matrice $M_{\vv\phi}$ de la partie linéaire de $\phi$.
+    \item Montrer que $\phi$ est une isométrie.
+    \item Déterminer la nature et les paramètres de la partie linéaire $\vv\phi$.
+    \item Déterminer la nature et les paramètres de $\phi$.
+  \end{enumerate}
+\end{exo}
+
+\begin{solution}
+
+  \begin{enumerate}
+    \item $\phi(x,y,z) = \frac{1}{3}
+          \begin{pmatrix}
+            -1 &  2 &  2 \\
+             2 & -1 &  2 \\
+             2 &  2 & -1
+          \end{pmatrix}
+          \begin{pmatrix} x\\ y\\ z\end{pmatrix}
+          +
+          \begin{pmatrix} 1\\ 0\\ 0\end{pmatrix}
+        $ et donc $\phi$ est une application de $\mathbb{R}^{3}$ de la forme $X\mapsto AX+B$, et donc d'après le cours c'est une application affine.
+    \item D'après la question précédente $M_{\vv\phi} = \frac{1}{3}
+          \begin{pmatrix}
+            -1 &  2 &  2 \\
+             2 & -1 &  2 \\
+             2 &  2 & -1
+          \end{pmatrix}
+          $.
+    \item Comme les trois vecteurs colonnes forment une base orthonormée (à vérifier), la matrice $M_{\vv\phi}$ est orthogonale et donc $\phi$ est une isométrie.
+    \item Comme $\det M_{\vv\phi} = 1$, la partie linéaire $\vv\phi$ est une rotation. On trouve facilement que l'ensemble des vecteurs fixes (l'axe de rotation) est $\affspan{(1,1,1)}$ et que l'angle de rotation $\theta$ vérifie $2\cos(\theta)+1 = \tr M_{\vv\phi} = -1$ $\implies$ $\theta = \pi (\mod 2\pi)$. Donc $\vv\phi$ est une symétrie\footnote{Pour dire que $\vv\phi$ est une symétrie, on aurait pu également utiliser le fait que\\ $M_{\vv\phi}$ est symétrique.} axiale d'axe $\affspan{(1,1,1)}$.
+    \item On décompose le vecteur $(1,0,0) = (\frac13,\frac13,\frac13)+(\frac23,-\frac13,-\frac13)$ avec $(\frac13,\frac13,\frac13) \in \affspan{(1,1,1)}$ et $(\frac23,-\frac13,-\frac13) \in \affspan{(1,1,1)}^{\perp}$. D'après le cours
+      \[
+        T_{\vv{(\frac23,-\frac13,-\frac13)}}\circ M_{\vv\phi} =
+        \begin{pmatrix}
+          -1 &  2 &  2 \\
+           2 & -1 &  2 \\
+           2 &  2 & -1
+        \end{pmatrix}
+        \begin{pmatrix} x\\ y\\ z\end{pmatrix}
+        +
+        \begin{pmatrix} \frac23\\ -\frac13\\ -\frac13\end{pmatrix}
+      \]
+      est une symétrie axiale d'axe de direction $\affspan{(1,1,1)}$. En cherchant ses points fixes qui vérifient $\frac{1}{3}(-x+2y+2z+2,2x-y+2z-1,2x+2y-z-1) = (x,y,z)$ on trouve que son axe de symétrie est $(\frac12,0,0)+\affspan{(1,1,1)}$. Pour finir on peut dire, d'après le cours, que comme $(\frac13,\frac13,\frac13)$ est dans la direction de l'axe de rotation de $T_{\vv{(\frac23,-\frac13,-\frac13)}}\circ M_{\vv\phi}$ alors $\phi$ est une symétrie axiale glissée d'axe $(\frac12,0,0)+\affspan{(1,1,1)}$ et de vecteur de translation $(\frac13,\frac13,\frac13)$.
+  \end{enumerate}
+\end{solution}
+
+
+\sisujet{\bigskip}
+%-----------------------------------
+\begin{exo} (Coniques)
+
+  \begin{enumerate}
+    \item Soient deux cercles $\ens{C}_{1}$ et $\ens{C}_{2}$ de centres respectifs $O_{1}$ et $O_{2}$ et de rayons respectifs $R_{1}$ et $R_{2}$ avec $R_{1} > R_{2}$. Donner et justifier la condition nécessaire et suffisante pour que $\ens{C}_{2}$ soit tangent intérieurement à $\ens{C}_{1}$.
+  \end{enumerate}
+
+  Soient $F$ et $G$ deux points du plan euclidien, et $\ens{C}$ un cercle de centre $G$ et de rayon $R > d(F,G)$.
+
+  ~\image{r}{42mm}{-7mm}{-28mm}{M53_2017-18_DS2_ellipse_cercle.tikz}
+  \vspace{-14mm}
+
+  \begin{enumerate}[resume]
+    \item On considère l'ensemble $\ens{S}$ des centres $\Omega$ des cercles tangents intérieurement à $\ens{C}$ et passant par $G$. Déterminer et dessiner l'ensemble $\ens{S}$.
+    \item On considère l'ensemble $\ens{E}$ des centres $M$ des cercles tangents intérieurement à $\ens{C}$ et passant par $F$. Montrer que cet ensemble est une ellipse, appelée ellipse de cercle directeur $\ens{C}$ et de foyer $F$, dont on précisera les paramètres.
+    \item Décrire et indiquer sur une figure les points de l'intersection $\ens{S}\cap\ens{E}$.
+  \end{enumerate}
+  \vspace{-4mm}
+
+  \begin{enumerate}[resume]
+    % \item Pourquoi appelle t-on $\ens{E}$ l'ellipse de cercle directeur $\ens{C}$ et de foyer $F$ ?
+    \item Est-ce que toute ellipse est l'ellipse d'un certain cercle directeur $\ens{C}$ et d'un certain foyer $F$ ?
+  \end{enumerate}
+
+\end{exo}
+
+\begin{solution}
+
+  On note $C(M,r)$ le cercle de centre $M$ et de rayon $r$.
+
+  ~\image{r}{35mm}{-21mm}{0mm}{M53_2017-18_DS2_exo4a_solution.tikz}
+  \vspace{-17mm}
+
+  \begin{enumerate}
+    \item Pour un point $M \in \ens{C}_{1}$, par l'inégalité triangulaire, on a $d(O_{2},M) \geq d(O_{1},M) - d(O_{1},O_{2})$, avec égalité seulement pour $M\equiv P$ tel que $O_{2} \in \convhull{O_{1},P}$\footnote{Pour $O_{1}\equiv O_{2}$ les deux cercles ne se touchent pas, et pour $O_{1}\not\equiv O_{2}$ le point $P$ est unique.}. Ainsi $\ens{C}_{1}$ est extérieur à $\ens{C}_{2}$ si et seulement si $\forall M \in \ens{C}_{1}, d(O_{2},M) \geq R_{2}$ $\iff$ $R_{1} - d(O_{1},O_{2}) \geq R_{2}$ $\iff$ $d(O_{1},O_{2}) \leq R_{1}-R_{2}$. Et les deux cercles se touchent (en $P$) si et seulement si cette inégalité est une égalité.
+  \end{enumerate}
+
+  ~\image{r}{35mm}{-21mm}{-7mm}{M53_2017-18_DS2_exo4b_solution.tikz}
+  \vspace{-17mm}
+
+  \begin{enumerate}[resume]
+    \item Le cercle $C(\Omega,r)$ touche intérieurement $\ens{C}$, d'après la question précédente, si et seulement si $d(G,\Omega) = R-r$. Et $C(\Omega,r)$ passe par $G$ si et seulement si $d(G,\Omega) = r$. Ainsi on trouve $\Omega \in \ens{S}$ $\iff$ $d(G,\Omega) = \frac{R}{2}$, autrement dit $\ens{S}$ est le cercle de centre $G$ et de rayon $\frac{R}{2}$.
+  \end{enumerate}
+
+  ~\image{r}{35mm}{-14mm}{0mm}{M53_2017-18_DS2_exo4c_solution.tikz}
+  \vspace{-17mm}
+
+  \begin{enumerate}[resume]
+    \item\label{ques:ell} Soit $P \in \ens{C}$ le point de tangence entre un cercle $C(M,r)$ qui passe par $F$ et qui touche $\ens{C}$. Nous avons $d(M,P) = d(M,F) = r$ et $d(G,M) = R-r$, donc $d(G,M) + d(M,F) = R$. Ainsi $M \in \ens{E}$, où $\ens{E}$ est l'ellipse de foyers $F$ et $G$ et «longueur de la corde» $2a = R$.\\
+    Réciproquement si $M \in \ens{E}$ alors le cercle $C(M,r)$ avec $r = d(M,F)$ touche intérieurement $\ens{C}$ car $d(G,M) = R-r$.\\
+    On trouve les autres paramètres de l'ellipse $c=d(F,G)/2$, $b=\sqrt{a^{2}-c^{2}} = \frac12\sqrt{R^{2}-d(F,G)^{2}}$, et finalement $\varepsilon = \frac{c}{a} = \frac{d(F,G)}{R}$.\\
+    \emph{Note: la question précédente correspond au cas particulier $F\equiv G$, où $a=b=\frac{R}{2}$ et $\varepsilon = 0$.}
+  \end{enumerate}
+
+  ~\image{r}{35mm}{-21mm}{7mm}{M53_2017-18_DS2_exo4d_solution.tikz}
+  \vspace{-17mm}
+
+  \begin{enumerate}[resume]
+    \item Soit $M \in \ens{S} \cap \ens{E}$, alors $d(F,M) = R - d(G,M) = R-R/2 = R/2 = d(G,M)$. Donc $M$ est à l'un des deux points équidistants à $R/2$ de $F$ et $G$.
+    %\item On appelle $\ens{E}$ l'ellipse de cercle directeur $\ens{C}$ et de foyer $F$ car c'est l'ensemble de points qui sont équidistants du cercle $\ens{C}$ et du foyer $F$, tout comme une parabole est l'ensemble de points qui sont équidistants de la droite directrice et du foyer.
+  \end{enumerate}
+
+  \begin{enumerate}[resume]
+    \item La réponse est «oui» car étant donnée une ellipse de foyers $F$ et $G$ et de grand rayon $a$, d'après la question \eqref{ques:ell}, elle coïncide avec l'ellipse de foyer $F$ et de cercle directeur $C(G,2a)$.
+  \end{enumerate}
+\end{solution}
+
+\end{document}
+
+% ================== exo supplémentaire ================
+
+%-----------------------------------
+\begin{exo} (Coniques)
+
+Notons par $\ens{C}$ le cercle unité dans le plan affine euclidien usuel $\mathbb{R}^2$. Notons par $L_t$ la droite de pente $t$ passant par le point $A=(-1,0)$. Remarquez que $A$ est un point commun de $\ens{C}$ et de $L_t$. Soit $Q$ une conique quelconque dans $\mathbb{R}^2$, d'équation $F(x,y)=0$.
+
+  \begin{enumerate}
+    \item Quelles sont les équations cartésiennes de $\ens{C}$ et de $L_t$ ?
+    \item Exprimer en fonction de $t \in \mathbb{R}$ les coordonnées du second point commun de $\ens{C}$ et de $L_t$. En déduire une paramétrisation $\rho:  \mathbb{R} \to \mathbb{R}^2$ de $\ens{C}$ privé du point $A$, telle que ses fonctions coordonnées $(a(t), b(t))$ soient des fractions rationnelles.
+    \item Rappeler quelle est la condition sur $F(x,y)$ assurant que $Q$ est une conique.
+    \item En considérant la composée $F(a(t), b(t))$, montrer que $\ens{C}$ et $Q$ ont au plus $4$ points en commun.
+    \item Donner un exemple d'ellipse centrée à l'origine qui coupe $\ens{C}$ en $4$ points distincts.
+  \end{enumerate}
+
+\end{exo}
+
+\begin{solution}
+
+  \begin{enumerate}
+    \item
+  \end{enumerate}
+\end{solution}
+
