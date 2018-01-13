@@ -1,0 +1,12 @@
+\begin{tikzpicture}[scale=.42,pt/.style={scale=3},every node/.style={circle,inner sep=1pt}]
+  \path (0,0) coordinate(G) [point="G"below];
+  \path (2,0) coordinate(F) [point="F"below];
+  \draw (G) circle(4);
+  \path (-45:4.5) node{$\ens{C}$};
+  \draw[very thick] ($(G)!.5!(F)$) coordinate(O) ellipse(2 and {sqrt(3)});
+  \path (140:1.7) node{$\ens{E}$};
+  \path (O) +({2*cos(70)},{sqrt(3)*sin(70)}) coordinate(M) [point="M"{anchor=-70}];
+  \path let \p1=(M), \n1={atan2(\y1,\x1)} in (G) +(\n1:4) [point="P"above right];
+  \draw let \p1=(M), \n1={veclen(\x1,\y1)} in (M) circle(4 cm - \n1);
+  \draw[dotted] (G) -- (P) (M) --(F);
+\end{tikzpicture}

@@ -1,0 +1,11 @@
+\begin{tikzpicture}[scale=.42,pt/.style={scale=3}]
+  \path (0,0) coordinate(G) [point="G"{anchor=45,inner sep=2pt}];
+  \draw (G) circle(4);
+  \path (-45:4.5) node{$\ens{C}$};
+  \draw[very thick] (G) circle(2);
+  \path (140:2.5) node{$\ens{S}$};
+  \path (G) +(30:2) coordinate(O) [point={label={[anchor=159]$\Omega$}}];
+  \path let \p1=(O), \n1={atan2(\y1,\x1)} in (G) +(\n1:4) [point="P"*];
+  \draw let \p1=(O), \n1={veclen(\x1,\y1)} in (O) circle(4 cm - \n1);
+  \draw[dotted] (G) -- (P);
+\end{tikzpicture}

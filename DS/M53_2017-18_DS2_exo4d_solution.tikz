@@ -1,0 +1,14 @@
+\begin{tikzpicture}[scale=.42,pt/.style={scale=3},every node/.style={circle,inner sep=1pt}]
+  \def\dfg{3}
+  \def\R{4}
+  \path (0,0) coordinate(G) [point="G"{right,scale=.7}];
+  \path (\dfg,0) coordinate(F) [point="F"{left,scale=.7}];
+  \draw (G) circle(4);
+  \path (-45:4.5) node{$\ens{C}$};
+  \draw[very thick] ($(G)!.5!(F)$) coordinate(O) ellipse({\R/2} and {sqrt(\R*\R-\dfg*\dfg)/2});
+  \draw[very thick] (G) circle(2);
+  \path (140:2.5) node{$\ens{E}$};
+  \path (O) +(0,{sqrt(\R*\R-\dfg*\dfg)/2}) [point="M_1"{anchor=-140,scale=.7}];
+  \path (O) +(0,{-sqrt(\R*\R-\dfg*\dfg)/2}) [point="M_2"{anchor=130,scale=.7}];
+  \draw[dotted] (G) -- (M_1) --(F);
+\end{tikzpicture}
