@@ -1,0 +1,155 @@
+\documentclass[a4paper,12pt,reqno]{amsart}
+\usepackage{graphicx}
+\usepackage{macros_M53}
+
+% pour voir les solutions il faut enlever le commentaire de la ligne suivante
+\solutionstrue
+
+\begin{document}
+
+% ==================================
+\hautdepage{
+\ifsolutions{Solutions du rattrapage}\else{Rattrapage}\fi\par\normalfont\normalsize
+14 juin 2018\\{[ durée: 3 heures ]}\par
+}
+% ==================================
+\ifsolutions\else
+% {\fontencoding{U}\fontfamily{futs}\selectfont\char 66\relax}
+\tikz[baseline=(e.base)]{\NoAutoSpacing\node(e){!};\draw[red,ultra thick,line join=round,yshift=-.15ex](90:1em)--(210:1em)--(330:1em)--cycle;}
+\textbf{Documents autorisés :}\textit{Une feuille A4 recto-verso écrite à la main.}
+
+\vspace{28mm}
+\tsvp
+\fi
+
+%-----------------------------------
+\begin{exo} (Géométrie du plan complexe et barycentres)
+
+  On considère trois points $A_{1}$, $A_{2}$ et $A_{3}$ du plan complexe dont les affixes $z_{1}$, $z_{2}$ et $z_{3}$ sont les racines complexes du polynôme $P(Z) = Z^{3} + 2Z + \sqrt{3}$, fixées arbitrairement une fois pour toutes.
+  \begin{enumerate}
+    \item Déterminer l'affixe de l'isobarycentre des trois points $A_{1}$, $A_{2}$ et $A_{3}$.\\
+    \begin{indication}
+      Rappeler comment s'expriment les coefficients de $P$ en fonction de ses racines.
+    \end{indication}
+    \item Montrer que pour $A_{1}$, $A_{2}$ et $A_{3}$ fixés, le vecteur $\vv{v} = \vv{MA_{1}} - 2\vv{MA_{2}}+\vv{MA_{3}}$ ne dépend pas du choix du point $M$.
+    \item Déterminer l'affixe de $\vv{v}$ en fonction de $z_{1}$, $z_{2}$ et $z_{3}$, puis montrer que $\vv{v} \neq 0$.
+   \end{enumerate}
+
+\end{exo}
+
+\begin{solution}
+  \begin{enumerate}
+    \item Comme le coefficient devant $Z^{2}$ est $0$ on trouve la somme des trois racines $z_{1}+z_{2}+z_{3} = 0$, d'où l'isobarycentre de $A_{1}$, $A_{2}$ et $A_{3}$ est le point $O$ d'affixe $\frac{1}{3}z_{1}+\frac{1}{3}z_{2}+\frac{1}{3}z_{3}=0$.
+    \item Comme $1+(-2)+1=0$, d'après le cours le vecteur $\vv{MA_{1}} - 2\vv{MA_{2}}+\vv{MA_{3}}$ ne dépend pas du point $M$, on le note $A_{1} - 2A_{2}+A_{3}$ et son affixe est $z_{1} - 2z_{2}+z_{3}$.
+    \item D'après la question précédente l'affixe de $\vv{v}$ est $z_{1} - 2z_{2}+z_{3}$. Si on suppose que $z_{1} - 2z_{2}+z_{3}=0$, comme $z_{1}+z_{2}+z_{3} = 0$ on trouve $z_{2}=0$, mais $0$ n'est pas racine de $P$. Donc $\vv{v}\neq 0$ car son affixe $z_{1} - 2z_{2}+z_{3}\neq 0$.
+  \end{enumerate}
+\end{solution}
+
+
+
+\sisujet{\bigskip}
+%-----------------------------------
+\begin{exo} (Espaces affines et transformations affines)
+
+Soit $\ens{E}$ un espace affine réel et $T: \ens{E} \to \ens{E}$ une application affine. On suppose qu'il existe $n \in \mathbb{N}^*$ tel que $T^n = Id_\ens{E}$. Montrer que $T$ a au moins un point fixe, c'est-à-dire qu'il existe $p \in \ens{E}$ vérifiant $T(p) = p$.
+
+\begin{indication}
+  On pourra construire un tel $p$ en partant de $v \in \ens{E}$ quelconque et en regardant la suite $\big(v, T(v), T^2(v), \dots, T^{n-1}(v)\big)$.
+\end{indication}
+
+\end{exo}
+
+\begin{solution}
+  On suit l'indication: soit $v \in \ens{E}$ arbitraire. On pose $p = \frac1n v + \frac1n T(v) + \dots + \frac1n T^{n-1}(v)$, l'isobarycentre des points $\big(v, T(v), \dots, T^{n-1}(v)\big)$. Comme $T$ préserve les barycentres, on a $T(p) = T\big(\frac1n v + \frac1n T(v) + \dots + \frac1n T^{n-1}(v)\big) = \frac1n T(v) + \frac1n T^{2}(v) + \dots + \frac1n T^{n}(v)$. Et comme $T^{n}(v) = v$ on trouve $T(p)=p$. Ainsi $T$ a au moins un point fixe, le point $p$.
+\end{solution}
+
+
+\sisujet{\newpage}
+%-----------------------------------
+\begin{exo} (Espaces euclidiens et isométries)
+
+    On considère l'espace affine $\mathbb{R}^{3}$ muni de sa structure euclidienne standard. Soit l'application $\phi : \mathbb{R}^{3} \rightarrow \mathbb{R}^{3}$, dont l'expression dans la base canonique est
+    \[
+      \phi(x,y,z) = \frac{1}{9}(7x-4y-4z+9,-4x+y-8z+27,-4x-8y+z+9).
+    \]
+
+  \begin{enumerate}
+    \item Montrer que $\phi$ est une application affine.
+    \item Donner la matrice $M_{\vv\phi}$ de la partie linéaire de $\phi$ dans la base canonique.
+    \item Montrer que $\phi$ est une isométrie.
+    \item Déterminer la nature et les paramètres de la partie linéaire $\vv\phi$.
+    \item Déterminer la nature et les paramètres de $\phi$.
+  \end{enumerate}
+\end{exo}
+
+\begin{solution}
+
+  \begin{enumerate}
+    \item Nous avons $\phi(x,y,z) = \frac{1}{9}
+          \begin{pmatrix}
+             7 & -4 & -4 \\
+            -4 &  1 & -8 \\
+            -4 & -8 &  1
+          \end{pmatrix}
+          \begin{pmatrix} x\\ y\\ z\end{pmatrix}
+          +
+          \begin{pmatrix} 1\\ 3\\ 1\end{pmatrix}
+        $ et donc $\phi$ est une application de $\mathbb{R}^{3}$ de la forme $X\mapsto AX+B$, et donc d'après le cours c'est une application affine.
+    \item D'après le cours la partie linéaire de $X\mapsto AX+B$ est $X\mapsto AX$ qui a pour matrice dans la base canonique $A$. Ainsi d'après la question précédente $M_{\vv\phi} = \frac{1}{9}
+          \begin{pmatrix}
+             7 & -4 & -4 \\
+            -4 &  1 & -8 \\
+            -4 & -8 &  1
+          \end{pmatrix}
+          $.
+    \item Comme les trois vecteurs colonnes forment une base orthonormée (à vérifier), la matrice $M_{\vv\phi}$ est orthogonale et donc $\phi$ est une isométrie.
+    \item Comme $\det M_{\vv\phi} = -1$, la partie linéaire $\vv\phi$ est une anti-rotation ou réflexion. On trouve facilement que l'ensemble des vecteurs $(-1)$-propres (l'axe de rotation) est $\affspan{(1,2,2)}$ et que l'angle de rotation $\theta$ vérifie $2\cos(\theta)-1 = \tr M_{\vv\phi} = 1$ $\implies$ $\theta = 0 (\mod 2\pi)$. Donc $\vv\phi$ est une réflexion\footnote{Pour dire que $\vv\phi$ est une symétrie, on aurait pu également utiliser le fait que $M_{\vv\phi}$ est symétrique, puis chercher les points fixes à la place des vecteurs $(-1)$-propres.} par rapport au plan $\affspan{(1,2,2)}^{\perp}$.
+    \item On décompose le vecteur $(1,3,1) = (1,2,2)+(0,1,-1)$ avec $(1,2,2) \in \affspan{(1,2,2)}$ et $(0,1,-1) \in \affspan{(1,2,2)}^{\perp}$. D'après le cours
+      \[
+        T_{\vv{(1,2,2)}}\circ M_{\vv\phi} =\frac{1}{9}
+          \begin{pmatrix}
+             7 & -4 & -4 \\
+            -4 &  1 & -8 \\
+            -4 & -8 &  1
+          \end{pmatrix}
+        \begin{pmatrix} x\\ y\\ z\end{pmatrix}
+        +
+        \begin{pmatrix} 1\\ 2\\ 2\end{pmatrix}
+      \]
+      est une réflexion par rapport à un hyperplan de direction $\affspan{(1,2,2)}^{\perp}$. En cherchant ses points fixes qui vérifient $\frac{1}{9}(7x-4y-4z+9,-4x+y-8z+18,-4x-8y+z+18) = (x,y,z)$ on trouve que son hyperplan de réflexion est $(\frac12,1,1)+\affspan{(1,2,2)}^{\perp}$. Pour finir on peut dire, d'après le cours, que comme $(0,1,-1)$ est dans la direction du plan de réflexion de $T_{\vv{(1,2,2)}}\circ M_{\vv\phi}$ alors $\phi$ est une réflexion glissée par rapport à l'hyperplan $(\frac12,1,1)+\affspan{(1,2,2)}^{\perp}$ et de vecteur de translation $(0,1,-1)$.
+  \end{enumerate}
+\end{solution}
+
+
+
+\sisujet{\bigskip}
+%-----------------------------------
+\begin{exo} (Coniques)
+
+  \image{r}{59mm}{-14mm}{-14mm}{M53_2017-18_Rattrapage_ellipse_cercles.tikz}
+  Soient deux droites orthogonales $\ens{D}_{1}$ et $\ens{D}_{2}$ qui se coupent en un point $O$, et deux cercles $\ens{C}_{1}$ et $\ens{C}_{2}$ de centre $O$ et de rayons respectifs $r$ et $R$ avec $0<r<R$.\newline
+  Pour tout point $Q$ sur $\ens{C}_{2}$, soit $P=\ens{C}_{1}\cap [O,Q]$.
+  Soient $\ens{D}'_{1}$ et $\ens{D}'_{2}$ les deux droites parallèles à $\ens{D}_{1}$ et $\ens{D}_{2}$ et passant par $P$ et $Q$ respectivement.
+
+  On considère le point d'intersection de ces deux droites $M=\ens{D}'_{1}\cap \ens{D}'_{2}$.
+
+  Montrer que quand $Q$ parcourt $\ens{C}_{2}$ le point $M$ parcourt une ellipse.
+
+\end{exo}
+
+\begin{solution}
+
+  On se place dans un repère orthonormé de centre $O$ et d'axes $\ens{D}_{1}$ et $\ens{D}_{2}$. Dans ce repère si $P=(x_{P},y_{P})$ et $Q=(x_{Q},y_{Q})$, alors d'une part $(x_{P},y_{P})=\frac{r}{R}(x_{Q},y_{Q})$, car $P$ est l'image de $Q$ par l'homothétie de centre $O$ et de rapport $\frac{r}{R}$, et d'autre part $M=(x_{Q},y_{P})$ par la construction de $M$, et donc $M=(x_{Q},\frac{r}{R}y_{Q})$.\newline
+  Ainsi quand $Q$ parcourt $\ens{C}_{2}$ ayant pour équation $\big\{ x^{2}+y^{2}=R^{2} \big\}$, $M$ parcourt l'image de $\ens{C}_{2}$ par l'affinité $(x,y)\mapsto(x,\frac{r}{R}y)$\,\footnote{dont l'inverse est l'affinité $(x,y)\mapsto(x,\frac{R}{r}y)$.}, qui est l'ellipse dont l'équation dans ce repère orthonormé est
+  \[
+    x^{2}+\Big(\frac{R}{r}y\Big)^{2}=R^{2}
+    \iff
+    \Big(\frac{x}{R}\Big)^{2}+\Big(\frac{y}{r}\Big)^{2}=1.
+  \]
+  \vspace{-2\baselineskip}
+
+\end{solution}
+
+% ==================================
+\end{document}
+
